@@ -5,19 +5,25 @@ class qObj : public qEntity
 {
 private:
 	
-	POINT		m_Pos;		// 위치
-	POINT		m_Scale;	// 크기
+	Vec2		m_Pos;		// 위치
+	Vec2		m_Scale;	// 크기
 
 public:
-	void SetPos(POINT _Pos) { m_Pos = _Pos; }
-	void SetScale(POINT _Scale) { m_Scale = _Scale; }
+	void SetPos(Vec2 _Pos) { m_Pos = _Pos; }
+	void SetScale(Vec2 _Scale) { m_Scale = _Scale; }
 
-	POINT GetPos() { return m_Pos; }
-	POINT GetScale() { return m_Scale; }
+	void SetPos(float _x, float _y) { m_Pos.x = _x; m_Pos.y = _y; }
+	void SetScale(float _width, float _height) { m_Scale.x = _width; m_Scale.y = _height; }
+
+	Vec2 GetPos() { return m_Pos; }
+	Vec2 GetScale() { return m_Scale; }
+
+
+
 
 public:
 	virtual void begin();		
-	virtual void tick();		
+	virtual void tick();		// 오브젝트가 매 프레임마다 해야할 작업을 구현
 	virtual void finaltick();	
 	virtual void render();
 

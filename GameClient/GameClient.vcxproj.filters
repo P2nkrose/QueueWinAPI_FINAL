@@ -35,6 +35,21 @@
     <Filter Include="03. Game\08. Module">
       <UniqueIdentifier>{4ee0d98e-a57d-4d93-8b5a-e2d7f48aaf46}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\03. Manager\01. LevelMgr">
+      <UniqueIdentifier>{32221453-8fa2-46da-be38-ad3c0e07d260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\01. Start_Logo">
+      <UniqueIdentifier>{060c9327-902f-4c2c-a0f5-3af3d2dfb754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\02. Editor">
+      <UniqueIdentifier>{b2057e5c-14ef-4d07-95a6-acea35de00fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\03. Stage01">
+      <UniqueIdentifier>{7a9de9f3-26f3-404c-9a8f-f6efc8f73dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\03. Manager\02. TimeMgr">
+      <UniqueIdentifier>{e5f3fc35-8e2e-4e9e-a0cb-0738d5ebe983}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -73,6 +88,18 @@
     <ClInclude Include="qLevel.h">
       <Filter>03. Game\04. Level</Filter>
     </ClInclude>
+    <ClInclude Include="qLevelMgr.h">
+      <Filter>03. Game\03. Manager\01. LevelMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>03. Game\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="qTimeMgr.h">
+      <Filter>03. Game\03. Manager\02. TimeMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="qLevel_Stage01.h">
+      <Filter>03. Game\04. Level\03. Stage01</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -108,6 +135,15 @@
     </ClCompile>
     <ClCompile Include="qLevel.cpp">
       <Filter>03. Game\04. Level</Filter>
+    </ClCompile>
+    <ClCompile Include="qLevelMgr.cpp">
+      <Filter>03. Game\03. Manager\01. LevelMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="qTimeMgr.cpp">
+      <Filter>03. Game\03. Manager\02. TimeMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="qLevel_Stage01.cpp">
+      <Filter>03. Game\04. Level\03. Stage01</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

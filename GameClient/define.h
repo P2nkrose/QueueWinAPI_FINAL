@@ -2,7 +2,7 @@
 
 
 #define SINGLE(type) public:\
-						static type* GetInit()\
+						static type* GetInst()\
 						{\
 							static type mgr;\
 							return &mgr;\

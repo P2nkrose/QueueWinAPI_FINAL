@@ -139,9 +139,13 @@
     <ClInclude Include="qEngine.h" />
     <ClInclude Include="qEntity.h" />
     <ClInclude Include="qLevel.h" />
+    <ClInclude Include="qLevelMgr.h" />
+    <ClInclude Include="qLevel_Stage01.h" />
     <ClInclude Include="qObj.h" />
     <ClInclude Include="qSelectObj.h" />
+    <ClInclude Include="qTimeMgr.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="struct.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -153,8 +157,11 @@
     <ClCompile Include="qEngine.cpp" />
     <ClCompile Include="qEntity.cpp" />
     <ClCompile Include="qLevel.cpp" />
+    <ClCompile Include="qLevelMgr.cpp" />
+    <ClCompile Include="qLevel_Stage01.cpp" />
     <ClCompile Include="qObj.cpp" />
     <ClCompile Include="qSelectObj.cpp" />
+    <ClCompile Include="qTimeMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc" />

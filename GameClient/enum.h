@@ -11,3 +11,31 @@ enum PEN_TYPE
 
 	PEN_END,
 };
+
+
+enum class LEVEL_TYPE
+{
+	LOGO_START,
+	EDITOR,
+	
+	STAGE_01,
+	STAGE_02,
+
+	BOSS_01,
+
+	END,
+};
+
+
+enum class PLAYER_STATE
+{
+	IDLE,
+	RUN,
+	MOVE,
+	DASH,
+	ATTACK,
+	HIT,
+	DEAD,
+
+	END,
+};

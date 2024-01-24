@@ -14,5 +14,12 @@ public:
 	int init(HWND _hWnd, POINT _Resolution);
 	void progress();
 
+private:
+	void CreateDefaultGDIObject();
+
+
+public:
+	HDC GetMainDC() { return m_hDC; }
+
 };
 

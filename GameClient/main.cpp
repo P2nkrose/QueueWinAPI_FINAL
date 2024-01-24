@@ -51,7 +51,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 
     // Engine 초기화
-    if (FAILED(qEngine::GetInit()->init(g_hWnd, POINT{ 1280, 768 })))
+    if (FAILED(qEngine::GetInst()->init(g_hWnd, POINT{ 1280, 768 })))
     {
         // Engine 초기화 실패 ==> 프로그램 종료
         MessageBox(nullptr, L"엔진 초기화 실패", L"에러 발생", MB_OK);
@@ -105,7 +105,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 // Game Logic
                 // 메세지가 큐에 없을 때에는 게임 코드 실행
 
-                qEngine::GetInit()->progress();
+                qEngine::GetInst()->progress();
 
             }
         }
