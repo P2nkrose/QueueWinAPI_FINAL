@@ -19,7 +19,7 @@ private:
 
 
 public:
+	HWND GetMainWnd() { return m_hMainWnd; }
 	HDC GetMainDC() { return m_hDC; }
-
 };
 

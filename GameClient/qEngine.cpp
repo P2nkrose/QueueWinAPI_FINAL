@@ -2,6 +2,7 @@
 #include "qEngine.h"
 
 #include "qLevelMgr.h"
+#include "qTimeMgr.h"
 
 qEngine::qEngine()
 	: m_hMainWnd(nullptr)
@@ -30,7 +31,10 @@ int qEngine::init(HWND _hWnd, POINT _Resolution)
 	CreateDefaultGDIObject();
 
 	// Manager ÃÊ±âÈ­
+	qTimeMgr::GetInst()->init();
 	qLevelMgr::GetInst()->init();
+	
+
 
 	return S_OK;
 
@@ -38,7 +42,10 @@ int qEngine::init(HWND _hWnd, POINT _Resolution)
 
 void qEngine::progress()
 {
+	qTimeMgr::GetInst()->tick();
+	
 	qLevelMgr::GetInst()->progress();
+	qLevelMgr::GetInst()->render();
 }
 
 void qEngine::CreateDefaultGDIObject()

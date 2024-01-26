@@ -43,5 +43,10 @@ void qLevelMgr::progress()
 
 	m_pCurrentLevel->tick();
 	m_pCurrentLevel->finaltick();
+
+}
+
+void qLevelMgr::render()
+{
 	m_pCurrentLevel->render();
 }
