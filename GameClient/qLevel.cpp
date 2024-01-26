@@ -10,7 +10,7 @@ qLevel::qLevel()
 
 qLevel::~qLevel()
 {
-
+	Save_Del_Vec(m_vecObj);
 }
 
 
