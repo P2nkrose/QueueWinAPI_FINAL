@@ -28,9 +28,7 @@ void qObj::tick()
 
 
 	// 현실시간 동기화
-	float DT = qTimeMgr::GetInst()->GetDeltaTime();
-
-	float fSpeed = 200.0f;
+	float fSpeed = 1000.0f;
 
 
 	if (0x8001 & GetAsyncKeyState(VK_LEFT))
@@ -60,9 +58,7 @@ void qObj::finaltick()
 
 void qObj::render()
 {
-	HDC dc = qEngine::GetInst()->GetMainDC();
-
-	Rectangle(dc, m_Pos.x - m_Scale.x * 0.5f
+	Rectangle(DC, m_Pos.x - m_Scale.x * 0.5f
 				, m_Pos.y - m_Scale.y * 0.5f
 				, m_Pos.x + m_Scale.x * 0.5f
 				, m_Pos.y + m_Scale.y * 0.5f);

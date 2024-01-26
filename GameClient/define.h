@@ -12,3 +12,8 @@
 							type(const type& _other) = delete;\
 						public:\
 							~type();
+
+
+#define DT qTimeMgr::GetInst()->GetDeltaTime()
+#define DC qEngine::GetInst()->GetSubDC()
+
