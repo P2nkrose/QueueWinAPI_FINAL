@@ -4,7 +4,7 @@
 #include "qLevel.h"
 #include "qLevel_Stage01.h"
 
-#include "qObj.h"
+#include "qPlayer.h"
 
 qLevelMgr::qLevelMgr()
 	: m_arrLevel{}
@@ -29,7 +29,7 @@ void qLevelMgr::init()
 	m_pCurrentLevel = m_arrLevel[(UINT)LEVEL_TYPE::STAGE_01];
 
 	// 레벨에 물체 추가하기
-	qObj* pObject = new qObj;
+	qObj* pObject = new qPlayer;
 	pObject->SetPos(640.0f, 384.0f);
 	pObject->SetScale(100.0f, 100.0f);
 

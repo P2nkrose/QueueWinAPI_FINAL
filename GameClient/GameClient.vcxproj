@@ -142,6 +142,7 @@
     <ClInclude Include="qLevelMgr.h" />
     <ClInclude Include="qLevel_Stage01.h" />
     <ClInclude Include="qObj.h" />
+    <ClInclude Include="qPlayer.h" />
     <ClInclude Include="qSelectObj.h" />
     <ClInclude Include="qTimeMgr.h" />
     <ClInclude Include="Resource.h" />
@@ -160,6 +161,7 @@
     <ClCompile Include="qLevelMgr.cpp" />
     <ClCompile Include="qLevel_Stage01.cpp" />
     <ClCompile Include="qObj.cpp" />
+    <ClCompile Include="qPlayer.cpp" />
     <ClCompile Include="qSelectObj.cpp" />
     <ClCompile Include="qTimeMgr.cpp" />
   </ItemGroup>

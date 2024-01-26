@@ -26,7 +26,7 @@ public:
 
 public:
 	// qEntity 클래스는 추상클래스이다.
-	// virtual qEntity* Clone() = 0;
+	virtual qEntity* Clone() = 0;
 
 public:
 	qEntity();

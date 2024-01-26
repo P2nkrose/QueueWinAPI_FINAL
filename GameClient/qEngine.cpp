@@ -55,6 +55,7 @@ void qEngine::progress()
 
 	// È­¸é Clear
 	{
+
 		Rectangle(m_hSubDC, -1, -1, m_Resolution.x + 1, m_Resolution.y + 1);
 	}
 

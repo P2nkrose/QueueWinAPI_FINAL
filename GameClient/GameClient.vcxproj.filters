@@ -50,6 +50,9 @@
     <Filter Include="03. Game\03. Manager\02. TimeMgr">
       <UniqueIdentifier>{e5f3fc35-8e2e-4e9e-a0cb-0738d5ebe983}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\05. Object\Player">
+      <UniqueIdentifier>{387927ba-5ae7-4818-8912-46de0bdd54c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -100,6 +103,9 @@
     <ClInclude Include="qLevel_Stage01.h">
       <Filter>03. Game\04. Level\03. Stage01</Filter>
     </ClInclude>
+    <ClInclude Include="qPlayer.h">
+      <Filter>03. Game\05. Object\Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -144,6 +150,9 @@
     </ClCompile>
     <ClCompile Include="qLevel_Stage01.cpp">
       <Filter>03. Game\04. Level\03. Stage01</Filter>
+    </ClCompile>
+    <ClCompile Include="qPlayer.cpp">
+      <Filter>03. Game\05. Object\Player</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

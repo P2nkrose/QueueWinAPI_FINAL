@@ -17,5 +17,9 @@ public:
 	void progress();
 	void render();
 
+
+public:
+	qLevel* GetCurrentLevel() { return m_pCurrentLevel; }
+
 };
 
