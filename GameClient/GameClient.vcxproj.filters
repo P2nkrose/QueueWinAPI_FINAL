@@ -53,6 +53,9 @@
     <Filter Include="03. Game\05. Object\Player">
       <UniqueIdentifier>{387927ba-5ae7-4818-8912-46de0bdd54c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\05. Object\Missile">
+      <UniqueIdentifier>{90a2e921-b1cb-4cdf-80f2-a23562480524}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -109,6 +112,9 @@
     <ClInclude Include="func.h">
       <Filter>02. Main</Filter>
     </ClInclude>
+    <ClInclude Include="qMissile.h">
+      <Filter>03. Game\05. Object\Missile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -156,6 +162,9 @@
     </ClCompile>
     <ClCompile Include="qPlayer.cpp">
       <Filter>03. Game\05. Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="qMissile.cpp">
+      <Filter>03. Game\05. Object\Missile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

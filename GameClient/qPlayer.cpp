@@ -4,6 +4,8 @@
 #include "qLevelMgr.h"
 #include "qLevel.h"
 
+#include "qMissile.h"
+
 qPlayer::qPlayer()
 	: m_Speed(500.f)
 {
@@ -47,6 +49,23 @@ void qPlayer::tick()
 	{
 		vPos.y += m_Speed * DT;
 	}
+
+	// SPACE 누르면 미사일 발사
+	if (0x8001 & GetAsyncKeyState(VK_SPACE))
+	{
+		qMissile* pMissile = new qMissile;
+
+		Vec2 vMissilePos = GetPos();
+		vMissilePos.y -= GetScale().y / 2.f;
+
+		pMissile->SetPos(vMissilePos);
+		pMissile->SetScale(Vec2(20.f, 20.f));
+
+		qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
+		pCurLevel->AddObject(pMissile);
+
+	}
+
 
 	SetPos(vPos);
 }
