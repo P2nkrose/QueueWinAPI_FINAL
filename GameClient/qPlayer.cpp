@@ -5,6 +5,7 @@
 #include "qLevel.h"
 
 #include "qMissile.h"
+#include "qKeyMgr.h"
 
 qPlayer::qPlayer()
 	: m_Speed(500.f)
@@ -30,28 +31,28 @@ void qPlayer::tick()
 
 	Vec2 vPos = GetPos();
 
-	if (0x8001 & GetAsyncKeyState(VK_LEFT))
+	if (KEY_PRESSED(LEFT))
 	{
 		vPos.x -= m_Speed * DT;
 	}
 
-	if (0x8001 & GetAsyncKeyState(VK_RIGHT))
+	if (KEY_PRESSED(RIGHT))
 	{
 		vPos.x += m_Speed * DT;
 	}
 
-	if (0x8001 & GetAsyncKeyState(VK_UP))
+	if (KEY_PRESSED(UP))
 	{
 		vPos.y -= m_Speed * DT;
 	}
 
-	if (0x8001 & GetAsyncKeyState(VK_DOWN))
+	if (KEY_PRESSED(DOWN))
 	{
 		vPos.y += m_Speed * DT;
 	}
 
 	// SPACE 누르면 미사일 발사
-	if (0x8001 & GetAsyncKeyState(VK_SPACE))
+	if (KEY_TAP(SPACE))
 	{
 		qMissile* pMissile = new qMissile;
 

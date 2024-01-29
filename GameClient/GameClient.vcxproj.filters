@@ -56,6 +56,9 @@
     <Filter Include="03. Game\05. Object\Missile">
       <UniqueIdentifier>{90a2e921-b1cb-4cdf-80f2-a23562480524}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\03. Manager\03. KeyMgr">
+      <UniqueIdentifier>{50fcc41c-96f1-47d4-9eb8-88f075e0a903}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -115,6 +118,9 @@
     <ClInclude Include="qMissile.h">
       <Filter>03. Game\05. Object\Missile</Filter>
     </ClInclude>
+    <ClInclude Include="qKeyMgr.h">
+      <Filter>03. Game\03. Manager\03. KeyMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -165,6 +171,9 @@
     </ClCompile>
     <ClCompile Include="qMissile.cpp">
       <Filter>03. Game\05. Object\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="qKeyMgr.cpp">
+      <Filter>03. Game\03. Manager\03. KeyMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

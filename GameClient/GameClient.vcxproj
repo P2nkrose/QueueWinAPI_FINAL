@@ -139,6 +139,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="qEngine.h" />
     <ClInclude Include="qEntity.h" />
+    <ClInclude Include="qKeyMgr.h" />
     <ClInclude Include="qLevel.h" />
     <ClInclude Include="qLevelMgr.h" />
     <ClInclude Include="qLevel_Stage01.h" />
@@ -159,6 +160,7 @@
     </ClCompile>
     <ClCompile Include="qEngine.cpp" />
     <ClCompile Include="qEntity.cpp" />
+    <ClCompile Include="qKeyMgr.cpp" />
     <ClCompile Include="qLevel.cpp" />
     <ClCompile Include="qLevelMgr.cpp" />
     <ClCompile Include="qLevel_Stage01.cpp" />
