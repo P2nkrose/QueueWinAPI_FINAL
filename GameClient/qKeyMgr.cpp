@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "qKeyMgr.h"
 
+#include "qEngine.h"
+
 
 
 UINT g_RealKey[(UINT)KEY::KEY_END] =
@@ -46,38 +48,64 @@ void qKeyMgr::init()
 
 void qKeyMgr::tick()
 {
-	for (UINT i = 0; i < (UINT)m_vecKeyInfo.size(); ++i)
+
+	// Main Window 가 포커싱 상태이다.
+	if (qEngine::GetInst()->GetMainWnd() == GetFocus())
 	{
-		// 지금 키가 눌려있는지 체크
-		if (0x8001 & GetAsyncKeyState(g_RealKey[(UINT)m_vecKeyInfo[i].eKey]))
+		for (UINT i = 0; i < (UINT)m_vecKeyInfo.size(); ++i)
 		{
-			// 이전에도 눌려있었는지
-			if (m_vecKeyInfo[i].bPressed)
+			// 지금 키가 눌려있는지 체크
+			if (0x8001 & GetAsyncKeyState(g_RealKey[(UINT)m_vecKeyInfo[i].eKey]))
 			{
-				m_vecKeyInfo[i].eKeyState = KEY_STATE::PRESSED;
-			}
-			else
-			{
-				m_vecKeyInfo[i].eKeyState = KEY_STATE::TAP;
+				// 이전에도 눌려있었는지
+				if (m_vecKeyInfo[i].bPressed)
+				{
+					m_vecKeyInfo[i].eKeyState = KEY_STATE::PRESSED;
+				}
+				else
+				{
+					m_vecKeyInfo[i].eKeyState = KEY_STATE::TAP;
+				}
+
+				m_vecKeyInfo[i].bPressed = true;
 			}
 
-			m_vecKeyInfo[i].bPressed = true;
+			// 키가 안눌려있음
+			else
+			{
+				// 이전에는 눌려있었음
+				if (m_vecKeyInfo[i].bPressed)
+				{
+					m_vecKeyInfo[i].eKeyState = KEY_STATE::RELEASED;
+				}
+				else
+				{
+					m_vecKeyInfo[i].eKeyState = KEY_STATE::NONE;
+				}
+
+				m_vecKeyInfo[i].bPressed = false;
+			}
 		}
+	}
 
-		// 키가 안눌려있음
-		else
+	// 윈도우 포커싱 해제됨
+	else
+	{
+		for (UINT i = 0; i < (UINT)m_vecKeyInfo.size(); ++i)
 		{
-			// 이전에는 눌려있었음
-			if (m_vecKeyInfo[i].bPressed)
+			if (m_vecKeyInfo[i].eKeyState == KEY_STATE::TAP || m_vecKeyInfo[i].eKeyState == KEY_STATE::PRESSED)
 			{
-				m_vecKeyInfo[i].eKeyState = KEY_STATE::RELEASED;
+				m_vecKeyInfo[i].eKeyState == KEY_STATE::RELEASED;
 			}
 			else
 			{
-				m_vecKeyInfo[i].eKeyState = KEY_STATE::NONE;
+				m_vecKeyInfo[i].eKeyState == KEY_STATE::NONE;
 			}
 
 			m_vecKeyInfo[i].bPressed = false;
 		}
 	}
+
+
+	
 }
