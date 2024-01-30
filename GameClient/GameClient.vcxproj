@@ -137,6 +137,7 @@
     <ClInclude Include="func.h" />
     <ClInclude Include="GameClient.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="qComponent.h" />
     <ClInclude Include="qEngine.h" />
     <ClInclude Include="qEntity.h" />
     <ClInclude Include="qKeyMgr.h" />
@@ -158,6 +159,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="qComponent.cpp" />
     <ClCompile Include="qEngine.cpp" />
     <ClCompile Include="qEntity.cpp" />
     <ClCompile Include="qKeyMgr.cpp" />

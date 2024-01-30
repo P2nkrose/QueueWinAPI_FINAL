@@ -59,6 +59,18 @@
     <Filter Include="03. Game\03. Manager\03. KeyMgr">
       <UniqueIdentifier>{50fcc41c-96f1-47d4-9eb8-88f075e0a903}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\06. Component\01. Collider">
+      <UniqueIdentifier>{ee430b37-98f2-41b0-ba84-de988aeb4b71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\06. Component\02. Animator">
+      <UniqueIdentifier>{711fe424-9b9b-41de-852c-08ac508ab974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\06. Component\03. Rigidbody">
+      <UniqueIdentifier>{ab2104a5-7076-49d0-804b-7dd471e6b3d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\06. Component\04. AI">
+      <UniqueIdentifier>{542c66a8-eb3d-4daf-b573-156f59767132}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -121,6 +133,9 @@
     <ClInclude Include="qKeyMgr.h">
       <Filter>03. Game\03. Manager\03. KeyMgr</Filter>
     </ClInclude>
+    <ClInclude Include="qComponent.h">
+      <Filter>03. Game\06. Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -174,6 +189,9 @@
     </ClCompile>
     <ClCompile Include="qKeyMgr.cpp">
       <Filter>03. Game\03. Manager\03. KeyMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="qComponent.cpp">
+      <Filter>03. Game\06. Component</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
