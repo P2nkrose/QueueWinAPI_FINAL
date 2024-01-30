@@ -1,8 +1,10 @@
 #include "pch.h"
 #include "qObj.h"
-#include "qEngine.h"
 
+#include "qEngine.h"
 #include "qTimeMgr.h"
+
+#include "qComponent.h"
 
 qObj::qObj()
 {
@@ -10,6 +12,7 @@ qObj::qObj()
 
 qObj::~qObj()
 {
+	Save_Del_Vec(m_vecCom);
 }
 
 
@@ -25,6 +28,10 @@ void qObj::tick()
 
 void qObj::finaltick()
 {
+	for (size_t i = 0; i < m_vecCom.size(); ++i)
+	{
+		m_vecCom[i]->finaltick();
+	}
 }
 
 void qObj::render()
@@ -36,3 +43,10 @@ void qObj::render()
 }
 
 
+qComponent* qObj::AddComponent(qComponent* _Component)
+{
+	m_vecCom.push_back(_Component);
+	_Component->m_Owner = this;
+
+	return _Component;
+}

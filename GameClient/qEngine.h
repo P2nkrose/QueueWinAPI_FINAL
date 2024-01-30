@@ -13,6 +13,9 @@ private:
 	HDC			m_hSubDC;			// 보조 DC
 	HBITMAP		m_hSubBitmap;		// 보조 Bitmap 
 
+	HPEN		m_arrPen[(UINT)PEN_TYPE::END];
+	HBRUSH		m_arrBrush[(UINT)BRUSH_TYPE::END];
+
 public:
 	int init(HWND _hWnd, POINT _Resolution);
 	void progress();
@@ -24,7 +27,10 @@ private:
 public:
 	HWND GetMainWnd() { return m_hMainWnd; }
 	HDC GetMainDC() { return m_hDC; }
-
 	HDC GetSubDC() { return m_hSubDC; }
+
+	HPEN GetPen(PEN_TYPE _type) { return m_arrPen[(UINT)_type]; }
+	HBRUSH GetBrush(BRUSH_TYPE _type) { return m_arrBrush[(UINT)_type]; }
+
 };
 

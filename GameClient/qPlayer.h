@@ -1,16 +1,18 @@
 #pragma once
 #include "qObj.h"
 
+class qCollider;
+
 class qPlayer : public qObj
 {
 private:
-	float	m_Speed;
+	float		m_Speed;
 
+	qCollider*	m_Collider;
 
 public:
 	virtual void begin();
 	virtual void tick();		
-	virtual void finaltick();
 	virtual void render();
 
 

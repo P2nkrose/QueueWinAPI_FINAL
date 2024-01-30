@@ -1,5 +1,9 @@
 #pragma once
 
+void DrawDebugRect(PEN_TYPE _Type, Vec2 _Pos, Vec2 _Scale, float _Time);
+
+void DrawDebugCircle(PEN_TYPE _Type, Vec2 _Pos, Vec2 _Scale, float _Time);
+
 
 template<typename T>
 void Save_Del_Vec(vector<T*>& _vec)

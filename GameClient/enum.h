@@ -1,15 +1,27 @@
 #pragma once
 
 
-enum PEN_TYPE
+enum class PEN_TYPE
 {
-	RED_PEN,
-	BLUE_PEN,
-	GREEN_PEN,
+	PEN_RED,
+	PEN_GREEN,
+	PEN_BLUE,
+
+	END,
+};
 
 
+enum class BRUSH_TYPE
+{
+	BRUSH_RED,
+	BRUSH_GREEN,
+	BRUSH_BLUE,
+	BRUSH_GRAY,
 
-	PEN_END,
+	BRUSH_HOLLOW,
+	BRUSH_BLACK,
+
+	END,
 };
 
 
@@ -38,4 +50,11 @@ enum class PLAYER_STATE
 	DEAD,
 
 	END,
+};
+
+
+enum class DBG_SHAPE
+{
+	CIRCLE,
+	RECT,
 };

@@ -14,6 +14,9 @@
 							~type();
 
 
+#define USE_PEN(DC, TYPE) qSelectObj SelectPen(DC, qEngine::GetInst()->GetPen(PEN_TYPE::TYPE))
+#define USE_BRUSH(DC, TYPE) qSelectObj SelectBrush(DC, qEngine::GetInst()->GetBrush(BRUSH_TYPE::TYPE))
+
 #define DT qTimeMgr::GetInst()->GetDeltaTime()
 #define DC qEngine::GetInst()->GetSubDC()
 

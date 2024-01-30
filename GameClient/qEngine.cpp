@@ -3,6 +3,7 @@
 
 #include "qLevelMgr.h"
 #include "qTimeMgr.h"
+#include "qDbgRender.h"
 #include "qKeyMgr.h"
 
 qEngine::qEngine()
@@ -20,6 +21,18 @@ qEngine::~qEngine()
 	// DC 삭제
 	ReleaseDC(m_hMainWnd, m_hDC);
 
+	// Pen 삭제
+	for (int i = 0; i < (UINT)PEN_TYPE::END; i++)
+	{
+		DeleteObject(m_arrPen[i]);
+	}
+	
+	// Brush 삭제
+	for (int i = 0; i < (UINT)BRUSH_TYPE::END; i++)
+	{
+		DeleteObject(m_arrBrush[i]);
+	}
+
 }
 
 int qEngine::init(HWND _hWnd, POINT _Resolution)
@@ -35,7 +48,7 @@ int qEngine::init(HWND _hWnd, POINT _Resolution)
 	// 윈도우 크기를 변경
 	SetWindowPos(m_hMainWnd, nullptr, 0, 0, rt.right - rt.left, rt.bottom - rt.top, 0);
 	
-	// DC 생성
+	// DC, 펜, 브러쉬 생성
 	CreateDefaultGDIObject();
 
 	// Manager 초기화
@@ -51,18 +64,30 @@ int qEngine::init(HWND _hWnd, POINT _Resolution)
 
 void qEngine::progress()
 {
+	// ============
+	// Manager Tick
+	// ============
 	qKeyMgr::GetInst()->tick();
 	qTimeMgr::GetInst()->tick();
+	qDbgRender::GetInst()->tick();
+
+	// ==============
+	// Level Progress
+	// ==============
 	qLevelMgr::GetInst()->progress();
 
-
+	// =========
+	// Rendering
+	// =========
 	// 화면 Clear
 	{
-
+		USE_BRUSH(m_hSubDC, BRUSH_GRAY);
 		Rectangle(m_hSubDC, -1, -1, m_Resolution.x + 1, m_Resolution.y + 1);
 	}
 
 	qLevelMgr::GetInst()->render();
+
+	qDbgRender::GetInst()->render();
 
 	// Sub -> Main
 	BitBlt(m_hDC, 0, 0, m_Resolution.x, m_Resolution.y, m_hSubDC, 0, 0, SRCCOPY);
@@ -89,6 +114,21 @@ void qEngine::CreateDefaultGDIObject()
 	// SubDC 가 SubBitmap 을 지정하게 함
 	HBITMAP hPrevBitmap = (HBITMAP)SelectObject(m_hSubDC, m_hSubBitmap);
 	DeleteObject(hPrevBitmap);
+
+
+
+	// 자주 사용할 펜 생성
+	m_arrPen[(UINT)PEN_TYPE::PEN_RED] = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+	m_arrPen[(UINT)PEN_TYPE::PEN_GREEN] = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	m_arrPen[(UINT)PEN_TYPE::PEN_BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
+
+	// 자주 사용할 브러쉬 생성
+	m_arrBrush[(UINT)BRUSH_TYPE::BRUSH_RED] = CreateSolidBrush(RGB(255, 0, 0));
+	m_arrBrush[(UINT)BRUSH_TYPE::BRUSH_GREEN] = CreateSolidBrush(RGB(0, 255, 0));
+	m_arrBrush[(UINT)BRUSH_TYPE::BRUSH_BLUE] = CreateSolidBrush(RGB(0, 0, 255));
+	m_arrBrush[(UINT)BRUSH_TYPE::BRUSH_GRAY] = CreateSolidBrush(RGB(100, 100, 100));
+	m_arrBrush[(UINT)BRUSH_TYPE::BRUSH_HOLLOW] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
+	m_arrBrush[(UINT)BRUSH_TYPE::BRUSH_BLACK] = (HBRUSH)GetStockObject(BLACK_BRUSH);
 
 
 }

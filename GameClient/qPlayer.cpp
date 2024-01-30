@@ -5,11 +5,18 @@
 #include "qLevel.h"
 
 #include "qMissile.h"
-#include "qKeyMgr.h"
+#include "qCollider.h"
+
 
 qPlayer::qPlayer()
 	: m_Speed(500.f)
 {
+	// Player의 컴포넌트 설정
+	m_Collider = (qCollider*)AddComponent(new qCollider);
+	m_Collider = GetComponent<qCollider>();
+
+	m_Collider->SetOffsetPos(Vec2(0.f, 0.f));
+	m_Collider->SetScale(Vec2(120.f, 120.f));
 }
 
 qPlayer::~qPlayer()
@@ -65,15 +72,14 @@ void qPlayer::tick()
 		qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
 		pCurLevel->AddObject(pMissile);
 
+		//DrawDebugRect(PEN_TYPE::PEN_GREEN, GetPos(), Vec2(500.f, 500.f), 3.f);
+
 	}
 
 
 	SetPos(vPos);
 }
 
-void qPlayer::finaltick()
-{
-}
 
 void qPlayer::render()
 {

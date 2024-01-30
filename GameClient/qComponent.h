@@ -1,10 +1,18 @@
 #pragma once
 #include "qEntity.h"
+
+#include "qObj.h"
+
 class qComponent : public qEntity
 {
+private:
+	qObj*		m_Owner;		// 컴포넌트를 소유하고 있는 오브젝트
+
+
+
 public:
-	qComponent();
-	~qComponent();
+	qObj* GetOwner() { return m_Owner; }
+
 
 
 public:
@@ -12,6 +20,11 @@ public:
 	virtual qComponent* Clone() = 0;
 
 
-private:
+public:
+	qComponent();
+	~qComponent();
+
+	friend class qObj;
+
 };
 

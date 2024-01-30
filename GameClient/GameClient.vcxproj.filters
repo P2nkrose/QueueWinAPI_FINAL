@@ -50,9 +50,6 @@
     <Filter Include="03. Game\03. Manager\02. TimeMgr">
       <UniqueIdentifier>{e5f3fc35-8e2e-4e9e-a0cb-0738d5ebe983}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\Player">
-      <UniqueIdentifier>{387927ba-5ae7-4818-8912-46de0bdd54c9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\Missile">
       <UniqueIdentifier>{90a2e921-b1cb-4cdf-80f2-a23562480524}</UniqueIdentifier>
     </Filter>
@@ -68,8 +65,23 @@
     <Filter Include="03. Game\06. Component\03. Rigidbody">
       <UniqueIdentifier>{ab2104a5-7076-49d0-804b-7dd471e6b3d8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\06. Component\04. AI">
+    <Filter Include="03. Game\05. Object\Tile">
+      <UniqueIdentifier>{d15c0527-03ea-4b38-8a0c-2e279cf51ff5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\UI">
+      <UniqueIdentifier>{9f4156f9-f6bc-4d96-ab4c-38de7a7264c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Player">
+      <UniqueIdentifier>{387927ba-5ae7-4818-8912-46de0bdd54c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Monster">
+      <UniqueIdentifier>{140961b4-6256-481f-a9d8-5cd1121e3d61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\06. Component\04. FSM">
       <UniqueIdentifier>{542c66a8-eb3d-4daf-b573-156f59767132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\03. Manager\04. DbgRender">
+      <UniqueIdentifier>{e25b869f-60eb-4461-8442-ce0899c5783d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -124,9 +136,6 @@
     <ClInclude Include="qPlayer.h">
       <Filter>03. Game\05. Object\Player</Filter>
     </ClInclude>
-    <ClInclude Include="func.h">
-      <Filter>02. Main</Filter>
-    </ClInclude>
     <ClInclude Include="qMissile.h">
       <Filter>03. Game\05. Object\Missile</Filter>
     </ClInclude>
@@ -135,6 +144,24 @@
     </ClInclude>
     <ClInclude Include="qComponent.h">
       <Filter>03. Game\06. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="qCollider.h">
+      <Filter>03. Game\06. Component\01. Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="qAnimator.h">
+      <Filter>03. Game\06. Component\02. Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="qRigidbody.h">
+      <Filter>03. Game\06. Component\03. Rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="qFSM.h">
+      <Filter>03. Game\06. Component\04. FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="qDbgRender.h">
+      <Filter>03. Game\03. Manager\04. DbgRender</Filter>
+    </ClInclude>
+    <ClInclude Include="func.h">
+      <Filter>03. Game\01. Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +219,24 @@
     </ClCompile>
     <ClCompile Include="qComponent.cpp">
       <Filter>03. Game\06. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="qCollider.cpp">
+      <Filter>03. Game\06. Component\01. Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="qAnimator.cpp">
+      <Filter>03. Game\06. Component\02. Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="qRigidbody.cpp">
+      <Filter>03. Game\06. Component\03. Rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="qFSM.cpp">
+      <Filter>03. Game\06. Component\04. FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="qDbgRender.cpp">
+      <Filter>03. Game\03. Manager\04. DbgRender</Filter>
+    </ClCompile>
+    <ClCompile Include="func.cpp">
+      <Filter>03. Game\01. Header</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

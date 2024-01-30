@@ -137,9 +137,13 @@
     <ClInclude Include="func.h" />
     <ClInclude Include="GameClient.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="qAnimator.h" />
+    <ClInclude Include="qCollider.h" />
     <ClInclude Include="qComponent.h" />
+    <ClInclude Include="qDbgRender.h" />
     <ClInclude Include="qEngine.h" />
     <ClInclude Include="qEntity.h" />
+    <ClInclude Include="qFSM.h" />
     <ClInclude Include="qKeyMgr.h" />
     <ClInclude Include="qLevel.h" />
     <ClInclude Include="qLevelMgr.h" />
@@ -147,6 +151,7 @@
     <ClInclude Include="qMissile.h" />
     <ClInclude Include="qObj.h" />
     <ClInclude Include="qPlayer.h" />
+    <ClInclude Include="qRigidbody.h" />
     <ClInclude Include="qSelectObj.h" />
     <ClInclude Include="qTimeMgr.h" />
     <ClInclude Include="Resource.h" />
@@ -154,14 +159,19 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="func.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="qAnimator.cpp" />
+    <ClCompile Include="qCollider.cpp" />
     <ClCompile Include="qComponent.cpp" />
+    <ClCompile Include="qDbgRender.cpp" />
     <ClCompile Include="qEngine.cpp" />
     <ClCompile Include="qEntity.cpp" />
+    <ClCompile Include="qFSM.cpp" />
     <ClCompile Include="qKeyMgr.cpp" />
     <ClCompile Include="qLevel.cpp" />
     <ClCompile Include="qLevelMgr.cpp" />
@@ -169,6 +179,7 @@
     <ClCompile Include="qMissile.cpp" />
     <ClCompile Include="qObj.cpp" />
     <ClCompile Include="qPlayer.cpp" />
+    <ClCompile Include="qRigidbody.cpp" />
     <ClCompile Include="qSelectObj.cpp" />
     <ClCompile Include="qTimeMgr.cpp" />
   </ItemGroup>
