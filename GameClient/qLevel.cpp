@@ -46,10 +46,10 @@ void qLevel::tick()
 void qLevel::finaltick()
 {
 	// 이전프레임 충돌체 등록 정보 Clear
-	//for (UINT i = 0; i < (UINT)LAYER_TYPE::END; i++)
-	//{
-	//	m_arrCollider[i].clear();
-	//}
+	for (UINT i = 0; i < (UINT)LAYER_TYPE::END; i++)
+	{
+		m_arrCollider[i].clear();
+	}
 
 
 	for (int i = 0; i < (UINT)LAYER_TYPE::END; i++)
@@ -78,9 +78,10 @@ void qLevel::AddObject(LAYER_TYPE _Layer, qObj* _Obj)
 	_Obj->m_Type = _Layer;
 }
 
-//void qLevel::RegisterCollider(qCollider* _Collider)
-//{
-//	LAYER_TYPE Layer = _Collider->GetOwner()->GetLayerType();
-//	m_arrCollider[(UINT)Layer].push_back(_Collider);
-//}
+
+void qLevel::RegisterCollider(qCollider* _Collider)
+{
+	LAYER_TYPE Layer = _Collider->GetOwner()->GetLayerType();
+	m_arrCollider[(UINT)Layer].push_back(_Collider);
+}
 

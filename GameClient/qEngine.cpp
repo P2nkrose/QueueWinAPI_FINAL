@@ -5,6 +5,7 @@
 #include "qTimeMgr.h"
 #include "qDbgRender.h"
 #include "qKeyMgr.h"
+#include "qCollisionMgr.h"
 
 qEngine::qEngine()
 	: m_hMainWnd(nullptr)
@@ -75,6 +76,7 @@ void qEngine::progress()
 	// Level Progress
 	// ==============
 	qLevelMgr::GetInst()->progress();
+	qCollisionMgr::GetInst()->tick();
 
 	// =========
 	// Rendering

@@ -80,8 +80,11 @@
     <Filter Include="03. Game\06. Component\04. FSM">
       <UniqueIdentifier>{542c66a8-eb3d-4daf-b573-156f59767132}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\03. Manager\04. DbgRender">
+    <Filter Include="03. Game\03. Manager\07. DbgRender">
       <UniqueIdentifier>{e25b869f-60eb-4461-8442-ce0899c5783d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\03. Manager\04. CollisionMgr">
+      <UniqueIdentifier>{9f43c80c-a177-482f-a6be-ac1ff71cd396}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -158,13 +161,16 @@
       <Filter>03. Game\06. Component\04. FSM</Filter>
     </ClInclude>
     <ClInclude Include="qDbgRender.h">
-      <Filter>03. Game\03. Manager\04. DbgRender</Filter>
+      <Filter>03. Game\03. Manager\07. DbgRender</Filter>
     </ClInclude>
     <ClInclude Include="func.h">
       <Filter>03. Game\01. Header</Filter>
     </ClInclude>
     <ClInclude Include="qMonster.h">
       <Filter>03. Game\05. Object\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="qCollisionMgr.h">
+      <Filter>03. Game\03. Manager\04. CollisionMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -236,13 +242,16 @@
       <Filter>03. Game\06. Component\04. FSM</Filter>
     </ClCompile>
     <ClCompile Include="qDbgRender.cpp">
-      <Filter>03. Game\03. Manager\04. DbgRender</Filter>
+      <Filter>03. Game\03. Manager\07. DbgRender</Filter>
     </ClCompile>
     <ClCompile Include="func.cpp">
       <Filter>03. Game\01. Header</Filter>
     </ClCompile>
     <ClCompile Include="qMonster.cpp">
       <Filter>03. Game\05. Object\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="qCollisionMgr.cpp">
+      <Filter>03. Game\03. Manager\04. CollisionMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

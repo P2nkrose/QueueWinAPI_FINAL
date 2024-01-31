@@ -139,6 +139,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="qAnimator.h" />
     <ClInclude Include="qCollider.h" />
+    <ClInclude Include="qCollisionMgr.h" />
     <ClInclude Include="qComponent.h" />
     <ClInclude Include="qDbgRender.h" />
     <ClInclude Include="qEngine.h" />
@@ -168,6 +169,7 @@
     </ClCompile>
     <ClCompile Include="qAnimator.cpp" />
     <ClCompile Include="qCollider.cpp" />
+    <ClCompile Include="qCollisionMgr.cpp" />
     <ClCompile Include="qComponent.cpp" />
     <ClCompile Include="qDbgRender.cpp" />
     <ClCompile Include="qEngine.cpp" />
