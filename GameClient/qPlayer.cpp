@@ -70,7 +70,7 @@ void qPlayer::tick()
 		pMissile->SetScale(Vec2(20.f, 20.f));
 
 		qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
-		pCurLevel->AddObject(pMissile);
+		pCurLevel->AddObject(LAYER_TYPE::PLAYER_MISSILE, pMissile);
 
 		//DrawDebugRect(PEN_TYPE::PEN_GREEN, GetPos(), Vec2(500.f, 500.f), 3.f);
 

@@ -18,6 +18,8 @@ private:
 	Vec2				m_Pos;		// 위치
 	Vec2				m_Scale;	// 크기
 	vector<qComponent*>	m_vecCom;	// 보유 컴포넌트들
+
+	LAYER_TYPE			m_Type;		// 소속 레이어
 	
 
 public:
@@ -29,6 +31,8 @@ public:
 
 	Vec2 GetPos() { return m_Pos; }
 	Vec2 GetScale() { return m_Scale; }
+
+	LAYER_TYPE GetLayerType() { return m_Type; }
 
 	qComponent* AddComponent(qComponent* _Component);
 
@@ -51,7 +55,7 @@ public:
 public:
 	virtual void begin();		
 	virtual void tick();		// 오브젝트가 매 프레임마다 해야할 작업을 구현
-	virtual void finaltick();	// 오브젝트가 소유한 컴포넌트들이 매 프레임마다 해야할 작업을 구현
+	virtual void finaltick() final;	// 오브젝트가 소유한 컴포넌트들이 매 프레임마다 해야할 작업을 구현
 	virtual void render();
 
 public:
@@ -61,5 +65,7 @@ public:
 public:
 	qObj();
 	~qObj();
+
+	friend class qLevel;
 };
 

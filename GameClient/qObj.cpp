@@ -7,6 +7,7 @@
 #include "qComponent.h"
 
 qObj::qObj()
+	: m_Type(LAYER_TYPE::NONE)
 {
 }
 

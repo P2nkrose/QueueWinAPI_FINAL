@@ -33,13 +33,13 @@ void qLevelMgr::init()
 	qObj* pObject = new qPlayer;
 	pObject->SetPos(640.0f, 384.0f);
 	pObject->SetScale(100.0f, 100.0f);
-	m_pCurrentLevel->AddObject(pObject);
+	m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pObject);
 
 	// 레벨에 몬스터 추가하기
 	pObject = new qMonster;
 	pObject->SetPos(800.0f, 200.0f);
 	pObject->SetScale(100.0f, 100.0f);
-	m_pCurrentLevel->AddObject(pObject);
+	m_pCurrentLevel->AddObject(LAYER_TYPE::MONSTER, pObject);
 }
 
 void qLevelMgr::progress()
