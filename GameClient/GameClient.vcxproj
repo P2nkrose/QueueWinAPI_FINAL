@@ -149,6 +149,7 @@
     <ClInclude Include="qLevelMgr.h" />
     <ClInclude Include="qLevel_Stage01.h" />
     <ClInclude Include="qMissile.h" />
+    <ClInclude Include="qMonster.h" />
     <ClInclude Include="qObj.h" />
     <ClInclude Include="qPlayer.h" />
     <ClInclude Include="qRigidbody.h" />
@@ -177,6 +178,7 @@
     <ClCompile Include="qLevelMgr.cpp" />
     <ClCompile Include="qLevel_Stage01.cpp" />
     <ClCompile Include="qMissile.cpp" />
+    <ClCompile Include="qMonster.cpp" />
     <ClCompile Include="qObj.cpp" />
     <ClCompile Include="qPlayer.cpp" />
     <ClCompile Include="qRigidbody.cpp" />

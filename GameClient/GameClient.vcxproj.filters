@@ -163,6 +163,9 @@
     <ClInclude Include="func.h">
       <Filter>03. Game\01. Header</Filter>
     </ClInclude>
+    <ClInclude Include="qMonster.h">
+      <Filter>03. Game\05. Object\Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -237,6 +240,9 @@
     </ClCompile>
     <ClCompile Include="func.cpp">
       <Filter>03. Game\01. Header</Filter>
+    </ClCompile>
+    <ClCompile Include="qMonster.cpp">
+      <Filter>03. Game\05. Object\Monster</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
