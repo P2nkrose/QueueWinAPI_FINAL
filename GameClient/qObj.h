@@ -58,6 +58,13 @@ public:
 	virtual void finaltick() final;	// 오브젝트가 소유한 컴포넌트들이 매 프레임마다 해야할 작업을 구현
 	virtual void render();
 
+
+	virtual void BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider){}
+	virtual void OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider){}
+	virtual void EndOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider){}
+
+
+
 public:
 	virtual qObj* Clone() = 0;	// { return new qObj(*this); }
 

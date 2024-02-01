@@ -8,12 +8,18 @@ class qPlayer : public qObj
 private:
 	float		m_Speed;
 
-	qCollider*	m_Collider;
+	qCollider*	m_HeadCol;
+	qCollider*	m_BodyCol;
 
 public:
 	virtual void begin();
 	virtual void tick();		
 	virtual void render();
+
+
+	virtual void BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
+	virtual void OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
+	virtual void EndOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
 
 
 public:

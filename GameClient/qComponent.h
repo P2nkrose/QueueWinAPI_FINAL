@@ -8,11 +8,8 @@ class qComponent : public qEntity
 private:
 	qObj*		m_Owner;		// 컴포넌트를 소유하고 있는 오브젝트
 
-
-
 public:
 	qObj* GetOwner() { return m_Owner; }
-
 
 
 public:

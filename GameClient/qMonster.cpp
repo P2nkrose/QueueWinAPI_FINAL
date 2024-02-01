@@ -4,7 +4,6 @@
 #include "qCollider.h"
 
 qMonster::qMonster()
-	: m_Collider(nullptr)
 {
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 	m_Collider->SetScale(Vec2(120.f, 120.f));

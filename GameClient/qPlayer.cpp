@@ -12,11 +12,20 @@ qPlayer::qPlayer()
 	: m_Speed(500.f)
 {
 	// Player의 컴포넌트 설정
-	m_Collider = (qCollider*)AddComponent(new qCollider);
-	m_Collider = GetComponent<qCollider>();
+	m_HeadCol = (qCollider*)AddComponent(new qCollider);
+	m_BodyCol = (qCollider*)AddComponent(new qCollider);
+	//m_Collider = GetComponent<qCollider>();
 
-	m_Collider->SetOffsetPos(Vec2(0.f, 0.f));
-	m_Collider->SetScale(Vec2(120.f, 120.f));
+	m_HeadCol->SetName(L"Head Collider");
+	m_HeadCol->SetOffsetPos(Vec2(0.f, -80.f));
+	m_HeadCol->SetScale(Vec2(30.f, 30.f));
+	m_HeadCol->SetActive(true);
+
+	m_BodyCol->SetName(L"Body Collider");
+	m_BodyCol->SetOffsetPos(Vec2(0.f, 0.f));
+	m_BodyCol->SetScale(Vec2(60.f, 60.f));
+	m_BodyCol->SetActive(true);
+
 }
 
 qPlayer::~qPlayer()
@@ -84,6 +93,24 @@ void qPlayer::tick()
 void qPlayer::render()
 {
 	qObj::render();
+}
+
+
+void qPlayer::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
+{
+	int a = 0;
+}
+
+
+void qPlayer::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
+{
+
+}
+
+
+void qPlayer::EndOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
+{
+	int a = 0;
 }
 
 

@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "qLevelMgr.h"
 
+#include "qCollisionMgr.h"
+
 #include "qLevel.h"
 #include "qLevel_Stage01.h"
 
@@ -35,11 +37,17 @@ void qLevelMgr::init()
 	pObject->SetScale(100.0f, 100.0f);
 	m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pObject);
 
+
 	// 레벨에 몬스터 추가하기
 	pObject = new qMonster;
 	pObject->SetPos(800.0f, 200.0f);
 	pObject->SetScale(100.0f, 100.0f);
 	m_pCurrentLevel->AddObject(LAYER_TYPE::MONSTER, pObject);
+
+
+	// 레벨 충돌 설정하기
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::MONSTER);
+
 }
 
 void qLevelMgr::progress()

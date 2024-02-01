@@ -4,6 +4,8 @@
 #include "qLevel.h"
 #include "qLevelMgr.h"
 
+#include "qCollider.h"
+
 
 qCollisionMgr::qCollisionMgr()
 	: m_Matrix{}
@@ -33,6 +35,60 @@ void qCollisionMgr::tick()
 			{
 				const vector<qCollider*>& vecLeft = pCurLevel->GetColliders((LAYER_TYPE)Row);
 				const vector<qCollider*>& vecRight = pCurLevel->GetColliders((LAYER_TYPE)Col);
+
+				for (size_t i = 0; i < vecLeft.size(); ++i)
+				{
+					for (size_t j = 0; j < vecRight.size(); ++j)
+					{
+						COLLIDER_ID id = {};
+
+						id.LeftID = vecLeft[i]->GetID();
+						id.RightID = vecRight[j]->GetID();
+
+						map<ULONGLONG, bool>::iterator iter = m_mapCollisionInfo.find(id.ID);
+
+						// 등록된 적이 없으면 등록시킨다.
+						if (iter == m_mapCollisionInfo.end())
+						{
+							m_mapCollisionInfo.insert(make_pair(id.ID, false));
+							iter = m_mapCollisionInfo.find(id.ID);
+						}
+
+						// 두 충돌체가 지금 충돌중이다.
+						if (IsCollision(vecLeft[i], vecRight[j]))
+						{
+							// 이전에도 충돌중이었다.
+							if (iter->second)
+							{
+								vecLeft[i]->OnOverlap(vecRight[j]);
+								vecRight[j]->OnOverlap(vecLeft[i]);
+							}
+
+							// 이전에는 충돌중이 아니었다.
+							else
+							{
+								vecLeft[i]->BeginOverlap(vecRight[j]);
+								vecRight[j]->BeginOverlap(vecLeft[i]);
+							}
+
+							iter->second = true;
+						}
+
+						// 두 충돌체가 지금 충돌중이 아니다.
+						else
+						{
+							// 이전에는 충돌중이었다.
+							if (iter->second)
+							{
+								vecLeft[i]->EndOverlap(vecRight[j]);
+								vecRight[j]->EndOverlap(vecLeft[i]);
+							}
+
+							iter->second = false;
+						}
+					}
+				}
+
 			}
 		}
 	}
@@ -51,6 +107,7 @@ void qCollisionMgr::CollisionCheck(LAYER_TYPE Layer1, LAYER_TYPE Layer2)
 	}
 
 	m_Matrix[Row] |= (1 << Col);
+	// m_Matrix[Row] = m_Matrix[Row] | (1 << Col);
 }
 
 void qCollisionMgr::CollisionUnCheck(LAYER_TYPE _Layer1, LAYER_TYPE _Layer2)
@@ -65,5 +122,23 @@ void qCollisionMgr::CollisionUnCheck(LAYER_TYPE _Layer1, LAYER_TYPE _Layer2)
 	}
 
 	m_Matrix[Row] &= ~(1 << Col);
+}
+
+
+bool qCollisionMgr::IsCollision(qCollider* _Left, qCollider* _Right)
+{
+	Vec2 vLeftPos = _Left->GetFinalPos();
+	Vec2 vLeftScale = _Left->GetScale();
+
+	Vec2 vRightPos = _Right->GetFinalPos();
+	Vec2 vRightScale = _Right->GetScale();
+
+	if (abs(vLeftPos.x - vRightPos.x) <= (vLeftScale.x + vRightScale.x) * 0.5f
+		&& abs(vLeftPos.y - vRightPos.y) <= (vLeftScale.y + vRightScale.y) * 0.5f)
+	{
+		return true;
+	}
+
+	return false;
 }
 
