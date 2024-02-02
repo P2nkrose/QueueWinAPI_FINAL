@@ -7,14 +7,16 @@
 #include "qMissile.h"
 #include "qCollider.h"
 
+#include "qDbgRender.h"
+
 
 qPlayer::qPlayer()
 	: m_Speed(500.f)
+	, m_PlayerImg(nullptr)
 {
 	// Player의 컴포넌트 설정
 	m_HeadCol = (qCollider*)AddComponent(new qCollider);
 	m_BodyCol = (qCollider*)AddComponent(new qCollider);
-	//m_Collider = GetComponent<qCollider>();
 
 	m_HeadCol->SetName(L"Head Collider");
 	m_HeadCol->SetOffsetPos(Vec2(0.f, -80.f));
@@ -25,6 +27,8 @@ qPlayer::qPlayer()
 	m_BodyCol->SetOffsetPos(Vec2(0.f, 0.f));
 	m_BodyCol->SetScale(Vec2(60.f, 60.f));
 	m_BodyCol->SetActive(true);
+
+	m_PlayerImg = qAssetMgr::GetInst()->LoadTexture(L"PlayerTex", L"texture\\Fighter.bmp");
 
 }
 
@@ -92,7 +96,19 @@ void qPlayer::tick()
 
 void qPlayer::render()
 {
-	qObj::render();
+	Vec2 vPos = GetPos();
+
+	float fWidth = (float)m_PlayerImg->GetWidth();
+	float fHeight = (float)m_PlayerImg->GetHeight();
+
+	BitBlt(DC, vPos.x - fWidth / 2.f
+		, vPos.y - fHeight / 2.f
+		, fWidth, fHeight
+		, m_PlayerImg->GetDC()
+		, 0, 0, SRCCOPY);
+
+
+	//qObj::render();
 }
 
 

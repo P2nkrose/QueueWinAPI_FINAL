@@ -7,6 +7,7 @@
 #include "qDbgRender.h"
 #include "qKeyMgr.h"
 #include "qCollisionMgr.h"
+#include "qAssetMgr.h"
 
 qEngine::qEngine()
 	: m_hMainWnd(nullptr)
@@ -14,6 +15,8 @@ qEngine::qEngine()
 	, m_hDC(nullptr)
 	, m_hSubDC(nullptr)
 	, m_hSubBitmap(nullptr)
+	, m_arrPen{}
+	, m_arrBrush{}
 {
 
 }
@@ -58,6 +61,8 @@ int qEngine::init(HINSTANCE _hInst, HWND _hWnd, POINT _Resolution)
 	qPathMgr::GetInst()->init();
 	qKeyMgr::GetInst()->init();
 	qTimeMgr::GetInst()->init();
+	qAssetMgr::GetInst()->init();
+
 	qLevelMgr::GetInst()->init();
 	
 

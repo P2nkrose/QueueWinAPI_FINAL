@@ -14,6 +14,7 @@ public:
 	const wstring& GetRelativePath() { return m_RelativePath; }
 
 public:
+	CLONE_DISABLE(qAsset);
 	virtual int Load(const wstring& _strFilePath) = 0;
 
 

@@ -5,6 +5,9 @@
 #include "qTimeMgr.h"
 #include "qKeyMgr.h"
 
+#include "qAssetMgr.h"
+#include "qTexture.h"
+
 class qComponent;
 class qCollider;
 class qAnimator;

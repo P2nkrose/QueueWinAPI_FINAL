@@ -8,6 +8,8 @@ class qPlayer : public qObj
 private:
 	float		m_Speed;
 
+	qTexture*	m_PlayerImg;
+
 	qCollider*	m_HeadCol;
 	qCollider*	m_BodyCol;
 
