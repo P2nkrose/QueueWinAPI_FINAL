@@ -162,6 +162,7 @@
     <ClInclude Include="qMissile.h" />
     <ClInclude Include="qMonster.h" />
     <ClInclude Include="qObj.h" />
+    <ClInclude Include="qPathMgr.h" />
     <ClInclude Include="qPlayer.h" />
     <ClInclude Include="qRigidbody.h" />
     <ClInclude Include="qSelectObj.h" />
@@ -196,6 +197,7 @@
     <ClCompile Include="qMissile.cpp" />
     <ClCompile Include="qMonster.cpp" />
     <ClCompile Include="qObj.cpp" />
+    <ClCompile Include="qPathMgr.cpp" />
     <ClCompile Include="qPlayer.cpp" />
     <ClCompile Include="qRigidbody.cpp" />
     <ClCompile Include="qSelectObj.cpp" />

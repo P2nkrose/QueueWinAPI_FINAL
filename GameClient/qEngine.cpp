@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "qEngine.h"
 
+#include "qPathMgr.h"
 #include "qLevelMgr.h"
 #include "qTimeMgr.h"
 #include "qDbgRender.h"
@@ -36,8 +37,9 @@ qEngine::~qEngine()
 
 }
 
-int qEngine::init(HWND _hWnd, POINT _Resolution)
+int qEngine::init(HINSTANCE _hInst, HWND _hWnd, POINT _Resolution)
 {
+	m_hInstance = _hInst;
 	m_hMainWnd = _hWnd;
 	m_Resolution = _Resolution;
 
@@ -53,6 +55,7 @@ int qEngine::init(HWND _hWnd, POINT _Resolution)
 	CreateDefaultGDIObject();
 
 	// Manager ÃÊ±âÈ­
+	qPathMgr::GetInst()->init();
 	qKeyMgr::GetInst()->init();
 	qTimeMgr::GetInst()->init();
 	qLevelMgr::GetInst()->init();
@@ -88,7 +91,7 @@ void qEngine::progress()
 	}
 
 	qLevelMgr::GetInst()->render();
-
+	qPathMgr::GetInst()->render();
 	qDbgRender::GetInst()->render();
 
 	// Sub -> Main

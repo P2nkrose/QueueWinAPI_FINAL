@@ -83,17 +83,20 @@
     <Filter Include="03. Game\03. Manager\03. AssetMgr">
       <UniqueIdentifier>{070b1ecf-af0a-4a54-9d5c-4bcd5f6033ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\03. Manager\04. LevelMgr">
-      <UniqueIdentifier>{32221453-8fa2-46da-be38-ad3c0e07d260}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\03. Manager\05. CollisionMgr">
-      <UniqueIdentifier>{9f43c80c-a177-482f-a6be-ac1ff71cd396}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\07. Asset\Texture">
       <UniqueIdentifier>{8754dae9-11e8-40b3-bdf2-376f58114890}</UniqueIdentifier>
     </Filter>
     <Filter Include="03. Game\07. Asset\Sound">
       <UniqueIdentifier>{9ce71e80-4f2f-4d7a-9a74-65951a7584b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\03. Manager\05. LevelMgr">
+      <UniqueIdentifier>{32221453-8fa2-46da-be38-ad3c0e07d260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\03. Manager\06. CollisionMgr">
+      <UniqueIdentifier>{9f43c80c-a177-482f-a6be-ac1ff71cd396}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\03. Manager\04. PathMgr">
+      <UniqueIdentifier>{0c8ce007-f76b-46e0-8810-936dba351cdd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -134,7 +137,7 @@
       <Filter>03. Game\04. Level</Filter>
     </ClInclude>
     <ClInclude Include="qLevelMgr.h">
-      <Filter>03. Game\03. Manager\04. LevelMgr</Filter>
+      <Filter>03. Game\03. Manager\05. LevelMgr</Filter>
     </ClInclude>
     <ClInclude Include="struct.h">
       <Filter>03. Game\01. Header</Filter>
@@ -179,7 +182,7 @@
       <Filter>03. Game\05. Object\Monster</Filter>
     </ClInclude>
     <ClInclude Include="qCollisionMgr.h">
-      <Filter>03. Game\03. Manager\05. CollisionMgr</Filter>
+      <Filter>03. Game\03. Manager\06. CollisionMgr</Filter>
     </ClInclude>
     <ClInclude Include="qAsset.h">
       <Filter>03. Game\07. Asset</Filter>
@@ -192,6 +195,9 @@
     </ClInclude>
     <ClInclude Include="qAssetMgr.h">
       <Filter>03. Game\03. Manager\03. AssetMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="qPathMgr.h">
+      <Filter>03. Game\03. Manager\04. PathMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -230,7 +236,7 @@
       <Filter>03. Game\04. Level</Filter>
     </ClCompile>
     <ClCompile Include="qLevelMgr.cpp">
-      <Filter>03. Game\03. Manager\04. LevelMgr</Filter>
+      <Filter>03. Game\03. Manager\05. LevelMgr</Filter>
     </ClCompile>
     <ClCompile Include="qTimeMgr.cpp">
       <Filter>03. Game\03. Manager\01. TimeMgr</Filter>
@@ -272,7 +278,7 @@
       <Filter>03. Game\05. Object\Monster</Filter>
     </ClCompile>
     <ClCompile Include="qCollisionMgr.cpp">
-      <Filter>03. Game\03. Manager\05. CollisionMgr</Filter>
+      <Filter>03. Game\03. Manager\06. CollisionMgr</Filter>
     </ClCompile>
     <ClCompile Include="qAsset.cpp">
       <Filter>03. Game\07. Asset</Filter>
@@ -285,6 +291,9 @@
     </ClCompile>
     <ClCompile Include="qAssetMgr.cpp">
       <Filter>03. Game\03. Manager\03. AssetMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="qPathMgr.cpp">
+      <Filter>03. Game\03. Manager\04. PathMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
