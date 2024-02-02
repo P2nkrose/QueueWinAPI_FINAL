@@ -181,6 +181,18 @@
     <ClInclude Include="qCollisionMgr.h">
       <Filter>03. Game\03. Manager\05. CollisionMgr</Filter>
     </ClInclude>
+    <ClInclude Include="qAsset.h">
+      <Filter>03. Game\07. Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="qSound.h">
+      <Filter>03. Game\07. Asset\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="qTexture.h">
+      <Filter>03. Game\07. Asset\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="qAssetMgr.h">
+      <Filter>03. Game\03. Manager\03. AssetMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -261,6 +273,18 @@
     </ClCompile>
     <ClCompile Include="qCollisionMgr.cpp">
       <Filter>03. Game\03. Manager\05. CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="qAsset.cpp">
+      <Filter>03. Game\07. Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="qSound.cpp">
+      <Filter>03. Game\07. Asset\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="qTexture.cpp">
+      <Filter>03. Game\07. Asset\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="qAssetMgr.cpp">
+      <Filter>03. Game\03. Manager\03. AssetMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

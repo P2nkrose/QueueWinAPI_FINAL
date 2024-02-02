@@ -146,6 +146,8 @@
     <ClInclude Include="GameClient.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="qAnimator.h" />
+    <ClInclude Include="qAsset.h" />
+    <ClInclude Include="qAssetMgr.h" />
     <ClInclude Include="qCollider.h" />
     <ClInclude Include="qCollisionMgr.h" />
     <ClInclude Include="qComponent.h" />
@@ -163,6 +165,8 @@
     <ClInclude Include="qPlayer.h" />
     <ClInclude Include="qRigidbody.h" />
     <ClInclude Include="qSelectObj.h" />
+    <ClInclude Include="qSound.h" />
+    <ClInclude Include="qTexture.h" />
     <ClInclude Include="qTimeMgr.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="struct.h" />
@@ -176,6 +180,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="qAnimator.cpp" />
+    <ClCompile Include="qAsset.cpp" />
+    <ClCompile Include="qAssetMgr.cpp" />
     <ClCompile Include="qCollider.cpp" />
     <ClCompile Include="qCollisionMgr.cpp" />
     <ClCompile Include="qComponent.cpp" />
@@ -193,6 +199,8 @@
     <ClCompile Include="qPlayer.cpp" />
     <ClCompile Include="qRigidbody.cpp" />
     <ClCompile Include="qSelectObj.cpp" />
+    <ClCompile Include="qSound.cpp" />
+    <ClCompile Include="qTexture.cpp" />
     <ClCompile Include="qTimeMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
