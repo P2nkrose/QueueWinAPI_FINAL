@@ -101,11 +101,18 @@ void qPlayer::render()
 	float fWidth = (float)m_PlayerImg->GetWidth();
 	float fHeight = (float)m_PlayerImg->GetHeight();
 
-	BitBlt(DC, vPos.x - fWidth / 2.f
-		, vPos.y - fHeight / 2.f
-		, fWidth, fHeight
+	//BitBlt(DC, vPos.x - fWidth / 2.f
+	//	, vPos.y - fHeight / 2.f
+	//	, fWidth, fHeight
+	//	, m_PlayerImg->GetDC()
+	//	, 0, 0, SRCCOPY);
+
+	TransparentBlt(DC, int(vPos.x - fWidth / 2.f)
+		, int(vPos.y - fHeight / 2.f)
+		, (int)fWidth, (int)fHeight
 		, m_PlayerImg->GetDC()
-		, 0, 0, SRCCOPY);
+		, 0, 0, (int)fWidth, (int)fHeight
+		, RGB(255, 0, 255));
 
 
 	//qObj::render();
