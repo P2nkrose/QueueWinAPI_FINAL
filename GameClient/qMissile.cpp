@@ -6,7 +6,7 @@
 
 qMissile::qMissile()
 	: m_Speed(500.f)
-	, m_Angle(1.f)
+	, m_Angle(0.f)
 {
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 

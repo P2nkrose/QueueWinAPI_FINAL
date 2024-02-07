@@ -29,6 +29,26 @@ void DrawDebugCircle(PEN_TYPE _Type, Vec2 _Pos, Vec2 _Scale, float _Time)
 }
 
 
+#include "qObj.h"
+bool IsValid(qObj*& _Object)
+{
+	if (nullptr == _Object)
+	{
+		return false;
+	}
+	else if (_Object->IsDead())
+	{
+		_Object = nullptr;
+		return false;
+	}
+
+	return true;
+}
+
+
+
+
+
 #include "qTaskMgr.h"
 void SpawnObject(qLevel* _Level, LAYER_TYPE _type, qObj* _pSpawned)
 {

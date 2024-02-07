@@ -4,10 +4,11 @@
 #include "qLevelMgr.h"
 #include "qLevel.h"
 
-#include "qMissile.h"
 #include "qCollider.h"
-
 #include "qDbgRender.h"
+
+#include "qMissile.h"
+#include "qGuideMissile.h"
 
 
 qPlayer::qPlayer()
@@ -74,7 +75,7 @@ void qPlayer::tick()
 	// SPACE 누르면 미사일 발사
 	if (KEY_TAP(SPACE))
 	{
-		qMissile* pMissile = new qMissile;
+		qMissile* pMissile = new qGuideMissile;
 		pMissile->SetName(L"Missile");
 
 		Vec2 vMissilePos = GetPos();

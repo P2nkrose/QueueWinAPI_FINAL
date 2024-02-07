@@ -3,11 +3,13 @@
 
 #include "qEngine.h"
 #include "qTimeMgr.h"
+#include "qTaskMgr.h"
 
 #include "qComponent.h"
 
 qObj::qObj()
 	: m_Type(LAYER_TYPE::NONE)
+	, m_bDead(false)
 {
 }
 
@@ -43,6 +45,15 @@ void qObj::render()
 				, (int)(m_Pos.y + m_Scale.y * 0.5f));
 }
 
+
+void qObj::Destroy()
+{
+	tTask task = {};
+	task.Type = TASK_TYPE::DELETE_OBJECT;
+	task.Param1 = (DWORD_PTR)this;
+
+	qTaskMgr::GetInst()->AddTask(task);
+}
 
 qComponent* qObj::AddComponent(qComponent* _Component)
 {

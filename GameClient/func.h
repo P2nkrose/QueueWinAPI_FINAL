@@ -49,10 +49,13 @@ void Safe_Del_Arr(T* (&Arr)[iSize])
 	}
 }
 
+class qObj;
+class qLevel;
+bool IsValid(qObj*& _Object);
+
 
 // ==============
 // Task 관련 함수
 // ==============
-class qObj;
-class qLevel;
+
 void SpawnObject(qLevel* _Level, LAYER_TYPE _type, qObj* _pSpawned);

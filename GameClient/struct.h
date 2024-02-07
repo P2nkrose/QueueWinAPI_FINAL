@@ -8,6 +8,14 @@ public:
 
 
 public:
+	// 빗변 구하는 공식
+	float GetDistance(Vec2 _Other)
+	{
+		return sqrtf(powf(x - _Other.x, 2) + powf(y - _Other.y, 2));
+	}
+
+
+public:
 	Vec2 operator +(float f) { return Vec2(x + f, y + f); }
 	Vec2 operator -(float f) { return Vec2(x - f, y - f); }
 	Vec2 operator *(float f) { return Vec2(x * f, y * f); }

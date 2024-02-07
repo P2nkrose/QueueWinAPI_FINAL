@@ -40,7 +40,15 @@ void qLevelMgr::init()
 
 	// 레벨에 몬스터 추가하기
 	pObject = new qMonster;
+	pObject->SetName(L"Monster");
 	pObject->SetPos(800.0f, 200.0f);
+	pObject->SetScale(100.0f, 100.0f);
+	m_pCurrentLevel->AddObject(LAYER_TYPE::MONSTER, pObject);
+
+	// 한마리 더!
+	pObject = new qMonster;
+	pObject->SetName(L"Monster");
+	pObject->SetPos(100.0f, 100.0f);
 	pObject->SetScale(100.0f, 100.0f);
 	m_pCurrentLevel->AddObject(LAYER_TYPE::MONSTER, pObject);
 

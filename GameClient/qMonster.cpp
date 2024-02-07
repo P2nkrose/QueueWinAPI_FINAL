@@ -5,6 +5,7 @@
 #include "qMissile.h"
 
 qMonster::qMonster()
+	: m_HP(5)
 {
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 	m_Collider->SetScale(Vec2(120.f, 120.f));
@@ -20,15 +21,13 @@ void qMonster::tick()
 
 void qMonster::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
-	qMissile* pMissile = dynamic_cast<qMissile*>(_OtherObj);
-
-	if (pMissile != nullptr)
-	{
-		int a = 0;
-	}
-
 	if (_OtherObj->GetName() == L"Missile")
 	{
-		int a = 0;
+		--m_HP;
+
+		if (0 >= m_HP)
+		{
+			Destroy();
+		}
 	}
 }

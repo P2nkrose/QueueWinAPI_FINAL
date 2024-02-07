@@ -65,10 +65,21 @@ void qLevel::render()
 {
 	for (int i = 0; i < (UINT)LAYER_TYPE::END; ++i)
 	{
-		for (size_t j = 0; j < m_arrObj[i].size(); ++j)
+		vector<qObj*>::iterator iter = m_arrObj[i].begin();
+
+		for (; iter != m_arrObj[i].end(); )
 		{
-			m_arrObj[i][j]->render();
+			if ((*iter)->IsDead())
+			{
+				iter = m_arrObj[i].erase(iter);
+			}
+			else
+			{
+				(*iter)->render();
+				++iter;
+			}
 		}
+		
 	}
 }
 
@@ -83,5 +94,34 @@ void qLevel::RegisterCollider(qCollider* _Collider)
 {
 	LAYER_TYPE Layer = _Collider->GetOwner()->GetLayerType();
 	m_arrCollider[(UINT)Layer].push_back(_Collider);
+}
+
+
+qObj* qLevel::FindObjectByName(const wstring& _Name)
+{
+	for (UINT i = 0; i < (UINT)LAYER_TYPE::END; ++i)
+	{
+		qObj* pFindObj = FindObjectByName((LAYER_TYPE)i, _Name);
+		
+		if (pFindObj)
+		{
+			return pFindObj;
+		}
+	}
+
+	return nullptr;
+}
+
+qObj* qLevel::FindObjectByName(LAYER_TYPE _Type, const wstring& _Name)
+{
+	for (size_t i = 0; i < m_arrObj[(UINT)_Type].size(); ++i)
+	{
+		if (_Name == m_arrObj[(UINT)_Type][i]->GetName())
+		{
+			return m_arrObj[(UINT)_Type][i];
+		}
+	}
+
+	return nullptr;
 }
 

@@ -23,11 +23,11 @@ public:
 public:
 	void AddObject(LAYER_TYPE _Layer, qObj* _Obj);
 	void RegisterCollider(qCollider* _Collider);
+	qObj* FindObjectByName(const wstring& _Name);
+	qObj* FindObjectByName(LAYER_TYPE _Type, const wstring& _Name);
 
-	const vector<qCollider*>& GetColliders(LAYER_TYPE _Layer)
-	{
-		return m_arrCollider[(UINT)_Layer];
-	}
+	const vector<qObj*>& GetObjects(LAYER_TYPE _Type) { return m_arrObj[(UINT)_Type]; }
+	const vector<qCollider*>& GetColliders(LAYER_TYPE _Layer) { return m_arrCollider[(UINT)_Layer]; }
 
 public:
 	virtual qLevel* Clone() = 0;

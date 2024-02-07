@@ -19,6 +19,9 @@ public:
 
 
 private:
-	qCollider* m_Collider;
+
+	int			m_HP;
+
+	qCollider*	m_Collider;
 };
 

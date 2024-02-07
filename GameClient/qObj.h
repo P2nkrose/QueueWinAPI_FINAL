@@ -21,8 +21,8 @@ private:
 	Vec2				m_Pos;		// 위치
 	Vec2				m_Scale;	// 크기
 	vector<qComponent*>	m_vecCom;	// 보유 컴포넌트들
-
 	LAYER_TYPE			m_Type;		// 소속 레이어
+	bool				m_bDead;	// 삭제 예정 상태
 	
 
 public:
@@ -34,8 +34,10 @@ public:
 
 	Vec2 GetPos() { return m_Pos; }
 	Vec2 GetScale() { return m_Scale; }
-
 	LAYER_TYPE GetLayerType() { return m_Type; }
+	bool IsDead() { return m_bDead; }
+
+	void Destroy();
 
 	qComponent* AddComponent(qComponent* _Component);
 
@@ -77,5 +79,6 @@ public:
 	~qObj();
 
 	friend class qLevel;
+	friend class qTaskMgr;
 };
 
