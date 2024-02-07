@@ -13,7 +13,7 @@ qObj::qObj()
 
 qObj::~qObj()
 {
-	Save_Del_Vec(m_vecCom);
+	Safe_Del_Vec(m_vecCom);
 }
 
 
@@ -37,10 +37,10 @@ void qObj::finaltick()
 
 void qObj::render()
 {
-	Rectangle(DC, m_Pos.x - m_Scale.x * 0.5f
-				, m_Pos.y - m_Scale.y * 0.5f
-				, m_Pos.x + m_Scale.x * 0.5f
-				, m_Pos.y + m_Scale.y * 0.5f);
+	Rectangle(DC, (int)(m_Pos.x - m_Scale.x * 0.5f)
+				, (int)(m_Pos.y - m_Scale.y * 0.5f)
+				, (int)(m_Pos.x + m_Scale.x * 0.5f)
+				, (int)(m_Pos.y + m_Scale.y * 0.5f));
 }
 
 

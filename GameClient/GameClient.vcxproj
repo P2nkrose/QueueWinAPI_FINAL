@@ -155,6 +155,7 @@
     <ClInclude Include="qEngine.h" />
     <ClInclude Include="qEntity.h" />
     <ClInclude Include="qFSM.h" />
+    <ClInclude Include="qGuideMissile.h" />
     <ClInclude Include="qKeyMgr.h" />
     <ClInclude Include="qLevel.h" />
     <ClInclude Include="qLevelMgr.h" />
@@ -191,6 +192,7 @@
     <ClCompile Include="qEngine.cpp" />
     <ClCompile Include="qEntity.cpp" />
     <ClCompile Include="qFSM.cpp" />
+    <ClCompile Include="qGuideMissile.cpp" />
     <ClCompile Include="qKeyMgr.cpp" />
     <ClCompile Include="qLevel.cpp" />
     <ClCompile Include="qLevelMgr.cpp" />

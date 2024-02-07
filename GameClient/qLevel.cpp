@@ -11,9 +11,9 @@ qLevel::qLevel()
 
 qLevel::~qLevel()
 {
-	for (UINT i = 0; i < (UINT)LAYER_TYPE::END; i++)
+	for (UINT i = 0; i < (UINT)LAYER_TYPE::END; ++i)
 	{
-		Save_Del_Vec(m_arrObj[i]);
+		Safe_Del_Vec(m_arrObj[i]);
 	}
 	
 }
@@ -21,7 +21,7 @@ qLevel::~qLevel()
 
 void qLevel::begin()
 {
-	for (int i = 0; i < (UINT)LAYER_TYPE::END; i++)
+	for (int i = 0; i < (UINT)LAYER_TYPE::END; ++i)
 	{
 		for (size_t j = 0; j < m_arrObj[i].size(); ++j)
 		{
@@ -34,7 +34,7 @@ void qLevel::begin()
 
 void qLevel::tick()
 {
-	for (int i = 0; i < (UINT)LAYER_TYPE::END; i++)
+	for (int i = 0; i < (UINT)LAYER_TYPE::END; ++i)
 	{
 		for (size_t j = 0; j < m_arrObj[i].size(); ++j)
 		{
@@ -46,7 +46,7 @@ void qLevel::tick()
 void qLevel::finaltick()
 {
 	// 이전프레임 충돌체 등록 정보 Clear
-	for (UINT i = 0; i < (UINT)LAYER_TYPE::END; i++)
+	for (UINT i = 0; i < (UINT)LAYER_TYPE::END; ++i)
 	{
 		m_arrCollider[i].clear();
 	}
@@ -63,7 +63,7 @@ void qLevel::finaltick()
 
 void qLevel::render()
 {
-	for (int i = 0; i < (UINT)LAYER_TYPE::END; i++)
+	for (int i = 0; i < (UINT)LAYER_TYPE::END; ++i)
 	{
 		for (size_t j = 0; j < m_arrObj[i].size(); ++j)
 		{

@@ -10,9 +10,9 @@ qAssetMgr::qAssetMgr()
 
 qAssetMgr::~qAssetMgr()
 {
-    Save_Del_Map(m_mapTex);
+    Safe_Del_Map(m_mapTex);
 
-    Save_Del_Map(m_mapSound);
+    Safe_Del_Map(m_mapSound);
 }
 
 void qAssetMgr::init()

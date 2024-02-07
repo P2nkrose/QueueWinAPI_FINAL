@@ -101,6 +101,9 @@
     <Filter Include="03. Game\03. Manager\08. TaskMgr">
       <UniqueIdentifier>{1a02e56f-1a36-4a45-913b-832d4ac31aae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\05. Object\Missile\GuideMissile">
+      <UniqueIdentifier>{1e990868-0c14-49f4-94aa-a047d0fdcae3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -205,6 +208,9 @@
     <ClInclude Include="qTaskMgr.h">
       <Filter>03. Game\03. Manager\08. TaskMgr</Filter>
     </ClInclude>
+    <ClInclude Include="qGuideMissile.h">
+      <Filter>03. Game\05. Object\Missile\GuideMissile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -303,6 +309,9 @@
     </ClCompile>
     <ClCompile Include="qTaskMgr.cpp">
       <Filter>03. Game\03. Manager\08. TaskMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="qGuideMissile.cpp">
+      <Filter>03. Game\05. Object\Missile\GuideMissile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

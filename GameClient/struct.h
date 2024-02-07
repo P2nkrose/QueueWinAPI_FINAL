@@ -19,6 +19,20 @@ public:
 	Vec2 operator / (Vec2 _Other) { assert(!(0.f == _Other.x || 0.f == _Other.y));  return Vec2(x / _Other.x, y / _Other.y); }
 
 
+	void operator +=(float _f)
+	{
+		x += _f;
+		y += _f;
+	}
+
+	void operator +=(Vec2 _Other)
+	{
+		x += _Other.x;
+		y += _Other.y;
+	}
+
+
+
 
 public:
 	Vec2()
@@ -57,8 +71,8 @@ struct tDbgRenderInfo
 struct tTask
 {
 	TASK_TYPE	Type;
-	DWORD_PTR	lParam;
-	DWORD_PTR	rParam;
-	DWORD_PTR	wParam;
+	DWORD_PTR	Param1;
+	DWORD_PTR	Param2;
+	DWORD_PTR	Param3;
 
 };

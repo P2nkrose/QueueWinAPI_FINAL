@@ -2,9 +2,11 @@
 #include "qMissile.h"
 
 #include "qCollider.h"
+#include "qTimeMgr.h"
 
 qMissile::qMissile()
 	: m_Speed(500.f)
+	, m_Angle(1.f)
 {
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 
@@ -20,8 +22,13 @@ qMissile::~qMissile()
 void qMissile::tick()
 {
 	Vec2 vPos = GetPos();
-	vPos.y -= DT * m_Speed;
+
+	Vec2 vDir = Vec2(cosf(m_Angle), -sinf(m_Angle));
+
+	vPos += vDir * m_Speed * DT;
+
 	SetPos(vPos);
+
 }
 
 void qMissile::render()

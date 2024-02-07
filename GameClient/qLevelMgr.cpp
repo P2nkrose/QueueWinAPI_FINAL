@@ -19,7 +19,7 @@ qLevelMgr::qLevelMgr()
 
 qLevelMgr::~qLevelMgr()
 {
-	Save_Del_Arr(m_arrLevel);
+	Safe_Del_Arr(m_arrLevel);
 }
 
 
