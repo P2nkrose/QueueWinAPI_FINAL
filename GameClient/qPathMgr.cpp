@@ -48,7 +48,7 @@ void qPathMgr::GetParentPath(_Inout_ wchar_t* _Buffer)
 {
 	size_t len = wcslen(_Buffer);
 
-	for (int i = len - 1; 0 < i; --i)
+	for (size_t i = len - 1; 0 < i; --i)
 	{
 		if (L'\\' == _Buffer[i])
 		{

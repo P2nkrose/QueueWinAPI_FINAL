@@ -98,6 +98,9 @@
     <Filter Include="03. Game\03. Manager\04. PathMgr">
       <UniqueIdentifier>{0c8ce007-f76b-46e0-8810-936dba351cdd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\03. Manager\08. TaskMgr">
+      <UniqueIdentifier>{1a02e56f-1a36-4a45-913b-832d4ac31aae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -199,6 +202,9 @@
     <ClInclude Include="qPathMgr.h">
       <Filter>03. Game\03. Manager\04. PathMgr</Filter>
     </ClInclude>
+    <ClInclude Include="qTaskMgr.h">
+      <Filter>03. Game\03. Manager\08. TaskMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -294,6 +300,9 @@
     </ClCompile>
     <ClCompile Include="qPathMgr.cpp">
       <Filter>03. Game\03. Manager\04. PathMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="qTaskMgr.cpp">
+      <Filter>03. Game\03. Manager\08. TaskMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

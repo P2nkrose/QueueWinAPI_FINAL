@@ -8,6 +8,7 @@
 #include "qKeyMgr.h"
 #include "qCollisionMgr.h"
 #include "qAssetMgr.h"
+#include "qTaskMgr.h"
 
 qEngine::qEngine()
 	: m_hMainWnd(nullptr)
@@ -101,6 +102,11 @@ void qEngine::progress()
 
 	// Sub -> Main
 	BitBlt(m_hDC, 0, 0, m_Resolution.x, m_Resolution.y, m_hSubDC, 0, 0, SRCCOPY);
+
+	// =========
+	// Task Ã³¸®
+	// =========
+	qTaskMgr::GetInst()->tick();
 }
 
 void qEngine::CreateDefaultGDIObject()

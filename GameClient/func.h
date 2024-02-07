@@ -46,3 +46,11 @@ void Save_Del_Arr(T* (&Arr)[iSize])
 		}
 	}
 }
+
+
+// ==============
+// Task 관련 함수
+// ==============
+class qObj;
+class qLevel;
+void SpawnObject(qLevel* _Level, LAYER_TYPE _type, qObj* _pSpawned);

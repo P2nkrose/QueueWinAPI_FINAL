@@ -75,6 +75,7 @@ void qPlayer::tick()
 	if (KEY_TAP(SPACE))
 	{
 		qMissile* pMissile = new qMissile;
+		pMissile->SetName(L"Missile");
 
 		Vec2 vMissilePos = GetPos();
 		vMissilePos.y -= GetScale().y / 2.f;
@@ -82,11 +83,9 @@ void qPlayer::tick()
 		pMissile->SetPos(vMissilePos);
 		pMissile->SetScale(Vec2(20.f, 20.f));
 
-		qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
-		pCurLevel->AddObject(LAYER_TYPE::PLAYER_MISSILE, pMissile);
 
-		//DrawDebugRect(PEN_TYPE::PEN_GREEN, GetPos(), Vec2(500.f, 500.f), 3.f);
-
+		// TASK
+		SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_MISSILE, pMissile);
 	}
 
 

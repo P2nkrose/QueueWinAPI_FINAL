@@ -77,3 +77,11 @@ enum class LAYER_TYPE
 	NONE = -1,
 
 };
+
+
+enum class TASK_TYPE
+{
+	SPAWN_OBJECT,
+	DELETE_OBJECT,
+	CHANGE_LEVEL,
+};

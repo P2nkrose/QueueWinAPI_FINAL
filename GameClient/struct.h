@@ -52,3 +52,13 @@ struct tDbgRenderInfo
 	float		Duration;
 	float		Age;
 };
+
+
+struct tTask
+{
+	TASK_TYPE	Type;
+	DWORD_PTR	lParam;
+	DWORD_PTR	rParam;
+	DWORD_PTR	wParam;
+
+};

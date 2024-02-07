@@ -27,3 +27,16 @@ void DrawDebugCircle(PEN_TYPE _Type, Vec2 _Pos, Vec2 _Scale, float _Time)
 
 	qDbgRender::GetInst()->AddDbgRenderInfo(info);
 }
+
+
+#include "qTaskMgr.h"
+void SpawnObject(qLevel* _Level, LAYER_TYPE _type, qObj* _pSpawned)
+{
+	tTask task = {};
+	task.Type = TASK_TYPE::SPAWN_OBJECT;
+	task.lParam = (DWORD_PTR)_Level;
+	task.rParam = (DWORD_PTR)_pSpawned;
+	task.wParam = (DWORD_PTR)_type;
+
+	qTaskMgr::GetInst()->AddTask(task);
+}
