@@ -81,6 +81,7 @@ void qDbgRender::render()
 		{
 			// 오래된 로그일수록 아래쪽에 출력이 되어야 함
 			// 로그의 y 축 offset 위치를 구함
+			int yoffset = ((int)m_LogList.size() - (i + 1)) * m_LogSpace;
 
 			switch (logiter->Type)
 			{
@@ -95,7 +96,11 @@ void qDbgRender::render()
 				break;
 			}
 
-			TextOut(DC, (int)m_LogStartPos.x, (int)m_LogStartPos.y, logiter->strLog.c_str(), (int)logiter->strLog.length());
+			TextOut(DC
+					, (int)m_LogStartPos.x
+					, (int)m_LogStartPos.y + yoffset
+					, logiter->strLog.c_str()
+					, (int)logiter->strLog.length());
 		}
 
 		// 로그 나이 계산

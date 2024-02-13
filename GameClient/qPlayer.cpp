@@ -87,6 +87,9 @@ void qPlayer::tick()
 
 		// TASK
 		SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_MISSILE, pMissile);
+
+		// LOG
+		LOG(LOG_TYPE::DBG_LOG, L"미사일 발사!");
 	}
 
 

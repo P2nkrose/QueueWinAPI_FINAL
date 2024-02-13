@@ -1,6 +1,7 @@
 #pragma once
 // 게임 최고 관리자
 
+
 class qEngine
 {
 	SINGLE(qEngine)
@@ -16,6 +17,7 @@ private:
 
 	HPEN		m_arrPen[(UINT)PEN_TYPE::END];
 	HBRUSH		m_arrBrush[(UINT)BRUSH_TYPE::END];
+
 
 public:
 	int init(HINSTANCE _hInst, HWND _hWnd, POINT _Resolution);

@@ -1,8 +1,9 @@
 #pragma once
 
 void DrawDebugRect(PEN_TYPE _Type, Vec2 _Pos, Vec2 _Scale, float _Time);
-
 void DrawDebugCircle(PEN_TYPE _Type, Vec2 _Pos, Vec2 _Scale, float _Time);
+
+void DebugLog(LOG_TYPE _Type, const WCHAR* _LogMgs);
 
 
 template<typename T1, typename T2>

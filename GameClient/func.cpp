@@ -28,6 +28,15 @@ void DrawDebugCircle(PEN_TYPE _Type, Vec2 _Pos, Vec2 _Scale, float _Time)
 	qDbgRender::GetInst()->AddDbgRenderInfo(info);
 }
 
+void DebugLog(LOG_TYPE _Type, const WCHAR* _LogMgs)
+{
+	tDbgLog log = {};
+	log.Type = _Type;
+	log.strLog = _LogMgs;
+
+	qDbgRender::GetInst()->AddDbgLog(log);
+}
+
 
 #include "qObj.h"
 bool IsValid(qObj*& _Object)

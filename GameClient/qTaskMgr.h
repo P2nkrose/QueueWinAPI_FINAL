@@ -17,6 +17,5 @@ public:
 private:
 	void ClearGC();
 	void ExcuteTask();
-
 };
 
