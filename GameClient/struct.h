@@ -76,6 +76,15 @@ struct tDbgRenderInfo
 };
 
 
+struct tDbgLog
+{
+	LOG_TYPE	Type;		// 로그의 종류
+	wstring		strLog;		// 로그 메세지
+	float		Age;		// 로그가 출력된 시간
+};
+
+
+
 struct tTask
 {
 	TASK_TYPE	Type;
@@ -84,3 +93,5 @@ struct tTask
 	DWORD_PTR	Param3;
 
 };
+
+

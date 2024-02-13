@@ -53,6 +53,13 @@ void qTaskMgr::ExcuteTask()
 		case TASK_TYPE::DELETE_OBJECT:
 		{
 			qObj* pObject = (qObj*)m_vecTask[i].Param1;
+
+			if (pObject->m_bDead)
+			{
+				continue;
+			}
+
+
 			pObject->m_bDead = true;
 
 			// GC 에서 수거

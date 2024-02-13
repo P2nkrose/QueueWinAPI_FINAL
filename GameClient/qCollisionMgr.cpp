@@ -55,7 +55,7 @@ void qCollisionMgr::tick()
 						}
 
 						bool bDead = vecLeft[i]->GetOwner()->IsDead() || vecRight[j]->GetOwner()->IsDead();
-						bool bDeactive = !vecLeft[i]->IsActive() || !vecRight[i]->IsActive();
+						bool bDeactive = !vecLeft[i]->IsActive() || !vecRight[j]->IsActive();
 
 						// 두 충돌체가 지금 충돌중이다.
 						if (IsCollision(vecLeft[i], vecRight[j]))

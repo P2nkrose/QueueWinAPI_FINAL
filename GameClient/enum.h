@@ -85,3 +85,11 @@ enum class TASK_TYPE
 	DELETE_OBJECT,		// 1 : Object Adress
 	CHANGE_LEVEL,
 };
+
+
+enum class LOG_TYPE
+{
+	DBG_LOG,
+	DBG_WARNING,
+	DBG_ERROR,
+};
