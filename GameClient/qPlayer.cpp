@@ -30,7 +30,7 @@ qPlayer::qPlayer()
 	m_BodyCol->SetActive(true);
 
 	m_PlayerImg = qAssetMgr::GetInst()->LoadTexture(L"PlayerTex", L"texture\\Fighter.bmp");
-
+	
 }
 
 qPlayer::~qPlayer()
@@ -52,28 +52,28 @@ void qPlayer::tick()
 
 	Vec2 vPos = GetPos();
 
-	if (KEY_PRESSED(LEFT))
+	if (KEY_PRESSED(KEY::LEFT))
 	{
 		vPos.x -= m_Speed * DT;
 	}
 
-	if (KEY_PRESSED(RIGHT))
+	if (KEY_PRESSED(KEY::RIGHT))
 	{
 		vPos.x += m_Speed * DT;
 	}
 
-	if (KEY_PRESSED(UP))
+	if (KEY_PRESSED(KEY::UP))
 	{
 		vPos.y -= m_Speed * DT;
 	}
 
-	if (KEY_PRESSED(DOWN))
+	if (KEY_PRESSED(KEY::DOWN))
 	{
 		vPos.y += m_Speed * DT;
 	}
 
 	// SPACE 누르면 미사일 발사
-	if (KEY_TAP(SPACE))
+	if (KEY_TAP(KEY::SPACE))
 	{
 		qMissile* pMissile = new qGuideMissile;
 		pMissile->SetName(L"Missile");

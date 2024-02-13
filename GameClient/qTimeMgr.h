@@ -10,7 +10,7 @@ private:
 
 	UINT				m_FPS;
 
-	float				m_DeltaTime;		// 프레임 간격 시간
+	float				m_DeltaTime;		// 프레임 간격 시간 (1 프레임 실행하는데 걸리는 시간)
 	float				m_Time;				// 프로그램이 켜진 이후로 진행된 시간
 
 

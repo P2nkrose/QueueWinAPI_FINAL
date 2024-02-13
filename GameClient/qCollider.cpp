@@ -7,6 +7,7 @@
 qCollider::qCollider()
 	: m_Active(true)
 	, m_CollisionCount(0)
+	, m_bRegister(true)
 {
 }
 
@@ -18,11 +19,24 @@ void qCollider::finaltick()
 {
 	m_FinalPos = GetOwner()->GetPos() + m_OffsetPos;
 
-	if (m_Active)
+	if (m_bRegister)
 	{
 		// 충돌체를 소유하고 있는 오브젝트의 소속 레이어에 자신을 등록시킨다.
 		qLevel* pLevel = qLevelMgr::GetInst()->GetCurrentLevel();
 		pLevel->RegisterCollider(this);
+
+		// 비활성화 상태면 등록옵션을 정지한다. (다음번 프레임부터 등록이 되지 않는다.)
+		if (!m_Active)
+		{
+			m_bRegister = false;
+		}
+
+	}
+
+	// 비활성화 상태의 충돌체는 DebugRender 를 요청하지 않는다.
+	if (!m_Active)
+	{
+		return;
 	}
 
 	if (0 != m_CollisionCount)

@@ -22,7 +22,17 @@ public:
 	Vec2 GetFinalPos() { return m_FinalPos; }
 	Vec2 GetScale() { return m_Scale; }
 
-	void SetActive(bool _Set) { m_Active = _Set; }
+	void SetActive(bool _Set) 
+	{ 
+		m_Active = _Set; 
+
+		if (m_Active)
+		{
+			m_bRegister = true;
+		}
+	}
+
+	bool IsActive() { return m_Active; }
 
 
 private:
@@ -37,8 +47,11 @@ private:
 	Vec2	m_Scale;
 
 	Vec2	m_FinalPos;			// 최종 좌표 (소유 오브젝트 포지션 + 오프셋 포즈)
-
-	bool	m_Active;
+	
+	
 	UINT	m_CollisionCount;	// 카운트를 활용하여 충돌상태를 체크한다.
+
+	bool	m_Active;			// 충돌체 활성화, 비활성화 상태 bool
+	bool	m_bRegister;		// 충돌체를 레벨에 등록할지 말지의 상태
 };
 

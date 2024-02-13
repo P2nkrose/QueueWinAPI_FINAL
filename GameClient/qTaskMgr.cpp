@@ -27,6 +27,8 @@ void qTaskMgr::tick()
 void qTaskMgr::ClearGC()
 {
 	Safe_Del_Vec(m_GC);
+
+	m_GC.clear();
 }
 
 void qTaskMgr::ExcuteTask()
