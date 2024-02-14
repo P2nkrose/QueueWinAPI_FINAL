@@ -21,6 +21,10 @@ private:
 	Vec2				m_Pos;		// 위치
 	Vec2				m_Scale;	// 크기
 	vector<qComponent*>	m_vecCom;	// 보유 컴포넌트들
+
+	qAnimator*			m_Animator;
+
+
 	LAYER_TYPE			m_Type;		// 소속 레이어
 	bool				m_bDead;	// 삭제 예정 상태
 	

@@ -2,6 +2,7 @@
 #include "qObj.h"
 
 class qCollider;
+class qAnimator;
 
 class qPlayer : public qObj
 {
@@ -12,11 +13,11 @@ private:
 
 	qCollider*	m_HeadCol;
 	qCollider*	m_BodyCol;
+	qAnimator*	m_Animator;
 
 public:
 	virtual void begin();
 	virtual void tick();		
-	virtual void render();
 
 
 	virtual void BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;

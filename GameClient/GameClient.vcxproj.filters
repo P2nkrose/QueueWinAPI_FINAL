@@ -104,6 +104,9 @@
     <Filter Include="03. Game\05. Object\Missile\GuideMissile">
       <UniqueIdentifier>{1e990868-0c14-49f4-94aa-a047d0fdcae3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\08. Module\Animation">
+      <UniqueIdentifier>{ae5107eb-b358-4e88-b931-758471c3cdcc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -211,6 +214,9 @@
     <ClInclude Include="qGuideMissile.h">
       <Filter>03. Game\05. Object\Missile\GuideMissile</Filter>
     </ClInclude>
+    <ClInclude Include="qAnimation.h">
+      <Filter>03. Game\08. Module\Animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -312,6 +318,9 @@
     </ClCompile>
     <ClCompile Include="qGuideMissile.cpp">
       <Filter>03. Game\05. Object\Missile\GuideMissile</Filter>
+    </ClCompile>
+    <ClCompile Include="qAnimation.cpp">
+      <Filter>03. Game\08. Module\Animation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

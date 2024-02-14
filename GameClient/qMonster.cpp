@@ -19,6 +19,17 @@ void qMonster::tick()
 {
 }
 
+void qMonster::render()
+{
+	Vec2 vPos = GetPos();
+	Vec2 vScale = GetScale();
+
+	Rectangle(DC, (int)(vPos.x - vScale.x * 0.5f)
+		, (int)(vPos.y - vScale.y * 0.5f)
+		, (int)(vPos.x + vScale.x * 0.5f)
+		, (int)(vPos.y + vScale.y * 0.5f));
+}
+
 void qMonster::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
 	if (_OtherObj->GetName() == L"Missile")

@@ -5,6 +5,7 @@
 #include "qLevel.h"
 
 #include "qCollider.h"
+#include "qAnimator.h"
 #include "qDbgRender.h"
 
 #include "qMissile.h"
@@ -19,6 +20,8 @@ qPlayer::qPlayer()
 	m_HeadCol = (qCollider*)AddComponent(new qCollider);
 	m_BodyCol = (qCollider*)AddComponent(new qCollider);
 
+	m_Animator = (qAnimator*)AddComponent(new qAnimator);
+
 	m_HeadCol->SetName(L"Head Collider");
 	m_HeadCol->SetOffsetPos(Vec2(0.f, -80.f));
 	m_HeadCol->SetScale(Vec2(30.f, 30.f));
@@ -29,8 +32,11 @@ qPlayer::qPlayer()
 	m_BodyCol->SetScale(Vec2(60.f, 60.f));
 	m_BodyCol->SetActive(true);
 
-	m_PlayerImg = qAssetMgr::GetInst()->LoadTexture(L"PlayerTex", L"texture\\Fighter.bmp");
-	
+	// Animation Ãß°¡
+	qTexture* pAtlas = qAssetMgr::GetInst()->LoadTexture(L"PlayerAtlasTex", L"texture\\link_32.bmp");
+	m_Animator->CreateAnimation(L"PlayerAtlasTex", pAtlas, Vec2(0.f, 520), Vec2(120.f, 130.f), 10, 10);
+
+	m_Animator->Play(L"PlayerAtlasTex", true);
 }
 
 qPlayer::~qPlayer()
@@ -96,30 +102,6 @@ void qPlayer::tick()
 	SetPos(vPos);
 }
 
-
-void qPlayer::render()
-{
-	Vec2 vPos = GetPos();
-
-	float fWidth = (float)m_PlayerImg->GetWidth();
-	float fHeight = (float)m_PlayerImg->GetHeight();
-
-	//BitBlt(DC, vPos.x - fWidth / 2.f
-	//	, vPos.y - fHeight / 2.f
-	//	, fWidth, fHeight
-	//	, m_PlayerImg->GetDC()
-	//	, 0, 0, SRCCOPY);
-
-	TransparentBlt(DC, int(vPos.x - fWidth / 2.f)
-		, int(vPos.y - fHeight / 2.f)
-		, (int)fWidth, (int)fHeight
-		, m_PlayerImg->GetDC()
-		, 0, 0, (int)fWidth, (int)fHeight
-		, RGB(255, 0, 255));
-
-
-	//qObj::render();
-}
 
 
 void qPlayer::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
