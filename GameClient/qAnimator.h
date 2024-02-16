@@ -19,6 +19,9 @@ public:
 
 	void CreateAnimation(const wstring& _AnimName, qTexture* _Atlas, Vec2 _StartPos, Vec2 _SliceSize, int _FrameCount, int _FPS);
 	qAnimation* FindAnimation(const wstring& _AnimName);
+	void LoadAnimation(const wstring& _strRelativeFilePath);
+
+
 	void Play(const wstring& _AnimName, bool _Repeat);
 
 

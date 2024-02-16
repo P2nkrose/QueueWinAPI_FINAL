@@ -7,6 +7,7 @@
 #include "qTexture.h"
 
 #include "qTimeMgr.h"
+#include "qPathMgr.h"
 
 qAnimation::qAnimation()
 	: m_Animator(nullptr)
@@ -48,6 +49,10 @@ void qAnimation::finaltick()
 
 void qAnimation::render()
 {
+
+	if (nullptr == m_Atlas)
+		return;
+
 	// 현재 프레임 정보
 	const tAnimFrm& frm = m_vecFrm[m_CurFrmIdx];
 
@@ -59,12 +64,12 @@ void qAnimation::render()
 
 	// 현재 프레임 이미지를 오브젝트 위치에 렌더링
 	TransparentBlt(DC
-					, vPos.x - frm.SliceSize.x / 2.f
-					, vPos.y - frm.SliceSize.y / 2.f
-					, frm.SliceSize.x, frm.SliceSize.y
+					, (int)vPos.x - frm.SliceSize.x / 2.f + frm.Offset.x
+					, (int)vPos.y - frm.SliceSize.y / 2.f + frm.Offset.y
+					, (int)frm.SliceSize.x, (int)frm.SliceSize.y
 					, m_Atlas->GetDC()
-					, frm.StartPos.x, frm.StartPos.y
-					, frm.SliceSize.x, frm.SliceSize.y
+					, (int)frm.StartPos.x, (int)frm.StartPos.y
+					, (int)frm.SliceSize.x, (int)frm.SliceSize.y
 					, RGB(255, 0, 255));
 }
 
@@ -82,4 +87,102 @@ void qAnimation::Create(qTexture* _AtlasTex, Vec2 _StartPos, Vec2 _SliceSize, in
 
 		m_vecFrm.push_back(frm);
 	}
+}
+
+void qAnimation::Save(const wstring& _strRelativeFolderPath)
+{
+	wstring strFilePath = qPathMgr::GetInst()->GetContentPath();
+	strFilePath += _strRelativeFolderPath;
+	strFilePath += GetName();
+	strFilePath += L".anim";
+
+	FILE* pFile = nullptr;
+	_wfopen_s(&pFile, strFilePath.c_str(), L"wb");
+
+	if (nullptr == pFile)
+	{
+		LOG(LOG_TYPE::DBG_ERROR, L"애니메이션 저장 실패");
+		return;
+	}
+
+	// 애니메이션 정보를 저장
+	// 애니메이션 이름 저장
+	wstring strAnimName = GetName();
+	SaveWString(strAnimName, pFile);
+
+
+	// 프레임 개수를 저장
+	size_t FrmCount = m_vecFrm.size();
+	fwrite(&FrmCount, sizeof(size_t), 1, pFile);
+
+	// 각각의 프레임 정보를 저장
+	for (size_t i = 0; i < m_vecFrm.size(); ++i)
+	{
+		fwrite(&m_vecFrm[i], sizeof(tAnimFrm), 1, pFile);
+	}
+	
+	// 아틀라스 텍스쳐 정보를 저장
+	bool bAtlasTex = false;
+	if (nullptr != m_Atlas)
+		bAtlasTex = true;
+
+	fwrite(&bAtlasTex, sizeof(bool), 1, pFile);
+
+	if (bAtlasTex)
+	{
+		SaveWString(m_Atlas->GetKey(), pFile);
+		SaveWString(m_Atlas->GetRelativePath(), pFile);
+	}
+
+	fclose(pFile);
+
+}
+
+int qAnimation::Load(const wstring& _strRelativeFilePath)
+{
+	wstring strFilePath = qPathMgr::GetInst()->GetContentPath();
+	strFilePath += _strRelativeFilePath;
+
+	FILE* pFile = nullptr;
+	_wfopen_s(&pFile, strFilePath.c_str(), L"rb");
+
+	if (nullptr == pFile)
+	{
+		return E_FAIL;
+	}
+
+	// 애니메이션의 정보를 읽기
+	// 애니메이션 이름 읽기
+	wstring strAnimName;
+	LoadWString(strAnimName, pFile);
+	SetName(strAnimName);
+
+	// 프레임 정보 저장
+	size_t FrmCount = 0;
+	fread(&FrmCount, sizeof(size_t), 1, pFile);
+
+	for (size_t i = 0; i < FrmCount; ++i)
+	{
+		tAnimFrm frm{};
+		fread(&frm, sizeof(tAnimFrm), 1, pFile);
+		m_vecFrm.push_back(frm);
+	}
+
+	bool bAtlasTex = false;
+	fread(&bAtlasTex, sizeof(bool), 1, pFile);
+
+	if (bAtlasTex)
+	{
+		wstring strKey;
+		LoadWString(strKey, pFile);
+
+		wstring strRelativePath;
+		LoadWString(strKey, pFile);
+
+		m_Atlas = qAssetMgr::GetInst()->LoadTexture(strKey, strRelativePath);
+	}
+
+	fclose(pFile);
+
+	return S_OK;
 }

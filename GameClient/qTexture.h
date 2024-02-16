@@ -19,7 +19,6 @@ public:
 
 
 
-
 private:
 	HDC			m_hDC;
 	HBITMAP		m_hBit;

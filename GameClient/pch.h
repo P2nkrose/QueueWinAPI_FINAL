@@ -24,5 +24,6 @@ using std::wstring;
 #include "enum.h"
 #include "struct.h"
 #include "func.h"
+#include "qDbgRender.h"
 
 #include "qSelectObj.h"

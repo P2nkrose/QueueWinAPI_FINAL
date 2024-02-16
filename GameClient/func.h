@@ -52,7 +52,11 @@ void Safe_Del_Arr(T* (&Arr)[iSize])
 
 class qObj;
 class qLevel;
+
 bool IsValid(qObj*& _Object);
+
+void SaveWString(const wstring& _str, FILE* _File);
+void LoadWString(wstring& _str, FILE* _File);
 
 
 // ==============
