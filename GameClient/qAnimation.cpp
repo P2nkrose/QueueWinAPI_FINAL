@@ -97,7 +97,7 @@ void qAnimation::Save(const wstring& _strRelativeFolderPath)
 	strFilePath += L".anim";
 
 	FILE* pFile = nullptr;
-	_wfopen_s(&pFile, strFilePath.c_str(), L"wb");
+	_wfopen_s(&pFile, strFilePath.c_str(), L"w");
 
 	if (nullptr == pFile)
 	{
@@ -107,33 +107,44 @@ void qAnimation::Save(const wstring& _strRelativeFolderPath)
 
 	// 애니메이션 정보를 저장
 	// 애니메이션 이름 저장
+	fwprintf_s(pFile, L"[ANIMATION_NAME]\n");
+	
 	wstring strAnimName = GetName();
-	SaveWString(strAnimName, pFile);
+	fwprintf_s(pFile, L"%s\n\n", strAnimName.c_str());
 
+	// 아틀라스 텍스쳐 정보 저장
+	fwprintf_s(pFile, L"[ATLAS_TEXTURE]\n");
 
+	if (nullptr == m_Atlas)
+	{
+		fwprintf_s(pFile, L"[ATLAS_KEY]\t%s\n", L"None");
+		fwprintf_s(pFile, L"[ATLAS_PATH\t%s\n", L"None");
+	}
+	else
+	{
+		fwprintf_s(pFile, L"[ATLAS_KEY]\t%s\n", m_Atlas->GetKey().c_str());
+		fwprintf_s(pFile, L"[ATLAS_PATH]\t%s\n", m_Atlas->GetRelativePath().c_str());
+	}
+
+	fwprintf_s(pFile, L"\n");
+
+	// 프레임 정보
 	// 프레임 개수를 저장
-	size_t FrmCount = m_vecFrm.size();
-	fwrite(&FrmCount, sizeof(size_t), 1, pFile);
+	fwprintf_s(pFile, L"[FRAME_COUNT\n");
+	fwprintf_s(pFile, L"%d\n\n", (int)m_vecFrm.size());
 
 	// 각각의 프레임 정보를 저장
+	size_t FrmCount = m_vecFrm.size();
 	for (size_t i = 0; i < m_vecFrm.size(); ++i)
 	{
-		fwrite(&m_vecFrm[i], sizeof(tAnimFrm), 1, pFile);
+		fwprintf_s(pFile, L"[FRAME_INDEX]\t%d\n", (int)i);
+		fwprintf_s(pFile, L"[START_POS] \t%f  %f\n", m_vecFrm[i].StartPos.x, m_vecFrm[i].StartPos.y);
+		fwprintf_s(pFile, L"[SLICE_SIZE]\t\t%f  %f\n", m_vecFrm[i].SliceSize.x, m_vecFrm[i].SliceSize.y);
+		fwprintf_s(pFile, L"[OFFSET]\t\t%f  %f\n", m_vecFrm[i].Offset.x, m_vecFrm[i].Offset.y);
+		fwprintf_s(pFile, L"[DURATION]  \t%f\n", m_vecFrm[i].Duration);
+		fwprintf_s(pFile, L"\n");
 	}
 	
-	// 아틀라스 텍스쳐 정보를 저장
-	bool bAtlasTex = false;
-	if (nullptr != m_Atlas)
-		bAtlasTex = true;
-
-	fwrite(&bAtlasTex, sizeof(bool), 1, pFile);
-
-	if (bAtlasTex)
-	{
-		SaveWString(m_Atlas->GetKey(), pFile);
-		SaveWString(m_Atlas->GetRelativePath(), pFile);
-	}
-
 	fclose(pFile);
 
 }
@@ -144,7 +155,7 @@ int qAnimation::Load(const wstring& _strRelativeFilePath)
 	strFilePath += _strRelativeFilePath;
 
 	FILE* pFile = nullptr;
-	_wfopen_s(&pFile, strFilePath.c_str(), L"rb");
+	_wfopen_s(&pFile, strFilePath.c_str(), L"r");
 
 	if (nullptr == pFile)
 	{
@@ -152,36 +163,60 @@ int qAnimation::Load(const wstring& _strRelativeFilePath)
 	}
 
 	// 애니메이션의 정보를 읽기
-	// 애니메이션 이름 읽기
-	wstring strAnimName;
-	LoadWString(strAnimName, pFile);
-	SetName(strAnimName);
+	// 애니메이션 이름
+	wchar_t szReadBuff[256] = {};
 
-	// 프레임 정보 저장
-	size_t FrmCount = 0;
-	fread(&FrmCount, sizeof(size_t), 1, pFile);
-
-	for (size_t i = 0; i < FrmCount; ++i)
+	while (EOF != fwscanf_s(pFile, L"%s", szReadBuff, 256))
 	{
-		tAnimFrm frm{};
-		fread(&frm, sizeof(tAnimFrm), 1, pFile);
-		m_vecFrm.push_back(frm);
+		wstring strRead = szReadBuff;
+
+		if (strRead == L"[ANIMATION_NAME]")
+		{
+			fwscanf_s(pFile, L"%s", szReadBuff, 256);
+			SetName(szReadBuff);
+		}
+		else if (strRead == L"[ATLAS_TEXTURE]")
+		{
+			fwscanf_s(pFile, L"%s", szReadBuff, 256);
+			fwscanf_s(pFile, L"%s", szReadBuff, 256);
+			wstring strKey = szReadBuff;
+
+			fwscanf_s(pFile, L"%s", szReadBuff, 256);
+			fwscanf_s(pFile, L"%s", szReadBuff, 256);
+			wstring strPath = szReadBuff;
+
+			if (strKey != L"None" && strPath != L"None")
+			{
+				m_Atlas = qAssetMgr::GetInst()->LoadTexture(strKey, strPath);
+			}
+		}
+		else if (strRead == L"[FRAME_COUNT")
+		{
+			int frmcount = 0;
+			fwscanf_s(pFile, L"%d", &frmcount);
+
+			for (int i = 0; i < frmcount; ++i)
+			{
+				tAnimFrm frm = {};
+				
+				// [START_POS] 가 나올때 까지 읽어들인다.
+
+				do { fwscanf_s(pFile, L"%s", szReadBuff, 256); } while (wcscmp(szReadBuff, L"[START_POS]"));
+
+				fwscanf_s(pFile, L"%f%f", &frm.StartPos.x, &frm.StartPos.y);
+				fwscanf_s(pFile, L"%s", szReadBuff, 256);
+				fwscanf_s(pFile, L"%f%f", &frm.SliceSize.x, &frm.SliceSize.y);
+				fwscanf_s(pFile, L"%s", szReadBuff, 256);
+				fwscanf_s(pFile, L"%f%f", &frm.Offset.x, &frm.Offset.y);
+				fwscanf_s(pFile, L"%s", szReadBuff, 256);
+				fwscanf_s(pFile, L"%f", &frm.Duration);
+
+				m_vecFrm.push_back(frm);
+			}
+		}
 	}
-
-	bool bAtlasTex = false;
-	fread(&bAtlasTex, sizeof(bool), 1, pFile);
-
-	if (bAtlasTex)
-	{
-		wstring strKey;
-		LoadWString(strKey, pFile);
-
-		wstring strRelativePath;
-		LoadWString(strKey, pFile);
-
-		m_Atlas = qAssetMgr::GetInst()->LoadTexture(strKey, strRelativePath);
-	}
-
+	
+	
 	fclose(pFile);
 
 	return S_OK;

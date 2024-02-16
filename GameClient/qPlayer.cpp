@@ -34,9 +34,9 @@ qPlayer::qPlayer()
 	m_BodyCol->SetActive(true);
 
 	// Animation Ãß°¡
-	qTexture* pAtlas = qAssetMgr::GetInst()->LoadTexture(L"PlayerAtlasTex", L"texture\\link_32.bmp");
-	m_Animator->CreateAnimation(L"WALK_DOWN", pAtlas, Vec2(0.f, 520.f), Vec2(120.f, 130.f), 10, 18);
-	m_Animator->FindAnimation(L"WALK_DOWN")->Save(L"animation\\player\\");
+	//qTexture* pAtlas = qAssetMgr::GetInst()->LoadTexture(L"PlayerAtlasTex", L"texture\\link_32.bmp");
+	//m_Animator->CreateAnimation(L"WALK_DOWN", pAtlas, Vec2(0.f, 520.f), Vec2(120.f, 130.f), 10, 18);
+	//m_Animator->FindAnimation(L"WALK_DOWN")->Save(L"animation\\player\\");
 
 	m_Animator->LoadAnimation(L"animation\\player\\WALK_DOWN.anim");
 	m_Animator->Play(L"WALK_DOWN", true);
