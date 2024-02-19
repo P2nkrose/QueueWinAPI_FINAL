@@ -57,6 +57,7 @@ enum class DBG_SHAPE
 {
 	CIRCLE,
 	RECT,
+	LINE
 };
 
 

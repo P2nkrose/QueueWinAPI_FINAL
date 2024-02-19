@@ -8,6 +8,7 @@
 #include "qAnimator.h"
 #include "qAnimation.h"
 #include "qDbgRender.h"
+#include "qRigidbody.h"
 
 #include "qMissile.h"
 #include "qGuideMissile.h"
@@ -20,8 +21,8 @@ qPlayer::qPlayer()
 	// Player의 컴포넌트 설정
 	m_HeadCol = (qCollider*)AddComponent(new qCollider);
 	m_BodyCol = (qCollider*)AddComponent(new qCollider);
-
 	m_Animator = (qAnimator*)AddComponent(new qAnimator);
+	m_RigidBody = (qRigidbody*)AddComponent(new qRigidbody);
 
 	m_HeadCol->SetName(L"Head Collider");
 	m_HeadCol->SetOffsetPos(Vec2(0.f, -80.f));
@@ -40,6 +41,10 @@ qPlayer::qPlayer()
 
 	m_Animator->LoadAnimation(L"animation\\player\\WALK_DOWN.anim");
 	m_Animator->Play(L"WALK_DOWN", true);
+
+	// 강체 설정
+	m_RigidBody->SetMass(1.f);
+	m_RigidBody->SetMaxWalkSpeed(300.f);
 }
 
 qPlayer::~qPlayer()
@@ -63,7 +68,8 @@ void qPlayer::tick()
 
 	if (KEY_PRESSED(KEY::LEFT))
 	{
-		vPos.x -= m_Speed * DT;
+		//vPos.x -= m_Speed * DT;
+		m_RigidBody->AddForce(Vec2(-1000.f, 0));
 	}
 	else if (KEY_TAP(KEY::LEFT))
 	{
@@ -77,7 +83,8 @@ void qPlayer::tick()
 
 	if (KEY_PRESSED(KEY::RIGHT))
 	{
-		vPos.x += m_Speed * DT;
+		//vPos.x += m_Speed * DT;
+		m_RigidBody->AddForce(Vec2(1000.f, 0));
 	}
 	else if (KEY_TAP(KEY::RIGHT))
 	{
@@ -92,7 +99,8 @@ void qPlayer::tick()
 
 	if (KEY_PRESSED(KEY::UP))
 	{
-		vPos.y -= m_Speed * DT;
+		//vPos.y -= m_Speed * DT;
+		m_RigidBody->AddForce(Vec2(0, -1000.f));
 	}
 	else if (KEY_TAP(KEY::UP))
 	{
@@ -107,7 +115,8 @@ void qPlayer::tick()
 
 	if (KEY_PRESSED(KEY::DOWN))
 	{
-		vPos.y += m_Speed * DT;
+		//vPos.y += m_Speed * DT;
+		m_RigidBody->AddForce(Vec2(0, 1000.f));
 	}
 	else if (KEY_TAP(KEY::DOWN))
 	{

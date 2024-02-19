@@ -14,6 +14,23 @@ public:
 		return sqrtf(powf(x - _Other.x, 2) + powf(y - _Other.y, 2));
 	}
 
+	// Length (빗변)
+	float Length()
+	{
+		return sqrtf(x * x + y * y);
+	}
+
+	// 정규화
+	void Normalize()
+	{
+		// 0, 0 벡터에 정규화를 하면 문제
+		assert(!(x == 0.f && y == 0.f));
+
+		float fLen = Length();
+		x /= fLen;
+		y /= fLen;
+	}
+
 
 public:
 	Vec2 operator +(float f) { return Vec2(x + f, y + f); }
@@ -37,6 +54,46 @@ public:
 	{
 		x += _Other.x;
 		y += _Other.y;
+	}
+
+	void operator -=(float _f)
+	{
+		x -= _f;
+		y -= _f;
+	}
+
+	void operator -=(Vec2 _Other)
+	{
+		x -= _Other.x;
+		y -= _Other.y;
+	}
+
+	void operator *=(float _f)
+	{
+		x *= _f;
+		y *= _f;
+	}
+
+	void operator *=(Vec2 _Other)
+	{
+		x *= _Other.x;
+		y *= _Other.y;
+	}
+
+	void operator /=(float _f)
+	{
+		assert(_f);
+
+		x /= _f;
+		y /= _f;
+	}
+
+	void operator /=(Vec2 _Other)
+	{
+		assert(_Other.x && _Other.y);
+
+		x /= _Other.x;
+		y /= _Other.y;
 	}
 
 

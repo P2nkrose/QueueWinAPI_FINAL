@@ -3,6 +3,7 @@
 
 class qCollider;
 class qAnimator;
+class qRigidbody;
 
 class qPlayer : public qObj
 {
@@ -14,6 +15,7 @@ private:
 	qCollider*	m_HeadCol;
 	qCollider*	m_BodyCol;
 	qAnimator*	m_Animator;
+	qRigidbody* m_RigidBody;
 
 public:
 	virtual void begin();

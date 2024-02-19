@@ -62,8 +62,11 @@ qComponent* qObj::AddComponent(qComponent* _Component)
 	m_vecCom.push_back(_Component);
 	_Component->m_Owner = this;
 
-	// 오브젝트에 추가된 컴포넌트가 Animator 면 별도의 포인터로 따로 가리킨다.
-	m_Animator = dynamic_cast<qAnimator*>(_Component);
+	if (m_Animator == nullptr)
+	{
+		// 오브젝트에 추가된 컴포넌트가 Animator 면 별도의 포인터로 따로 가리킨다.
+		m_Animator = dynamic_cast<qAnimator*>(_Component);
+	}
 
 	return _Component;
 }

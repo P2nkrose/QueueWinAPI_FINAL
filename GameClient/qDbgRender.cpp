@@ -46,7 +46,7 @@ void qDbgRender::render()
 				, (int)(iter->Position.y + iter->Scale.y / 2.f));
 		}
 
-		// DBG 가 Circle 면 사각형을 그린다.
+		// DBG 가 Circle 면 원을 그린다.
 		else if(m_bRender && DBG_SHAPE::CIRCLE == iter->Shape)
 		{
 			Ellipse(DC,
@@ -54,6 +54,15 @@ void qDbgRender::render()
 				, (int)(iter->Position.y - iter->Scale.y / 2.f)
 				, (int)(iter->Position.x + iter->Scale.x / 2.f)
 				, (int)(iter->Position.y + iter->Scale.y / 2.f));
+		}
+		// DBG 가 Line 이면 선을 그린다.
+		else if (m_bRender && DBG_SHAPE::LINE == iter->Shape)
+		{
+			// MoveToEx 현재 위치를 지정된 시점으로 옮긴다.
+			MoveToEx(DC, (int)iter->Position.x, (int)iter->Position.y, nullptr);
+
+			// 현재 위치에서 지정된 시점까지 선을 그린다.
+			LineTo(DC, (int)iter->Scale.x, (int)iter->Scale.y);
 		}
 
 		// 해당 디버그렌더 정보가 수명을 다하면 리스트에서 제거한다.

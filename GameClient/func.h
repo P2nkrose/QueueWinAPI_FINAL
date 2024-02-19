@@ -2,6 +2,7 @@
 
 void DrawDebugRect(PEN_TYPE _Type, Vec2 _Pos, Vec2 _Scale, float _Time);
 void DrawDebugCircle(PEN_TYPE _Type, Vec2 _Pos, Vec2 _Scale, float _Time);
+void DrawDebugLine(PEN_TYPE _Type, Vec2 _Start, Vec2 _End, float _Time);
 
 void DebugLog(LOG_TYPE _Type, const WCHAR* _LogMgs);
 
