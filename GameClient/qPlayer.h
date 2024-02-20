@@ -31,6 +31,7 @@ public:
 	virtual qObj* Clone() override { return new qPlayer(*this); };
 
 
+
 public:
 	qPlayer();
 	~qPlayer();

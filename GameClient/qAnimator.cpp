@@ -37,7 +37,7 @@ void qAnimator::render()
 
 void qAnimator::CreateAnimation(const wstring& _AnimName, qTexture* _Atlas, Vec2 _StartPos, Vec2 _SliceSize, int _FrameCount, int _FPS)
 {
-	// 동일한 이름의 Animatio 이 이미 Animator 에 있는 경우
+	// 동일한 이름의 Animation 이 이미 Animator 에 있는 경우
 	qAnimation* pAnim = FindAnimation(_AnimName);
 	assert(!pAnim);
 

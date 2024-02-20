@@ -24,6 +24,12 @@ public:
 	void SetMass(float _Mass) { m_Mass = _Mass; }							// 질량 설정
 	void SetInitialWalkSpeed(float _Speed) { m_InitWalkSpeed = _Speed; }	// 초기 이동속도 설정
 	void SetMaxWalkSpeed(float _Speed) { m_MaxWalkSpeed = _Speed; }			// 최대 이동속도 설정
+	void SetFriction(float _Friction) { m_Friction = _Friction; }
+
+	float GetMass() { return m_Mass; }
+	float GetInitWalkSpeed() { return m_InitWalkSpeed; }
+	float GetMaxWalkSpeed() { return m_MaxWalkSpeed; }
+	float GetFriction() { return m_Friction; }
 
 
 private:
@@ -34,5 +40,7 @@ private:
 
 	float	m_InitWalkSpeed;	// 초기 이동속도
 	float	m_MaxWalkSpeed;		// 최대 이동속도
+
+	float	m_Friction;			// 마찰력
 };
 

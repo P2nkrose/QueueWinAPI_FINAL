@@ -11,6 +11,7 @@
 class qComponent;
 class qCollider;
 class qAnimator;
+class qRigidbody;
 class qFSM;
 
 

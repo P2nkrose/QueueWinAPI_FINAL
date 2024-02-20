@@ -107,6 +107,12 @@
     <Filter Include="03. Game\08. Module\Animation">
       <UniqueIdentifier>{ae5107eb-b358-4e88-b931-758471c3cdcc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\05. Object\Force">
+      <UniqueIdentifier>{c807ea12-8c56-4ed0-82e0-6463658f874f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Effect">
+      <UniqueIdentifier>{5844f181-35e6-4dff-8772-b0e2656f7f47}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -217,6 +223,9 @@
     <ClInclude Include="qAnimation.h">
       <Filter>03. Game\08. Module\Animation</Filter>
     </ClInclude>
+    <ClInclude Include="qForce.h">
+      <Filter>03. Game\05. Object\Force</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -321,6 +330,9 @@
     </ClCompile>
     <ClCompile Include="qAnimation.cpp">
       <Filter>03. Game\08. Module\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="qForce.cpp">
+      <Filter>03. Game\05. Object\Force</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

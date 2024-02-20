@@ -51,6 +51,9 @@ void Safe_Del_Arr(T* (&Arr)[iSize])
 	}
 }
 
+
+float Saturate(float _Ratio);
+
 class qObj;
 class qLevel;
 

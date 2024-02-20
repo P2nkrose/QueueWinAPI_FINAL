@@ -4,11 +4,19 @@
 #include "qCollider.h"
 #include "qMissile.h"
 
+#include "qRigidbody.h"
+
 qMonster::qMonster()
 	: m_HP(5)
 {
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 	m_Collider->SetScale(Vec2(120.f, 120.f));
+
+	m_Rigidbody = (qRigidbody*)AddComponent(new qRigidbody);
+	m_Rigidbody->SetMass(2.f);
+	m_Rigidbody->SetInitialWalkSpeed(0.f);
+	m_Rigidbody->SetMaxWalkSpeed(400.f);
+	m_Rigidbody->SetFriction(2000.f);
 }
 
 qMonster::~qMonster()

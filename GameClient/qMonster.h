@@ -24,5 +24,7 @@ private:
 	int			m_HP;
 
 	qCollider*	m_Collider;
+	qRigidbody* m_Rigidbody;
+
 };
 

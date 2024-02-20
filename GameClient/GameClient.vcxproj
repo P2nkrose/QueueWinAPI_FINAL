@@ -155,6 +155,7 @@
     <ClInclude Include="qDbgRender.h" />
     <ClInclude Include="qEngine.h" />
     <ClInclude Include="qEntity.h" />
+    <ClInclude Include="qForce.h" />
     <ClInclude Include="qFSM.h" />
     <ClInclude Include="qGuideMissile.h" />
     <ClInclude Include="qKeyMgr.h" />
@@ -193,6 +194,7 @@
     <ClCompile Include="qDbgRender.cpp" />
     <ClCompile Include="qEngine.cpp" />
     <ClCompile Include="qEntity.cpp" />
+    <ClCompile Include="qForce.cpp" />
     <ClCompile Include="qFSM.cpp" />
     <ClCompile Include="qGuideMissile.cpp" />
     <ClCompile Include="qKeyMgr.cpp" />

@@ -35,16 +35,35 @@ qPlayer::qPlayer()
 	m_BodyCol->SetActive(true);
 
 	// Animation 추가
-	//qTexture* pAtlas = qAssetMgr::GetInst()->LoadTexture(L"PlayerAtlasTex", L"texture\\link_32.bmp");
-	//m_Animator->CreateAnimation(L"WALK_DOWN", pAtlas, Vec2(0.f, 520.f), Vec2(120.f, 130.f), 10, 18);
-	//m_Animator->FindAnimation(L"WALK_DOWN")->Save(L"animation\\player\\");
+	qTexture* pAtlas = qAssetMgr::GetInst()->LoadTexture(L"PlayerAtlasTex", L"texture\\link_32.bmp");
 
-	m_Animator->LoadAnimation(L"animation\\player\\WALK_DOWN.anim");
-	m_Animator->Play(L"WALK_DOWN", true);
+	m_Animator->CreateAnimation(L"IDLE_DOWN", pAtlas, Vec2(0.f, 0.f), Vec2(120.f, 130.f), 3, 10);
+	m_Animator->CreateAnimation(L"IDLE_LEFT", pAtlas, Vec2(0.f, 130.f), Vec2(120.f, 130.f), 3, 10);
+	m_Animator->CreateAnimation(L"IDLE_UP", pAtlas, Vec2(0.f, 260.f), Vec2(120.f, 130.f), 1, 1);
+	m_Animator->CreateAnimation(L"IDLE_RIGHT", pAtlas, Vec2(0.f, 390.f), Vec2(120.f, 130.f), 3, 10);
+
+	m_Animator->CreateAnimation(L"WALK_DOWN", pAtlas, Vec2(0.f, 520.f), Vec2(120.f, 130.f), 10, 18);
+	m_Animator->CreateAnimation(L"WALK_LEFT", pAtlas, Vec2(0.f, 650.f), Vec2(120.f, 130.f), 10, 18);
+	m_Animator->CreateAnimation(L"WALK_UP", pAtlas, Vec2(0.f, 780.f), Vec2(120.f, 130.f), 10, 18);
+	m_Animator->CreateAnimation(L"WALK_RIGHT", pAtlas, Vec2(0.f, 910.f), Vec2(120.f, 130.f), 10, 18);
+
+	//m_Animator->FindAnimation(L"IDLE_DOWN")->Save(L"animation\\player\\");
+	//m_Animator->FindAnimation(L"IDLE_LEFT")->Save(L"animation\\player\\");
+	//m_Animator->FindAnimation(L"IDLE_UP")->Save(L"animation\\player\\");
+	//m_Animator->FindAnimation(L"IDLE_RIGHT")->Save(L"animation\\player\\");
+
+	//m_Animator->FindAnimation(L"WALK_DOWN")->Save(L"animation\\player\\");
+	//m_Animator->FindAnimation(L"WALK_LEFT")->Save(L"animation\\player\\");
+	//m_Animator->FindAnimation(L"WALK_UP")->Save(L"animation\\player\\");
+	//m_Animator->FindAnimation(L"WALK_RIGHT")->Save(L"animation\\player\\");
+
+	m_Animator->LoadAnimation(L"animation\\player\\IDLE_DOWN.anim");
+	m_Animator->Play(L"IDLE_DOWN", true);
 
 	// 강체 설정
 	m_RigidBody->SetMass(1.f);
 	m_RigidBody->SetMaxWalkSpeed(300.f);
+	m_RigidBody->SetFriction(2000.f);
 }
 
 qPlayer::~qPlayer()
@@ -69,7 +88,7 @@ void qPlayer::tick()
 	if (KEY_PRESSED(KEY::LEFT))
 	{
 		//vPos.x -= m_Speed * DT;
-		m_RigidBody->AddForce(Vec2(-1000.f, 0));
+		m_RigidBody->AddForce(Vec2(-1000.f, 0.f));
 	}
 	else if (KEY_TAP(KEY::LEFT))
 	{
@@ -84,7 +103,7 @@ void qPlayer::tick()
 	if (KEY_PRESSED(KEY::RIGHT))
 	{
 		//vPos.x += m_Speed * DT;
-		m_RigidBody->AddForce(Vec2(1000.f, 0));
+		m_RigidBody->AddForce(Vec2(1000.f, 0.f));
 	}
 	else if (KEY_TAP(KEY::RIGHT))
 	{
@@ -100,7 +119,7 @@ void qPlayer::tick()
 	if (KEY_PRESSED(KEY::UP))
 	{
 		//vPos.y -= m_Speed * DT;
-		m_RigidBody->AddForce(Vec2(0, -1000.f));
+		m_RigidBody->AddForce(Vec2(0.f, -1000.f));
 	}
 	else if (KEY_TAP(KEY::UP))
 	{
@@ -116,7 +135,7 @@ void qPlayer::tick()
 	if (KEY_PRESSED(KEY::DOWN))
 	{
 		//vPos.y += m_Speed * DT;
-		m_RigidBody->AddForce(Vec2(0, 1000.f));
+		m_RigidBody->AddForce(Vec2(0.f, 1000.f));
 	}
 	else if (KEY_TAP(KEY::DOWN))
 	{
@@ -173,12 +192,3 @@ void qPlayer::EndOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _O
 
 
 
-//m_Animator->CreateAnimation(L"IDLE_DOWN", pAtlas, Vec2(0.f, 0.f), Vec2(120.f, 130.f), 3, 10);
-//m_Animator->CreateAnimation(L"IDLE_LEFT", pAtlas, Vec2(0.f, 130.f), Vec2(120.f, 130.f), 3, 10);
-//m_Animator->CreateAnimation(L"IDLE_UP", pAtlas, Vec2(0.f, 260.f), Vec2(120.f, 130.f), 1, 1);
-//m_Animator->CreateAnimation(L"IDLE_RIGHT", pAtlas, Vec2(0.f, 390.f), Vec2(120.f, 130.f), 3, 10);
-//
-//m_Animator->CreateAnimation(L"WALK_DOWN", pAtlas, Vec2(0.f, 520.f), Vec2(120.f, 130.f), 10, 18);
-//m_Animator->CreateAnimation(L"WALK_LEFT", pAtlas, Vec2(0.f, 650.f), Vec2(120.f, 130.f), 10, 18);
-//m_Animator->CreateAnimation(L"WALK_UP", pAtlas, Vec2(0.f, 780.f), Vec2(120.f, 130.f), 10, 18);
-//m_Animator->CreateAnimation(L"WALK_RIGHT", pAtlas, Vec2(0.f, 910.f), Vec2(120.f, 130.f), 10, 18);

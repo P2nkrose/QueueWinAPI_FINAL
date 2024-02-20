@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "func.h"
+
 #include "qDbgRender.h"
 
 void DrawDebugRect(PEN_TYPE _Type, Vec2 _Pos, Vec2 _Scale, float _Time)
@@ -49,6 +49,19 @@ void DebugLog(LOG_TYPE _Type, const WCHAR* _LogMgs)
 
 	qDbgRender::GetInst()->AddDbgLog(log);
 }
+
+
+float Saturate(float _Ratio)
+{
+	if (_Ratio < 0.f)
+		_Ratio = 0.f;
+
+	if (1.f < _Ratio)
+		_Ratio = 1.f;
+
+	return _Ratio;
+}
+
 
 
 #include "qObj.h"
