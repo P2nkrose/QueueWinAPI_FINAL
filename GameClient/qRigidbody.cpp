@@ -5,13 +5,24 @@ qRigidbody::qRigidbody()
 	: m_Mass(1.f)
 	, m_InitWalkSpeed(0.f)
 	, m_MaxWalkSpeed(0.f)
+	, m_MaxGravitySpeed(0.f)
 	, m_Friction(500.f)
+	, m_GravityAccel(980.f)
+	, m_UseGravity(false)
+	, m_JumpSpeed(400.f)
 {
 }
 
 qRigidbody::~qRigidbody()
 {
 }
+
+void qRigidbody::jump()
+{
+	m_VelocityByGravity += Vec2(0.f, -1.f) * m_JumpSpeed;
+	m_Ground = false;
+}
+
 
 void qRigidbody::finaltick()
 {
@@ -44,7 +55,18 @@ void qRigidbody::finaltick()
 	if (m_Force.IsZero())
 	{
 		float Speed = m_Velocity.Length();
-		Speed -= m_Friction * DT;
+		
+
+		// 중력 기능을 켰고, 공중 상태인 경우
+		if (m_UseGravity && !m_Ground)
+		{
+			// 마찰을 더 적게 적용한다.
+			Speed -= m_Friction * DT * 0.2f;
+		}
+		else
+		{
+			Speed -= m_Friction * DT;
+		}
 
 		// 마찰에 의해서 속도가 역으로 생길 수는 없기 때문에,
 		// 감소된 속력의 크기가 음수가 되지 않게 보정한다.
@@ -57,15 +79,34 @@ void qRigidbody::finaltick()
 		m_Velocity *= Speed;
 	}
 
+
+	// 중력 가속도에 의한 속도 증가
+	if (m_UseGravity && !m_Ground)
+	{
+		m_VelocityByGravity += Vec2(0.0f, 1.f) * m_GravityAccel * DT;
+
+		if (0.f != m_MaxGravitySpeed && m_MaxGravitySpeed < m_VelocityByGravity.Length())
+		{
+			m_VelocityByGravity.Normalize();
+			m_VelocityByGravity *= m_MaxGravitySpeed;
+		}
+	}
+
+	// 최종 속도
+	Vec2 vFinalVelocity = m_Velocity + m_VelocityByGravity;
+
+
 	// 현재 속도에 따른 이동
 	// 속도 = 거리 / 시간
-	vObjPos += m_Velocity * DT;
-
+	vObjPos += vFinalVelocity * DT;
 	GetOwner()->SetPos(vObjPos);
 
 	// 이번 프레임 힘 초기화
 	m_Force = Vec2(0.f, 0.f);
+	m_AddVelocity = Vec2(0.f, 0.f);
 
 	// DebugRender
+	DrawDebugLine(PEN_TYPE::PEN_BLUE, vObjPos, vObjPos + vFinalVelocity, 0.f);
 
 }
+

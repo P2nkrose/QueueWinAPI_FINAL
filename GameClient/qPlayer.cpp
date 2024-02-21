@@ -37,14 +37,14 @@ qPlayer::qPlayer()
 	// Animation 추가
 	qTexture* pAtlas = qAssetMgr::GetInst()->LoadTexture(L"PlayerAtlasTex", L"texture\\link_32.bmp");
 
-	m_Animator->CreateAnimation(L"IDLE_DOWN", pAtlas, Vec2(0.f, 0.f), Vec2(120.f, 130.f), 3, 10);
+	//m_Animator->CreateAnimation(L"IDLE_DOWN", pAtlas, Vec2(0.f, 0.f), Vec2(120.f, 130.f), 3, 10);
 	m_Animator->CreateAnimation(L"IDLE_LEFT", pAtlas, Vec2(0.f, 130.f), Vec2(120.f, 130.f), 3, 10);
-	m_Animator->CreateAnimation(L"IDLE_UP", pAtlas, Vec2(0.f, 260.f), Vec2(120.f, 130.f), 1, 1);
+	//m_Animator->CreateAnimation(L"IDLE_UP", pAtlas, Vec2(0.f, 260.f), Vec2(120.f, 130.f), 1, 1);
 	m_Animator->CreateAnimation(L"IDLE_RIGHT", pAtlas, Vec2(0.f, 390.f), Vec2(120.f, 130.f), 3, 10);
 
-	m_Animator->CreateAnimation(L"WALK_DOWN", pAtlas, Vec2(0.f, 520.f), Vec2(120.f, 130.f), 10, 18);
+	//m_Animator->CreateAnimation(L"WALK_DOWN", pAtlas, Vec2(0.f, 520.f), Vec2(120.f, 130.f), 10, 18);
 	m_Animator->CreateAnimation(L"WALK_LEFT", pAtlas, Vec2(0.f, 650.f), Vec2(120.f, 130.f), 10, 18);
-	m_Animator->CreateAnimation(L"WALK_UP", pAtlas, Vec2(0.f, 780.f), Vec2(120.f, 130.f), 10, 18);
+	//m_Animator->CreateAnimation(L"WALK_UP", pAtlas, Vec2(0.f, 780.f), Vec2(120.f, 130.f), 10, 18);
 	m_Animator->CreateAnimation(L"WALK_RIGHT", pAtlas, Vec2(0.f, 910.f), Vec2(120.f, 130.f), 10, 18);
 
 	//m_Animator->FindAnimation(L"IDLE_DOWN")->Save(L"animation\\player\\");
@@ -58,12 +58,17 @@ qPlayer::qPlayer()
 	//m_Animator->FindAnimation(L"WALK_RIGHT")->Save(L"animation\\player\\");
 
 	m_Animator->LoadAnimation(L"animation\\player\\IDLE_DOWN.anim");
-	m_Animator->Play(L"IDLE_DOWN", true);
+	m_Animator->Play(L"IDLE_LEFT", true);
 
 	// 강체 설정
 	m_RigidBody->SetMass(1.f);
 	m_RigidBody->SetMaxWalkSpeed(300.f);
 	m_RigidBody->SetFriction(2000.f);
+
+	// 중력 관련 설정
+	m_RigidBody->UseGravity(true);
+	m_RigidBody->SetMaxGravitySpeed(1500.f);
+	m_RigidBody->SetJumpSpeed(800.f);
 }
 
 qPlayer::~qPlayer()
@@ -77,6 +82,8 @@ void qPlayer::begin()
 
 void qPlayer::tick()
 {
+	qObj::tick();
+
 	// GetAsyncKeyState
 	// 0x0000 : 이전에도 누른적이 없고, 호출 시점에도 안눌려있을때
 	// 0x0001 : 이전에 누른적이 있고, 호출 시점에 안눌려있을때 (뗄떼)
@@ -146,29 +153,18 @@ void qPlayer::tick()
 		m_Animator->Play(L"IDLE_DOWN", true);
 	}
 
-	// SPACE 누르면 미사일 발사
+	// SPACE 누르면 점프!
 	if (KEY_TAP(KEY::SPACE))
 	{
-		qMissile* pMissile = new qGuideMissile;
-		pMissile->SetName(L"Missile");
-
-		Vec2 vMissilePos = GetPos();
-		vMissilePos.y -= GetScale().y / 2.f;
-
-		pMissile->SetPos(vMissilePos);
-		pMissile->SetScale(Vec2(20.f, 20.f));
-
-
-		// TASK
-		SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_MISSILE, pMissile);
-
-		// LOG
-		LOG(LOG_TYPE::DBG_LOG, L"미사일 발사!");
+		//Shoot();
+		Jump();
 	}
 
 
 	SetPos(vPos);
 }
+
+
 
 
 
@@ -187,6 +183,30 @@ void qPlayer::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _Ot
 void qPlayer::EndOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
 	int a = 0;
+}
+
+
+void qPlayer::Shoot()
+{
+	qMissile* pMissile = new qGuideMissile;
+	pMissile->SetName(L"Missile");
+
+	Vec2 vMissilePos = GetPos();
+	vMissilePos.y -= GetScale().y / 2.f;
+
+	pMissile->SetPos(vMissilePos);
+	pMissile->SetScale(Vec2(20.f, 20.f));
+
+	// TASK
+	SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_MISSILE, pMissile);
+
+	// LOG
+	LOG(LOG_TYPE::DBG_LOG, L"미사일 발사!");
+}
+
+void qPlayer::Jump()
+{
+	m_RigidBody->jump();
 }
 
 

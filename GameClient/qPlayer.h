@@ -19,7 +19,10 @@ private:
 
 public:
 	virtual void begin();
-	virtual void tick();		
+	virtual void tick();	
+
+	void Shoot();
+	void Jump();
 
 
 	virtual void BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
