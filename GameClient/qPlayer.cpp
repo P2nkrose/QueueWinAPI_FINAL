@@ -19,19 +19,14 @@ qPlayer::qPlayer()
 	, m_PlayerImg(nullptr)
 {
 	// Player의 컴포넌트 설정
-	m_HeadCol = (qCollider*)AddComponent(new qCollider);
+	
 	m_BodyCol = (qCollider*)AddComponent(new qCollider);
 	m_Animator = (qAnimator*)AddComponent(new qAnimator);
 	m_RigidBody = (qRigidbody*)AddComponent(new qRigidbody);
 
-	m_HeadCol->SetName(L"Head Collider");
-	m_HeadCol->SetOffsetPos(Vec2(0.f, -80.f));
-	m_HeadCol->SetScale(Vec2(30.f, 30.f));
-	m_HeadCol->SetActive(true);
-
 	m_BodyCol->SetName(L"Body Collider");
-	m_BodyCol->SetOffsetPos(Vec2(0.f, 0.f));
-	m_BodyCol->SetScale(Vec2(60.f, 60.f));
+	m_BodyCol->SetOffsetPos(Vec2(0.f, 10.f));
+	m_BodyCol->SetScale(Vec2(70.f, 110.f));
 	m_BodyCol->SetActive(true);
 
 	// Animation 추가
@@ -68,7 +63,7 @@ qPlayer::qPlayer()
 	// 중력 관련 설정
 	m_RigidBody->UseGravity(true);
 	m_RigidBody->SetMaxGravitySpeed(1500.f);
-	m_RigidBody->SetJumpSpeed(800.f);
+	m_RigidBody->SetJumpSpeed(400.f);
 }
 
 qPlayer::~qPlayer()

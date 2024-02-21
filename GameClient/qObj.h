@@ -20,6 +20,7 @@ class qObj : public qEntity
 private:
 	
 	Vec2				m_Pos;		// 위치
+	Vec2				m_PrevPos;	// 이전 프레임에서의 위치
 	Vec2				m_Scale;	// 크기
 	vector<qComponent*>	m_vecCom;	// 보유 컴포넌트들
 
@@ -38,6 +39,7 @@ public:
 	void SetScale(float _width, float _height) { m_Scale.x = _width; m_Scale.y = _height; }
 
 	Vec2 GetPos() { return m_Pos; }
+	Vec2 GetPrevPos() { return m_PrevPos; }
 	Vec2 GetScale() { return m_Scale; }
 	LAYER_TYPE GetLayerType() { return m_Type; }
 	bool IsDead() { return m_bDead; }

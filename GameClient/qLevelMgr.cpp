@@ -8,6 +8,7 @@
 
 #include "qPlayer.h"
 #include "qMonster.h"
+#include "qPlatform.h"
 
 qLevelMgr::qLevelMgr()
 	: m_arrLevel{}
@@ -33,6 +34,7 @@ void qLevelMgr::init()
 
 	// 레벨에 물체 추가하기
 	qObj* pObject = new qPlayer;
+	pObject->SetName(L"Player");
 	pObject->SetPos(640.0f, 384.0f);
 	pObject->SetScale(100.0f, 100.0f);
 	m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pObject);
@@ -44,7 +46,7 @@ void qLevelMgr::init()
 	pObject->SetPos(800.0f, 200.0f);
 	pObject->SetScale(100.0f, 100.0f);
 	m_pCurrentLevel->AddObject(LAYER_TYPE::MONSTER, pObject);
-
+	
 	// 한마리 더!
 	pObject = new qMonster;
 	pObject->SetName(L"Monster");
@@ -52,11 +54,18 @@ void qLevelMgr::init()
 	pObject->SetScale(100.0f, 100.0f);
 	m_pCurrentLevel->AddObject(LAYER_TYPE::MONSTER, pObject);
 
+	// 플랫폼 생성
+	pObject = new qPlatform;
+	pObject->SetName(L"Platform");
+	pObject->SetPos(Vec2(640.f, 700.f));
+	m_pCurrentLevel->AddObject(LAYER_TYPE::PLATFORM, pObject);
+
 
 	// 레벨 충돌 설정하기
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::MONSTER);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_MISSILE, LAYER_TYPE::MONSTER);
-
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
+	
 }
 
 void qLevelMgr::progress()

@@ -32,7 +32,15 @@ void qRigidbody::finaltick()
 	Vec2 vAccel = m_Force / m_Mass;
 
 	// 가속도
-	m_Velocity += vAccel * DT;
+	// 중력을 사용할 때, 공중에서 힘이 적용된 경우
+	if (m_UseGravity && !m_Ground)
+	{
+		m_Velocity += vAccel * DT * 0.5f;
+	}
+	else
+	{
+		m_Velocity += vAccel * DT * 1.f;
+	}
 
 	// 최대속도 제한
 	if (0.f != m_MaxWalkSpeed && m_MaxWalkSpeed < m_Velocity.Length())

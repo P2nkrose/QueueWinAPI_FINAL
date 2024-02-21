@@ -229,6 +229,9 @@
     <ClInclude Include="qForce.h">
       <Filter>03. Game\05. Object\Force</Filter>
     </ClInclude>
+    <ClInclude Include="qPlatform.h">
+      <Filter>03. Game\05. Object\Platform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -336,6 +339,9 @@
     </ClCompile>
     <ClCompile Include="qForce.cpp">
       <Filter>03. Game\05. Object\Force</Filter>
+    </ClCompile>
+    <ClCompile Include="qPlatform.cpp">
+      <Filter>03. Game\05. Object\Platform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
