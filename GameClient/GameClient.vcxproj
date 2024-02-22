@@ -149,6 +149,7 @@
     <ClInclude Include="qAnimator.h" />
     <ClInclude Include="qAsset.h" />
     <ClInclude Include="qAssetMgr.h" />
+    <ClInclude Include="qCamera.h" />
     <ClInclude Include="qCollider.h" />
     <ClInclude Include="qCollisionMgr.h" />
     <ClInclude Include="qComponent.h" />
@@ -189,6 +190,7 @@
     <ClCompile Include="qAnimator.cpp" />
     <ClCompile Include="qAsset.cpp" />
     <ClCompile Include="qAssetMgr.cpp" />
+    <ClCompile Include="qCamera.cpp" />
     <ClCompile Include="qCollider.cpp" />
     <ClCompile Include="qCollisionMgr.cpp" />
     <ClCompile Include="qComponent.cpp" />

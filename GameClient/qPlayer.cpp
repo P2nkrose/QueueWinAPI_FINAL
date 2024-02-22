@@ -14,6 +14,7 @@
 #include "qGuideMissile.h"
 
 #include "qDbgRender.h"
+#include "qCamera.h"
 
 
 void BeGround()
@@ -89,6 +90,8 @@ qPlayer::qPlayer()
 	// Delegate
 	m_RigidBody->SetGroundDelegate(this, (DELEGATE)&qPlayer::RestoreJumpCount);
 
+	// Ä«¸Þ¶ó
+	qCamera::GetInst()->SetOwner(this);
 }
 
 qPlayer::~qPlayer()

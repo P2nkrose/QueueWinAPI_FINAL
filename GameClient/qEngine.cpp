@@ -9,6 +9,7 @@
 #include "qCollisionMgr.h"
 #include "qAssetMgr.h"
 #include "qTaskMgr.h"
+#include "qCamera.h"
 
 qEngine::qEngine()
 	: m_hMainWnd(nullptr)
@@ -62,9 +63,11 @@ int qEngine::init(HINSTANCE _hInst, HWND _hWnd, POINT _Resolution)
 	qPathMgr::GetInst()->init();
 	qKeyMgr::GetInst()->init();
 	qTimeMgr::GetInst()->init();
+	
 	qAssetMgr::GetInst()->init();
-
 	qLevelMgr::GetInst()->init();
+
+	qCamera::GetInst()->init();
 	
 
 
@@ -77,9 +80,10 @@ void qEngine::progress()
 	// ============
 	// Manager Tick
 	// ============
-	qKeyMgr::GetInst()->tick();
 	qTimeMgr::GetInst()->tick();
+	qKeyMgr::GetInst()->tick();
 	qDbgRender::GetInst()->tick();
+	qCamera::GetInst()->tick();
 
 	// ==============
 	// Level Progress

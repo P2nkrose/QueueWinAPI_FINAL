@@ -29,7 +29,7 @@ void qMonster::tick()
 
 void qMonster::render()
 {
-	Vec2 vPos = GetPos();
+	Vec2 vPos = GetRenderPos();
 	Vec2 vScale = GetScale();
 
 	Rectangle(DC, (int)(vPos.x - vScale.x * 0.5f)

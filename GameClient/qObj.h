@@ -8,6 +8,8 @@
 #include "qAssetMgr.h"
 #include "qTexture.h"
 
+#include "qCamera.h"
+
 class qComponent;
 class qCollider;
 class qAnimator;
@@ -40,6 +42,7 @@ public:
 
 	Vec2 GetPos() { return m_Pos; }
 	Vec2 GetPrevPos() { return m_PrevPos; }
+	Vec2 GetRenderPos() { return qCamera::GetInst()->GetRenderPos(m_Pos); }
 	Vec2 GetScale() { return m_Scale; }
 	LAYER_TYPE GetLayerType() { return m_Type; }
 	bool IsDead() { return m_bDead; }

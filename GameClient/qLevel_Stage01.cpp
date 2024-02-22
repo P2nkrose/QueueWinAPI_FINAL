@@ -19,9 +19,10 @@ void qLevel_Stage01::tick()
 	if (KEY_TAP(KEY::LBTN))
 	{
 		Vec2 vMousePos = qKeyMgr::GetInst()->GetMousePos();
+		Vec2 vPos = qCamera::GetInst()->GetRenderPos(vMousePos);
 
 		qForce* pForce = new qForce();
-		pForce->SetPos(vMousePos);
+		pForce->SetPos(vPos);
 		pForce->SetForce(1000.f, 500.f, 2.f);
 		SpawnObject(this, LAYER_TYPE::FORCE, pForce);
 	}

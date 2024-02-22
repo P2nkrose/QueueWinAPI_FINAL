@@ -33,7 +33,7 @@ void qMissile::tick()
 
 void qMissile::render()
 {
-	Vec2 vPos = GetPos();
+	Vec2 vPos = GetRenderPos();
 	Vec2 vScale = GetScale();
 
 	Ellipse(DC, (int)(vPos.x - vScale.x * 0.5f)
