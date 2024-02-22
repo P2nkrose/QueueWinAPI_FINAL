@@ -17,12 +17,21 @@ private:
 	qAnimator*	m_Animator;
 	qRigidbody* m_RigidBody;
 
+
+	int			m_DoubleJumpCount;
+	int			m_CurJumpCount;
+
 public:
 	virtual void begin();
 	virtual void tick();	
 
 	void Shoot();
 	void Jump();
+
+	void RestoreJumpCount()
+	{
+		m_CurJumpCount = 0;
+	}
 
 
 	virtual void BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;

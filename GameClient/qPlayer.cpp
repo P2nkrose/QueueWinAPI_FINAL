@@ -13,10 +13,27 @@
 #include "qMissile.h"
 #include "qGuideMissile.h"
 
+#include "qDbgRender.h"
+
+
+void BeGround()
+{
+	LOG(LOG_TYPE::DBG_WARNING, L"Grounded!!!");
+	LOG(LOG_TYPE::DBG_WARNING, L"Grounded!!!");
+}
+
+void BeAir()
+{
+	LOG(LOG_TYPE::DBG_WARNING, L"Air!!!");
+	LOG(LOG_TYPE::DBG_WARNING, L"Air!!!");
+}
+
 
 qPlayer::qPlayer()
 	: m_Speed(500.f)
 	, m_PlayerImg(nullptr)
+	, m_DoubleJumpCount(2)
+	, m_CurJumpCount(0)
 {
 	// Player의 컴포넌트 설정
 	
@@ -64,6 +81,14 @@ qPlayer::qPlayer()
 	m_RigidBody->UseGravity(true);
 	m_RigidBody->SetMaxGravitySpeed(1500.f);
 	m_RigidBody->SetJumpSpeed(400.f);
+
+	// CallBack 설정
+	m_RigidBody->SetGroundFunc(&BeGround);
+	m_RigidBody->SetAirFunc(&BeAir);
+
+	// Delegate
+	m_RigidBody->SetGroundDelegate(this, (DELEGATE)&qPlayer::RestoreJumpCount);
+
 }
 
 qPlayer::~qPlayer()
@@ -152,7 +177,13 @@ void qPlayer::tick()
 	if (KEY_TAP(KEY::SPACE))
 	{
 		//Shoot();
-		Jump();
+
+		if (m_DoubleJumpCount > m_CurJumpCount)
+		{
+			Jump();
+			m_CurJumpCount += 1;
+		}
+
 	}
 
 

@@ -10,6 +10,12 @@ qRigidbody::qRigidbody()
 	, m_GravityAccel(980.f)
 	, m_UseGravity(false)
 	, m_JumpSpeed(400.f)
+	, m_GroundFunc(nullptr)
+	, m_AirFunc(nullptr)
+	, m_GroundInst(nullptr)
+	, m_AirInst(nullptr)
+	, m_GroundDelegate(nullptr)
+	, m_AirDelegate(nullptr)
 {
 }
 
@@ -20,7 +26,7 @@ qRigidbody::~qRigidbody()
 void qRigidbody::jump()
 {
 	m_VelocityByGravity += Vec2(0.f, -1.f) * m_JumpSpeed;
-	m_Ground = false;
+	SetGround(false);
 }
 
 

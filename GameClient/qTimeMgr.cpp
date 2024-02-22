@@ -38,6 +38,10 @@ void qTimeMgr::tick()
 	// 이전 카운트와 현재 카운트의 차이값을 통해서 1프레임 간의 시간값을 계산
 	m_DeltaTime = (float)(m_llCurCount.QuadPart - m_llPrevCount.QuadPart) / (float)m_llFrequency.QuadPart;
 
+	// DT 보정
+	if (1.f / 60.f < m_DeltaTime)
+		m_DeltaTime = 1.f / 60.f;
+
 	// 누적시간을 통해서 프로그램이 실행된 이후로 지나간 시간값을 기록
 	m_Time += m_DeltaTime;
 

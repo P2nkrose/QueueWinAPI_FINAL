@@ -33,8 +33,10 @@
 
 #define PI 3.1415926535f
 
-#define LOG(TYPE, Msg)	string FuncName = __FUNCTION__;\
-						wstring strFuncName = wstring(FuncName.begin(), FuncName.end());\
-						WCHAR szLog[256] = {};\
-						swprintf_s(szLog, L"{%s : %d} : %s", strFuncName.c_str(), __LINE__, Msg);\
-						DebugLog(TYPE, szLog);
+#define LOG(TYPE, Msg)	{\
+							string FuncName = __FUNCTION__;\
+							wstring strFuncName = wstring(FuncName.begin(), FuncName.end());\
+							WCHAR szLog[256] = {};\
+							swprintf_s(szLog, L"{%s : %d} : %s", strFuncName.c_str(), __LINE__, Msg);\
+							DebugLog(TYPE, szLog);\
+						}

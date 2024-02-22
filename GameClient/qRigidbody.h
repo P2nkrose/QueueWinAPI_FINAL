@@ -1,6 +1,9 @@
 #pragma once
 #include "qComponent.h"
 
+typedef void(*CALL_BACK)(void);
+typedef void(qObj::*DELEGATE)(void);
+
 // vector : 크기, 방향	
 // scalar : 크기			
 
@@ -40,6 +43,21 @@ public:
 	float GetFriction() { return m_Friction; }
 	Vec2 GetGravityVelocity() { return m_VelocityByGravity; }
 
+	void SetGroundFunc(void(*_pFunc)(void)) { m_GroundFunc = _pFunc; }
+	void SetAirFunc(void(*_pFunc)(void)) { m_AirFunc = _pFunc; }
+
+	void SetGroundDelegate(qObj* _Inst, DELEGATE _MemFunc)
+	{
+		m_GroundInst = _Inst;
+		m_GroundDelegate = _MemFunc;
+	}
+
+	void SetAirDelegate(qObj* _Inst, DELEGATE _MemFunc)
+	{
+		m_AirInst = _Inst;
+		m_AirDelegate = _MemFunc;
+	}
+
 	void UseGravity(bool _Use)
 	{
 		m_UseGravity = _Use;
@@ -52,7 +70,23 @@ public:
 		m_Ground = _Ground;
 
 		if (m_Ground)
+		{
 			m_VelocityByGravity = Vec2(0.f, 0.f);
+
+			if (nullptr != m_GroundFunc)
+				m_GroundFunc();
+
+			if (m_GroundInst && m_GroundDelegate)
+				(m_GroundInst->*m_GroundDelegate)();
+		}
+		else
+		{
+			if (nullptr != m_AirFunc)
+				m_AirFunc();
+
+			if (m_AirInst && m_AirDelegate)
+				(m_AirInst->*m_AirDelegate)();
+		}
 	}
 
 	bool IsGround() { return m_Ground; }
@@ -77,6 +111,16 @@ private:
 	bool	m_Ground;				// 땅 위에 서있는지 체크
 	float	m_JumpSpeed;			// 점프 속력
 
+	// Ground On / Off 호출시킬 함수포인터
+	CALL_BACK	m_GroundFunc;
+	CALL_BACK	m_AirFunc;
+
+	// Delegate
+	qObj*		m_GroundInst;
+	DELEGATE	m_GroundDelegate;
+
+	qObj*		m_AirInst;
+	DELEGATE	m_AirDelegate;
 
 };
 

@@ -108,11 +108,11 @@ void qKeyMgr::tick()
 		{
 			if (m_vecKeyInfo[i].eKeyState == KEY_STATE::TAP || m_vecKeyInfo[i].eKeyState == KEY_STATE::PRESSED)
 			{
-				m_vecKeyInfo[i].eKeyState == KEY_STATE::RELEASED;
+				m_vecKeyInfo[i].eKeyState = KEY_STATE::RELEASED;
 			}
 			else
 			{
-				m_vecKeyInfo[i].eKeyState == KEY_STATE::NONE;
+				m_vecKeyInfo[i].eKeyState = KEY_STATE::NONE;
 			}
 
 			m_vecKeyInfo[i].bPressed = false;
