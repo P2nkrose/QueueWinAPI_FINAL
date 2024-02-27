@@ -94,6 +94,21 @@ qPlayer::qPlayer()
 	qCamera::GetInst()->SetOwner(this);
 }
 
+qPlayer::qPlayer(const qPlayer& _Other)
+	: qObj(_Other)
+	, m_Speed(_Other.m_Speed)
+	, m_PlayerImg(_Other.m_PlayerImg)
+	, m_BodyCol(nullptr)
+	, m_Animator(nullptr)
+	, m_RigidBody(nullptr)
+	, m_DoubleJumpCount(_Other.m_DoubleJumpCount)
+	, m_CurJumpCount(_Other.m_CurJumpCount)
+{
+	m_BodyCol = GetComponent<qCollider>();
+	m_Animator = GetComponent<qAnimator>();
+	m_RigidBody = GetComponent<qRigidbody>();
+}
+
 qPlayer::~qPlayer()
 {
 }

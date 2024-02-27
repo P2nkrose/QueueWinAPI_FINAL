@@ -30,6 +30,7 @@ public:
 
 public:
 	qEntity();
+	qEntity(const qEntity& _Other);
 	virtual ~qEntity();
 };
 

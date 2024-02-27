@@ -40,12 +40,11 @@ public:
 
 
 public:
-	virtual qObj* Clone() override { return new qPlayer(*this); };
-
-
+	CLONE(qPlayer);
 
 public:
 	qPlayer();
+	qPlayer(const qPlayer& _Other);
 	~qPlayer();
 
 };

@@ -86,6 +86,7 @@ public:
 
 public:
 	qObj();
+	qObj(const qObj& _Other);
 	~qObj();
 
 	friend class qLevel;

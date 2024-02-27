@@ -4,6 +4,9 @@
 class qCollider : public qComponent
 {
 public:
+
+	CLONE(qCollider);
+
 	friend class qCollisionMgr;
 
 	qCollider();
@@ -12,7 +15,6 @@ public:
 
 public:
 	virtual void finaltick() override;
-	virtual qCollider* Clone() { return new qCollider; }
 	
 
 public:

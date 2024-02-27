@@ -30,7 +30,7 @@ public:
 	const vector<qCollider*>& GetColliders(LAYER_TYPE _Layer) { return m_arrCollider[(UINT)_Layer]; }
 
 public:
-	virtual qLevel* Clone() = 0;
+	CLONE_DISABLE(qLevel);
 
 
 public:
