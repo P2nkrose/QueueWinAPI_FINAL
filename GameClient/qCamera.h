@@ -7,6 +7,15 @@ enum class CAM_EFFECT
 	NONE,
 };
 
+struct CAM_EFFECT_INFO
+{
+	CAM_EFFECT		Effect;
+	float			Duration;
+	float			Time;
+	float			Alpha;
+
+};
+
 class qObj;
 class qTexture;
 
@@ -32,18 +41,16 @@ private:
 	void CameraEffect();
 
 private:
-	Vec2			m_LookAt;
-	Vec2			m_Diff;
-	float			m_CamSpeed;
+	Vec2					m_LookAt;
+	Vec2					m_Diff;
+	float					m_CamSpeed;
 
-	qObj*			m_Owner;
+	qObj*					m_Owner;	
 
-	CAM_EFFECT		m_Effect;
-	float			m_Duration;
-	float			m_Time;
-	float			m_Alpha;
+	list<CAM_EFFECT_INFO>	m_EffectList;
 
-	qTexture*		m_FadeTex;
+	qTexture*				m_FadeTex;
+	qTexture*				m_RedTex;
 
 };
 

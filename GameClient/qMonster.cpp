@@ -18,7 +18,7 @@ qMonster::qMonster()
 	m_Rigidbody->SetMaxWalkSpeed(400.f);
 	m_Rigidbody->SetFriction(2000.f);
 
-	m_Img = qAssetMgr::GetInst()->LoadTexture(L"texture\\Fighter.bmp", L"texture\\Fighter.bmp");
+	m_Img = qAssetMgr::GetInst()->LoadTexture(L"texture\\Character.png", L"texture\\smokeparticle.png");
 }
 
 qMonster::~qMonster()
@@ -34,6 +34,8 @@ void qMonster::render()
 	Vec2 vPos = GetRenderPos();
 	Vec2 vScale = GetScale();
 
+
+	// ±ôºý±ôºý
 	static float alpha = 0;
 	static float dir = 1;
 
@@ -53,7 +55,7 @@ void qMonster::render()
 
 	bf.BlendOp = AC_SRC_OVER;
 	bf.BlendFlags = 0;
-	bf.SourceConstantAlpha = (int)alpha;
+	bf.SourceConstantAlpha = 255;
 	bf.AlphaFormat = AC_SRC_ALPHA;
 
 	AlphaBlend(DC

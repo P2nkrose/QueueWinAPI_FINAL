@@ -17,13 +17,31 @@ qTexture::~qTexture()
 
 int qTexture::Load(const wstring& _strFilePath)
 {
-    m_hBit = (HBITMAP)LoadImage(nullptr, _strFilePath.c_str()
-        , IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
-    
-    if (nullptr == m_hBit)
+
+    wchar_t szExt[50] = {};
+    _wsplitpath_s(_strFilePath.c_str(), nullptr, 0, nullptr, 0, nullptr, 0, szExt, 50);
+
+    if (!wcscmp(szExt, L".bmp") || !wcscmp(szExt, L".BMP"))
     {
-        MessageBox(nullptr, L"비트맵 로딩 실패", L"Asset 로딩 실패", MB_OK);
-        return E_FAIL;
+        m_hBit = (HBITMAP)LoadImage(nullptr, _strFilePath.c_str()
+            , IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
+
+        if (nullptr == m_hBit)
+        {
+            MessageBox(nullptr, L"비트맵 로딩 실패", L"Asset 로딩 실패", MB_OK);
+            return E_FAIL;
+        }
+    }
+    else if (!wcscmp(szExt, L".png") || !wcscmp(szExt, L".PNG"))
+    {
+        ULONG_PTR gdiplusToken = 0;
+        GdiplusStartupInput gdiplusinput = {};
+        GdiplusStartup(&gdiplusToken, &gdiplusinput, nullptr);
+
+        Image* pImg = Image::FromFile(_strFilePath.c_str(), 0);
+        Bitmap* pBitmap = (Bitmap*)pImg->Clone();
+        Gdiplus::Status status = pBitmap->GetHBITMAP(Color(0, 0, 0, 0), &m_hBit);
+        assert(status == Gdiplus::Status::Ok);
     }
 
     // 로드된 비트맵의 정보를 확인한다.

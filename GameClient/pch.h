@@ -27,3 +27,9 @@ using std::wstring;
 #include "qDbgRender.h"
 
 #include "qSelectObj.h"
+
+// png 로딩 관련 추가
+#include <objidl.h>
+#include <gdiplus.h>
+#pragma comment(lib, "GdiPlus.lib")
+using namespace Gdiplus;
