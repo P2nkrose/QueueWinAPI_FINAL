@@ -66,6 +66,8 @@ void qLevelMgr::init()
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_MISSILE, LAYER_TYPE::MONSTER);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
 	
+	// 레벨 시작 (플레이)
+	m_pCurrentLevel->begin();
 }
 
 void qLevelMgr::progress()

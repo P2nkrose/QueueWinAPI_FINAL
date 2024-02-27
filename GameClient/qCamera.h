@@ -1,6 +1,14 @@
 #pragma once
 
+enum class CAM_EFFECT
+{
+	FADE_IN,
+	FADE_OUT,
+	NONE,
+};
+
 class qObj;
+class qTexture;
 
 class qCamera
 {
@@ -9,28 +17,33 @@ class qCamera
 public:
 	void init();
 	void tick();
+	void render();
 
 public:
-	Vec2 GetRenderPos(Vec2 _RealPos)
-	{
-		return _RealPos - m_Diff;
-	}
-
-	Vec2 GetRealPos(Vec2 _RenderPos)
-	{
-		return _RenderPos + m_Diff;
-	}
+	Vec2 GetRenderPos(Vec2 _RealPos) { return _RealPos - m_Diff; }
+	Vec2 GetRealPos(Vec2 _RenderPos) { return _RenderPos + m_Diff; }
+	void SetCameraEffect(CAM_EFFECT _Effect, float _Duration);
 
 	void SetOwner(qObj* _Owner) { m_Owner = _Owner; }
 
 
 private:
-	Vec2		m_LookAt;
-	Vec2		m_Diff;
+	void Move();
+	void CameraEffect();
 
-	float		m_CamSpeed;
+private:
+	Vec2			m_LookAt;
+	Vec2			m_Diff;
+	float			m_CamSpeed;
 
-	qObj*		m_Owner;
+	qObj*			m_Owner;
+
+	CAM_EFFECT		m_Effect;
+	float			m_Duration;
+	float			m_Time;
+	float			m_Alpha;
+
+	qTexture*		m_FadeTex;
 
 };
 

@@ -11,6 +11,7 @@ public:
 	void init();
 
 	qTexture* LoadTexture(const wstring& _Key, const wstring& _strRelativePath);
+	qTexture* CreateTexture(const wstring& _Key, UINT _Width, UINT _Height);
 	qTexture* FindTexture(const wstring& _Key);
 
 private:

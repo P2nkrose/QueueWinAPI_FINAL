@@ -9,6 +9,7 @@ public:
 	qLevel_Stage01();
 	~qLevel_Stage01();
 
+	virtual void begin() override;
 	virtual void tick() override;
 };
 

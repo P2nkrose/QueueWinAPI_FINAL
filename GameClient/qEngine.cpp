@@ -11,12 +11,12 @@
 #include "qTaskMgr.h"
 #include "qCamera.h"
 
+#include "qTexture.h"
+
 qEngine::qEngine()
 	: m_hMainWnd(nullptr)
 	, m_Resolution{}
 	, m_hDC(nullptr)
-	, m_hSubDC(nullptr)
-	, m_hSubBitmap(nullptr)
 	, m_arrPen{}
 	, m_arrBrush{}
 {
@@ -96,16 +96,16 @@ void qEngine::progress()
 	// =========
 	// 화면 Clear
 	{
-		USE_BRUSH(m_hSubDC, BRUSH_TYPE::BRUSH_GRAY);
-		Rectangle(m_hSubDC, -1, -1, m_Resolution.x + 1, m_Resolution.y + 1);
+		USE_BRUSH(m_SubTex->GetDC(), BRUSH_TYPE::BRUSH_GRAY);
+		Rectangle(m_SubTex->GetDC(), -1, -1, m_Resolution.x + 1, m_Resolution.y + 1);
 	}
 
 	qLevelMgr::GetInst()->render();
-	//qPathMgr::GetInst()->render();
+	qCamera::GetInst()->render();
 	qDbgRender::GetInst()->render();
 
 	// Sub -> Main
-	BitBlt(m_hDC, 0, 0, m_Resolution.x, m_Resolution.y, m_hSubDC, 0, 0, SRCCOPY);
+	BitBlt(m_hDC, 0, 0, m_Resolution.x, m_Resolution.y, m_SubTex->GetDC(), 0, 0, SRCCOPY);
 
 	// =========
 	// Task 처리
@@ -125,15 +125,8 @@ void qEngine::CreateDefaultGDIObject()
 	// 메인 윈도우를 타겟으로 지정하는 DC 생성
 	m_hDC = ::GetDC(m_hMainWnd);
 
-	// Sub DC 생성
-	m_hSubDC = CreateCompatibleDC(m_hDC);
-
-	// Sub Bitmap 생성
-	m_hSubBitmap = CreateCompatibleBitmap(m_hDC, m_Resolution.x, m_Resolution.y);
-
-	// SubDC 가 SubBitmap 을 지정하게 함
-	HBITMAP hPrevBitmap = (HBITMAP)SelectObject(m_hSubDC, m_hSubBitmap);
-	DeleteObject(hPrevBitmap);
+	// 메인 비트맵(윈도우) 에 출력하기 전에 먼저 그림들이 그려지는 텍스쳐
+	m_SubTex = qAssetMgr::GetInst()->CreateTexture(L"SubTexture", (UINT)m_Resolution.x, (UINT)m_Resolution.y);
 
 
 
@@ -151,4 +144,9 @@ void qEngine::CreateDefaultGDIObject()
 	m_arrBrush[(UINT)BRUSH_TYPE::BRUSH_BLACK] = (HBRUSH)GetStockObject(BLACK_BRUSH);
 
 
+}
+
+HDC qEngine::GetSubDC()
+{
+	return m_SubTex->GetDC();
 }

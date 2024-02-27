@@ -54,6 +54,30 @@ qTexture* qAssetMgr::LoadTexture(const wstring & _Key, const wstring & _strRelat
 
 }
 
+qTexture* qAssetMgr::CreateTexture(const wstring& _Key, UINT _Width, UINT _Height)
+{
+    // 이미 해당키로 등록된 텍스쳐가 있으면
+    assert(!FindTexture(_Key));
+
+    // 텍스쳐 객체 생성
+    qTexture* pTex = new qTexture;
+    if (FAILED(pTex->Create(_Width, _Height)))
+    {
+        MessageBox(nullptr, _Key.c_str(), L"텍스쳐 생성 실패", MB_OK);
+        delete pTex;
+        return nullptr;
+    }
+
+    // map 에 로딩된 텍스쳐를 등록
+    m_mapTex.insert(make_pair(_Key, pTex));
+
+    // 텍스쳐 에셋에 본인의 키값과 상대경로를 알려줌
+    pTex->m_Key = _Key;
+
+    return pTex;
+
+}
+
 qTexture* qAssetMgr::FindTexture(const wstring& _Key)
 {
     map<wstring, qTexture*>::iterator iter = m_mapTex.find(_Key);

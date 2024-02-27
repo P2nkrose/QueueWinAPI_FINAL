@@ -11,6 +11,8 @@ qTexture::qTexture()
 
 qTexture::~qTexture()
 {
+    DeleteDC(m_hDC);
+    DeleteObject(m_hBit);
 }
 
 int qTexture::Load(const wstring& _strFilePath)
@@ -30,6 +32,24 @@ int qTexture::Load(const wstring& _strFilePath)
     // DC 를 생성시켜서 로드된 비트맵이랑 연결한다.
     m_hDC = CreateCompatibleDC(qEngine::GetInst()->GetMainDC());
     DeleteObject(SelectObject(m_hDC, m_hBit));
+
+    return S_OK;
+}
+
+int qTexture::Create(UINT _Width, UINT _Height)
+{
+    // DC 생성
+    m_hDC = CreateCompatibleDC(qEngine::GetInst()->GetMainDC());
+
+    // Bitmap 생성
+    m_hBit = CreateCompatibleBitmap(qEngine::GetInst()->GetMainDC(), _Width, _Height);
+
+    // SubDC 가 SubBitmap 을 지정하게 함
+    HBITMAP hPrevBitmap = (HBITMAP)SelectObject(m_hDC, m_hBit);
+    DeleteObject(hPrevBitmap);
+
+    // 로드된 비트맵의 정보를 확인한다.
+    GetObject(m_hBit, sizeof(BITMAP), &m_Info);
 
     return S_OK;
 }

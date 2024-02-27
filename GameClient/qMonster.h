@@ -1,6 +1,7 @@
 #pragma once
 #include "qObj.h"
 
+class qTexture;
 
 class qMonster : public qObj
 {
@@ -22,6 +23,8 @@ public:
 private:
 
 	int			m_HP;
+
+	qTexture*	m_Img;
 
 	qCollider*	m_Collider;
 	qRigidbody* m_Rigidbody;

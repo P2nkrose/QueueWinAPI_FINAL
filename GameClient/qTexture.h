@@ -11,6 +11,8 @@ public:
 
 public:
 	virtual int Load(const wstring& _strFilePath) override;
+	int Create(UINT _Width, UINT _Height);
+
 
 public:
 	HDC GetDC() { return m_hDC; }

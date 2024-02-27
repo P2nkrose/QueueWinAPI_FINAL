@@ -12,6 +12,11 @@ qLevel_Stage01::~qLevel_Stage01()
 {
 }
 
+void qLevel_Stage01::begin()
+{
+	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 2.f);
+}
+
 void qLevel_Stage01::tick()
 {
 	qLevel::tick();
