@@ -12,7 +12,7 @@ private:
 	vector<qCollider*>	m_arrCollider[(UINT)LAYER_TYPE::END];
 
 public:
-
+	
 	// 시점 함수
 	virtual void begin();		// 레벨이 시작될 때
 	virtual void tick();		// 매 프레임마다 호출

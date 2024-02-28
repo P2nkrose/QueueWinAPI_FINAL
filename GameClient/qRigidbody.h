@@ -20,6 +20,7 @@ public:
 	CLONE(qRigidbody);
 
 	qRigidbody();
+	qRigidbody(const qRigidbody& _Other);
 	~qRigidbody();
 
 	virtual void finaltick() override;

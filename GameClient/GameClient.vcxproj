@@ -172,6 +172,7 @@
     <ClInclude Include="qRigidbody.h" />
     <ClInclude Include="qSelectObj.h" />
     <ClInclude Include="qSound.h" />
+    <ClInclude Include="qState.h" />
     <ClInclude Include="qTaskMgr.h" />
     <ClInclude Include="qTexture.h" />
     <ClInclude Include="qTimeMgr.h" />
@@ -213,6 +214,7 @@
     <ClCompile Include="qRigidbody.cpp" />
     <ClCompile Include="qSelectObj.cpp" />
     <ClCompile Include="qSound.cpp" />
+    <ClCompile Include="qState.cpp" />
     <ClCompile Include="qTaskMgr.cpp" />
     <ClCompile Include="qTexture.cpp" />
     <ClCompile Include="qTimeMgr.cpp" />

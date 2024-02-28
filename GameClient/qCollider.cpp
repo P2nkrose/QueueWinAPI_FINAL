@@ -6,8 +6,18 @@
 
 qCollider::qCollider()
 	: m_Active(true)
-	, m_CollisionCount(0)
+	, m_OverlapCount(0)
 	, m_bRegister(true)
+{
+}
+
+qCollider::qCollider(const qCollider& _Other)
+	: qComponent(_Other)
+	, m_OffsetPos(_Other.m_OffsetPos)
+	, m_Scale(_Other.m_Scale)
+	, m_OverlapCount(0)
+	, m_Active(_Other.m_Active)
+	, m_bRegister(_Other.m_bRegister)
 {
 }
 
@@ -39,7 +49,7 @@ void qCollider::finaltick()
 		return;
 	}
 
-	if (0 != m_CollisionCount)
+	if (0 != m_OverlapCount)
 	{
 		DrawDebugRect(PEN_TYPE::PEN_RED, m_FinalPos, m_Scale, 0.f);
 	}
@@ -53,7 +63,7 @@ void qCollider::finaltick()
 
 void qCollider::BeginOverlap(qCollider* _OtherCollider)
 {
-	m_CollisionCount++;
+	m_OverlapCount++;
 
 	GetOwner()->BeginOverlap(this, _OtherCollider->GetOwner(), _OtherCollider);
 }
@@ -65,7 +75,7 @@ void qCollider::OnOverlap(qCollider* _OtherCollider)
 
 void qCollider::EndOverlap(qCollider* _OtherCollider)
 {
-	m_CollisionCount--;
+	m_OverlapCount--;
 
 	GetOwner()->EndOverlap(this, _OtherCollider->GetOwner(), _OtherCollider);
 }

@@ -11,6 +11,7 @@ public:
 
 public:
 	qAnimator();
+	qAnimator(const qAnimator& _Other);
 	~qAnimator();
 
 

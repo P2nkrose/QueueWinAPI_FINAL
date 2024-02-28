@@ -5,7 +5,29 @@
 
 qAnimator::qAnimator()
 	: m_CurAnim(nullptr)
+	, m_Repeat(false)
 {
+}
+
+qAnimator::qAnimator(const qAnimator& _Other)
+	: qComponent(_Other)
+	, m_CurAnim(nullptr)
+	, m_Repeat(_Other.m_Repeat)
+{
+	// 원본 Animator 가 보유한 Animation 들을 복제해서 가져온다.
+	for (const auto& pair : _Other.m_mapAnim)
+	{
+		qAnimation* pCloneAnim = pair.second->Clone();
+
+		pCloneAnim->m_Animator = this;
+		m_mapAnim.insert(make_pair(pair.first, pCloneAnim));
+	}
+
+	// 현재 재생중인 애니메이션 설정
+	if (nullptr != _Other.m_CurAnim)
+	{
+		m_CurAnim = FindAnimation(_Other.m_CurAnim->GetName());
+	}
 }
 
 qAnimator::~qAnimator()

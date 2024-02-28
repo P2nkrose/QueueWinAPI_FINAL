@@ -119,6 +119,9 @@
     <Filter Include="03. Game\09. Camera">
       <UniqueIdentifier>{1a156249-b193-4fb8-a7a4-831c9ab6b4d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\08. Module\State">
+      <UniqueIdentifier>{e26ffa26-cbfe-45d6-804a-d3c8014b1cdd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -238,6 +241,9 @@
     <ClInclude Include="qCamera.h">
       <Filter>03. Game\09. Camera</Filter>
     </ClInclude>
+    <ClInclude Include="qState.h">
+      <Filter>03. Game\08. Module\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -351,6 +357,9 @@
     </ClCompile>
     <ClCompile Include="qCamera.cpp">
       <Filter>03. Game\09. Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="qState.cpp">
+      <Filter>03. Game\08. Module\State</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -3,5 +3,6 @@
 class qFSM :
     public qComponent
 {
+
 };
 

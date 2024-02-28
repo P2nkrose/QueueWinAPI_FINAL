@@ -6,6 +6,11 @@ qComponent::qComponent()
 {
 }
 
+qComponent::qComponent(const qComponent& _Other)
+	: m_Owner(nullptr)
+{
+}
+
 qComponent::~qComponent()
 {
 }

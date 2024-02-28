@@ -107,6 +107,8 @@ qPlayer::qPlayer(const qPlayer& _Other)
 	m_BodyCol = GetComponent<qCollider>();
 	m_Animator = GetComponent<qAnimator>();
 	m_RigidBody = GetComponent<qRigidbody>();
+
+	m_RigidBody->SetGroundDelegate(this, (DELEGATE)&qPlayer::RestoreJumpCount);
 }
 
 qPlayer::~qPlayer()
@@ -116,6 +118,12 @@ qPlayer::~qPlayer()
 
 void qPlayer::begin()
 {
+	// CallBack ¼³Á¤
+	m_RigidBody->SetGroundFunc(&BeGround);
+	m_RigidBody->SetAirFunc(&BeAir);
+
+	// Delegate
+	//m_RigidBody->SetGroundDelegate(this, (DELEGATE)&qPlayer::RestoreJumpCount);
 }
 
 void qPlayer::tick()
@@ -203,7 +211,6 @@ void qPlayer::tick()
 		}
 
 	}
-
 
 	SetPos(vPos);
 }

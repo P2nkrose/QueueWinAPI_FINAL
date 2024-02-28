@@ -19,6 +19,7 @@ public:
 
 public:
 	qComponent();
+	qComponent(const qComponent& _Other);
 	~qComponent();
 
 	friend class qObj;
