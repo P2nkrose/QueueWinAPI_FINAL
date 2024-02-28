@@ -122,6 +122,9 @@
     <Filter Include="03. Game\08. Module\State">
       <UniqueIdentifier>{e26ffa26-cbfe-45d6-804a-d3c8014b1cdd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\08. Module\State\MonsterState">
+      <UniqueIdentifier>{94db36c4-f659-4cd4-b7bf-8c0caaaa14a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -244,6 +247,18 @@
     <ClInclude Include="qState.h">
       <Filter>03. Game\08. Module\State</Filter>
     </ClInclude>
+    <ClInclude Include="qIdleState.h">
+      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+    </ClInclude>
+    <ClInclude Include="qAttackState.h">
+      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+    </ClInclude>
+    <ClInclude Include="qDeadState.h">
+      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+    </ClInclude>
+    <ClInclude Include="qTraceState.h">
+      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -360,6 +375,18 @@
     </ClCompile>
     <ClCompile Include="qState.cpp">
       <Filter>03. Game\08. Module\State</Filter>
+    </ClCompile>
+    <ClCompile Include="qAttackState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+    </ClCompile>
+    <ClCompile Include="qIdleState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+    </ClCompile>
+    <ClCompile Include="qDeadState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+    </ClCompile>
+    <ClCompile Include="qTraceState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

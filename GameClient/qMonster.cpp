@@ -5,9 +5,13 @@
 #include "qMissile.h"
 
 #include "qRigidbody.h"
+#include "qFSM.h"
+#include "qIdleState.h"
+#include "qTraceState.h"
 
 qMonster::qMonster()
 	: m_HP(5)
+	, m_DetectRange(500)
 {
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 	m_Collider->SetScale(Vec2(120.f, 120.f));
@@ -19,10 +23,20 @@ qMonster::qMonster()
 	m_Rigidbody->SetFriction(2000.f);
 
 	m_Img = qAssetMgr::GetInst()->LoadTexture(L"texture\\Character.png", L"texture\\smokeparticle.png");
+
+	m_FSM = (qFSM*)AddComponent(new qFSM);
+	m_FSM->AddState(L"Idle", new qIdleState);
+	m_FSM->AddState(L"Trace", new qTraceState);
 }
 
 qMonster::~qMonster()
 {
+}
+
+void qMonster::begin()
+{
+	//m_FSM->SetBlackboardData(L"DetectRange", &m_DetectRange);
+	m_FSM->ChangeState(L"Idle");
 }
 
 void qMonster::tick()
@@ -81,3 +95,5 @@ void qMonster::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider*
 		}
 	}
 }
+
+
