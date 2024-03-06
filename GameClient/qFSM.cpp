@@ -44,7 +44,7 @@ qState* qFSM::FindState(const wstring& _strStateName)
 
 void qFSM::ChangeState(const wstring& _strNextStateName)
 {
-	if (!m_CurState && (_strNextStateName == m_CurState->GetName()))
+	if (m_CurState && (_strNextStateName == m_CurState->GetName()))
 		return;
 
 	if (nullptr != m_CurState)
@@ -55,4 +55,10 @@ void qFSM::ChangeState(const wstring& _strNextStateName)
 	assert(m_CurState);
 
 	m_CurState->Enter();
+}
+
+void qFSM::SetBlackboardData(const wstring& _DataKey, DATA_TYPE _Type, void* _pData)
+{
+	tBlackboardData data = { _Type, _pData };
+	m_mapData.insert(make_pair(_DataKey, data));
 }

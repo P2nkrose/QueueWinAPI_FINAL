@@ -22,7 +22,9 @@ public:
 private:
 
 	int			m_HP;
-	int			m_DetectRange;
+	float		m_DetectRange;
+
+	//Vec2		m_Data;
 
 	qTexture*	m_Img;
 

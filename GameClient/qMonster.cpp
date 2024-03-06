@@ -35,7 +35,10 @@ qMonster::~qMonster()
 
 void qMonster::begin()
 {
-	//m_FSM->SetBlackboardData(L"DetectRange", &m_DetectRange);
+	m_FSM->SetBlackboardData(L"DetectRange", DATA_TYPE::FLOAT, &m_DetectRange);
+	m_FSM->SetBlackboardData(L"Self", DATA_TYPE::OBJECT, this);
+
+
 	m_FSM->ChangeState(L"Idle");
 }
 
