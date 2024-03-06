@@ -45,7 +45,7 @@ void qCamera::tick()
 {
 	// 카메라가 캐릭터 따라다니게 하기
 	m_LookAt.x = m_Owner->GetPos().x;
-	m_LookAt.y = m_Owner->GetPos().y / 1.5f;
+	//m_LookAt.y = m_Owner->GetPos().y / 1.5f;
 
 	// 카메라 이동
 	Move();

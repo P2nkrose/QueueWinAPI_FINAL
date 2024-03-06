@@ -9,9 +9,12 @@
 #include "qIdleState.h"
 #include "qTraceState.h"
 
+#include "qLevelMgr.h"
+
 qMonster::qMonster()
 	: m_HP(5)
-	, m_DetectRange(500)
+	, m_DetectRange(400)
+	, m_Speed(100)
 {
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 	m_Collider->SetScale(Vec2(120.f, 120.f));
@@ -36,8 +39,12 @@ qMonster::~qMonster()
 void qMonster::begin()
 {
 	m_FSM->SetBlackboardData(L"DetectRange", DATA_TYPE::FLOAT, &m_DetectRange);
+	m_FSM->SetBlackboardData(L"Speed", DATA_TYPE::FLOAT, &m_Speed);
 	m_FSM->SetBlackboardData(L"Self", DATA_TYPE::OBJECT, this);
 
+	qObj* pPlayer = qLevelMgr::GetInst()->FindObjectByName(L"Player");
+
+	m_FSM->SetBlackboardData(L"Target", DATA_TYPE::OBJECT, pPlayer);
 
 	m_FSM->ChangeState(L"Idle");
 }

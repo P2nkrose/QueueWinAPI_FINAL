@@ -24,6 +24,11 @@ qLevelMgr::~qLevelMgr()
 }
 
 
+qObj* qLevelMgr::FindObjectByName(const wstring& _StrName)
+{
+	return m_pCurrentLevel->FindObjectByName(_StrName);
+;}
+
 void qLevelMgr::init()
 {
 	// 모든 레벨 생성
@@ -39,9 +44,10 @@ void qLevelMgr::init()
 	pObject->SetScale(100.0f, 100.0f);
 	m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pObject);
 
-	qObj* pPlayerClone = pObject->Clone();
-	pPlayerClone->SetPos(800.f, 400.f);
-	m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pPlayerClone);
+	// 플레이어 클론
+	//qObj* pPlayerClone = pObject->Clone();
+	//pPlayerClone->SetPos(800.f, 400.f);
+	//m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pPlayerClone);
 
 
 	// 레벨에 몬스터 추가하기

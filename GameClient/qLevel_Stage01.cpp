@@ -16,8 +16,8 @@ void qLevel_Stage01::begin()
 {
 	qLevel::begin();
 
-	qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 2.f);
-	qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_OUT, 2.f);
+	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 2.f);
+	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_OUT, 2.f);
 }
 
 void qLevel_Stage01::tick()

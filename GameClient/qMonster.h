@@ -23,6 +23,7 @@ private:
 
 	int			m_HP;
 	float		m_DetectRange;
+	float		m_Speed;
 
 	//Vec2		m_Data;
 
