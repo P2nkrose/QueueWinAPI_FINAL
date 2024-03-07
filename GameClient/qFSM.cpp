@@ -4,11 +4,13 @@
 #include "qState.h"
 
 qFSM::qFSM()
+	: m_CurState(nullptr)
 {
 }
 
 qFSM::~qFSM()
 {
+	Safe_Del_Map(m_mapState);
 }
 
 void qFSM::finaltick()

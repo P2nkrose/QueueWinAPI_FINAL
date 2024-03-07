@@ -44,7 +44,7 @@ private:
 
 	map<wstring, tBlackboardData>			m_mapData;
 	map<wstring, qState*>					m_mapState;
-	qState* m_CurState;
+	qState*									m_CurState;
 };
 
 template<typename T>

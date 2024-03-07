@@ -2,6 +2,7 @@
 #include "qLevel_Editor.h"
 
 #include "qKeyMgr.h"
+#include "qTile.h"
 
 qLevel_Editor::qLevel_Editor()
 {
@@ -28,7 +29,8 @@ void qLevel_Editor::tick()
 
 void qLevel_Editor::Enter()
 {
-
+	qObj* pTile = new qTile;
+	AddObject(LAYER_TYPE::TILE, pTile);
 }
 
 void qLevel_Editor::Exit()
