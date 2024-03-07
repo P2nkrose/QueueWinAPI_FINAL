@@ -4,6 +4,11 @@
 #include "qKeyMgr.h"
 #include "qForce.h"
 
+#include "qCollisionMgr.h"
+#include "qPlayer.h"
+#include "qMonster.h"
+#include "qPlatform.h"
+
 qLevel_Stage01::qLevel_Stage01()
 {
 }
@@ -16,8 +21,9 @@ void qLevel_Stage01::begin()
 {
 	qLevel::begin();
 
-	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 2.f);
-	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_OUT, 2.f);
+
+	qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 2.f);
+	qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_OUT, 2.f);
 }
 
 void qLevel_Stage01::tick()
@@ -34,4 +40,60 @@ void qLevel_Stage01::tick()
 		pForce->SetForce(1000.f, 500.f, 2.f);
 		SpawnObject(this, LAYER_TYPE::FORCE, pForce);
 	}
+
+	if (KEY_TAP(KEY::ENTER))
+	{
+		ChangeLevel(LEVEL_TYPE::EDITOR);
+	}
+}
+
+void qLevel_Stage01::Enter()
+{
+
+
+	// 레벨에 물체 추가하기
+	qObj* pObject = new qPlayer;
+	pObject->SetName(L"Player");
+	pObject->SetPos(640.0f, 384.0f);
+	pObject->SetScale(100.0f, 100.0f);
+	AddObject(LAYER_TYPE::PLAYER, pObject);
+
+	// 플레이어 클론
+	//qObj* pPlayerClone = pObject->Clone();
+	//pPlayerClone->SetPos(800.f, 400.f);
+	//m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pPlayerClone);
+
+
+	// 레벨에 몬스터 추가하기
+	pObject = new qMonster;
+	pObject->SetName(L"Monster");
+	pObject->SetPos(800.0f, 200.0f);
+	pObject->SetScale(100.0f, 100.0f);
+	AddObject(LAYER_TYPE::MONSTER, pObject);
+
+	// 한마리 더!
+	pObject = new qMonster;
+	pObject->SetName(L"Monster");
+	pObject->SetPos(100.0f, 100.0f);
+	pObject->SetScale(100.0f, 100.0f);
+	AddObject(LAYER_TYPE::MONSTER, pObject);
+
+	// 플랫폼 생성
+	pObject = new qPlatform;
+	pObject->SetName(L"Platform");
+	pObject->SetPos(Vec2(640.f, 700.f));
+	AddObject(LAYER_TYPE::PLATFORM, pObject);
+
+
+	// 레벨 충돌 설정하기
+	qCollisionMgr::GetInst()->CollisionCheckClear();
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::MONSTER);
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_MISSILE, LAYER_TYPE::MONSTER);
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
+}
+
+void qLevel_Stage01::Exit()
+{
+	// 레벨에 있는 모든 오브젝트 삭제한다.
+	DeleteAllObjects();
 }

@@ -68,3 +68,4 @@ void LoadWString(wstring& _str, FILE* _File);
 // ==============
 
 void SpawnObject(qLevel* _Level, LAYER_TYPE _type, qObj* _pSpawned);
+void ChangeLevel(LEVEL_TYPE _NextLevelType);

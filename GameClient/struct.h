@@ -165,9 +165,9 @@ struct tDbgLog
 struct tTask
 {
 	TASK_TYPE	Type;
-	DWORD_PTR	Param1;
-	DWORD_PTR	Param2;
-	DWORD_PTR	Param3;
+	DWORD_PTR	Param1;		// 레벨종류
+	DWORD_PTR	Param2;		// 레이어 타입
+	DWORD_PTR	Param3;		// 스폰할 오브젝트
 
 };
 

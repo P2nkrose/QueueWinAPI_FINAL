@@ -125,3 +125,25 @@ qObj* qLevel::FindObjectByName(LAYER_TYPE _Type, const wstring& _Name)
 	return nullptr;
 }
 
+void qLevel::DeleteAllObjects()
+{
+	for (UINT i = 0; i < (UINT)LAYER_TYPE::END; ++i)
+	{
+		DeleteObjects((LAYER_TYPE)i);
+	}
+}
+
+void qLevel::DeleteObjects(LAYER_TYPE _LayerType)
+{
+	vector<qObj*>& vecObjects = m_arrObj[(UINT)_LayerType];
+
+	if (vecObjects.empty())
+		return;
+
+	for (size_t i = 0; i < vecObjects.size(); ++i)
+	{
+		delete vecObjects[i];
+	}
+
+	vecObjects.clear();
+}

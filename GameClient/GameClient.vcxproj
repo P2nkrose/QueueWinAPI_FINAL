@@ -72,11 +72,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)OutputFile\bin\</OutDir>
-    <TargetName>Kirby_d</TargetName>
+    <TargetName>Maple_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)OutputFile\bin\</OutDir>
-    <TargetName>Kirby</TargetName>
+    <TargetName>Maple</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -165,7 +165,9 @@
     <ClInclude Include="qKeyMgr.h" />
     <ClInclude Include="qLevel.h" />
     <ClInclude Include="qLevelMgr.h" />
+    <ClInclude Include="qLevel_Editor.h" />
     <ClInclude Include="qLevel_Stage01.h" />
+    <ClInclude Include="qLevel_Stage02.h" />
     <ClInclude Include="qMissile.h" />
     <ClInclude Include="qMonster.h" />
     <ClInclude Include="qObj.h" />
@@ -178,6 +180,7 @@
     <ClInclude Include="qState.h" />
     <ClInclude Include="qTaskMgr.h" />
     <ClInclude Include="qTexture.h" />
+    <ClInclude Include="qTile.h" />
     <ClInclude Include="qTimeMgr.h" />
     <ClInclude Include="qTraceState.h" />
     <ClInclude Include="Resource.h" />
@@ -211,7 +214,9 @@
     <ClCompile Include="qKeyMgr.cpp" />
     <ClCompile Include="qLevel.cpp" />
     <ClCompile Include="qLevelMgr.cpp" />
+    <ClCompile Include="qLevel_Editor.cpp" />
     <ClCompile Include="qLevel_Stage01.cpp" />
+    <ClCompile Include="qLevel_Stage02.cpp" />
     <ClCompile Include="qMissile.cpp" />
     <ClCompile Include="qMonster.cpp" />
     <ClCompile Include="qObj.cpp" />
@@ -224,6 +229,7 @@
     <ClCompile Include="qState.cpp" />
     <ClCompile Include="qTaskMgr.cpp" />
     <ClCompile Include="qTexture.cpp" />
+    <ClCompile Include="qTile.cpp" />
     <ClCompile Include="qTimeMgr.cpp" />
     <ClCompile Include="qTraceState.cpp" />
   </ItemGroup>

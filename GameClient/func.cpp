@@ -113,3 +113,12 @@ void SpawnObject(qLevel* _Level, LAYER_TYPE _type, qObj* _pSpawned)
 
 	qTaskMgr::GetInst()->AddTask(task);
 }
+
+void ChangeLevel(LEVEL_TYPE _NextLevelType)
+{
+	tTask task = {};
+	task.Type = TASK_TYPE::CHANGE_LEVEL;
+	task.Param1 = (DWORD_PTR)_NextLevelType;
+
+	qTaskMgr::GetInst()->AddTask(task);
+}

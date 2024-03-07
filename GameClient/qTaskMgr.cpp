@@ -33,6 +33,10 @@ void qTaskMgr::ClearGC()
 
 void qTaskMgr::ExcuteTask()
 {
+
+	static bool bLevelChanged = false;
+	bLevelChanged = false;
+
 	for (size_t i = 0; i < m_vecTask.size(); ++i)
 	{
 		switch (m_vecTask[i].Type)
@@ -68,6 +72,13 @@ void qTaskMgr::ExcuteTask()
 
 		break;
 		case TASK_TYPE::CHANGE_LEVEL:
+		{
+			assert(!bLevelChanged);
+			bLevelChanged = true;
+
+			LEVEL_TYPE NextType = (LEVEL_TYPE)m_vecTask[i].Param1;
+			qLevelMgr::GetInst()->ChangeLevel(NextType);
+		}
 			break;
 		}
 	}

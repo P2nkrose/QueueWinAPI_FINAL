@@ -41,9 +41,6 @@
     <Filter Include="03. Game\04. Level\02. Editor">
       <UniqueIdentifier>{b2057e5c-14ef-4d07-95a6-acea35de00fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\04. Level\03. Stage01">
-      <UniqueIdentifier>{7a9de9f3-26f3-404c-9a8f-f6efc8f73dff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\Missile">
       <UniqueIdentifier>{90a2e921-b1cb-4cdf-80f2-a23562480524}</UniqueIdentifier>
     </Filter>
@@ -125,6 +122,9 @@
     <Filter Include="03. Game\08. Module\State\MonsterState">
       <UniqueIdentifier>{94db36c4-f659-4cd4-b7bf-8c0caaaa14a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\04. Level\03. Stage">
+      <UniqueIdentifier>{7a9de9f3-26f3-404c-9a8f-f6efc8f73dff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -173,7 +173,7 @@
       <Filter>03. Game\03. Manager\01. TimeMgr</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_Stage01.h">
-      <Filter>03. Game\04. Level\03. Stage01</Filter>
+      <Filter>03. Game\04. Level\03. Stage</Filter>
     </ClInclude>
     <ClInclude Include="qPlayer.h">
       <Filter>03. Game\05. Object\Player</Filter>
@@ -259,6 +259,15 @@
     <ClInclude Include="qTraceState.h">
       <Filter>03. Game\08. Module\State\MonsterState</Filter>
     </ClInclude>
+    <ClInclude Include="qLevel_Stage02.h">
+      <Filter>03. Game\04. Level\03. Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="qLevel_Editor.h">
+      <Filter>03. Game\04. Level\02. Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="qTile.h">
+      <Filter>03. Game\05. Object\Tile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -302,7 +311,7 @@
       <Filter>03. Game\03. Manager\01. TimeMgr</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_Stage01.cpp">
-      <Filter>03. Game\04. Level\03. Stage01</Filter>
+      <Filter>03. Game\04. Level\03. Stage</Filter>
     </ClCompile>
     <ClCompile Include="qPlayer.cpp">
       <Filter>03. Game\05. Object\Player</Filter>
@@ -387,6 +396,15 @@
     </ClCompile>
     <ClCompile Include="qTraceState.cpp">
       <Filter>03. Game\08. Module\State\MonsterState</Filter>
+    </ClCompile>
+    <ClCompile Include="qLevel_Stage02.cpp">
+      <Filter>03. Game\04. Level\03. Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="qLevel_Editor.cpp">
+      <Filter>03. Game\04. Level\02. Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="qTile.cpp">
+      <Filter>03. Game\05. Object\Tile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

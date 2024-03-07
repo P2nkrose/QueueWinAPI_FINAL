@@ -5,6 +5,8 @@
 
 #include "qLevel.h"
 #include "qLevel_Stage01.h"
+#include "qLevel_Stage02.h"
+#include "qLevel_Editor.h"
 
 #include "qPlayer.h"
 #include "qMonster.h"
@@ -24,6 +26,7 @@ qLevelMgr::~qLevelMgr()
 }
 
 
+
 qObj* qLevelMgr::FindObjectByName(const wstring& _StrName)
 {
 	return m_pCurrentLevel->FindObjectByName(_StrName);
@@ -33,51 +36,10 @@ void qLevelMgr::init()
 {
 	// 모든 레벨 생성
 	m_arrLevel[(UINT)LEVEL_TYPE::STAGE_01] = new qLevel_Stage01;
+	m_arrLevel[(UINT)LEVEL_TYPE::EDITOR] = new qLevel_Editor;
 
-	// 현재 레벨 지정
-	m_pCurrentLevel = m_arrLevel[(UINT)LEVEL_TYPE::STAGE_01];
-
-	// 레벨에 물체 추가하기
-	qObj* pObject = new qPlayer;
-	pObject->SetName(L"Player");
-	pObject->SetPos(640.0f, 384.0f);
-	pObject->SetScale(100.0f, 100.0f);
-	m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pObject);
-
-	// 플레이어 클론
-	//qObj* pPlayerClone = pObject->Clone();
-	//pPlayerClone->SetPos(800.f, 400.f);
-	//m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pPlayerClone);
-
-
-	// 레벨에 몬스터 추가하기
-	pObject = new qMonster;
-	pObject->SetName(L"Monster");
-	pObject->SetPos(800.0f, 200.0f);
-	pObject->SetScale(100.0f, 100.0f);
-	m_pCurrentLevel->AddObject(LAYER_TYPE::MONSTER, pObject);
-	
-	// 한마리 더!
-	pObject = new qMonster;
-	pObject->SetName(L"Monster");
-	pObject->SetPos(100.0f, 100.0f);
-	pObject->SetScale(100.0f, 100.0f);
-	m_pCurrentLevel->AddObject(LAYER_TYPE::MONSTER, pObject);
-
-	// 플랫폼 생성
-	pObject = new qPlatform;
-	pObject->SetName(L"Platform");
-	pObject->SetPos(Vec2(640.f, 700.f));
-	m_pCurrentLevel->AddObject(LAYER_TYPE::PLATFORM, pObject);
-
-
-	// 레벨 충돌 설정하기
-	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::MONSTER);
-	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_MISSILE, LAYER_TYPE::MONSTER);
-	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
-	
-	// 레벨 시작 (플레이)
-	m_pCurrentLevel->begin();
+	// 처음 시작할 레벨
+	::ChangeLevel(LEVEL_TYPE::EDITOR);
 }
 
 void qLevelMgr::progress()
@@ -92,5 +54,30 @@ void qLevelMgr::progress()
 
 void qLevelMgr::render()
 {
+	if (nullptr == m_pCurrentLevel)
+		return;
+
 	m_pCurrentLevel->render();
+}
+
+
+void qLevelMgr::ChangeLevel(LEVEL_TYPE _NextLevelType)
+{
+	if (m_arrLevel[(UINT)_NextLevelType] == m_pCurrentLevel)
+	{
+		LOG(LOG_TYPE::DBG_ERROR, L"현재 레벨과 변경하려는 레벨이 동일합니다.");
+		return;
+	}
+
+	// 기존 레벨에서 Exit 한다.
+	if (m_pCurrentLevel)
+		m_pCurrentLevel->Exit();
+
+	// 새로운 레벨로 포인터의 주소값을 교체한다.
+	m_pCurrentLevel = m_arrLevel[(UINT)_NextLevelType];
+	assert(m_pCurrentLevel);
+
+	// 변경된 새로운 레벨로 Enter 한다.
+	m_pCurrentLevel->Enter();
+	m_pCurrentLevel->begin();
 }
