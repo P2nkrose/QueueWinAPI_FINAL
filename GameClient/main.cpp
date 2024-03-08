@@ -43,7 +43,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // 반환값은 윈도우 핸들 (ID) 값,
     // 커널오브젝트 : OS 가 관리하는 오브젝트, 직접적인 접근이 불가능하고 ID 값을 통해서 제어함
 
-    g_hWnd = CreateWindowW(L"Window Class Key", L"Kirby MouseAttack", WS_OVERLAPPEDWINDOW,
+    g_hWnd = CreateWindowW(L"Window Class Key", L"Maple Story", WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
     if (!g_hWnd)

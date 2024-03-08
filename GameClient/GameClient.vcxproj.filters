@@ -125,6 +125,12 @@
     <Filter Include="03. Game\04. Level\03. Stage">
       <UniqueIdentifier>{7a9de9f3-26f3-404c-9a8f-f6efc8f73dff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\08. Module\State\PlayerState">
+      <UniqueIdentifier>{89fb0671-31f6-4dd1-99c9-265b756dde21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\06. Component\05. TileMap">
+      <UniqueIdentifier>{04b77910-0cfc-4701-94a6-2f5d39296b4b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -268,6 +274,9 @@
     <ClInclude Include="qTile.h">
       <Filter>03. Game\05. Object\Tile</Filter>
     </ClInclude>
+    <ClInclude Include="qPlayerState.h">
+      <Filter>03. Game\08. Module\State\PlayerState</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -405,6 +414,9 @@
     </ClCompile>
     <ClCompile Include="qTile.cpp">
       <Filter>03. Game\05. Object\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="qPlayerState.cpp">
+      <Filter>03. Game\08. Module\State\PlayerState</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

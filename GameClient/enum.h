@@ -34,6 +34,7 @@ enum class LEVEL_TYPE
 	STAGE_02,
 
 	BOSS_01,
+	BOSS_02,
 
 	END,
 };
@@ -42,12 +43,33 @@ enum class LEVEL_TYPE
 enum class PLAYER_STATE
 {
 	IDLE,
-	RUN,
 	MOVE,
-	DASH,
 	ATTACK,
-	HIT,
-	DEAD,
+	DOWN,
+	DOWN_ATTACK,
+	JUMP,
+	ROPE,
+
+	END,
+};
+
+
+enum class PLAYER_SKILL
+{
+	BUFF,		// 트루사이트 (버프기)
+	ATTACK,		// 솔라슬래시 (기본기)
+	MISSILE,	// 루나 디바이드 (유도탄)
+	STRIKE,		// 라우드 러쉬 (벽력일섬)
+	SPECIAL,	// 엘리시온 (크게 한방)
+
+	END,
+};
+
+enum class BOSS_SKILL
+{
+	MISSILE,	// 발사
+	DARK,		// 다크 제네시스
+	FIRE,		// 불새
 
 	END,
 };
