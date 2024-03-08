@@ -277,6 +277,9 @@
     <ClInclude Include="qPlayerState.h">
       <Filter>03. Game\08. Module\State\PlayerState</Filter>
     </ClInclude>
+    <ClInclude Include="qTileMap.h">
+      <Filter>03. Game\06. Component\05. TileMap</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -417,6 +420,9 @@
     </ClCompile>
     <ClCompile Include="qPlayerState.cpp">
       <Filter>03. Game\08. Module\State\PlayerState</Filter>
+    </ClCompile>
+    <ClCompile Include="qTileMap.cpp">
+      <Filter>03. Game\06. Component\05. TileMap</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,8 @@
 #pragma once
 #include "qLevel.h"
+
+class qTile;
+
 class qLevel_Editor : public qLevel
 {
 public:
@@ -13,6 +16,9 @@ private:
 
 	virtual void Enter() override;
 	virtual void Exit() override;
+
+private:
+	qTile*		m_EditTile;
 
 };
 

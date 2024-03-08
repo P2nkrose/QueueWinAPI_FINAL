@@ -1,9 +1,11 @@
 #include "pch.h"
 #include "qTile.h"
 
+#include "qTileMap.h"
+
 qTile::qTile()
 {
-	SetScale(Vec2(TILE_SIZE, TILE_SIZE));
+	m_TileMap = (qTileMap*)AddComponent(new qTileMap);
 }
 
 qTile::~qTile()
@@ -20,12 +22,30 @@ void qTile::tick()
 
 void qTile::render()
 {
-	Vec2 vRenderPos = GetRenderPos();
-	Vec2 vScale = GetScale();
+	m_TileMap->render();
+}
 
-	USE_PEN(DC, PEN_TYPE::PEN_GREEN);
-	USE_BRUSH(DC, BRUSH_TYPE::BRUSH_HOLLOW);
+void qTile::SetRow(UINT _Row)
+{
+	m_TileMap->SetRow(_Row);
+}
 
-	Rectangle(DC, (int)vRenderPos.x, (int)vRenderPos.y
-		, (int)vRenderPos.x + (int)vScale.x, (int)vRenderPos.y + (int)vScale.y);
+void qTile::SetCol(UINT _Col)
+{
+	m_TileMap->SetCol(_Col);
+}
+
+void qTile::SetRowCol(UINT _Row, UINT _Col)
+{
+	m_TileMap->SetRowCol(_Row, _Col);
+}
+
+void qTile::SetAtlasTex(qTexture* _Atlas)
+{
+	m_TileMap->SetAtlasTex(_Atlas);
+}
+
+void qTile::Clicked(Vec2 _vMousePos)
+{
+	m_TileMap->Clicked(_vMousePos);
 }

@@ -182,6 +182,7 @@
     <ClInclude Include="qTaskMgr.h" />
     <ClInclude Include="qTexture.h" />
     <ClInclude Include="qTile.h" />
+    <ClInclude Include="qTileMap.h" />
     <ClInclude Include="qTimeMgr.h" />
     <ClInclude Include="qTraceState.h" />
     <ClInclude Include="Resource.h" />
@@ -232,6 +233,7 @@
     <ClCompile Include="qTaskMgr.cpp" />
     <ClCompile Include="qTexture.cpp" />
     <ClCompile Include="qTile.cpp" />
+    <ClCompile Include="qTileMap.cpp" />
     <ClCompile Include="qTimeMgr.cpp" />
     <ClCompile Include="qTraceState.cpp" />
   </ItemGroup>

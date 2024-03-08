@@ -24,6 +24,8 @@ public:
 	void AddDbgLog(const tDbgLog& _info) { m_LogList.push_back(_info); }
 
 
+	bool IsDbgRender() { return m_bRender; }
+
 public:
 	void tick();
 	void render();
