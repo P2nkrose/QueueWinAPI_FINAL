@@ -37,6 +37,8 @@ void qTileMap::render()
 }
 
 
+
+
 void qTileMap::render_grid()
 {
 	Vec2 vRenderPos = GetOwner()->GetRenderPos();
@@ -162,3 +164,45 @@ void qTileMap::SetAtlasTex(qTexture* _Atlas)
 }
 
 
+void qTileMap::SaveToFile(FILE* _File)
+{
+	fwrite(&m_Row, sizeof(UINT), 1, _File);
+	fwrite(&m_Col, sizeof(UINT), 1, _File);
+	fwrite(&m_TileSize, sizeof(Vec2), 1, _File);
+	fwrite(m_vecTileInfo.data(), sizeof(tTileInfo), m_vecTileInfo.size(), _File);
+
+	bool bAtlasTex = m_AtlasTex;
+	fwrite(&bAtlasTex, sizeof(bool), 1, _File);
+
+	if (bAtlasTex)
+	{
+		wstring strKey = m_AtlasTex->GetKey();
+		wstring strRelativePath = m_AtlasTex->GetRelativePath();
+
+		SaveWString(strKey, _File);
+		SaveWString(strRelativePath, _File);
+	}
+}
+
+void qTileMap::LoadFromFile(FILE* _File)
+{
+	fread(&m_Row, sizeof(UINT), 1, _File);
+	fread(&m_Col, sizeof(UINT), 1, _File);
+	fread(&m_TileSize, sizeof(Vec2), 1, _File);
+	SetRowCol(m_Row, m_Col);
+	fread(m_vecTileInfo.data(), sizeof(tTileInfo), m_vecTileInfo.size(), _File);
+
+	bool bAtlasTex = m_AtlasTex;
+	fread(&bAtlasTex, sizeof(bool), 1, _File);
+
+	if (bAtlasTex)
+	{
+		wstring strKey, strRelativePath;
+
+		LoadWString(strKey, _File);
+		LoadWString(strRelativePath, _File);
+		m_AtlasTex = qAssetMgr::GetInst()->LoadTexture(strKey, strRelativePath);
+
+		SetAtlasTex(m_AtlasTex);
+	}
+}

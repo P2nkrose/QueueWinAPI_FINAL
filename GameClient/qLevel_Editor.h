@@ -2,6 +2,8 @@
 #include "qLevel.h"
 
 class qTile;
+class qPlatform;
+class qCamera;
 
 class qLevel_Editor : public qLevel
 {
@@ -17,8 +19,16 @@ private:
 	virtual void Enter() override;
 	virtual void Exit() override;
 
+
 private:
-	qTile*		m_EditTile;
+	void SaveToFile(const wstring& _strRelativePath);
+
+
+private:
+	qTile*			m_EditTile;
+
+	qPlatform*		m_TestPlatform;
+	tInfo			m_TestInfo;
 
 };
 

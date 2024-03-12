@@ -22,8 +22,8 @@ void qLevel_Stage01::begin()
 	qLevel::begin();
 
 
-	qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 2.f);
-	qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_OUT, 2.f);
+	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 2.f);
+	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_OUT, 2.f);
 }
 
 void qLevel_Stage01::tick()
@@ -84,12 +84,18 @@ void qLevel_Stage01::Enter()
 	pObject->SetPos(Vec2(640.f, 700.f));
 	AddObject(LAYER_TYPE::PLATFORM, pObject);
 
+	// 콜라이더 읽어오기
+	LoadFromFile(L"platform\\platform.plat");
+
 
 	// 레벨 충돌 설정하기
 	qCollisionMgr::GetInst()->CollisionCheckClear();
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::MONSTER);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_MISSILE, LAYER_TYPE::MONSTER);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
+
+
+	
 }
 
 void qLevel_Stage01::Exit()

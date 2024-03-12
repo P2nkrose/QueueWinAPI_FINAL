@@ -23,8 +23,12 @@ public:
 	void SetRowCol(UINT _Row, UINT _Col);
 	void SetAtlasTex(qTexture* _Atlas);
 
-
 	void Clicked(Vec2 _vMousePos);
+
+
+public:
+	//void SaveToFile(const wstring& _RelativePath);
+	//void LoadToFile(const wstring& _RelativePath);
 
 
 private:

@@ -3,16 +3,20 @@
 
 class qObj;
 class qCollider;
+class qPlatform;
 
 class qLevel : public qEntity
 {
-private:
-
-	vector<qObj*>		m_arrObj[(UINT)LAYER_TYPE::END];
-	vector<qCollider*>	m_arrCollider[(UINT)LAYER_TYPE::END];
 
 public:
-	
+	CLONE_DISABLE(qLevel);
+
+
+public:
+	qLevel();
+	~qLevel();
+
+public:
 	// 시점 함수
 	virtual void begin();			// 레벨이 시작될 때
 	virtual void tick();			// 매 프레임마다 호출
@@ -37,13 +41,20 @@ protected:
 	void DeleteAllObjects();
 	void DeleteObjects(LAYER_TYPE _LayerType);
 
-
-public:
-	CLONE_DISABLE(qLevel);
+	void LoadFromFile(const wstring& _strRelativePath);
 
 
-public:
-	qLevel();
-	~qLevel();
+private:
+
+	vector<qObj*>		m_arrObj[(UINT)LAYER_TYPE::END];
+	vector<qCollider*>	m_arrCollider[(UINT)LAYER_TYPE::END];
+
+
+protected:
+	vector<qPlatform*>	m_vecEditPlat;
+	qPlatform*			m_Platform;
+	tInfo				m_Info;
+
+
 };
 
