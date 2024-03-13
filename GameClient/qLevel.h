@@ -5,6 +5,7 @@ class qObj;
 class qCollider;
 class qPlatform;
 
+
 class qLevel : public qEntity
 {
 
@@ -35,6 +36,8 @@ public:
 
 	const vector<qObj*>& GetObjects(LAYER_TYPE _Type) { return m_arrObj[(UINT)_Type]; }
 	const vector<qCollider*>& GetColliders(LAYER_TYPE _Layer) { return m_arrCollider[(UINT)_Layer]; }
+
+
 
 
 protected:

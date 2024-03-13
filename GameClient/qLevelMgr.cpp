@@ -4,9 +4,11 @@
 #include "qCollisionMgr.h"
 
 #include "qLevel.h"
+#include "qLogo.h"
+#include "qStart.h"
+#include "qLevel_Editor.h"
 #include "qLevel_Stage01.h"
 #include "qLevel_Stage02.h"
-#include "qLevel_Editor.h"
 
 #include "qPlayer.h"
 #include "qMonster.h"
@@ -35,11 +37,14 @@ qObj* qLevelMgr::FindObjectByName(const wstring& _StrName)
 void qLevelMgr::init()
 {
 	// 모든 레벨 생성
-	m_arrLevel[(UINT)LEVEL_TYPE::STAGE_01] = new qLevel_Stage01;
+
+	m_arrLevel[(UINT)LEVEL_TYPE::START] = new qStart;
 	m_arrLevel[(UINT)LEVEL_TYPE::EDITOR] = new qLevel_Editor;
+	m_arrLevel[(UINT)LEVEL_TYPE::STAGE_01] = new qLevel_Stage01;
 
 	// 처음 시작할 레벨
-	::ChangeLevel(LEVEL_TYPE::EDITOR);
+	::ChangeLevel(LEVEL_TYPE::START);
+	
 }
 
 void qLevelMgr::progress()

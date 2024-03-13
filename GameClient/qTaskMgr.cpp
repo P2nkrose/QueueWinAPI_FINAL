@@ -4,6 +4,7 @@
 #include "qLevelMgr.h"
 #include "qLevel.h"
 #include "qObj.h"
+#include "qUI.h"
 
 qTaskMgr::qTaskMgr()
 {
@@ -79,7 +80,15 @@ void qTaskMgr::ExcuteTask()
 			LEVEL_TYPE NextType = (LEVEL_TYPE)m_vecTask[i].Param1;
 			qLevelMgr::GetInst()->ChangeLevel(NextType);
 		}
-			break;
+		break;
+
+		case TASK_TYPE::UI_LBTN_DOWN:
+		{
+			qUI* pUI = (qUI*)m_vecTask[i].Param1;
+			bool bLbtnDown = (bool)m_vecTask[i].Param2;
+			pUI->m_MouseLbtnDown = bLbtnDown;
+		}
+		break;
 		}
 	}
 

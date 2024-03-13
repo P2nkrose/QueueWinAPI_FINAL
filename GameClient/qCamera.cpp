@@ -4,12 +4,17 @@
 #include "qEngine.h"
 #include "qKeyMgr.h"
 #include "qTimeMgr.h"
+#include "qPlayer.h"
+#include "qLevelMgr.h"
+#include "qLevel.h"
 
 #include "qObj.h"
+#include "qBackground.h"
 
 qCamera::qCamera()
 	: m_CamSpeed(500.f)
 	, m_FadeTex(nullptr)
+	, m_RightBlock(false)
 {
 }
 
@@ -43,10 +48,6 @@ void qCamera::init()
 
 void qCamera::tick()
 {
-	// 카메라가 캐릭터 따라다니게 하기
-	//m_LookAt.x = m_Owner->GetPos().x;
-	//m_LookAt.y = m_Owner->GetPos().y / 1.5f;
-
 	// 카메라 이동
 	Move();
 	
@@ -56,6 +57,8 @@ void qCamera::tick()
 
 	// 카메라 효과
 	CameraEffect();
+
+
 }
 
 void qCamera::render()
@@ -79,14 +82,66 @@ void qCamera::render()
 
 void qCamera::Move()
 {
-	if (KEY_PRESSED(KEY::W))
-		m_LookAt.y -= DT * m_CamSpeed;
-	if (KEY_PRESSED(KEY::S))
-		m_LookAt.y += DT * m_CamSpeed;
-	if (KEY_PRESSED(KEY::A))
-		m_LookAt.x -= DT * m_CamSpeed;
-	if (KEY_PRESSED(KEY::D))
-		m_LookAt.x += DT * m_CamSpeed;
+	qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
+
+	if (nullptr == pCurLevel || nullptr == m_Owner)
+		return;
+
+	if(pCurLevel->GetName() == L"editor")
+	{
+		if (KEY_PRESSED(KEY::W))
+			m_LookAt.y -= DT * m_CamSpeed;
+		if (KEY_PRESSED(KEY::S))
+			m_LookAt.y += DT * m_CamSpeed;
+		if (KEY_PRESSED(KEY::A))
+			m_LookAt.x -= DT * m_CamSpeed;
+		if (KEY_PRESSED(KEY::D))
+			m_LookAt.x += DT * m_CamSpeed;
+	}
+	if (pCurLevel->GetName() == L"stage1")
+	{
+		if (KEY_PRESSED(KEY::W))
+			m_LookAt.y -= DT * m_CamSpeed;
+		if (KEY_PRESSED(KEY::S))
+			m_LookAt.y += DT * m_CamSpeed;
+		if (KEY_PRESSED(KEY::A))
+			m_LookAt.x -= DT * m_CamSpeed;
+		if (KEY_PRESSED(KEY::D))
+			m_LookAt.x += DT * m_CamSpeed;
+		qBackground* BackGround = (qBackground*)pCurLevel->FindObjectByName(L"Stage1");
+
+		if (nullptr == BackGround)
+			return;
+
+		
+		UINT Width = BackGround->GetWidth();
+		UINT Height = BackGround->GetHeight();
+
+		m_LookAt.x = m_Owner->GetPos().x;
+		
+		Vec2 vPos = BackGround->GetPos() - Width * 0.5f;
+		
+		vPos.x = BackGround->GetPos().x - Width * 0.5f;
+		vPos.y = BackGround->GetPos().y - Height * 0.5f;
+
+		UINT StartWidth = Width - (Width - 1);
+		UINT FinalHeigt;
+		
+		UINT CameraMinimumDist = StartWidth + 640.f;
+
+		float CameraDistX = vPos.x + vPos.x + 640.f;
+		float CameraDistY = vPos.y - vPos.y + 384.f;
+		
+		float ObjDist = vPos.x + m_Owner->GetPos().x;
+
+		
+		if (CameraDistX >= ObjDist)
+		{
+			m_LookAt.x = CameraDistX;
+		}
+		
+	}
+
 }
 
 void qCamera::CameraEffect()

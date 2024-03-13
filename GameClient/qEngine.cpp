@@ -10,6 +10,7 @@
 #include "qAssetMgr.h"
 #include "qTaskMgr.h"
 #include "qCamera.h"
+#include "qUIMgr.h"
 
 #include "qTexture.h"
 
@@ -84,6 +85,7 @@ void qEngine::progress()
 	qKeyMgr::GetInst()->tick();
 	qDbgRender::GetInst()->tick();
 	qCamera::GetInst()->tick();
+	qUIMgr::GetInst()->tick();
 
 	// ==============
 	// Level Progress

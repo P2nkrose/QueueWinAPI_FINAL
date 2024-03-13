@@ -35,12 +35,6 @@
     <Filter Include="03. Game\08. Module">
       <UniqueIdentifier>{4ee0d98e-a57d-4d93-8b5a-e2d7f48aaf46}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\04. Level\01. Start_Logo">
-      <UniqueIdentifier>{060c9327-902f-4c2c-a0f5-3af3d2dfb754}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\04. Level\02. Editor">
-      <UniqueIdentifier>{b2057e5c-14ef-4d07-95a6-acea35de00fc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\Missile">
       <UniqueIdentifier>{90a2e921-b1cb-4cdf-80f2-a23562480524}</UniqueIdentifier>
     </Filter>
@@ -113,23 +107,41 @@
     <Filter Include="03. Game\05. Object\Platform">
       <UniqueIdentifier>{5590f0c0-c71e-4db1-be1c-4bd293e51693}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\09. Camera">
-      <UniqueIdentifier>{1a156249-b193-4fb8-a7a4-831c9ab6b4d4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\08. Module\State">
       <UniqueIdentifier>{e26ffa26-cbfe-45d6-804a-d3c8014b1cdd}</UniqueIdentifier>
     </Filter>
     <Filter Include="03. Game\08. Module\State\MonsterState">
       <UniqueIdentifier>{94db36c4-f659-4cd4-b7bf-8c0caaaa14a3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\04. Level\03. Stage">
-      <UniqueIdentifier>{7a9de9f3-26f3-404c-9a8f-f6efc8f73dff}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\08. Module\State\PlayerState">
       <UniqueIdentifier>{89fb0671-31f6-4dd1-99c9-265b756dde21}</UniqueIdentifier>
     </Filter>
     <Filter Include="03. Game\06. Component\05. TileMap">
       <UniqueIdentifier>{04b77910-0cfc-4701-94a6-2f5d39296b4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\03. Manager\09. Camera">
+      <UniqueIdentifier>{1a156249-b193-4fb8-a7a4-831c9ab6b4d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\03. Manager\10. UIMgr">
+      <UniqueIdentifier>{99ba1f23-4f32-40ab-9019-79b01a41c031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Background">
+      <UniqueIdentifier>{61f9d4fd-02e1-4ba3-b69b-59384a1788ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\UI\ButtonUI">
+      <UniqueIdentifier>{42af13b4-b6a3-4bc9-ac57-fcc244f3d4c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\01. Logo">
+      <UniqueIdentifier>{060c9327-902f-4c2c-a0f5-3af3d2dfb754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\03. Editor">
+      <UniqueIdentifier>{b2057e5c-14ef-4d07-95a6-acea35de00fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\04. Stage">
+      <UniqueIdentifier>{7a9de9f3-26f3-404c-9a8f-f6efc8f73dff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\02. Start">
+      <UniqueIdentifier>{71ba6833-250c-4e1f-87f0-a3987d994082}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -179,7 +191,7 @@
       <Filter>03. Game\03. Manager\01. TimeMgr</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_Stage01.h">
-      <Filter>03. Game\04. Level\03. Stage</Filter>
+      <Filter>03. Game\04. Level\04. Stage</Filter>
     </ClInclude>
     <ClInclude Include="qPlayer.h">
       <Filter>03. Game\05. Object\Player</Filter>
@@ -248,7 +260,7 @@
       <Filter>03. Game\05. Object\Platform</Filter>
     </ClInclude>
     <ClInclude Include="qCamera.h">
-      <Filter>03. Game\09. Camera</Filter>
+      <Filter>03. Game\03. Manager\09. Camera</Filter>
     </ClInclude>
     <ClInclude Include="qState.h">
       <Filter>03. Game\08. Module\State</Filter>
@@ -266,10 +278,10 @@
       <Filter>03. Game\08. Module\State\MonsterState</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_Stage02.h">
-      <Filter>03. Game\04. Level\03. Stage</Filter>
+      <Filter>03. Game\04. Level\04. Stage</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_Editor.h">
-      <Filter>03. Game\04. Level\02. Editor</Filter>
+      <Filter>03. Game\04. Level\03. Editor</Filter>
     </ClInclude>
     <ClInclude Include="qTile.h">
       <Filter>03. Game\05. Object\Tile</Filter>
@@ -279,6 +291,24 @@
     </ClInclude>
     <ClInclude Include="qTileMap.h">
       <Filter>03. Game\06. Component\05. TileMap</Filter>
+    </ClInclude>
+    <ClInclude Include="qUI.h">
+      <Filter>03. Game\05. Object\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="qUIMgr.h">
+      <Filter>03. Game\03. Manager\10. UIMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="qBackground.h">
+      <Filter>03. Game\05. Object\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="qButton.h">
+      <Filter>03. Game\05. Object\UI\ButtonUI</Filter>
+    </ClInclude>
+    <ClInclude Include="qLogo.h">
+      <Filter>03. Game\04. Level\01. Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="qStart.h">
+      <Filter>03. Game\04. Level\02. Start</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -323,7 +353,7 @@
       <Filter>03. Game\03. Manager\01. TimeMgr</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_Stage01.cpp">
-      <Filter>03. Game\04. Level\03. Stage</Filter>
+      <Filter>03. Game\04. Level\04. Stage</Filter>
     </ClCompile>
     <ClCompile Include="qPlayer.cpp">
       <Filter>03. Game\05. Object\Player</Filter>
@@ -392,7 +422,7 @@
       <Filter>03. Game\05. Object\Platform</Filter>
     </ClCompile>
     <ClCompile Include="qCamera.cpp">
-      <Filter>03. Game\09. Camera</Filter>
+      <Filter>03. Game\03. Manager\09. Camera</Filter>
     </ClCompile>
     <ClCompile Include="qState.cpp">
       <Filter>03. Game\08. Module\State</Filter>
@@ -410,10 +440,10 @@
       <Filter>03. Game\08. Module\State\MonsterState</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_Stage02.cpp">
-      <Filter>03. Game\04. Level\03. Stage</Filter>
+      <Filter>03. Game\04. Level\04. Stage</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_Editor.cpp">
-      <Filter>03. Game\04. Level\02. Editor</Filter>
+      <Filter>03. Game\04. Level\03. Editor</Filter>
     </ClCompile>
     <ClCompile Include="qTile.cpp">
       <Filter>03. Game\05. Object\Tile</Filter>
@@ -423,6 +453,24 @@
     </ClCompile>
     <ClCompile Include="qTileMap.cpp">
       <Filter>03. Game\06. Component\05. TileMap</Filter>
+    </ClCompile>
+    <ClCompile Include="qUI.cpp">
+      <Filter>03. Game\05. Object\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="qUIMgr.cpp">
+      <Filter>03. Game\03. Manager\10. UIMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="qBackground.cpp">
+      <Filter>03. Game\05. Object\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="qButton.cpp">
+      <Filter>03. Game\05. Object\UI\ButtonUI</Filter>
+    </ClCompile>
+    <ClCompile Include="qLogo.cpp">
+      <Filter>03. Game\04. Level\01. Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="qStart.cpp">
+      <Filter>03. Game\04. Level\02. Start</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

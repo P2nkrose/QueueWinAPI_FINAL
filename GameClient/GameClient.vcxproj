@@ -150,6 +150,8 @@
     <ClInclude Include="qAsset.h" />
     <ClInclude Include="qAssetMgr.h" />
     <ClInclude Include="qAttackState.h" />
+    <ClInclude Include="qBackground.h" />
+    <ClInclude Include="qButton.h" />
     <ClInclude Include="qCamera.h" />
     <ClInclude Include="qCollider.h" />
     <ClInclude Include="qCollisionMgr.h" />
@@ -168,6 +170,7 @@
     <ClInclude Include="qLevel_Editor.h" />
     <ClInclude Include="qLevel_Stage01.h" />
     <ClInclude Include="qLevel_Stage02.h" />
+    <ClInclude Include="qLogo.h" />
     <ClInclude Include="qMissile.h" />
     <ClInclude Include="qMonster.h" />
     <ClInclude Include="qObj.h" />
@@ -178,6 +181,7 @@
     <ClInclude Include="qRigidbody.h" />
     <ClInclude Include="qSelectObj.h" />
     <ClInclude Include="qSound.h" />
+    <ClInclude Include="qStart.h" />
     <ClInclude Include="qState.h" />
     <ClInclude Include="qTaskMgr.h" />
     <ClInclude Include="qTexture.h" />
@@ -185,6 +189,8 @@
     <ClInclude Include="qTileMap.h" />
     <ClInclude Include="qTimeMgr.h" />
     <ClInclude Include="qTraceState.h" />
+    <ClInclude Include="qUI.h" />
+    <ClInclude Include="qUIMgr.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="struct.h" />
     <ClInclude Include="targetver.h" />
@@ -201,6 +207,8 @@
     <ClCompile Include="qAsset.cpp" />
     <ClCompile Include="qAssetMgr.cpp" />
     <ClCompile Include="qAttackState.cpp" />
+    <ClCompile Include="qBackground.cpp" />
+    <ClCompile Include="qButton.cpp" />
     <ClCompile Include="qCamera.cpp" />
     <ClCompile Include="qCollider.cpp" />
     <ClCompile Include="qCollisionMgr.cpp" />
@@ -219,6 +227,7 @@
     <ClCompile Include="qLevel_Editor.cpp" />
     <ClCompile Include="qLevel_Stage01.cpp" />
     <ClCompile Include="qLevel_Stage02.cpp" />
+    <ClCompile Include="qLogo.cpp" />
     <ClCompile Include="qMissile.cpp" />
     <ClCompile Include="qMonster.cpp" />
     <ClCompile Include="qObj.cpp" />
@@ -229,6 +238,7 @@
     <ClCompile Include="qRigidbody.cpp" />
     <ClCompile Include="qSelectObj.cpp" />
     <ClCompile Include="qSound.cpp" />
+    <ClCompile Include="qStart.cpp" />
     <ClCompile Include="qState.cpp" />
     <ClCompile Include="qTaskMgr.cpp" />
     <ClCompile Include="qTexture.cpp" />
@@ -236,6 +246,8 @@
     <ClCompile Include="qTileMap.cpp" />
     <ClCompile Include="qTimeMgr.cpp" />
     <ClCompile Include="qTraceState.cpp" />
+    <ClCompile Include="qUI.cpp" />
+    <ClCompile Include="qUIMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc" />

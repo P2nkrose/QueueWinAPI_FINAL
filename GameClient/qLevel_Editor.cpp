@@ -7,10 +7,12 @@
 #include "qPathMgr.h"
 #include "qPlatform.h"
 #include "qCollider.h"
+#include "qBackground.h"
 
 qLevel_Editor::qLevel_Editor()
 	: m_EditTile(nullptr)
 {
+	SetName(L"editor");
 }
 
 qLevel_Editor::~qLevel_Editor()
@@ -46,7 +48,7 @@ void qLevel_Editor::tick()
 	}
 	else if (KEY_PRESSED(KEY::LBTN))
 	{
-		m_TestInfo.EndPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
+		m_TestInfo.EndPos = qCamera::GetInst()->GetRenderPos(qKeyMgr::GetInst()->GetMousePos());
 		m_TestPlatform->SetScale(m_TestInfo.EndPos);
 	}
 	else if (KEY_RELEASED(KEY::LBTN))
@@ -91,6 +93,13 @@ void qLevel_Editor::Enter()
 	//m_EditTile->SetAtlasTex(qAssetMgr::GetInst()->LoadTexture(L"texture\\TILE.bmp", L"texture\\TILE.bmp"));
 
 	//AddObject(LAYER_TYPE::TILE, m_EditTile);
+	// Background
+	qObj* pBack = new qBackground;
+	pBack->SetName(L"Stage1");
+	pBack->SetPos(0.0f, 420.f);
+	pBack->SetScale(1.3f, 1.3f);
+	AddObject(LAYER_TYPE::BACKGROUND, pBack);
+
 }
 
 void qLevel_Editor::Exit()

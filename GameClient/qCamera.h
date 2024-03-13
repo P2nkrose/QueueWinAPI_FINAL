@@ -44,6 +44,8 @@ private:
 	Vec2					m_LookAt;
 	Vec2					m_Diff;
 	float					m_CamSpeed;
+	
+	bool					m_RightBlock;
 
 	qObj*					m_Owner;	
 

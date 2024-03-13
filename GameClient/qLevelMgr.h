@@ -2,6 +2,8 @@
 
 class qLevel;
 
+
+
 class qLevelMgr
 {
 	SINGLE(qLevelMgr)

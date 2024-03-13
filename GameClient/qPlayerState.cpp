@@ -15,6 +15,7 @@ void qPlayerState::Enter()
 
 void qPlayerState::FinalTick()
 {
+
 }
 
 void qPlayerState::Exit()

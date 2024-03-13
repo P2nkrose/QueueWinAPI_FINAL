@@ -8,9 +8,11 @@
 #include "qPlayer.h"
 #include "qMonster.h"
 #include "qPlatform.h"
+#include "qBackground.h"
 
 qLevel_Stage01::qLevel_Stage01()
 {
+	SetName(L"stage1");
 }
 
 qLevel_Stage01::~qLevel_Stage01()
@@ -49,9 +51,17 @@ void qLevel_Stage01::tick()
 
 void qLevel_Stage01::Enter()
 {
+	// 레벨에 오브젝트 추가
+	// 
+	// Background
+	qObj* pBack = new qBackground;
+	pBack->SetName(L"Stage1");
+	pBack->SetPos(0.0f, 420.f);
+	pBack->SetScale(1.3f, 1.3f);
+	AddObject(LAYER_TYPE::BACKGROUND, pBack);
 
 
-	// 레벨에 물체 추가하기
+	// Player
 	qObj* pObject = new qPlayer;
 	pObject->SetName(L"Player");
 	pObject->SetPos(640.0f, 384.0f);
@@ -64,19 +74,19 @@ void qLevel_Stage01::Enter()
 	//m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pPlayerClone);
 
 
-	// 레벨에 몬스터 추가하기
-	pObject = new qMonster;
-	pObject->SetName(L"Monster");
-	pObject->SetPos(800.0f, 200.0f);
-	pObject->SetScale(100.0f, 100.0f);
-	AddObject(LAYER_TYPE::MONSTER, pObject);
+	//// 레벨에 몬스터 추가하기
+	//pObject = new qMonster;
+	//pObject->SetName(L"Monster");
+	//pObject->SetPos(800.0f, 200.0f);
+	//pObject->SetScale(100.0f, 100.0f);
+	//AddObject(LAYER_TYPE::MONSTER, pObject);
 
-	// 한마리 더!
-	pObject = new qMonster;
-	pObject->SetName(L"Monster");
-	pObject->SetPos(100.0f, 100.0f);
-	pObject->SetScale(100.0f, 100.0f);
-	AddObject(LAYER_TYPE::MONSTER, pObject);
+	//// 한마리 더!
+	//pObject = new qMonster;
+	//pObject->SetName(L"Monster");
+	//pObject->SetPos(100.0f, 100.0f);
+	//pObject->SetScale(100.0f, 100.0f);
+	//AddObject(LAYER_TYPE::MONSTER, pObject);
 
 	// 플랫폼 생성
 	pObject = new qPlatform;

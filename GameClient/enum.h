@@ -27,7 +27,8 @@ enum class BRUSH_TYPE
 
 enum class LEVEL_TYPE
 {
-	LOGO_START,
+	LOGO,
+	START,
 	EDITOR,
 	
 	STAGE_01,
@@ -109,6 +110,7 @@ enum class TASK_TYPE
 	SPAWN_OBJECT,		// 1 : Level,  2 : LAYER_TYPE,  3 : Object Adress
 	DELETE_OBJECT,		// 1 : Object Adress
 	CHANGE_LEVEL,
+	UI_LBTN_DOWN,		// 1 : UI Object Adress, 2 : true or false
 };
 
 
