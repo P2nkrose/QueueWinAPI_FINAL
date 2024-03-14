@@ -96,7 +96,7 @@ void qLevel_Editor::Enter()
 	// Background
 	qObj* pBack = new qBackground;
 	pBack->SetName(L"Stage1");
-	pBack->SetPos(0.0f, 420.f);
+	pBack->SetPos(0.0f, 0.f);
 	pBack->SetScale(1.3f, 1.3f);
 	AddObject(LAYER_TYPE::BACKGROUND, pBack);
 

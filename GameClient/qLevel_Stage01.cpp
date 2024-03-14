@@ -23,9 +23,9 @@ void qLevel_Stage01::begin()
 {
 	qLevel::begin();
 
-
-	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 2.f);
-	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_OUT, 2.f);
+	// 페이드 인 페이드 아웃
+	qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 0.7f);
+	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_OUT, 1.f);
 }
 
 void qLevel_Stage01::tick()
@@ -56,7 +56,7 @@ void qLevel_Stage01::Enter()
 	// Background
 	qObj* pBack = new qBackground;
 	pBack->SetName(L"Stage1");
-	pBack->SetPos(0.0f, 420.f);
+	pBack->SetPos(0.0f, 0.f);
 	pBack->SetScale(1.3f, 1.3f);
 	AddObject(LAYER_TYPE::BACKGROUND, pBack);
 
@@ -64,7 +64,7 @@ void qLevel_Stage01::Enter()
 	// Player
 	qObj* pObject = new qPlayer;
 	pObject->SetName(L"Player");
-	pObject->SetPos(640.0f, 384.0f);
+	pObject->SetPos(100.f, 384.f);
 	pObject->SetScale(100.0f, 100.0f);
 	AddObject(LAYER_TYPE::PLAYER, pObject);
 

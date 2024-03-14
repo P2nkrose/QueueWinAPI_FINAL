@@ -100,14 +100,6 @@ void qCamera::Move()
 	}
 	if (pCurLevel->GetName() == L"stage1")
 	{
-		if (KEY_PRESSED(KEY::W))
-			m_LookAt.y -= DT * m_CamSpeed;
-		if (KEY_PRESSED(KEY::S))
-			m_LookAt.y += DT * m_CamSpeed;
-		if (KEY_PRESSED(KEY::A))
-			m_LookAt.x -= DT * m_CamSpeed;
-		if (KEY_PRESSED(KEY::D))
-			m_LookAt.x += DT * m_CamSpeed;
 		qBackground* BackGround = (qBackground*)pCurLevel->FindObjectByName(L"Stage1");
 
 		if (nullptr == BackGround)
@@ -117,29 +109,32 @@ void qCamera::Move()
 		UINT Width = BackGround->GetWidth();
 		UINT Height = BackGround->GetHeight();
 
-		m_LookAt.x = m_Owner->GetPos().x;
-		
-		Vec2 vPos = BackGround->GetPos() - Width * 0.5f;
-		
-		vPos.x = BackGround->GetPos().x - Width * 0.5f;
-		vPos.y = BackGround->GetPos().y - Height * 0.5f;
-
-		UINT StartWidth = Width - (Width - 1);
-		UINT FinalHeigt;
-		
-		UINT CameraMinimumDist = StartWidth + 640.f;
-
-		float CameraDistX = vPos.x + vPos.x + 640.f;
-		float CameraDistY = vPos.y - vPos.y + 384.f;
-		
-		float ObjDist = vPos.x + m_Owner->GetPos().x;
-
-		
-		if (CameraDistX >= ObjDist)
+		// 카메라 벽 못넘게 하기
+		Vec2 vPos = GetRealPos(m_Owner->GetPos());
+		Vec2 vRenderPos = m_Owner->GetRenderPos();
+		wchar_t szBuff[256] = {};
+		static float fTime = 0.f;
+		fTime += DT;
+		if (fTime >= 1.f)
 		{
-			m_LookAt.x = CameraDistX;
+			swprintf_s(szBuff, L"x : %f, y : %f", vPos.x, vPos.y);
+			LOG(LOG_TYPE::DBG_ERROR, szBuff);
+			fTime = 0.f;
 		}
-		
+		if (vPos.x <= 800.f)
+		{
+			m_LookAt.x = 800.f;
+		}
+		// 스테이지 1 카메라 못넘게하기 (오른쪽) == 3535
+		else if (vPos.x >= 3535.f)
+		{
+			m_LookAt.x = Width - 800;
+		}
+
+		else
+		{
+			m_LookAt.x = m_Owner->GetPos().x;
+		}
 	}
 
 }

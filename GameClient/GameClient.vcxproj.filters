@@ -143,6 +143,36 @@
     <Filter Include="03. Game\04. Level\02. Start">
       <UniqueIdentifier>{71ba6833-250c-4e1f-87f0-a3987d994082}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\05. Object\Platform\1. Ground">
+      <UniqueIdentifier>{ee9b030d-2d31-40a9-ab7f-034f3d7c4d74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Platform\2. Wall">
+      <UniqueIdentifier>{d8f4fb44-cf9a-4392-8aa0-8e8f6b73ba28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Platform\3. Portal">
+      <UniqueIdentifier>{52f9d64d-ee31-410d-b80c-eb5d5b16fea9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Platform\4. Rope">
+      <UniqueIdentifier>{65311fea-0cf9-4d46-a8a3-af6ca41e298c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Background\1. LOGO">
+      <UniqueIdentifier>{5d999461-63b6-4a3d-b38f-3b4e2f33add3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Background\2. START">
+      <UniqueIdentifier>{344657c8-5806-4d8c-a847-5b95776bce03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Background\3. STAGE_1">
+      <UniqueIdentifier>{52c92b9e-6ffa-4ed4-8a59-870ebe5def94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Background\4. STAGE_2">
+      <UniqueIdentifier>{32a2503b-46c7-4113-8df9-07ce7af83b5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Background\5. BOSS_1">
+      <UniqueIdentifier>{6f9dd70e-97d9-40e4-a1d7-764f54167268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\Background\6. BOSS_2">
+      <UniqueIdentifier>{1a68b75e-ed74-4250-a368-90409d7bfe05}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
