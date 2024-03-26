@@ -151,6 +151,7 @@
     <ClInclude Include="qAssetMgr.h" />
     <ClInclude Include="qAttackState.h" />
     <ClInclude Include="qBackground.h" />
+    <ClInclude Include="qBackground_stage1.h" />
     <ClInclude Include="qButton.h" />
     <ClInclude Include="qCamera.h" />
     <ClInclude Include="qCollider.h" />
@@ -181,6 +182,7 @@
     <ClInclude Include="qRigidbody.h" />
     <ClInclude Include="qSelectObj.h" />
     <ClInclude Include="qSound.h" />
+    <ClInclude Include="qSoundMgr.h" />
     <ClInclude Include="qStart.h" />
     <ClInclude Include="qState.h" />
     <ClInclude Include="qTaskMgr.h" />
@@ -208,6 +210,7 @@
     <ClCompile Include="qAssetMgr.cpp" />
     <ClCompile Include="qAttackState.cpp" />
     <ClCompile Include="qBackground.cpp" />
+    <ClCompile Include="qBackground_stage1.cpp" />
     <ClCompile Include="qButton.cpp" />
     <ClCompile Include="qCamera.cpp" />
     <ClCompile Include="qCollider.cpp" />
@@ -238,6 +241,7 @@
     <ClCompile Include="qRigidbody.cpp" />
     <ClCompile Include="qSelectObj.cpp" />
     <ClCompile Include="qSound.cpp" />
+    <ClCompile Include="qSoundMgr.cpp" />
     <ClCompile Include="qStart.cpp" />
     <ClCompile Include="qState.cpp" />
     <ClCompile Include="qTaskMgr.cpp" />

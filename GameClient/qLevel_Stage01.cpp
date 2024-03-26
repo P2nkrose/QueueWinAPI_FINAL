@@ -32,16 +32,16 @@ void qLevel_Stage01::tick()
 {
 	qLevel::tick();
 
-	if (KEY_TAP(KEY::LBTN))
-	{
-		Vec2 vMousePos = qKeyMgr::GetInst()->GetMousePos();
-		Vec2 vPos = qCamera::GetInst()->GetRenderPos(vMousePos);
+	//if (KEY_TAP(KEY::LBTN))
+	//{
+	//	Vec2 vMousePos = qKeyMgr::GetInst()->GetMousePos();
+	//	Vec2 vPos = qCamera::GetInst()->GetRenderPos(vMousePos);
 
-		qForce* pForce = new qForce();
-		pForce->SetPos(vPos);
-		pForce->SetForce(1000.f, 500.f, 2.f);
-		SpawnObject(this, LAYER_TYPE::FORCE, pForce);
-	}
+	//	qForce* pForce = new qForce();
+	//	pForce->SetPos(vPos);
+	//	pForce->SetForce(1000.f, 500.f, 2.f);
+	//	SpawnObject(this, LAYER_TYPE::FORCE, pForce);
+	//}
 
 	if (KEY_TAP(KEY::ENTER))
 	{
@@ -59,12 +59,12 @@ void qLevel_Stage01::Enter()
 	pBack->SetPos(0.0f, 0.f);
 	pBack->SetScale(1.3f, 1.3f);
 	AddObject(LAYER_TYPE::BACKGROUND, pBack);
-
+	
 
 	// Player
 	qObj* pObject = new qPlayer;
 	pObject->SetName(L"Player");
-	pObject->SetPos(100.f, 384.f);
+	pObject->SetPos(1400.f, 745.f);
 	pObject->SetScale(100.0f, 100.0f);
 	AddObject(LAYER_TYPE::PLAYER, pObject);
 

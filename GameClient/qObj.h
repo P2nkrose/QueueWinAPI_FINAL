@@ -20,6 +20,8 @@ class qFSM;
 class qObj : public qEntity
 {
 private:
+
+	DIRECTION			m_Dir;		// 방향
 	
 	Vec2				m_Pos;		// 위치
 	Vec2				m_PrevPos;	// 이전 프레임에서의 위치
@@ -34,6 +36,9 @@ private:
 	
 
 public:
+	void SetDir(DIRECTION _Dir) { m_Dir = _Dir; }
+	DIRECTION GetDir() { return m_Dir; }
+
 	void SetPos(Vec2 _Pos) { m_Pos = _Pos; }
 	void SetScale(Vec2 _Scale) { m_Scale = _Scale; }
 

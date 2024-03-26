@@ -1,0 +1,16 @@
+[ANIMATION_NAME]
+PlayerDownLeft
+
+[ATLAS_TEXTURE]
+[ATLAS_KEY]	PlayerDownLeft
+[ATLAS_PATH]	texture\character\player\down\down_left.png
+
+[FRAME_COUNT]
+1
+
+[FRAME_INDEX]	0
+[START_POS] 	0.000000  0.000000
+[SLICE_SIZE]		132.000000  67.000000
+[OFFSET]		-23.000000  17.000000
+[DURATION]  	0.333333
+

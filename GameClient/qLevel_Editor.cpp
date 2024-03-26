@@ -9,6 +9,9 @@
 #include "qCollider.h"
 #include "qBackground.h"
 
+#include "qUI.h"
+#include "qButton.h"
+
 qLevel_Editor::qLevel_Editor()
 	: m_EditTile(nullptr)
 {
@@ -93,7 +96,9 @@ void qLevel_Editor::Enter()
 	//m_EditTile->SetAtlasTex(qAssetMgr::GetInst()->LoadTexture(L"texture\\TILE.bmp", L"texture\\TILE.bmp"));
 
 	//AddObject(LAYER_TYPE::TILE, m_EditTile);
-	// Background
+
+
+	//Background
 	qObj* pBack = new qBackground;
 	pBack->SetName(L"Stage1");
 	pBack->SetPos(0.0f, 0.f);
@@ -130,3 +135,5 @@ void qLevel_Editor::SaveToFile(const wstring& _strRelativePath)
 
 	fclose(pFile);
 }
+
+

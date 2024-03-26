@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "qBackground.h"
 
+#include "qSound.h"
+
 qBackground::qBackground()
 {
 	m_Img = qAssetMgr::GetInst()->LoadTexture(L"stage1", L"texture\\map\\stage1.png");
@@ -33,6 +35,11 @@ void qBackground::render()
 	//	, m_Img->GetWidth(), m_Img->GetHeight()
 	//	, bf);
 
-	StretchBlt(DC, (int)vPos.x, (int)vPos.y, m_Img->GetWidth(), m_Img->GetHeight(), m_Img->GetDC(), 0, 0, m_Img->GetWidth(), m_Img->GetHeight(), SRCCOPY);
+	StretchBlt(DC, (int)vPos.x, (int)vPos.y
+				 , m_Img->GetWidth(), m_Img->GetHeight()
+				 , m_Img->GetDC()
+				 , 0, 0
+				 , m_Img->GetWidth(), m_Img->GetHeight(), SRCCOPY);
+
 	//TransparentBlt(DC, (int)vPos.x, (int)vPos.y, m_Img->GetWidth(), m_Img->GetHeight(), m_Img->GetDC(), 0, 0, m_Img->GetWidth(), m_Img->GetHeight(), SRCCOPY);
 }

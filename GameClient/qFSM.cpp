@@ -8,6 +8,13 @@ qFSM::qFSM()
 {
 }
 
+qFSM::qFSM(const qFSM& _Other)
+	: qComponent(_Other)
+	, m_CurState(nullptr)
+{
+
+}
+
 qFSM::~qFSM()
 {
 	Safe_Del_Map(m_mapState);

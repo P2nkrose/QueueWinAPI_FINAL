@@ -1,5 +1,8 @@
 #pragma once
 #include "qLevel.h"
+
+class qSound;
+
 class qStart : public qLevel
 {
 public:
@@ -11,5 +14,9 @@ public:
 
 	virtual void Enter() override;
 	virtual void Exit() override;
+
+
+private:
+	qSound* pSound;
 };
 

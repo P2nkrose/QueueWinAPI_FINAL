@@ -31,6 +31,8 @@ void qUIMgr::tick()
 	{
 		qUI* pUI = (qUI*)vecUI[i];
 
+		//pUI = GetPriorityUI(pUI);
+
 		// 왼쪽 버튼이 눌렸고, 그게 해당 UI 안에서 라면
 		if (LBtnTap && pUI->IsMouseOn())
 		{

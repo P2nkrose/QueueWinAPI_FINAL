@@ -17,6 +17,7 @@ public:
 	virtual void FinalTick() PURE;
 	virtual void Exit() PURE;
 
+
 protected:
 	qObj* GetObj() { return m_Owner->GetOwner(); }
 	qFSM* GetFSM() { return m_Owner; }
@@ -26,6 +27,8 @@ protected:
 	{
 		return m_Owner->GetBlackboardData<T>(_DataName);
 	}
+
+
 
 private:
 	qFSM*	m_Owner;

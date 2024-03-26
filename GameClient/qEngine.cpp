@@ -11,6 +11,7 @@
 #include "qTaskMgr.h"
 #include "qCamera.h"
 #include "qUIMgr.h"
+#include "qSoundMgr.h"
 
 #include "qTexture.h"
 
@@ -64,7 +65,7 @@ int qEngine::init(HINSTANCE _hInst, HWND _hWnd, POINT _Resolution)
 	qPathMgr::GetInst()->init();
 	qKeyMgr::GetInst()->init();
 	qTimeMgr::GetInst()->init();
-	
+	qSoundMgr::GetInst()->init();
 	qAssetMgr::GetInst()->init();
 	qLevelMgr::GetInst()->init();
 

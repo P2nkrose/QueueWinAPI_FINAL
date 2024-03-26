@@ -55,5 +55,6 @@ private:
     int                 m_CurFrmIdx;    // 현재 프레임
     bool                m_bFinish;      // 애니메이션 재생이 종료됨을 알림
 
+    // bool m_bFinish 를 반환하는 함수 만들기
 };
 

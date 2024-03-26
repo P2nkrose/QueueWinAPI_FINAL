@@ -6,6 +6,7 @@
 #include "qKeyMgr.h"
 
 #include "qButton.h"
+#include "qSound.h"
 
 
 void ButtonCallBackFunc()
@@ -29,6 +30,11 @@ qStart::~qStart()
 
 void qStart::begin()
 {
+	// 사운드 로딩
+	//qSound* pSound = CAssetMgr::GetInst()->LoadSound(L"BGM_01", L"sound\\BGM_Stage1.wav");
+	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\start.wav");
+	pSound->SetVolume(100.f);
+	pSound->Play();
 }
 
 void qStart::Enter()
@@ -47,4 +53,8 @@ void qStart::Enter()
 
 void qStart::Exit()
 {
+	// 사운드 끄기
+\
+	pSound->SetVolume(100.f);
+	pSound->Stop();
 }

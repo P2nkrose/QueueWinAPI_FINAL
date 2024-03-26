@@ -37,12 +37,13 @@ public:
 	void SetJumpSpeed(float _Speed) { m_JumpSpeed = _Speed; }
 
 	void jump();
+	void doublejump();
 
 	float GetMass() { return m_Mass; }
 	float GetInitWalkSpeed() { return m_InitWalkSpeed; }
 	float GetMaxWalkSpeed() { return m_MaxWalkSpeed; }
 	float GetFriction() { return m_Friction; }
-	Vec2 GetGravityVelocity() { return m_VelocityByGravity; }
+	Vec2  GetGravityVelocity() { return m_VelocityByGravity; }
 
 	void SetGroundFunc(void(*_pFunc)(void)) { m_GroundFunc = _pFunc; }
 	void SetAirFunc(void(*_pFunc)(void)) { m_AirFunc = _pFunc; }
@@ -91,6 +92,7 @@ public:
 	}
 
 	bool IsGround() { return m_Ground; }
+	bool IsWall() { return m_Wall; }
 
 private:
 
@@ -111,6 +113,13 @@ private:
 	bool	m_UseGravity;			// 중력 사용 <-> 미사용 bool
 	bool	m_Ground;				// 땅 위에 서있는지 체크
 	float	m_JumpSpeed;			// 점프 속력
+	float	m_DoubleJumpSpeed;		// 더플점프 속력
+
+
+	// 벽 구현하기
+	bool	m_Wall;					// 벽에 부딪혔는지 체크
+
+
 
 	// Ground On / Off 호출시킬 함수포인터
 	CALL_BACK	m_GroundFunc;

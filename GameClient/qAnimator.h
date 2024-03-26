@@ -1,5 +1,6 @@
 #pragma once
 #include "qComponent.h"
+#include "qAnimation.h"
 
 class qAnimation;
 class qTexture;
@@ -22,15 +23,20 @@ public:
 	qAnimation* FindAnimation(const wstring& _AnimName);
 	void LoadAnimation(const wstring& _strRelativeFilePath);
 
-
 	void Play(const wstring& _AnimName, bool _Repeat);
 
+	bool IsFinish() { return m_CurAnim->IsFinish(); }
+
+public:
+	qAnimation* GetCurAnim() { return m_CurAnim; }
 
 
 private:
 	map<wstring, qAnimation*>	m_mapAnim;
 	qAnimation*					m_CurAnim;
 	bool						m_Repeat;
+
+
 
 };
 

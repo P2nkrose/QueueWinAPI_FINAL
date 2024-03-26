@@ -55,6 +55,7 @@ void qPlatform::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider
 	{
 		qRigidbody* pRB = _OtherObj->GetComponent<qRigidbody>();
 		pRB->SetGround(true);
+		
 	}
 }
 

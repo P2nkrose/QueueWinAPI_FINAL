@@ -46,12 +46,23 @@ enum class PLAYER_STATE
 	IDLE,
 	MOVE,
 	ATTACK,
+	MISSILE,
+	SLASH,
+	SPECIAL,
+	BUFF,
 	DOWN,
 	DOWN_ATTACK,
 	JUMP,
 	ROPE,
 
 	END,
+};
+
+enum class DIRECTION
+{
+	RIGHT,
+	LEFT,
+	DOWN,
 };
 
 

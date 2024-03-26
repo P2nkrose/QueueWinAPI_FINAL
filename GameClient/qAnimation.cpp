@@ -63,15 +63,36 @@ void qAnimation::render()
 	// 오브젝트의 렌더링 위치
 	Vec2 vRenderPos = pOwnerObj->GetRenderPos();
 
-	// 현재 프레임 이미지를 오브젝트 위치에 렌더링
-	TransparentBlt(DC
-					, (int)vRenderPos.x - frm.SliceSize.x / 2.f + frm.Offset.x
-					, (int)vRenderPos.y - frm.SliceSize.y / 2.f + frm.Offset.y
-					, (int)frm.SliceSize.x, (int)frm.SliceSize.y
-					, m_Atlas->GetDC()
-					, (int)frm.StartPos.x, (int)frm.StartPos.y
-					, (int)frm.SliceSize.x, (int)frm.SliceSize.y
-					, RGB(255, 0, 255));
+	 //AlphaBlending
+	BLENDFUNCTION bf = {};
+
+	bf.BlendOp = AC_SRC_OVER;
+	bf.BlendFlags = 0;
+	bf.SourceConstantAlpha = 255;
+	bf.AlphaFormat = AC_SRC_ALPHA;
+
+
+	// 알파블렌드로 그리기
+	AlphaBlend(DC
+	, (int)vRenderPos.x - frm.SliceSize.x / 2.f + frm.Offset.x
+	, (int)vRenderPos.y - frm.SliceSize.y / 2.f + frm.Offset.y
+	, frm.SliceSize.x
+	, frm.SliceSize.y
+	, m_Atlas->GetDC()
+	, frm.StartPos.x , frm.StartPos.y
+	, frm.SliceSize.x, frm.SliceSize.y
+	, bf);
+
+
+	//// 현재 프레임 이미지를 오브젝트 위치에 렌더링
+	//TransparentBlt(DC
+	//				, (int)vRenderPos.x - frm.SliceSize.x / 2.f + frm.Offset.x
+	//				, (int)vRenderPos.y - frm.SliceSize.y / 2.f + frm.Offset.y
+	//				, (int)frm.SliceSize.x, (int)frm.SliceSize.y
+	//				, m_Atlas->GetDC()
+	//				, (int)frm.StartPos.x, (int)frm.StartPos.y
+	//				, (int)frm.SliceSize.x, (int)frm.SliceSize.y
+	//				, RGB(255, 0, 255));
 }
 
 void qAnimation::Create(qTexture* _AtlasTex, Vec2 _StartPos, Vec2 _SliceSize, int _FrameCount, int _FPS)
@@ -131,7 +152,7 @@ void qAnimation::Save(const wstring& _strRelativeFolderPath)
 
 	// 프레임 정보
 	// 프레임 개수를 저장
-	fwprintf_s(pFile, L"[FRAME_COUNT\n");
+	fwprintf_s(pFile, L"[FRAME_COUNT]\n");
 	fwprintf_s(pFile, L"%d\n\n", (int)m_vecFrm.size());
 
 	// 각각의 프레임 정보를 저장
@@ -191,7 +212,7 @@ int qAnimation::Load(const wstring& _strRelativeFilePath)
 				m_Atlas = qAssetMgr::GetInst()->LoadTexture(strKey, strPath);
 			}
 		}
-		else if (strRead == L"[FRAME_COUNT")
+		else if (strRead == L"[FRAME_COUNT]")
 		{
 			int frmcount = 0;
 			fwscanf_s(pFile, L"%d", &frmcount);

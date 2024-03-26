@@ -23,6 +23,7 @@ public:
 	CLONE(qFSM);
 
 	qFSM();
+	qFSM(const qFSM& _Other);
 	~qFSM();
 
 

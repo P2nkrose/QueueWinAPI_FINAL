@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "qRigidbody.h"
+#include "qPlayer.h"
 
 qRigidbody::qRigidbody()
 	: m_Mass(1.f)
@@ -10,6 +11,7 @@ qRigidbody::qRigidbody()
 	, m_GravityAccel(980.f)
 	, m_UseGravity(false)
 	, m_JumpSpeed(400.f)
+	, m_DoubleJumpSpeed(500.f)
 	, m_GroundFunc(nullptr)
 	, m_AirFunc(nullptr)
 	, m_GroundInst(nullptr)
@@ -29,6 +31,7 @@ qRigidbody::qRigidbody(const qRigidbody& _Other)
 	, m_GravityAccel(_Other.m_GravityAccel)
 	, m_UseGravity(_Other.m_UseGravity)
 	, m_JumpSpeed(_Other.m_JumpSpeed)
+	, m_DoubleJumpSpeed(_Other.m_DoubleJumpSpeed)
 	, m_GroundFunc(nullptr)
 	, m_AirFunc(nullptr)
 	, m_GroundInst(nullptr)
@@ -46,9 +49,31 @@ qRigidbody::~qRigidbody()
 
 void qRigidbody::jump()
 {
-	m_VelocityByGravity += Vec2(0.f, -1.f) * m_JumpSpeed;
+	if (L"Player" == GetOwner()->GetName())
+	{
+		m_VelocityByGravity += Vec2(0.f, -1.f) * m_JumpSpeed;
+	}
+	
 	SetGround(false);
 }
+
+void qRigidbody::doublejump()
+{
+	if (L"Player" == GetOwner()->GetName())
+	{
+		if (DIRECTION::LEFT == GetOwner()->GetDir())
+		{
+			m_VelocityByGravity += Vec2(-1.f, 0.f) * m_DoubleJumpSpeed;
+		}
+		else if (DIRECTION::RIGHT == GetOwner()->GetDir())
+		{
+			m_VelocityByGravity += Vec2(1.f, 0.f) * m_DoubleJumpSpeed;
+		}
+	}
+
+	SetGround(false);
+}
+
 
 
 void qRigidbody::finaltick()
