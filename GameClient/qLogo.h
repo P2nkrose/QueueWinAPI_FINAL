@@ -1,22 +1,25 @@
 #pragma once
-#include "qLevel.h"
+#include "qObj.h"
 
+class qCamera;
+class qTexture;
+class qAnimator;
 
-class qLogo : public qLevel
+class qLogo : public qObj
 {
 public:
-	qLogo();
-	~qLogo();
-
+	CLONE(qLogo);
 
 public:
-	virtual void begin() override;
-	virtual void render() override;
+	qLogo();
+	qLogo(const qLogo& _Other);
+	~qLogo();
 
-	virtual void Enter() override;
-	virtual void Exit() override;
+	qAnimator* GetAnimator() { return m_Animator; }
 
+	virtual void tick() override;
 
-
+private:
+	qAnimator*		m_Animator;
 };
 

@@ -9,7 +9,8 @@
 #include "qLevel.h"
 
 #include "qObj.h"
-#include "qBackground.h"
+#include "qBackground_stage1.h"
+#include "qBackground_stage2.h"
 
 qCamera::qCamera()
 	: m_CamSpeed(500.f)
@@ -98,9 +99,9 @@ void qCamera::Move()
 		if (KEY_PRESSED(KEY::D))
 			m_LookAt.x += DT * m_CamSpeed;
 	}
-	if (pCurLevel->GetName() == L"stage1")
+	if (pCurLevel->GetName() == L"Stage1")
 	{
-		qBackground* BackGround = (qBackground*)pCurLevel->FindObjectByName(L"Stage1");
+		qBackground_stage1* BackGround = (qBackground_stage1*)pCurLevel->FindObjectByName(L"Stage1");
 
 		if (nullptr == BackGround)
 			return;
@@ -136,6 +137,135 @@ void qCamera::Move()
 			m_LookAt.x = m_Owner->GetPos().x;
 		}
 	}
+	else if (pCurLevel->GetName() == L"Stage2")
+	{
+		qBackground_stage2* BackGround = (qBackground_stage2*)pCurLevel->FindObjectByName(L"Stage2");
+
+		if (nullptr == BackGround)
+			return;
+
+		UINT Width = BackGround->GetWidth();
+		UINT Height = BackGround->GetHeight();
+
+		// 카메라 벽 못넘게 하기
+		Vec2 vPos = GetRealPos(m_Owner->GetPos());
+		Vec2 vRenderPos = m_Owner->GetRenderPos();
+		wchar_t szBuff[256] = {};
+		static float fTime = 0.f;
+		fTime += DT;
+
+		if (m_Owner)
+		{
+			m_LookAt.x = m_Owner->GetPos().x;
+			m_LookAt.y = m_Owner->GetPos().y;
+		}
+
+		if (fTime >= 1.f)
+		{
+			swprintf_s(szBuff, L"x : %f, y : %f", vPos.x, vPos.y);
+			LOG(LOG_TYPE::DBG_ERROR, szBuff);
+			fTime = 0.f;
+		}
+
+		float fWidth = Width - vPos.x;
+
+	    if (vPos.x <= 800.f)
+	    {
+	    	m_LookAt.x = 800.f;
+	    }	
+
+		else if (m_LookAt.x >= 1179.f)
+		{
+			m_LookAt.x = 1179.f;
+		}
+
+		// 스테이지 2 카메라 못넘게하기 (오른쪽) == 1561
+
+		float fHeight = vPos.y - Height;
+
+		if (fHeight <= m_LookAt.y)
+		{
+			m_LookAt.y = 450.f;
+		}
+	
+	}
+	else if (pCurLevel->GetName() == L"Boss1")
+	{
+		qBackground_stage2* BackGround = (qBackground_stage2*)pCurLevel->FindObjectByName(L"Boss1");
+
+		if (nullptr == BackGround)
+			return;
+
+
+		UINT Width = BackGround->GetWidth();
+		UINT Height = BackGround->GetHeight();
+
+		// 카메라 벽 못넘게 하기
+		Vec2 vPos = GetRealPos(m_Owner->GetPos());
+		Vec2 vRenderPos = m_Owner->GetRenderPos();
+		wchar_t szBuff[256] = {};
+		static float fTime = 0.f;
+		fTime += DT;
+		if (fTime >= 1.f)
+		{
+			swprintf_s(szBuff, L"x : %f, y : %f", vPos.x, vPos.y);
+			LOG(LOG_TYPE::DBG_ERROR, szBuff);
+			fTime = 0.f;
+		}
+		if (vPos.x <= 800.f)
+		{
+			m_LookAt.x = 800.f;
+		}
+		// 보스 1 카메라 못넘게하기 (오른쪽) == 
+		else if (vPos.x >= 1246.f)
+		{
+			m_LookAt.x = Width - 800;
+		}
+
+		else
+		{
+			m_LookAt.x = m_Owner->GetPos().x;
+		}
+	}
+
+	else if (pCurLevel->GetName() == L"Boss2")
+	{
+		qBackground_stage2* BackGround = (qBackground_stage2*)pCurLevel->FindObjectByName(L"Boss2");
+
+		if (nullptr == BackGround)
+			return;
+
+
+		UINT Width = BackGround->GetWidth();
+		UINT Height = BackGround->GetHeight();
+
+		// 카메라 벽 못넘게 하기
+		Vec2 vPos = GetRealPos(m_Owner->GetPos());
+		Vec2 vRenderPos = m_Owner->GetRenderPos();
+		wchar_t szBuff[256] = {};
+		static float fTime = 0.f;
+		fTime += DT;
+		if (fTime >= 1.f)
+		{
+			swprintf_s(szBuff, L"x : %f, y : %f", vPos.x, vPos.y);
+			LOG(LOG_TYPE::DBG_ERROR, szBuff);
+			fTime = 0.f;
+		}
+		if (vPos.x <= 800.f)
+		{
+			m_LookAt.x = 800.f;
+		}
+		// 보스 1 카메라 못넘게하기 (오른쪽) == 
+		else if (vPos.x >= 1246.f)
+		{
+			m_LookAt.x = Width - 800;
+		}
+
+		else
+		{
+			m_LookAt.x = m_Owner->GetPos().x;
+		}
+		}
 
 }
 

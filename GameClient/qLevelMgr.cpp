@@ -1,14 +1,15 @@
 #include "pch.h"
 #include "qLevelMgr.h"
-
 #include "qCollisionMgr.h"
 
 #include "qLevel.h"
-#include "qLogo.h"
-#include "qStart.h"
+#include "qLevel_Logo.h"
+#include "qLevel_Start.h"
 #include "qLevel_Editor.h"
-#include "qLevel_Stage01.h"
-#include "qLevel_Stage02.h"
+#include "qLevel_stage1.h"
+#include "qLevel_stage2.h"
+#include "qLevel_boss1.h"
+#include "qLevel_boss2.h"
 
 #include "qPlayer.h"
 #include "qMonster.h"
@@ -38,12 +39,16 @@ void qLevelMgr::init()
 {
 	// 모든 레벨 생성
 
-	m_arrLevel[(UINT)LEVEL_TYPE::START] = new qStart;
+	m_arrLevel[(UINT)LEVEL_TYPE::LOGO] = new qLevel_Logo;
+	m_arrLevel[(UINT)LEVEL_TYPE::START] = new qLevel_Start;
 	m_arrLevel[(UINT)LEVEL_TYPE::EDITOR] = new qLevel_Editor;
-	m_arrLevel[(UINT)LEVEL_TYPE::STAGE_01] = new qLevel_Stage01;
+	m_arrLevel[(UINT)LEVEL_TYPE::STAGE_01] = new qLevel_stage1;
+	m_arrLevel[(UINT)LEVEL_TYPE::STAGE_02] = new qLevel_stage2;
+	m_arrLevel[(UINT)LEVEL_TYPE::BOSS_01] = new qLevel_boss1;
+	m_arrLevel[(UINT)LEVEL_TYPE::BOSS_02] = new qLevel_boss2;
 
 	// 처음 시작할 레벨
-	::ChangeLevel(LEVEL_TYPE::START);
+	::ChangeLevel(LEVEL_TYPE::LOGO);
 	
 }
 

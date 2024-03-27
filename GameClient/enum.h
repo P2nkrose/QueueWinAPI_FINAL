@@ -30,7 +30,7 @@ enum class LEVEL_TYPE
 	LOGO,
 	START,
 	EDITOR,
-	
+
 	STAGE_01,
 	STAGE_02,
 

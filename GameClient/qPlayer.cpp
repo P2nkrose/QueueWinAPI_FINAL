@@ -287,9 +287,36 @@ qPlayer::~qPlayer()
 
 void qPlayer::begin()
 {
+	qObj::begin();
 	// CallBack 설정
 	m_RigidBody->SetGroundFunc(&BeGround);
 	m_RigidBody->SetAirFunc(&BeAir);
+
+
+	// 플레이어 방향 설정
+	qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
+
+	if (pCurLevel->GetName() == L"Stage1")
+	{
+		SetDir(DIRECTION::LEFT);
+		m_Animator->Play(L"PlayerIdleLeft", true);
+	}
+	else if (pCurLevel->GetName() == L"Stage2")
+	{
+		SetDir(DIRECTION::LEFT);
+		m_Animator->Play(L"PlayerIdleLeft", true);
+	}
+	else if (pCurLevel->GetName() == L"Boss1")
+	{
+		SetDir(DIRECTION::RIGHT);
+		m_Animator->Play(L"PlayerIdleRight", true);
+	}
+	else if (pCurLevel->GetName() == L"Boss2")
+	{
+		SetDir(DIRECTION::RIGHT); 
+		m_Animator->Play(L"PlayerIdleRight", true);
+	}
+
 
 	// Delegate
 	//m_RigidBody->SetGroundDelegate(this, (DELEGATE)&qPlayer::RestoreJumpCount);
@@ -301,6 +328,7 @@ void qPlayer::begin()
 	//m_FSM->SetBlackboardData(L"pPlayer", DATA_TYPE::OBJECT, this);
 
 	//m_FSM->ChangeState(L"IDLE");
+
 }
 
 void qPlayer::tick()

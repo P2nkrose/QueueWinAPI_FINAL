@@ -7,7 +7,7 @@
 #include "qPathMgr.h"
 #include "qPlatform.h"
 #include "qCollider.h"
-#include "qBackground.h"
+#include "qBackground_stage1.h"
 
 #include "qUI.h"
 #include "qButton.h"
@@ -25,6 +25,8 @@ qLevel_Editor::~qLevel_Editor()
 void qLevel_Editor::begin()
 {
 	qLevel::begin();
+
+	qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 0.7f);
 }
 
 void qLevel_Editor::tick()
@@ -99,7 +101,7 @@ void qLevel_Editor::Enter()
 
 
 	//Background
-	qObj* pBack = new qBackground;
+	qObj* pBack = new qBackground_stage1;
 	pBack->SetName(L"Stage1");
 	pBack->SetPos(0.0f, 0.f);
 	pBack->SetScale(1.3f, 1.3f);
