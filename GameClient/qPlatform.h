@@ -7,7 +7,7 @@ class qPlatform : public qObj
 
 public:
 	qPlatform();
-	qPlatform(Vec2 _Pos, Vec2 _Scale);
+	qPlatform(Vec2 _Pos, Vec2 _Scale, PLATFORM_TYPE _Type);
 	~qPlatform();
 
 	virtual void tick();
@@ -19,6 +19,6 @@ public:
 
 private:
 	qCollider*		m_Collider;
-
+	PLATFORM_TYPE   m_eType;
 };
 

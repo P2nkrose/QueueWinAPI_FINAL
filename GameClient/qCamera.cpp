@@ -85,10 +85,10 @@ void qCamera::Move()
 {
 	qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
 
-	if (nullptr == pCurLevel || nullptr == m_Owner)
+	if (nullptr == pCurLevel)
 		return;
 
-	if(pCurLevel->GetName() == L"editor")
+	if(pCurLevel->GetName() == L"Editor")
 	{
 		if (KEY_PRESSED(KEY::W))
 			m_LookAt.y -= DT * m_CamSpeed;
@@ -102,17 +102,23 @@ void qCamera::Move()
 	if (pCurLevel->GetName() == L"Stage1")
 	{
 		qBackground_stage1* BackGround = (qBackground_stage1*)pCurLevel->FindObjectByName(L"Stage1");
-
+		
 		if (nullptr == BackGround)
 			return;
-
+		
+		if (!m_Owner)
+			return;
+		
+		//m_LookAt = m_Owner->GetPos();
 		
 		UINT Width = BackGround->GetWidth();
 		UINT Height = BackGround->GetHeight();
-
+		
 		// 카메라 벽 못넘게 하기
 		Vec2 vPos = GetRealPos(m_Owner->GetPos());
 		Vec2 vRenderPos = m_Owner->GetRenderPos();
+		
+		// 현재 위치 표시
 		wchar_t szBuff[256] = {};
 		static float fTime = 0.f;
 		fTime += DT;
@@ -122,72 +128,87 @@ void qCamera::Move()
 			LOG(LOG_TYPE::DBG_ERROR, szBuff);
 			fTime = 0.f;
 		}
+		
 		if (vPos.x <= 800.f)
 		{
 			m_LookAt.x = 800.f;
 		}
+
 		// 스테이지 1 카메라 못넘게하기 (오른쪽) == 3535
 		else if (vPos.x >= 3535.f)
 		{
 			m_LookAt.x = Width - 800;
 		}
-
 		else
 		{
 			m_LookAt.x = m_Owner->GetPos().x;
 		}
-	}
+		
+		m_LookAt.y = 477.f;
+		
+}
 	else if (pCurLevel->GetName() == L"Stage2")
 	{
 		qBackground_stage2* BackGround = (qBackground_stage2*)pCurLevel->FindObjectByName(L"Stage2");
-
+		
 		if (nullptr == BackGround)
 			return;
 
+		//m_LookAt.x = m_Owner->GetPos().x;
+		//m_LookAt.y = m_Owner->GetPos().y;
+
 		UINT Width = BackGround->GetWidth();
 		UINT Height = BackGround->GetHeight();
-
+		
 		// 카메라 벽 못넘게 하기
 		Vec2 vPos = GetRealPos(m_Owner->GetPos());
 		Vec2 vRenderPos = m_Owner->GetRenderPos();
+		
+		//현재 위치 표시
 		wchar_t szBuff[256] = {};
 		static float fTime = 0.f;
 		fTime += DT;
-
-		if (m_Owner)
-		{
-			m_LookAt.x = m_Owner->GetPos().x;
-			m_LookAt.y = m_Owner->GetPos().y;
-		}
-
 		if (fTime >= 1.f)
 		{
 			swprintf_s(szBuff, L"x : %f, y : %f", vPos.x, vPos.y);
 			LOG(LOG_TYPE::DBG_ERROR, szBuff);
 			fTime = 0.f;
 		}
-
-		float fWidth = Width - vPos.x;
-
-	    if (vPos.x <= 800.f)
-	    {
-	    	m_LookAt.x = 800.f;
-	    }	
-
-		else if (m_LookAt.x >= 1179.f)
+		// X 좌표 계산
+		// 왼쪽 벽 못넘게 하기
+		if (vPos.x <= 800.f)
 		{
-			m_LookAt.x = 1179.f;
+			m_LookAt.x = 800.f;
+		}
+		//스테이지 2 카메라 못넘게하기 (오른쪽) == 1561
+		else if (vPos.x >= 1561.f)
+		{
+			m_LookAt.x = Width - 800;
+		}
+		else
+		{
+			m_LookAt.x = m_Owner->GetPos().x;
 		}
 
-		// 스테이지 2 카메라 못넘게하기 (오른쪽) == 1561
+		float vDist = m_LookAt.y - vPos.y;
 
-		float fHeight = vPos.y - Height;
+		m_LookAt.y = 1190.f;
 
-		if (fHeight <= m_LookAt.y)
-		{
-			m_LookAt.y = 450.f;
-		}
-	
+		// Y좌표 계산
+		//if (vDist < -150.f)
+		//{
+		//	m_LookAt.y = Height * 0.7;
+		//}
+		//else if (vDist >= -150.f)
+		//{
+		//	m_LookAt.y = m_Owner->GetPos().y;
+		//}
+		//else if (vDist <= -150.f && vDist >= 60)
+		//{
+		//	m_LookAt.y = Height * 0.5;
+		//}
+		
+		
 	}
 	else if (pCurLevel->GetName() == L"Boss1")
 	{
@@ -221,11 +242,12 @@ void qCamera::Move()
 		{
 			m_LookAt.x = Width - 800;
 		}
-
 		else
 		{
 			m_LookAt.x = m_Owner->GetPos().x;
 		}
+		
+		m_LookAt.y = 496.f;
 	}
 
 	else if (pCurLevel->GetName() == L"Boss2")
@@ -265,8 +287,9 @@ void qCamera::Move()
 		{
 			m_LookAt.x = m_Owner->GetPos().x;
 		}
-		}
 
+		m_LookAt.y = 485.f;
+	}
 }
 
 void qCamera::CameraEffect()

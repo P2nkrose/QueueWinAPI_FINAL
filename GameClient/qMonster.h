@@ -10,6 +10,7 @@ public:
 	CLONE(qMonster);
 
 	qMonster();
+	qMonster(Vec2 _Pos, Vec2 _Scale);
 	~qMonster();
 
 public:

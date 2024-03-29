@@ -57,9 +57,19 @@ void qLevel_stage1::tick()
 		ChangeLevel(LEVEL_TYPE::EDITOR);
 	}
 
-	if (KEY_TAP(KEY::Z))
+	if (KEY_TAP(KEY::X))
 	{
 		ChangeLevel(LEVEL_TYPE::STAGE_02);
+	}
+
+	if (KEY_TAP(KEY::C))
+	{
+		ChangeLevel(LEVEL_TYPE::BOSS_01);
+	}
+
+	if (KEY_TAP(KEY::V))
+	{
+		ChangeLevel(LEVEL_TYPE::BOSS_02);
 	}
 }
 
@@ -73,7 +83,6 @@ void qLevel_stage1::Enter()
 	qObj* pBack = new qBackground_stage1;
 	pBack->SetName(L"Stage1");
 	pBack->SetPos(0.0f, 0.f);
-	pBack->SetScale(1.3f, 1.3f);
 	AddObject(LAYER_TYPE::BACKGROUND, pBack);
 	
 
@@ -105,14 +114,14 @@ void qLevel_stage1::Enter()
 	//AddObject(LAYER_TYPE::MONSTER, pObject);
 
 	// 플랫폼 생성
-	pObject = new qPlatform;
-	pObject->SetName(L"Platform");
-	pObject->SetPos(Vec2(640.f, 700.f));
-	AddObject(LAYER_TYPE::PLATFORM, pObject);
+	//pObject = new qPlatform;
+	//pObject->SetName(L"Platform");
+	//pObject->SetPos(Vec2(640.f, 700.f));
+	//AddObject(LAYER_TYPE::PLATFORM, pObject);
 
 	// 콜라이더 읽어오기
-	LoadFromFile(L"platform\\platform.plat");
-
+	LoadPlatform(L"platform\\platform.dat");
+	LoadMonster(L"monster\\monster.dat");
 
 	// 레벨 충돌 설정하기
 	qCollisionMgr::GetInst()->CollisionCheckClear();

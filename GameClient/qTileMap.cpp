@@ -184,7 +184,7 @@ void qTileMap::SaveToFile(FILE* _File)
 	}
 }
 
-void qTileMap::LoadFromFile(FILE* _File)
+void qTileMap::LoadPlatform(FILE* _File)
 {
 	fread(&m_Row, sizeof(UINT), 1, _File);
 	fread(&m_Col, sizeof(UINT), 1, _File);

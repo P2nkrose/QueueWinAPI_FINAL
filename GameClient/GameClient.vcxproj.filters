@@ -146,18 +146,6 @@
     <Filter Include="03. Game\05. Object\5. Platform">
       <UniqueIdentifier>{5590f0c0-c71e-4db1-be1c-4bd293e51693}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\5. Platform\1. Ground">
-      <UniqueIdentifier>{ee9b030d-2d31-40a9-ab7f-034f3d7c4d74}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Platform\2. Wall">
-      <UniqueIdentifier>{d8f4fb44-cf9a-4392-8aa0-8e8f6b73ba28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Platform\3. Portal">
-      <UniqueIdentifier>{52f9d64d-ee31-410d-b80c-eb5d5b16fea9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Platform\4. Rope">
-      <UniqueIdentifier>{65311fea-0cf9-4d46-a8a3-af6ca41e298c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\7. Tile">
       <UniqueIdentifier>{d15c0527-03ea-4b38-8a0c-2e279cf51ff5}</UniqueIdentifier>
     </Filter>
@@ -298,9 +286,6 @@
     <ClInclude Include="qForce.h">
       <Filter>03. Game\05. Object\9. Force</Filter>
     </ClInclude>
-    <ClInclude Include="qPlatform.h">
-      <Filter>03. Game\05. Object\5. Platform</Filter>
-    </ClInclude>
     <ClInclude Include="qCamera.h">
       <Filter>03. Game\03. Manager\09. Camera</Filter>
     </ClInclude>
@@ -375,6 +360,9 @@
     </ClInclude>
     <ClInclude Include="qLevel_boss2.h">
       <Filter>03. Game\04. Level\04. Stage\4. BOSS_2</Filter>
+    </ClInclude>
+    <ClInclude Include="qPlatform.h">
+      <Filter>03. Game\05. Object\5. Platform</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -481,9 +469,6 @@
     <ClCompile Include="qForce.cpp">
       <Filter>03. Game\05. Object\9. Force</Filter>
     </ClCompile>
-    <ClCompile Include="qPlatform.cpp">
-      <Filter>03. Game\05. Object\5. Platform</Filter>
-    </ClCompile>
     <ClCompile Include="qCamera.cpp">
       <Filter>03. Game\03. Manager\09. Camera</Filter>
     </ClCompile>
@@ -558,6 +543,9 @@
     </ClCompile>
     <ClCompile Include="qLevel_boss2.cpp">
       <Filter>03. Game\04. Level\04. Stage\4. BOSS_2</Filter>
+    </ClCompile>
+    <ClCompile Include="qPlatform.cpp">
+      <Filter>03. Game\05. Object\5. Platform</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -100,7 +100,11 @@ enum class LAYER_TYPE
 	DEFAULT,
 	BACKGROUND,
 	TILE,
+
 	PLATFORM,
+	ROPE,
+	PORTAL,
+
 	PLAYER,
 	MONSTER,
 	PLAYER_MISSILE,
@@ -108,8 +112,8 @@ enum class LAYER_TYPE
 
 	FORCE,
 
-	UI = 15,
-	END = 16,
+	UI,
+	END,
 
 	NONE = -1,
 
@@ -130,4 +134,27 @@ enum class LOG_TYPE
 	DBG_LOG,
 	DBG_WARNING,
 	DBG_ERROR,
+};
+
+enum class PLATFORM_TYPE
+{
+	GROUND,
+	ROPE,
+	PORTAL,
+	END,
+};
+
+enum class EDIT_TYPE
+{
+	PLATFORM,
+	MONSTER,
+	END,
+};
+
+enum class STAGE_NAME
+{
+	STAGE1,
+	STAGE2,
+	BOSS1,
+	BOSS2,
 };

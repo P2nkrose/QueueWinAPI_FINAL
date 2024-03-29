@@ -45,8 +45,10 @@ public:
 	float GetFriction() { return m_Friction; }
 	Vec2  GetGravityVelocity() { return m_VelocityByGravity; }
 
+
 	void SetGroundFunc(void(*_pFunc)(void)) { m_GroundFunc = _pFunc; }
 	void SetAirFunc(void(*_pFunc)(void)) { m_AirFunc = _pFunc; }
+	void SetRopeFunc(void(*_pFunc)(void)) { m_RopeFunc = _pFunc; }
 
 	void SetGroundDelegate(qObj* _Inst, DELEGATE _MemFunc)
 	{
@@ -58,6 +60,12 @@ public:
 	{
 		m_AirInst = _Inst;
 		m_AirDelegate = _MemFunc;
+	}
+
+	void SetRopeDelegate(qObj* _Inst, DELEGATE _MemFunc)
+	{
+		m_RopeInst = _Inst;
+		m_RopeDelegate = _MemFunc;
 	}
 
 	void UseGravity(bool _Use)
@@ -91,8 +99,27 @@ public:
 		}
 	}
 
+	void SetRope(bool _Rope)
+	{
+		m_Rope = _Rope;
+
+		if (m_Rope)
+		{
+			m_VelocityByGravity = Vec2(0.f, 0.f);
+
+			if (nullptr != m_RopeFunc)
+				m_RopeFunc();
+
+			if (m_RopeInst && m_RopeDelegate)
+				(m_RopeInst->*m_RopeDelegate)();
+		}
+	}
+
+
+
 	bool IsGround() { return m_Ground; }
 	bool IsWall() { return m_Wall; }
+	bool IsRope() { return m_Rope; }
 
 private:
 
@@ -115,15 +142,18 @@ private:
 	float	m_JumpSpeed;			// 점프 속력
 	float	m_DoubleJumpSpeed;		// 더플점프 속력
 
+	// 로프
+	bool	m_Rope;					// 로프상태인지 체크
 
 	// 벽 구현하기
 	bool	m_Wall;					// 벽에 부딪혔는지 체크
 
 
 
-	// Ground On / Off 호출시킬 함수포인터
+	// Ground, Air, Rope   On / Off 호출시킬 함수포인터
 	CALL_BACK	m_GroundFunc;
 	CALL_BACK	m_AirFunc;
+	CALL_BACK	m_RopeFunc;
 
 	// Delegate
 	qObj*		m_GroundInst;
@@ -131,6 +161,9 @@ private:
 
 	qObj*		m_AirInst;
 	DELEGATE	m_AirDelegate;
+
+	qObj*		m_RopeInst;
+	DELEGATE	m_RopeDelegate;
 
 };
 

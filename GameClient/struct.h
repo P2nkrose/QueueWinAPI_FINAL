@@ -174,7 +174,7 @@ struct tTask
 
 struct tInfo
 {
-	Vec2		startPos;
+	Vec2		StartPos;
 	Vec2		EndPos;
 };
 

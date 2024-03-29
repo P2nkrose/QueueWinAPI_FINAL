@@ -28,7 +28,7 @@ public:
 	void render();
 
 	void SaveToFile(FILE* _File);
-	void LoadFromFile(FILE* _File);
+	void LoadPlatform(FILE* _File);
 
 	
 public:

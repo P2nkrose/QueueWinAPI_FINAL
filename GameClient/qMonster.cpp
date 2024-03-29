@@ -32,8 +32,20 @@ qMonster::qMonster()
 	m_FSM->AddState(L"Trace", new qTraceState);
 }
 
+qMonster::qMonster(Vec2 _Pos, Vec2 _Scale)
+	: m_HP(5)
+	, m_DetectRange(400)
+	, m_Speed(100)
+{
+	SetPos(_Pos);
+	SetScale(_Scale);
+	m_Collider = (qCollider*)AddComponent(new qCollider);
+	m_Collider->SetScale(GetScale());
+}
+
 qMonster::~qMonster()
 {
+	
 }
 
 void qMonster::begin()

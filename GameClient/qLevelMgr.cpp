@@ -42,13 +42,14 @@ void qLevelMgr::init()
 	m_arrLevel[(UINT)LEVEL_TYPE::LOGO] = new qLevel_Logo;
 	m_arrLevel[(UINT)LEVEL_TYPE::START] = new qLevel_Start;
 	m_arrLevel[(UINT)LEVEL_TYPE::EDITOR] = new qLevel_Editor;
+	m_arrLevel[(UINT)LEVEL_TYPE::EDITOR]->SetPos(Vec2(0.f, 0.f));
 	m_arrLevel[(UINT)LEVEL_TYPE::STAGE_01] = new qLevel_stage1;
 	m_arrLevel[(UINT)LEVEL_TYPE::STAGE_02] = new qLevel_stage2;
 	m_arrLevel[(UINT)LEVEL_TYPE::BOSS_01] = new qLevel_boss1;
 	m_arrLevel[(UINT)LEVEL_TYPE::BOSS_02] = new qLevel_boss2;
 
-	// 처음 시작할 레벨
-	::ChangeLevel(LEVEL_TYPE::LOGO);
+	// 처음 시작할 레벨 
+	::ChangeLevel(LEVEL_TYPE::STAGE_02);
 	
 }
 

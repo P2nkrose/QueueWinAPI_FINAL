@@ -22,6 +22,10 @@ void ButtonCallBackFunc()
 
 qLevel_Start::qLevel_Start()
 {
+	if (KEY_TAP(KEY::E))
+	{
+		ChangeLevel(LEVEL_TYPE::EDITOR);
+	}
 }
 
 qLevel_Start::~qLevel_Start()
@@ -52,6 +56,7 @@ void qLevel_Start::Enter()
 	pUI->SetScale(Vec2(200.f, 100.f));
 	pUI->SetPos(Vec2(vResol.x - (pUI->GetScale().x + 10), 10.f));
 	AddObject(LAYER_TYPE::UI, pUI);
+
 }
 
 void qLevel_Start::Exit()

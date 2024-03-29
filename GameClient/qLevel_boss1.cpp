@@ -38,7 +38,17 @@ void qLevel_boss1::tick()
 		::ChangeLevel(LEVEL_TYPE::EDITOR);
 	}
 
-	if (KEY_TAP(KEY::C))
+	if (KEY_TAP(KEY::Z))
+	{
+		::ChangeLevel(LEVEL_TYPE::STAGE_01);
+	}
+
+	if (KEY_TAP(KEY::X))
+	{
+		::ChangeLevel(LEVEL_TYPE::STAGE_02);
+	}
+
+	if (KEY_TAP(KEY::V))
 	{
 		::ChangeLevel(LEVEL_TYPE::BOSS_02);
 	}
@@ -54,27 +64,27 @@ void qLevel_boss1::Enter()
 	// Background
 	qObj* pBack = new qBackground_boss1;
 	pBack->SetName(L"Boss1");
-	pBack->SetPos(0.f, -25.f);
-	pBack->SetScale(1.3f, 1.3f);
+	pBack->SetPos(0.f, 0.f);
 	AddObject(LAYER_TYPE::BACKGROUND, pBack);
 
 	// Player
 	qObj* pPlayer = new qPlayer;
 	pPlayer->SetName(L"Player");
-	pPlayer->SetPos(220.f, 745.f);
+	pPlayer->SetPos(227.f, 766.f);
 	pPlayer->SetScale(100.0f, 100.0f);
 	AddObject(LAYER_TYPE::PLAYER, pPlayer);
 
 
 	// 플랫폼 생성
-	qObj* pPlatform = new qPlatform;
-	pPlatform->SetName(L"Platform");
-	pPlatform->SetPos(Vec2(640.f, 700.f));
-	AddObject(LAYER_TYPE::PLATFORM, pPlatform);
+	//qObj* pPlatform = new qPlatform;
+	//pPlatform->SetName(L"Platform");
+	//pPlatform->SetPos(Vec2(640.f, 700.f));
+	//AddObject(LAYER_TYPE::PLATFORM, pPlatform);
 
 
 	// 콜라이더 읽어오기
-	LoadFromFile(L"platform\\platform.plat");
+	LoadPlatform(L"platform\\platform.dat");
+	LoadMonster(L"monster\\monster.dat");
 
 
 	// 레벨 충돌 설정하기

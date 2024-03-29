@@ -5,11 +5,12 @@ class qObj;
 class qCollider;
 class qPlatform;
 
-
 class qLevel : public qEntity
 {
 
 public:
+	friend class qUIMgr;
+
 	CLONE_DISABLE(qLevel);
 
 
@@ -37,27 +38,30 @@ public:
 	const vector<qObj*>& GetObjects(LAYER_TYPE _Type) { return m_arrObj[(UINT)_Type]; }
 	const vector<qCollider*>& GetColliders(LAYER_TYPE _Layer) { return m_arrCollider[(UINT)_Layer]; }
 
+	void SetStageName(STAGE_NAME _name) { m_stageName = _name; }
 
+	void SetPos(Vec2 _Pos) { m_Pos = _Pos; }
+	Vec2 GetPos() { return m_Pos; }
 
 
 protected:
 	void DeleteAllObjects();
 	void DeleteObjects(LAYER_TYPE _LayerType);
 
-	void LoadFromFile(const wstring& _strRelativePath);
-
-
-private:
-
-	vector<qObj*>		m_arrObj[(UINT)LAYER_TYPE::END];
-	vector<qCollider*>	m_arrCollider[(UINT)LAYER_TYPE::END];
-
 
 protected:
-	vector<qPlatform*>	m_vecEditPlat;
-	qPlatform*			m_Platform;
-	tInfo				m_Info;
+	void SavePlatform(const wstring& _strRelativePath);
+	void SaveMonster(const wstring& _strRelativePath);
 
 
+	void LoadPlatform(const wstring& _strRelativePath);
+	void LoadMonster(const wstring& _strRelativePath);
+
+private:
+	vector<qObj*>		m_arrObj[(UINT)LAYER_TYPE::END];
+	vector<qCollider*>	m_arrCollider[(UINT)LAYER_TYPE::END];
+	STAGE_NAME			m_stageName;
+
+	Vec2				m_Pos;
 };
 

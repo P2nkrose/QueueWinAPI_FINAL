@@ -56,6 +56,7 @@ qPlayer::qPlayer()
 	m_BodyCol->SetScale(Vec2(70.f, 70.f));
 	m_BodyCol->SetActive(true);
 
+	
 	// Animation 추가
 	//qTexture* pAtlas = qAssetMgr::GetInst()->LoadTexture(L"PlayerAtlasTex", L"texture\\link.png");
 
@@ -250,6 +251,7 @@ qPlayer::qPlayer()
 
 	// Delegate
 	m_RigidBody->SetGroundDelegate(this, (DELEGATE)&qPlayer::RestoreJumpCount);
+	//m_RigidBody->SetGround(true);
 
 	// 카메라
 	qCamera::GetInst()->SetOwner(this);
@@ -337,11 +339,28 @@ void qPlayer::tick()
 
 	m_Pos = GetPos();
 
-	
+	wchar_t szBuff[256] = {};
+	static float Time = 0.f;
+
+	Time += DT;
+	if (Time >= 1.f)
+	{
+		swprintf_s(szBuff, L"%f, %f", m_Pos.x, m_Pos.y);
+		LOG(LOG_TYPE::DBG_WARNING, szBuff);
+		Time = 0.f;
+	}
 	// ======
 	//  MOVE
 	// ======
-
+	if (KEY_PRESSED(KEY::H))
+	{
+		m_Pos += Vec2(0.f, -1.f) * 200.f * DT;
+	}
+	
+	if (KEY_PRESSED(KEY::N))
+	{
+		m_Pos += Vec2(0.f, 1.f) * 200.f * DT;
+	}
 
 	if (KEY_PRESSED(KEY::LEFT) && m_RigidBody->IsGround() 
 		&& PLAYER_STATE::ATTACK != m_State && PLAYER_STATE::MISSILE != m_State && PLAYER_STATE::SLASH != m_State
