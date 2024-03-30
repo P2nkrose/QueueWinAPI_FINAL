@@ -13,7 +13,7 @@
 
 #include "qObj.h"
 #include "qLogo.h"
-
+ 
 
 qLevel_Logo::qLevel_Logo()
 {

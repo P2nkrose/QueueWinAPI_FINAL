@@ -1,15 +1,14 @@
 #pragma once
 #include "qObj.h"
 
-
-class qPlatform : public qObj
+class qPortal : public qObj
 {
-	CLONE(qPlatform)
+	CLONE(qPortal);
 
 public:
-	qPlatform();
-	qPlatform(Vec2 _Pos, Vec2 _Scale);
-	~qPlatform();
+	qPortal();
+	qPortal(Vec2 _Pos, Vec2 _Scale);
+	~qPortal();
 
 	virtual void tick();
 	virtual void render();
@@ -19,6 +18,6 @@ public:
 	virtual void EndOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
 
 private:
-	qCollider*		m_Collider;
+	qCollider* m_Collider;
 };
 

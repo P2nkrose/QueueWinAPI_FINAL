@@ -176,6 +176,15 @@
     <Filter Include="03. Game\04. Level\04. Stage\4. BOSS_2">
       <UniqueIdentifier>{458ed9ed-2312-4000-b45a-9bf6c3e25bd1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\05. Object\5. Platform\1. Platform">
+      <UniqueIdentifier>{ab3dbf2e-aa34-43f0-98c3-38c116f54b88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Platform\2. Rope">
+      <UniqueIdentifier>{5fa6d2a7-f811-4251-8674-4c2d496e1aa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Platform\3. Portal">
+      <UniqueIdentifier>{3e5283af-4ecc-4e96-8d18-6c18ad3eb787}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -362,7 +371,13 @@
       <Filter>03. Game\04. Level\04. Stage\4. BOSS_2</Filter>
     </ClInclude>
     <ClInclude Include="qPlatform.h">
-      <Filter>03. Game\05. Object\5. Platform</Filter>
+      <Filter>03. Game\05. Object\5. Platform\1. Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="qRope.h">
+      <Filter>03. Game\05. Object\5. Platform\2. Rope</Filter>
+    </ClInclude>
+    <ClInclude Include="qPortal.h">
+      <Filter>03. Game\05. Object\5. Platform\3. Portal</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -545,7 +560,13 @@
       <Filter>03. Game\04. Level\04. Stage\4. BOSS_2</Filter>
     </ClCompile>
     <ClCompile Include="qPlatform.cpp">
-      <Filter>03. Game\05. Object\5. Platform</Filter>
+      <Filter>03. Game\05. Object\5. Platform\1. Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="qRope.cpp">
+      <Filter>03. Game\05. Object\5. Platform\2. Rope</Filter>
+    </ClCompile>
+    <ClCompile Include="qPortal.cpp">
+      <Filter>03. Game\05. Object\5. Platform\3. Portal</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -51,10 +51,14 @@ protected:
 
 protected:
 	void SavePlatform(const wstring& _strRelativePath);
+	void SaveRope(const wstring& _strRelativePath);
+	void SavePortal(const wstring& _strRelativePath);
 	void SaveMonster(const wstring& _strRelativePath);
 
 
 	void LoadPlatform(const wstring& _strRelativePath);
+	void LoadRope(const wstring& _strRelativePath);
+	void LoadPortal(const wstring& _strRelativePath);
 	void LoadMonster(const wstring& _strRelativePath);
 
 private:

@@ -40,6 +40,7 @@ qPlayer::qPlayer()
 	, m_SlashRange(0.f)
 	, m_Slash(true)
 	, m_Hud(100.f)
+	, m_Level(LEVEL_TYPE::END)
 	, m_PlayerImg(nullptr)
 	, m_DoubleJumpCount(2)
 	, m_CurJumpCount(0)
@@ -251,7 +252,7 @@ qPlayer::qPlayer()
 
 	// Delegate
 	m_RigidBody->SetGroundDelegate(this, (DELEGATE)&qPlayer::RestoreJumpCount);
-	//m_RigidBody->SetGround(true);
+	m_RigidBody->SetGround(true);
 
 	// Ä«¸Þ¶ó
 	qCamera::GetInst()->SetOwner(this);
@@ -335,7 +336,10 @@ void qPlayer::begin()
 
 void qPlayer::tick()
 {
+
 	qObj::tick();
+
+	qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
 
 	m_Pos = GetPos();
 
@@ -745,8 +749,36 @@ void qPlayer::tick()
 
 	}
 
-
 	SetPos(m_Pos);
+
+	
+	if (m_Portal)
+	{
+		if (pCurLevel->GetName() == L"Stage1")
+		{
+			if (KEY_TAP(KEY::UP))
+			{
+				ChangeLevel(LEVEL_TYPE::STAGE_02);
+			}
+		}
+		if (pCurLevel->GetName() == L"Stage2")
+		{
+			if (KEY_TAP(KEY::UP))
+			{
+				ChangeLevel(LEVEL_TYPE::BOSS_01);
+			}
+		}
+		if (pCurLevel->GetName() == L"Boss1")
+		{
+			if (KEY_TAP(KEY::UP))
+			{
+				ChangeLevel(LEVEL_TYPE::BOSS_02);
+			}
+		}
+	}
+	
+
+	
 
 }
 
@@ -762,7 +794,7 @@ void qPlayer::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* 
 
 void qPlayer::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
-
+	
 }
 
 

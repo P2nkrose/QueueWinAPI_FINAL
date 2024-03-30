@@ -3,8 +3,12 @@
 
 #include "qCollisionMgr.h"
 #include "qPlayer.h"
-#include "qMonster.h"
+
 #include "qPlatform.h"
+#include "qRope.h"
+#include "qPortal.h"
+#include "qMonster.h"
+
 #include "qBackground_boss1.h"
 
 #include "qSound.h"
@@ -70,7 +74,7 @@ void qLevel_boss1::Enter()
 	// Player
 	qObj* pPlayer = new qPlayer;
 	pPlayer->SetName(L"Player");
-	pPlayer->SetPos(227.f, 766.f);
+	pPlayer->SetPos(223.f, 771.f);
 	pPlayer->SetScale(100.0f, 100.0f);
 	AddObject(LAYER_TYPE::PLAYER, pPlayer);
 
@@ -84,14 +88,17 @@ void qLevel_boss1::Enter()
 
 	// 콜라이더 읽어오기
 	LoadPlatform(L"platform\\platform.dat");
+	LoadRope(L"rope\\rope.dat");
+	LoadPortal(L"portal\\portal.dat");
 	LoadMonster(L"monster\\monster.dat");
-
 
 	// 레벨 충돌 설정하기
 	qCollisionMgr::GetInst()->CollisionCheckClear();
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::MONSTER);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_MISSILE, LAYER_TYPE::MONSTER);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::ROPE);
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PORTAL);
 }
 
 void qLevel_boss1::Exit()

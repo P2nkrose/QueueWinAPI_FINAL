@@ -136,17 +136,19 @@ enum class LOG_TYPE
 	DBG_ERROR,
 };
 
-enum class PLATFORM_TYPE
-{
-	GROUND,
-	ROPE,
-	PORTAL,
-	END,
-};
+//enum class PLATFORM_TYPE
+//{
+//	PORTAL,
+//	GROUND,
+//	ROPE,
+//	END,
+//};
 
 enum class EDIT_TYPE
 {
 	PLATFORM,
+	ROPE,
+	PORTAL,
 	MONSTER,
 	END,
 };

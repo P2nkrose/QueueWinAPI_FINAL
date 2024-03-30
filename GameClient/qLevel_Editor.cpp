@@ -4,6 +4,8 @@
 #include "qTile.h"
 #include "qPathMgr.h"
 #include "qPlatform.h"
+#include "qRope.h"
+#include "qPortal.h"
 #include "qCollider.h"
 #include "qTexture.h"
 #include "qMonster.h"
@@ -23,8 +25,7 @@
 
 qLevel_Editor::qLevel_Editor()
 	: m_EditTile(nullptr)
-	, m_Type(EDIT_TYPE::PLATFORM)
-	, m_pType(PLATFORM_TYPE::GROUND)
+	, m_Type(EDIT_TYPE::END)
 	, m_CurImg(nullptr)
 	, m_Background(nullptr)
 {
@@ -81,46 +82,46 @@ void qLevel_Editor::tick()
 	}
 
 	// SetType 후 edit MessageBox
-	if (KEY_TAP(KEY::P))
+	if (KEY_TAP(KEY::U))
 	{
 		SetType(EDIT_TYPE::PLATFORM);
 		ResetInfo();
-		MessageBox(qEngine::GetInst()->GetMainWnd(), L"PLATFORM EDIT", L"Type", MB_OK);
+		MessageBox(qEngine::GetInst()->GetMainWnd(), L"PLATFORM EDIT", L"EDITOR TOOL", MB_OK);
 	}
-	else if (KEY_TAP(KEY::M))
+	if (KEY_TAP(KEY::I))
+	{
+		SetType(EDIT_TYPE::ROPE);
+		ResetInfo();
+		MessageBox(qEngine::GetInst()->GetMainWnd(), L"ROPE EDIT", L"EDITOR TOOL", MB_OK);
+	}
+	if (KEY_TAP(KEY::O))
+	{
+		SetType(EDIT_TYPE::PORTAL);
+		ResetInfo();
+		MessageBox(qEngine::GetInst()->GetMainWnd(), L"PORTAL EDIT", L"EDITOR TOOL", MB_OK);
+	}
+	else if (KEY_TAP(KEY::P))
 	{
 		SetType(EDIT_TYPE::MONSTER);
 		ResetInfo();
-		MessageBox(qEngine::GetInst()->GetMainWnd(), L"MONSTER EDIT", L"Type", MB_OK);
+		MessageBox(qEngine::GetInst()->GetMainWnd(), L"MONSTER EDIT", L"EDITOR TOOL", MB_OK);
 	}
 
-	//
-	if (KEY_TAP(KEY::J))
-	{
-		SetPlatType(PLATFORM_TYPE::GROUND);
-		MessageBox(qEngine::GetInst()->GetMainWnd(), L"그라운드 세팅", L"플랫폼 타입", MB_OK);
-	}
-	else if (KEY_TAP(KEY::K))
-	{
-		SetPlatType(PLATFORM_TYPE::ROPE);
-		MessageBox(qEngine::GetInst()->GetMainWnd(), L"로프 세팅", L"플랫폼 타입", MB_OK);
-	}
-	else if (KEY_TAP(KEY::L))
-	{
-		SetPlatType(PLATFORM_TYPE::PORTAL);
-		MessageBox(qEngine::GetInst()->GetMainWnd(), L"포탈 세팅", L"플랫폼 타입", MB_OK);
-	}
-
-
-
-
-
-	// 사용할 Edit로 변경
-	if (EDIT_TYPE::PLATFORM == m_Type)
+	
+	// 사용할 Type 으로 변경
+	if (EDIT_TYPE::PLATFORM == GetType())
 	{
 		Platform();
 	}
-	else if (EDIT_TYPE::MONSTER == m_Type)
+	else if (EDIT_TYPE::ROPE == GetType())
+	{
+		Rope();
+	}
+	else if (EDIT_TYPE::PORTAL == GetType())
+	{
+		Portal();
+	}
+	else if (EDIT_TYPE::MONSTER == GetType())
 	{
 		Monster();
 	}
@@ -129,17 +130,26 @@ void qLevel_Editor::tick()
 	if (KEY_TAP(KEY::_9))
 	{
 		SavePlatform(L"platform\\platform.dat");
-		SaveMonster(L"monster\\monster.dat");
+		SaveRope(L"rope\\rope.dat");
+		SavePortal(L"portal\\portal.dat");
+		SaveMonster(L"monster\\monster.dat");	
 		MessageBox(qEngine::GetInst()->GetMainWnd(), L"Collider 저장 완료", L"EDITOR", MB_OK);
 	}
+
 	// 저장되어있는 Edit 불러오기
 	else if (KEY_TAP(KEY::_0))
 	{
-		LoadPlatform(L"platform\\platform.dat");
-		LoadMonster(L"monster\\monster.dat");
+	
+			LoadPlatform(L"platform\\platform.dat");
+		
+			LoadRope(L"rope\\rope.dat");
+		
+			LoadPortal(L"portal\\portal.dat");
+		
+			LoadMonster(L"monster\\monster.dat");
+		
 		MessageBox(qEngine::GetInst()->GetMainWnd(), L"Collider 로딩 완료", L"EDITOR", MB_OK);
 	}
-	
 
 
 	if (KEY_TAP(KEY::Z))
@@ -199,21 +209,60 @@ void qLevel_Editor::Platform()
 		float width = abs(m_tInfo.EndPos.x - m_tInfo.StartPos.x);
 		float height = abs(m_tInfo.EndPos.y - m_tInfo.StartPos.y);
 
-		if (m_pType == PLATFORM_TYPE::GROUND)
-		{
-			qPlatform* pPlatform = new qPlatform(Vec2(x, y), Vec2(width, height), PLATFORM_TYPE::GROUND);
- 			AddObject(LAYER_TYPE::PLATFORM, pPlatform);
-		}
-		else if (m_pType == PLATFORM_TYPE::ROPE)
-		{
-			qPlatform* pPlatform = new qPlatform(Vec2(x, y), Vec2(width, height), PLATFORM_TYPE::ROPE);
-			AddObject(LAYER_TYPE::PLATFORM, pPlatform);
-		}
-		else if (m_pType == PLATFORM_TYPE::PORTAL)
-		{
-			qPlatform* pPlatform = new qPlatform(Vec2(x, y), Vec2(width, height), PLATFORM_TYPE::PORTAL);
-			AddObject(LAYER_TYPE::PLATFORM, pPlatform);
-		}
+		qPlatform* pPlatform = new qPlatform(Vec2(x, y), Vec2(width, height));
+ 		AddObject(LAYER_TYPE::PLATFORM, pPlatform);
+
+		memset(&m_tInfo, 0, sizeof(tInfo));
+	}
+}
+
+void qLevel_Editor::Rope()
+{
+	if (KEY_TAP(KEY::LBTN))
+	{
+		m_tInfo.StartPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
+	}
+	else if (KEY_PRESSED(KEY::LBTN))
+	{
+		m_tInfo.EndPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
+	}
+	else if (KEY_RELEASED(KEY::LBTN))
+	{
+		m_tInfo.EndPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
+		float x = abs((m_tInfo.StartPos.x + m_tInfo.EndPos.x) * 0.5f);
+		float y = abs((m_tInfo.StartPos.y + m_tInfo.EndPos.y) * 0.5f);
+
+		float width = abs(m_tInfo.EndPos.x - m_tInfo.StartPos.x);
+		float height = abs(m_tInfo.EndPos.y - m_tInfo.StartPos.y);
+
+		qRope* pRope = new qRope(Vec2(x, y), Vec2(width, height));
+		AddObject(LAYER_TYPE::ROPE, pRope);
+
+		memset(&m_tInfo, 0, sizeof(tInfo));
+	}
+}
+
+void qLevel_Editor::Portal()
+{
+	if (KEY_TAP(KEY::LBTN))
+	{
+		m_tInfo.StartPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
+	}
+	else if (KEY_PRESSED(KEY::LBTN))
+	{
+		m_tInfo.EndPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
+	}
+	else if (KEY_RELEASED(KEY::LBTN))
+	{
+		m_tInfo.EndPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
+		float x = abs((m_tInfo.StartPos.x + m_tInfo.EndPos.x) * 0.5f);
+		float y = abs((m_tInfo.StartPos.y + m_tInfo.EndPos.y) * 0.5f);
+
+		float width = abs(m_tInfo.EndPos.x - m_tInfo.StartPos.x);
+		float height = abs(m_tInfo.EndPos.y - m_tInfo.StartPos.y);
+
+		qPortal* pPortal = new qPortal(Vec2(x, y), Vec2(width, height));
+		AddObject(LAYER_TYPE::PORTAL, pPortal);
 
 		memset(&m_tInfo, 0, sizeof(tInfo));
 	}
@@ -245,7 +294,7 @@ void qLevel_Editor::render()
 		, 0, 0
 		, m_CurImg->GetWidth(), m_CurImg->GetHeight(), SRCCOPY);
 
-	if (m_Type == EDIT_TYPE::PLATFORM)
+	if (m_Type == EDIT_TYPE::PLATFORM || m_Type == EDIT_TYPE::ROPE || m_Type == EDIT_TYPE::PORTAL)
 	{
 		USE_PEN(DC, PEN_TYPE::PEN_GREEN);
 		USE_BRUSH(DC, BRUSH_TYPE::BRUSH_HOLLOW);
@@ -255,6 +304,7 @@ void qLevel_Editor::render()
 
 		Rectangle(DC, Start.x, Start.y, End.x, End.y);
 	}
+
 }
 
 

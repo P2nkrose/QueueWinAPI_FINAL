@@ -13,24 +13,28 @@ private:
 	PLAYER_STATE		m_State;
 	
 
-	float		m_Speed;
-	float		m_Hud;
-	float		m_SlashSpeed;
-	float		m_SlashRange;
-	bool		m_Slash;
+	float			m_Speed;
+	float			m_Hud;
+	float			m_SlashSpeed;
+	float			m_SlashRange;
+	bool			m_Slash;
 
-	Vec2		m_Pos;
+	bool			m_Portal;		// Æ÷Å»
 
-	qTexture*	m_PlayerImg;
+	LEVEL_TYPE		m_Level;
 
-	qCollider*	m_HeadCol;
-	qCollider*	m_BodyCol;
-	qAnimator*	m_Animator;
-	qRigidbody* m_RigidBody;
-	qFSM*		m_FSM;
+	Vec2			m_Pos;
 
-	int			m_DoubleJumpCount;
-	int			m_CurJumpCount;
+	qTexture*		m_PlayerImg;
+
+	qCollider*		m_HeadCol;
+	qCollider*		m_BodyCol;
+	qAnimator*		m_Animator;
+	qRigidbody*		m_RigidBody;
+	qFSM*			m_FSM;
+
+	int				m_DoubleJumpCount;
+	int				m_CurJumpCount;
 
 public:
 	virtual void begin();
@@ -39,11 +43,21 @@ public:
 	//void Shoot();
 	void Jump();
 	void DoubleJump();
-
-
 	void RestoreJumpCount()
 	{
 		m_CurJumpCount = 0;
+	}
+
+	bool IsPortal() { return m_Portal; }
+	void SetPortal(bool _Portal)
+	{
+		m_Portal = _Portal;
+	}
+
+	LEVEL_TYPE GetLevel() { return m_Level; }
+	void SetLevel(LEVEL_TYPE _Level)
+	{
+		m_Level = _Level;
 	}
 
 

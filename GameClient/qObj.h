@@ -30,8 +30,6 @@ private:
 
 	qAnimator*			m_Animator;
 
-	PLATFORM_TYPE		m_PlatType;	// 플랫폼타입
-
 	LAYER_TYPE			m_Type;		// 소속 레이어
 	bool				m_bDead;	// 삭제 예정 상태
 	
@@ -39,9 +37,6 @@ private:
 public:
 	void SetDir(DIRECTION _Dir) { m_Dir = _Dir; }
 	DIRECTION GetDir() { return m_Dir; }
-
-	void SetPlat(PLATFORM_TYPE _PlatType) { m_PlatType = _PlatType; }
-	PLATFORM_TYPE GetPlat() { return m_PlatType; }
 
 	void SetPos(Vec2 _Pos) { m_Pos = _Pos; }
 	void SetScale(Vec2 _Scale) { m_Scale = _Scale; }
@@ -53,7 +48,10 @@ public:
 	Vec2 GetPrevPos() { return m_PrevPos; }
 	Vec2 GetRenderPos() { return qCamera::GetInst()->GetRenderPos(m_Pos); }
 	Vec2 GetScale() { return m_Scale; }
+
 	LAYER_TYPE GetLayerType() { return m_Type; }
+	void SetLayerType(LAYER_TYPE _Type) { m_Type = _Type; }
+
 	bool IsDead() { return m_bDead; }
 
 	void Destroy();
