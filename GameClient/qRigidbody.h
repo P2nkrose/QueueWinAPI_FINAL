@@ -142,6 +142,7 @@ private:
 	float	m_JumpSpeed;			// 점프 속력
 	float	m_DoubleJumpSpeed;		// 더플점프 속력
 
+
 	// 로프
 	bool	m_Rope;					// 로프상태인지 체크
 

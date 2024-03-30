@@ -10,6 +10,8 @@
 #include "qDbgRender.h"
 #include "qRigidbody.h"
 
+#include "qRope.h"
+
 #include "qFSM.h"
 #include "qPlayerState.h"
 
@@ -44,6 +46,7 @@ qPlayer::qPlayer()
 	, m_PlayerImg(nullptr)
 	, m_DoubleJumpCount(2)
 	, m_CurJumpCount(0)
+	, m_bRope(false)
 {
 	// Player의 컴포넌트 설정
 	
@@ -353,18 +356,47 @@ void qPlayer::tick()
 		LOG(LOG_TYPE::DBG_WARNING, szBuff);
 		Time = 0.f;
 	}
+
+
+	// ======
+	//  ROPE
+	// ======
+	qRope* pRope = (qRope*)pCurLevel->FindObjectByName(L"Rope");
+
+	if (m_bRope)
+	{
+		if (KEY_PRESSED(KEY::UP))
+		{
+			SetPos(m_Rope->GetPos().x, m_Pos.y);
+			m_RigidBody->SetRope(true);
+			m_Animator->Play(L"PlayerRope", true);
+			m_Pos += Vec2(0.f, -1.f) * 200.f * DT;
+			SetPos(m_Rope->GetPos().x, m_Pos.y);
+			return;
+		}
+		if (KEY_PRESSED(KEY::DOWN))
+		{
+			SetPos(m_Rope->GetPos().x, m_Pos.y);
+			m_RigidBody->SetRope(true);
+			m_Animator->Play(L"PlayerRope", true);
+			m_Pos += Vec2(0.f, 1.f) * 200.f * DT;
+			SetPos(m_Rope->GetPos().x, m_Pos.y);
+			return;
+		}
+	}
+	else
+	{
+
+	}
+
+	
+	
+	
+
 	// ======
 	//  MOVE
 	// ======
-	if (KEY_PRESSED(KEY::H))
-	{
-		m_Pos += Vec2(0.f, -1.f) * 200.f * DT;
-	}
 	
-	if (KEY_PRESSED(KEY::N))
-	{
-		m_Pos += Vec2(0.f, 1.f) * 200.f * DT;
-	}
 
 	if (KEY_PRESSED(KEY::LEFT) && m_RigidBody->IsGround() 
 		&& PLAYER_STATE::ATTACK != m_State && PLAYER_STATE::MISSILE != m_State && PLAYER_STATE::SLASH != m_State
@@ -417,7 +449,7 @@ void qPlayer::tick()
 	//  DOWN
 	// ======
 
-	if (KEY_TAP(KEY::DOWN) && m_RigidBody->IsGround())
+	if (KEY_TAP(KEY::DOWN) && m_RigidBody->IsGround() && PLAYER_STATE::IDLE == GetState())
 	{
 		if (GetDir() == DIRECTION::LEFT)
 		{
@@ -455,7 +487,7 @@ void qPlayer::tick()
 	}
 
 
-	else if (KEY_RELEASED(KEY::DOWN))
+	else if (KEY_RELEASED(KEY::DOWN) && m_RigidBody->IsGround())
 	{
 		m_State = PLAYER_STATE::IDLE;
 		m_Slash = true;
@@ -794,7 +826,7 @@ void qPlayer::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* 
 
 void qPlayer::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
-	
+
 }
 
 

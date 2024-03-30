@@ -236,6 +236,7 @@ void qLevel_Editor::Rope()
 		float height = abs(m_tInfo.EndPos.y - m_tInfo.StartPos.y);
 
 		qRope* pRope = new qRope(Vec2(x, y), Vec2(width, height));
+		pRope->SetName(L"Rope");
 		AddObject(LAYER_TYPE::ROPE, pRope);
 
 		memset(&m_tInfo, 0, sizeof(tInfo));

@@ -5,6 +5,7 @@
 #include "qRigidbody.h"
 #include "qPlayer.h"
 
+#include "qKeyMgr.h"
 #include "qLevelMgr.h"
 #include "qLevel.h"
 
@@ -39,15 +40,17 @@ void qRope::render()
 
 void qRope::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
+	if (_OtherObj->GetName() == L"Player")
+	{
+		qPlayer* pPlayer = static_cast<qPlayer*>(_OtherObj);
+		pPlayer->SetRope(true);
+		pPlayer->SetTargetRope(this);	
+
+	}
 }
 
 void qRope::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
-	if (_OtherObj->GetName() == L"Player")
-	{
-		qRigidbody* pRB = _OtherObj->GetComponent<qRigidbody>();
-		pRB->SetRope(true);
-	}
 }
 
 void qRope::EndOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
@@ -56,5 +59,6 @@ void qRope::EndOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _Oth
 	{
 		qRigidbody* pRB = _OtherObj->GetComponent<qRigidbody>();
 		pRB->SetRope(false);
+		static_cast<qPlayer*>(_OtherObj)->SetRope(false);
 	}
 }

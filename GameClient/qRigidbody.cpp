@@ -141,7 +141,7 @@ void qRigidbody::finaltick()
 
 
 	// 중력 가속도에 의한 속도 증가
-	if (m_UseGravity && !m_Ground)
+	if (m_UseGravity && !m_Ground && !m_Rope)
 	{
 		m_VelocityByGravity += Vec2(0.0f, 1.f) * m_GravityAccel * DT;
 

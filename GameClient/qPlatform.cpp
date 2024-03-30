@@ -69,8 +69,11 @@ void qPlatform::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider
 	if (_OtherObj->GetName() == L"Player")
 	{
 		qRigidbody* pRB = _OtherObj->GetComponent<qRigidbody>();
-		pRB->SetGround(true);
-	}
+		if (GetPrevPos().y + (GetScale().y * 0.5) <= _OtherObj->GetPos().y)
+		{
+			pRB->SetGround(true);
+		}
+ 	}
 }
 
 void qPlatform::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
