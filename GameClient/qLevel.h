@@ -53,13 +53,15 @@ protected:
 	void SavePlatform(const wstring& _strRelativePath);
 	void SaveRope(const wstring& _strRelativePath);
 	void SavePortal(const wstring& _strRelativePath);
-	void SaveMonster(const wstring& _strRelativePath);
+	void SaveMonster_blue(const wstring& _strRelativePath);
+	void SaveMonster_red(const wstring& _strRelativePath);
 
 
 	void LoadPlatform(const wstring& _strRelativePath);
 	void LoadRope(const wstring& _strRelativePath);
 	void LoadPortal(const wstring& _strRelativePath);
-	void LoadMonster(const wstring& _strRelativePath);
+	void LoadMonster_blue(const wstring& _strRelativePath);
+	void LoadMonster_red(const wstring& _strRelativePath);
 
 private:
 	vector<qObj*>		m_arrObj[(UINT)LAYER_TYPE::END];

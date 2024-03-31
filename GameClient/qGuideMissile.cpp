@@ -70,7 +70,7 @@ void qGuideMissile::FindTarget()
 	{
 		// 몬스터 전체 목록을 받아옴
 		qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
-		const vector<qObj*>& vecMonster = pCurLevel->GetObjects(LAYER_TYPE::MONSTER);
+		const vector<qObj*>& vecMonster = pCurLevel->GetObjects(LAYER_TYPE::MONSTER_BLUE);
 
 		// 미사일의 위치
 		Vec2 vMissilePos = GetPos();

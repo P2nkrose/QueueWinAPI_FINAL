@@ -16,6 +16,8 @@ qMonster_blue::qMonster_blue()
 	, m_DetectRange(400)
 	, m_Speed(100)
 {
+	SetName(L"Blue");
+
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 	m_Collider->SetScale(Vec2(65.f, 85.f));
 	//
@@ -37,6 +39,10 @@ qMonster_blue::qMonster_blue(Vec2 _Pos, Vec2 _Scale)
 	, m_DetectRange(400)
 	, m_Speed(100)
 {
+	SetName(L"Blue");
+
+	m_Img = qAssetMgr::GetInst()->LoadTexture(L"monster_blue", L"texture\\edit\\monster_blue.png");
+
 	SetPos(_Pos);
 	SetScale(_Scale);
 	m_Collider = (qCollider*)AddComponent(new qCollider);

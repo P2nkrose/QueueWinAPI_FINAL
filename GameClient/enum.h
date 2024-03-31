@@ -71,7 +71,7 @@ enum class PLAYER_SKILL
 	BUFF,		// 트루사이트 (버프기)
 	ATTACK,		// 솔라슬래시 (기본기)
 	MISSILE,	// 루나 디바이드 (유도탄)
-	STRIKE,		// 라우드 러쉬 (벽력일섬)
+	SLASH,		// 라우드 러쉬 (벽력일섬)
 	SPECIAL,	// 엘리시온 (크게 한방)
 
 	END,
@@ -106,7 +106,12 @@ enum class LAYER_TYPE
 	PORTAL,
 
 	PLAYER,
-	MONSTER,
+	
+	MONSTER_BLUE,
+	MONSTER_RED,
+
+	BOSS,
+
 	PLAYER_MISSILE,
 	MONSTER_MISSILE,
 
@@ -136,20 +141,14 @@ enum class LOG_TYPE
 	DBG_ERROR,
 };
 
-//enum class PLATFORM_TYPE
-//{
-//	PORTAL,
-//	GROUND,
-//	ROPE,
-//	END,
-//};
 
 enum class EDIT_TYPE
 {
 	PLATFORM,
 	ROPE,
 	PORTAL,
-	MONSTER,
+	MONSTER_BLUE,
+	MONSTER_RED,
 	END,
 };
 

@@ -64,6 +64,7 @@ void qLevel_Editor::tick()
 		MessageBox(qEngine::GetInst()->GetMainWnd(), L"스테이지 2 설정", L"STAGE", MB_OK);
 		m_CurImg = qAssetMgr::GetInst()->LoadTexture(L"stage2", L"texture\\map\\stage2.png");
 		m_CurImg->SetName(L"Stage2");
+
 		SetStageName(STAGE_NAME::STAGE2);
 	}
 	else if (KEY_TAP(KEY::_3))
@@ -84,29 +85,35 @@ void qLevel_Editor::tick()
 	}
 
 	// SetType 후 edit MessageBox
-	if (KEY_TAP(KEY::U))
+	if (KEY_TAP(KEY::I))
 	{
 		SetType(EDIT_TYPE::PLATFORM);
 		ResetInfo();
 		MessageBox(qEngine::GetInst()->GetMainWnd(), L"PLATFORM EDIT", L"EDITOR TOOL", MB_OK);
 	}
-	if (KEY_TAP(KEY::I))
+	if (KEY_TAP(KEY::O))
 	{
 		SetType(EDIT_TYPE::ROPE);
 		ResetInfo();
 		MessageBox(qEngine::GetInst()->GetMainWnd(), L"ROPE EDIT", L"EDITOR TOOL", MB_OK);
 	}
-	if (KEY_TAP(KEY::O))
+	if (KEY_TAP(KEY::P))
 	{
 		SetType(EDIT_TYPE::PORTAL);
 		ResetInfo();
 		MessageBox(qEngine::GetInst()->GetMainWnd(), L"PORTAL EDIT", L"EDITOR TOOL", MB_OK);
 	}
-	else if (KEY_TAP(KEY::P))
+	else if (KEY_TAP(KEY::K))
 	{
-		SetType(EDIT_TYPE::MONSTER);
+		SetType(EDIT_TYPE::MONSTER_BLUE);
 		ResetInfo();
-		MessageBox(qEngine::GetInst()->GetMainWnd(), L"MONSTER EDIT", L"EDITOR TOOL", MB_OK);
+		MessageBox(qEngine::GetInst()->GetMainWnd(), L"MONSTER BLUE EDIT", L"EDITOR TOOL", MB_OK);
+	}
+	else if (KEY_TAP(KEY::L))
+	{
+		SetType(EDIT_TYPE::MONSTER_RED);
+		ResetInfo();
+		MessageBox(qEngine::GetInst()->GetMainWnd(), L"MONSTER RED EDIT", L"EDITOR TOOL", MB_OK);
 	}
 
 	
@@ -123,9 +130,13 @@ void qLevel_Editor::tick()
 	{
 		Portal();
 	}
-	else if (EDIT_TYPE::MONSTER == GetType())
+	else if (EDIT_TYPE::MONSTER_BLUE == GetType())
 	{
-		Monster();
+		Monster_blue();
+	}
+	else if (EDIT_TYPE::MONSTER_RED == GetType())
+	{
+		Monster_red();
 	}
 
 	// 그린 Edit 저장
@@ -134,23 +145,21 @@ void qLevel_Editor::tick()
 		SavePlatform(L"platform\\platform.dat");
 		SaveRope(L"rope\\rope.dat");
 		SavePortal(L"portal\\portal.dat");
-		SaveMonster(L"monster\\monster.dat");	
-		MessageBox(qEngine::GetInst()->GetMainWnd(), L"Collider 저장 완료", L"EDITOR", MB_OK);
+		SaveMonster_blue(L"monster_blue\\monster_blue.dat");	
+		SaveMonster_red(L"monster_red\\monster_red.dat");	
+		MessageBox(qEngine::GetInst()->GetMainWnd(), L"저장 완료", L"EDITOR", MB_OK);
 	}
 
 	// 저장되어있는 Edit 불러오기
 	else if (KEY_TAP(KEY::_0))
 	{
-	
-			LoadPlatform(L"platform\\platform.dat");
+		LoadPlatform(L"platform\\platform.dat");
+		LoadRope(L"rope\\rope.dat");
+		LoadPortal(L"portal\\portal.dat");
+		LoadMonster_blue(L"monster_blue\\monster_blue.dat");
+		LoadMonster_red(L"monster_red\\monster_red.dat");
 		
-			LoadRope(L"rope\\rope.dat");
-		
-			LoadPortal(L"portal\\portal.dat");
-		
-			LoadMonster(L"monster\\monster.dat");
-		
-		MessageBox(qEngine::GetInst()->GetMainWnd(), L"Collider 로딩 완료", L"EDITOR", MB_OK);
+		MessageBox(qEngine::GetInst()->GetMainWnd(), L"로딩 완료", L"EDITOR", MB_OK);
 	}
 
 
@@ -263,7 +272,7 @@ void qLevel_Editor::Portal()
 	}
 }
 
-void qLevel_Editor::Monster()
+void qLevel_Editor::Monster_blue()
 {
 	if (KEY_TAP(KEY::LBTN))
 	{
@@ -272,12 +281,27 @@ void qLevel_Editor::Monster()
 		pMonster->SetPos(vPos);
 		pMonster->SetScale(100.f, 100.f);
 
-		AddObject(LAYER_TYPE::MONSTER, pMonster);
+		AddObject(LAYER_TYPE::MONSTER_BLUE, pMonster);
 	}
 }
 
+void qLevel_Editor::Monster_red()
+{
+	if (KEY_TAP(KEY::LBTN))
+	{
+		Vec2 vPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
+		qMonster_red* pMonster = new qMonster_red;
+		pMonster->SetPos(vPos);
+		pMonster->SetScale(100.f, 100.f);
+
+		AddObject(LAYER_TYPE::MONSTER_RED, pMonster);
+	}
+}
+
+
 void qLevel_Editor::render()
 {
+	
 
 	// Rendering
 	if (nullptr == m_CurImg)

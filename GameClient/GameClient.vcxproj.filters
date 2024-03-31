@@ -188,10 +188,10 @@
     <Filter Include="03. Game\05. Object\3. Boss">
       <UniqueIdentifier>{13a51e0e-fbae-4ee4-8366-8ffc06e30764}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\2. Monster\1. RED">
+    <Filter Include="03. Game\05. Object\2. Monster\2. RED">
       <UniqueIdentifier>{5c384c47-5be3-4703-abb9-b1c333bb1d6b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\2. Monster\2. BLUE">
+    <Filter Include="03. Game\05. Object\2. Monster\1. BLUE">
       <UniqueIdentifier>{bfc21093-8ebf-42ec-96bf-2b5f15413de2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -389,10 +389,10 @@
       <Filter>03. Game\05. Object\4. Background\2. START</Filter>
     </ClInclude>
     <ClInclude Include="qMonster_blue.h">
-      <Filter>03. Game\05. Object\2. Monster\2. BLUE</Filter>
+      <Filter>03. Game\05. Object\2. Monster\1. BLUE</Filter>
     </ClInclude>
     <ClInclude Include="qMonster_red.h">
-      <Filter>03. Game\05. Object\2. Monster\1. RED</Filter>
+      <Filter>03. Game\05. Object\2. Monster\2. RED</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -584,10 +584,10 @@
       <Filter>03. Game\05. Object\4. Background\2. START</Filter>
     </ClCompile>
     <ClCompile Include="qMonster_blue.cpp">
-      <Filter>03. Game\05. Object\2. Monster\2. BLUE</Filter>
+      <Filter>03. Game\05. Object\2. Monster\1. BLUE</Filter>
     </ClCompile>
     <ClCompile Include="qMonster_red.cpp">
-      <Filter>03. Game\05. Object\2. Monster\1. RED</Filter>
+      <Filter>03. Game\05. Object\2. Monster\2. RED</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -20,7 +20,8 @@ qForce::~qForce()
 
 void qForce::tick()
 {
-	AddForce(LAYER_TYPE::MONSTER);
+	AddForce(LAYER_TYPE::MONSTER_BLUE);
+	AddForce(LAYER_TYPE::MONSTER_RED);
 	AddForce(LAYER_TYPE::PLAYER);
 
 	DrawDebugCircle(PEN_TYPE::PEN_BLUE, GetPos(), Vec2(m_Range * 2.f, m_Range * 2.f), 0.f);

@@ -6,6 +6,9 @@ class qTexture;
 class qPlatform;
 class qRope;
 class qPortal;
+class qMonster_blue;
+class qMonster_red;
+
 class qObj;
 class qCamera;
 
@@ -30,7 +33,8 @@ private:
 	void Platform();
 	void Rope();
 	void Portal();
-	void Monster();
+	void Monster_blue();
+	void Monster_red();
 
 	void ResetInfo()
 	{

@@ -64,6 +64,7 @@ public:
 	{
 		m_Level = _Level;
 	}
+
 	void SetRope(bool _Rope) { m_bRope = _Rope; }
 
 	PLAYER_STATE GetState() { return m_State; }

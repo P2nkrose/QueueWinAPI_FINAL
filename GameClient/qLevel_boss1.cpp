@@ -91,12 +91,13 @@ void qLevel_boss1::Enter()
 	LoadPlatform(L"platform\\platform.dat");
 	LoadRope(L"rope\\rope.dat");
 	LoadPortal(L"portal\\portal.dat");
-	LoadMonster(L"monster\\monster.dat");
+
+	LoadMonster_blue(L"monster_blue\\monster_blue.dat");
+	LoadMonster_red(L"monster_red\\monster_red.dat");
 
 	// 레벨 충돌 설정하기
 	qCollisionMgr::GetInst()->CollisionCheckClear();
-	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::MONSTER);
-	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_MISSILE, LAYER_TYPE::MONSTER);
+
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::ROPE);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PORTAL);

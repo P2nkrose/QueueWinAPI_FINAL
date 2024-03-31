@@ -321,7 +321,8 @@ void qLevel::SavePortal(const wstring& _strRelativePath)
 }
 
 
-void qLevel::SaveMonster(const wstring& _strRelativePath)
+
+void qLevel::SaveMonster_blue(const wstring& _strRelativePath)
 {
 	wstring strFullPath = qPathMgr::GetInst()->GetContentPath();
 
@@ -354,14 +355,14 @@ void qLevel::SaveMonster(const wstring& _strRelativePath)
 		return;
 	}
 
-	size_t len = m_arrObj[(UINT)LAYER_TYPE::MONSTER].size();
+	size_t len = m_arrObj[(UINT)LAYER_TYPE::MONSTER_BLUE].size();
 
 	fwrite(&len, sizeof(size_t), 1, pFile);
 
-	for (size_t i = 0; i < m_arrObj[(UINT)LAYER_TYPE::MONSTER].size(); ++i)
+	for (size_t i = 0; i < m_arrObj[(UINT)LAYER_TYPE::MONSTER_BLUE].size(); ++i)
 	{
-		Vec2 vPos = m_arrObj[(UINT)LAYER_TYPE::MONSTER][i]->GetPos();
-		Vec2 vScale = m_arrObj[(UINT)LAYER_TYPE::MONSTER][i]->GetScale();
+		Vec2 vPos = m_arrObj[(UINT)LAYER_TYPE::MONSTER_BLUE][i]->GetPos();
+		Vec2 vScale = m_arrObj[(UINT)LAYER_TYPE::MONSTER_BLUE][i]->GetScale();
 
 		fwrite(&vPos, sizeof(Vec2), 1, pFile);
 		fwrite(&vScale, sizeof(Vec2), 1, pFile);
@@ -369,6 +370,58 @@ void qLevel::SaveMonster(const wstring& _strRelativePath)
 
 	fclose(pFile);
 }
+
+
+void qLevel::SaveMonster_red(const wstring& _strRelativePath)
+{
+	wstring strFullPath = qPathMgr::GetInst()->GetContentPath();
+
+	if (STAGE_NAME::STAGE1 == m_stageName)
+	{
+		strFullPath += L"edit\\stage1\\";
+	}
+	else if (STAGE_NAME::STAGE2 == m_stageName)
+	{
+		strFullPath += L"edit\\stage2\\";
+	}
+	else if (STAGE_NAME::BOSS1 == m_stageName)
+	{
+		strFullPath += L"edit\\boss1\\";
+	}
+	else if (STAGE_NAME::BOSS2 == m_stageName)
+	{
+		strFullPath += L"edit\\boss2\\";
+	}
+
+	strFullPath += _strRelativePath;
+
+	FILE* pFile = nullptr;
+
+	_wfopen_s(&pFile, strFullPath.c_str(), L"wb");
+
+	if (nullptr == pFile)
+	{
+		MessageBox(qEngine::GetInst()->GetMainWnd(), L"파일 저장 실패", L"Error", MB_OK);
+		return;
+	}
+
+	size_t len = m_arrObj[(UINT)LAYER_TYPE::MONSTER_RED].size();
+
+	fwrite(&len, sizeof(size_t), 1, pFile);
+
+	for (size_t i = 0; i < m_arrObj[(UINT)LAYER_TYPE::MONSTER_RED].size(); ++i)
+	{
+		Vec2 vPos = m_arrObj[(UINT)LAYER_TYPE::MONSTER_RED][i]->GetPos();
+		Vec2 vScale = m_arrObj[(UINT)LAYER_TYPE::MONSTER_RED][i]->GetScale();
+
+		fwrite(&vPos, sizeof(Vec2), 1, pFile);
+		fwrite(&vScale, sizeof(Vec2), 1, pFile);
+	}
+
+	fclose(pFile);
+}
+
+
 
 void qLevel::LoadPlatform(const wstring& _strRelativePath)
 {
@@ -421,6 +474,7 @@ void qLevel::LoadPlatform(const wstring& _strRelativePath)
 void qLevel::LoadRope(const wstring& _strRelativePath)
 {
 	wstring strFullPath = qPathMgr::GetInst()->GetContentPath();
+
 	if (L"Stage1" == GetName())
 	{
 		strFullPath += L"edit\\stage1\\";
@@ -514,28 +568,27 @@ void qLevel::LoadPortal(const wstring& _strRelativePath)
 	fclose(pFile);
 }
 
-
-
-void qLevel::LoadMonster(const wstring& _strRelativePath)
+void qLevel::LoadMonster_blue(const wstring& _strRelativePath)
 {
 	wstring strFullPath = qPathMgr::GetInst()->GetContentPath();
 
-	if (STAGE_NAME::STAGE1 == m_stageName)
+	if (L"Stage1" == GetName())
 	{
 		strFullPath += L"edit\\stage1\\";
 	}
-	else if (STAGE_NAME::STAGE2 == m_stageName)
+	else if (L"Stage2" == GetName())
 	{
 		strFullPath += L"edit\\stage2\\";
 	}
-	else if (STAGE_NAME::BOSS1 == m_stageName)
+	else if (L"Boss1" == GetName())
 	{
 		strFullPath += L"edit\\boss1\\";
 	}
-	else if (STAGE_NAME::BOSS2 == m_stageName)
+	else if (L"Boss2" == GetName())
 	{
 		strFullPath += L"edit\\boss2\\";
 	}
+
 
 	strFullPath += _strRelativePath;
 
@@ -544,6 +597,7 @@ void qLevel::LoadMonster(const wstring& _strRelativePath)
 	_wfopen_s(&pFile, strFullPath.c_str(), L"rb");
 
 	size_t len = 0;
+
 	fread(&len, sizeof(size_t), 1, pFile);
 
 	for (size_t i = 0; i < len; ++i)
@@ -555,8 +609,58 @@ void qLevel::LoadMonster(const wstring& _strRelativePath)
 		fread(&vScale, sizeof(Vec2), 1, pFile);
 
 		qMonster_blue* pMonster = new qMonster_blue(vPos, vScale);
-		AddObject(LAYER_TYPE::MONSTER, pMonster);
+		AddObject(LAYER_TYPE::MONSTER_BLUE, pMonster);
 	}
 
 	fclose(pFile);
 }
+
+void qLevel::LoadMonster_red(const wstring& _strRelativePath)
+{
+	wstring strFullPath = qPathMgr::GetInst()->GetContentPath();
+
+	if (L"Stage1" == GetName())
+	{
+		strFullPath += L"edit\\stage1\\";
+	}
+	else if (L"Stage2" == GetName())
+	{
+		strFullPath += L"edit\\stage2\\";
+	}
+	else if (L"Boss1" == GetName())
+	{
+		strFullPath += L"edit\\boss1\\";
+	}
+	else if (L"Boss2" == GetName())
+	{
+		strFullPath += L"edit\\boss2\\";
+	}
+
+
+	strFullPath += _strRelativePath;
+
+	FILE* pFile = nullptr;
+
+	_wfopen_s(&pFile, strFullPath.c_str(), L"rb");
+
+	size_t len = 0;
+
+	fread(&len, sizeof(size_t), 1, pFile);
+
+	for (size_t i = 0; i < len; ++i)
+	{
+		Vec2 vPos;
+		Vec2 vScale;
+
+		fread(&vPos, sizeof(Vec2), 1, pFile);
+		fread(&vScale, sizeof(Vec2), 1, pFile);
+
+		qMonster_red* pMonster = new qMonster_red(vPos, vScale);
+		AddObject(LAYER_TYPE::MONSTER_RED, pMonster);
+	}
+
+	fclose(pFile);
+}
+
+
+
