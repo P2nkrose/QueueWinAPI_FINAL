@@ -154,6 +154,7 @@
     <ClInclude Include="qBackground_boss2.h" />
     <ClInclude Include="qBackground_stage1.h" />
     <ClInclude Include="qBackground_stage2.h" />
+    <ClInclude Include="qBackground_start.h" />
     <ClInclude Include="qButton.h" />
     <ClInclude Include="qCamera.h" />
     <ClInclude Include="qCollider.h" />
@@ -220,6 +221,7 @@
     <ClCompile Include="qBackground_boss2.cpp" />
     <ClCompile Include="qBackground_stage1.cpp" />
     <ClCompile Include="qBackground_stage2.cpp" />
+    <ClCompile Include="qBackground_start.cpp" />
     <ClCompile Include="qButton.cpp" />
     <ClCompile Include="qCamera.cpp" />
     <ClCompile Include="qCollider.cpp" />

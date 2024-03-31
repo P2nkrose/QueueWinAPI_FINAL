@@ -379,6 +379,9 @@
     <ClInclude Include="qPortal.h">
       <Filter>03. Game\05. Object\5. Platform\3. Portal</Filter>
     </ClInclude>
+    <ClInclude Include="qBackground_start.h">
+      <Filter>03. Game\05. Object\3. Background\2. START</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -567,6 +570,9 @@
     </ClCompile>
     <ClCompile Include="qPortal.cpp">
       <Filter>03. Game\05. Object\5. Platform\3. Portal</Filter>
+    </ClCompile>
+    <ClCompile Include="qBackground_start.cpp">
+      <Filter>03. Game\05. Object\3. Background\2. START</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

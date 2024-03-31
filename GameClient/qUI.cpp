@@ -30,7 +30,7 @@ void qUI::render()
 	Vec2 vPos = GetPos();
 	Vec2 vScale = GetScale();
 
-	Rectangle(DC, (int)(vPos.x), (int)(vPos.y), (int)(vPos.x + vScale.x), (int)(vPos.y + vScale.y));
+	//Rectangle(DC, (int)(vPos.x), (int)(vPos.y), (int)(vPos.x + vScale.x), (int)(vPos.y + vScale.y));
 }
 
 void qUI::CheckMouseOn()
