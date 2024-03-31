@@ -179,7 +179,8 @@
     <ClInclude Include="qLevel_Logo.h" />
     <ClInclude Include="qLogo.h" />
     <ClInclude Include="qMissile.h" />
-    <ClInclude Include="qMonster.h" />
+    <ClInclude Include="qMonster_blue.h" />
+    <ClInclude Include="qMonster_red.h" />
     <ClInclude Include="qObj.h" />
     <ClInclude Include="qPathMgr.h" />
     <ClInclude Include="qPlatform.h" />
@@ -246,7 +247,8 @@
     <ClCompile Include="qLevel_Logo.cpp" />
     <ClCompile Include="qLogo.cpp" />
     <ClCompile Include="qMissile.cpp" />
-    <ClCompile Include="qMonster.cpp" />
+    <ClCompile Include="qMonster_blue.cpp" />
+    <ClCompile Include="qMonster_red.cpp" />
     <ClCompile Include="qObj.cpp" />
     <ClCompile Include="qPathMgr.cpp" />
     <ClCompile Include="qPlatform.cpp" />

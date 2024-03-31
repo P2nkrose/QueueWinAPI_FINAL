@@ -10,7 +10,8 @@
 #include "qPlatform.h"
 #include "qRope.h"
 #include "qPortal.h"
-#include "qMonster.h"
+#include "qMonster_red.h"
+#include "qMonster_blue.h"
 
 #include "qBackground_stage2.h"
 
@@ -31,7 +32,7 @@ void qLevel_stage2::begin()
 	qLevel::begin();
 
 	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\stage2.wav");
-	pSound->SetVolume(50.f);
+	pSound->SetVolume(30.f);
 	pSound->Play();
 
 	qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_IN, 0.7f);
@@ -117,7 +118,7 @@ void qLevel_stage2::Exit()
 {
 	
 
-	pSound->SetVolume(50.f);
+	pSound->SetVolume(30.f);
 	pSound->Stop();
 
 	// 레벨에 있는 모든 오브젝트 삭제한다.

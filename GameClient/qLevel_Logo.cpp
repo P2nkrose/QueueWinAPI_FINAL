@@ -30,7 +30,7 @@ void qLevel_Logo::begin()
 	qLevel::begin();
 
 	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\logo.wav");
-	pSound->SetVolume(50.f);
+	pSound->SetVolume(30.f);
 	pSound->Play();
 }
 
@@ -63,7 +63,7 @@ void qLevel_Logo::Exit()
 	//qCamera::GetInst()->SetCameraEffect(CAM_EFFECT::FADE_OUT, 1.f);
 
 	// »ç¿îµå ²ô±â
-	pSound->SetVolume(50.f);
+	pSound->SetVolume(30.f);
 	pSound->Stop();
 
 	DeleteAllObjects();

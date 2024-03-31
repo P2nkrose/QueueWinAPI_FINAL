@@ -3,15 +3,15 @@
 
 class qTexture;
 
-class qMonster : public qObj
+class qMonster_blue : public qObj
 {
 public:
 
-	CLONE(qMonster);
+	CLONE(qMonster_blue);
 
-	qMonster();
-	qMonster(Vec2 _Pos, Vec2 _Scale);
-	~qMonster();
+	qMonster_blue();
+	qMonster_blue(Vec2 _Pos, Vec2 _Scale);
+	~qMonster_blue();
 
 public:
 	virtual void begin() override;

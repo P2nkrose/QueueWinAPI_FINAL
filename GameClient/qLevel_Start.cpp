@@ -47,7 +47,7 @@ void qLevel_Start::begin()
 	// 사운드 로딩
 	//qSound* pSound = CAssetMgr::GetInst()->LoadSound(L"BGM_01", L"sound\\BGM_Stage1.wav");
 	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\start.wav");
-	pSound->SetVolume(50.f);
+	pSound->SetVolume(30.f);
 	pSound->Play();
 }
 
@@ -101,6 +101,6 @@ void qLevel_Start::Exit()
 {
 	// 사운드 끄기
 
-	pSound->SetVolume(50.f);
+	pSound->SetVolume(30.f);
 	pSound->Stop();
 }

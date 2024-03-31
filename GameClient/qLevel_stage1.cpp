@@ -11,7 +11,8 @@
 #include "qPlatform.h"
 #include "qRope.h"
 #include "qPortal.h"
-#include "qMonster.h"
+#include "qMonster_red.h"
+#include "qMonster_blue.h"
 #include "qBackground_stage1.h"
 
 #include "qSound.h"
@@ -30,7 +31,7 @@ void qLevel_stage1::begin()
 	qLevel::begin();
 
 	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\stage1.wav");
-	pSound->SetVolume(50.f);
+	pSound->SetVolume(30.f);
 	pSound->Play();
 
 	// 페이드 인 페이드 아웃
@@ -128,6 +129,7 @@ void qLevel_stage1::Enter()
 	LoadPortal(L"portal\\portal.dat");
 	LoadMonster(L"monster\\monster.dat");
 
+
 	// 레벨 충돌 설정하기
 	qCollisionMgr::GetInst()->CollisionCheckClear();
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::MONSTER);
@@ -144,7 +146,7 @@ void qLevel_stage1::Exit()
 {
 	
 
-	pSound->SetVolume(50.f);
+	pSound->SetVolume(30.f);
 	pSound->Stop();
 
 	// 레벨에 있는 모든 오브젝트 삭제한다.

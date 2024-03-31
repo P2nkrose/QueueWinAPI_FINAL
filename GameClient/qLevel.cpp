@@ -8,7 +8,8 @@
 #include "qPlatform.h"
 #include "qRope.h"
 #include "qPortal.h"
-#include "qMonster.h"
+#include "qMonster_red.h"
+#include "qMonster_blue.h"
 
 qLevel::qLevel()
 {
@@ -553,7 +554,8 @@ void qLevel::LoadMonster(const wstring& _strRelativePath)
 		fread(&vPos, sizeof(Vec2), 1, pFile);
 		fread(&vScale, sizeof(Vec2), 1, pFile);
 
-		qMonster* pMonster = new qMonster(vPos, vScale);
+		qMonster_blue* pMonster = new qMonster_blue(vPos, vScale);
+		AddObject(LAYER_TYPE::MONSTER, pMonster);
 	}
 
 	fclose(pFile);

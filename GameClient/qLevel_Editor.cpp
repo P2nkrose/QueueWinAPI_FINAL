@@ -8,7 +8,9 @@
 #include "qPortal.h"
 #include "qCollider.h"
 #include "qTexture.h"
-#include "qMonster.h"
+
+#include "qMonster_red.h"
+#include "qMonster_blue.h"
 
 #include "qBackground_stage1.h"
 #include "qBackground_stage2.h"
@@ -30,6 +32,7 @@ qLevel_Editor::qLevel_Editor()
 	, m_Background(nullptr)
 {
 	SetName(L"Editor");
+	
 }
 
 qLevel_Editor::~qLevel_Editor()
@@ -40,7 +43,7 @@ void qLevel_Editor::begin()
 {
 	qLevel::begin();
 
-	//m_CurImg = qAssetMgr::GetInst()->LoadTexture(L"stage1", L"texture\\edit\\edit.png");
+	//m_CurImg = qAssetMgr::GetInst()->LoadTexture(L"edit", L"texture\\edit\\edit1.png");
 
 }
 
@@ -53,7 +56,6 @@ void qLevel_Editor::tick()
 		MessageBox(qEngine::GetInst()->GetMainWnd(), L"스테이지 1 설정", L"STAGE", MB_OK);
 		m_CurImg = qAssetMgr::GetInst()->LoadTexture(L"stage1", L"texture\\map\\stage1.png");
 		m_CurImg->SetName(L"Stage1");
-
 
 		SetStageName(STAGE_NAME::STAGE1);
 	}
@@ -174,14 +176,6 @@ void qLevel_Editor::Enter()
 {
 	qCamera::GetInst()->SetOwner(nullptr);
 
-
-	////Background
-	//qObj* pBack = new qBackground_stage1;
-	//pBack->SetName(L"Stage1");
-	//pBack->SetPos(0.0f, 0.f);
-	//pBack->SetScale(1.3f, 1.3f);
-	//AddObject(LAYER_TYPE::BACKGROUND, pBack);
-
 }
 
 void qLevel_Editor::Exit()
@@ -274,26 +268,30 @@ void qLevel_Editor::Monster()
 	if (KEY_TAP(KEY::LBTN))
 	{
 		Vec2 vPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
-		qMonster* pMonster = new qMonster;
+		qMonster_blue* pMonster = new qMonster_blue;
 		pMonster->SetPos(vPos);
 		pMonster->SetScale(100.f, 100.f);
+
 		AddObject(LAYER_TYPE::MONSTER, pMonster);
 	}
 }
 
 void qLevel_Editor::render()
 {
-	qLevel::render();
+
 	// Rendering
 	if (nullptr == m_CurImg)
 		return;
+		
 	Vec2 vPos = qCamera::GetInst()->GetRenderPos(GetPos());
+
 
 	StretchBlt(DC, vPos.x, vPos.y
 		, m_CurImg->GetWidth(), m_CurImg->GetHeight()
 		, m_CurImg->GetDC()
 		, 0, 0
 		, m_CurImg->GetWidth(), m_CurImg->GetHeight(), SRCCOPY);
+
 
 	if (m_Type == EDIT_TYPE::PLATFORM || m_Type == EDIT_TYPE::ROPE || m_Type == EDIT_TYPE::PORTAL)
 	{
@@ -306,6 +304,7 @@ void qLevel_Editor::render()
 		Rectangle(DC, Start.x, Start.y, End.x, End.y);
 	}
 
+	qLevel::render();
 }
 
 
