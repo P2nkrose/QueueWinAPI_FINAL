@@ -19,7 +19,7 @@ qSkill_attack_right::qSkill_attack_right()
 	qTexture* AttackRight = qAssetMgr::GetInst()->LoadTexture(L"AttackRight", L"texture\\skill\\attack\\attack_right.png");
 
 	// 애니메이션 CREATE
-	m_Animator->CreateAnimation(L"AttackRight", AttackRight, Vec2(0.f, 0.f), Vec2(410.f, 240.f), 12, 5);
+	m_Animator->CreateAnimation(L"AttackRight", AttackRight, Vec2(0.f, 0.f), Vec2(410.f, 240.f), 12, 13);
 
 	// 애니메이션 SAVE
 	m_Animator->FindAnimation(L"AttackRight")->Save(L"animation\\skill\\attack\\");
@@ -35,7 +35,7 @@ qSkill_attack_right::qSkill_attack_right()
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 
 	m_Collider->SetOffsetPos(Vec2(0.f, 0.f));
-	m_Collider->SetScale(Vec2(410.f, 240.f));
+	m_Collider->SetScale(Vec2(350.f, 200.f));
 
 }
 

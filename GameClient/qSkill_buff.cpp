@@ -16,7 +16,7 @@ qSkill_buff::qSkill_buff()
 	qTexture* Buff = qAssetMgr::GetInst()->LoadTexture(L"Buff", L"texture\\skill\\buff\\buff.png");
 
 	// 애니메이션 CREATE
-	m_Animator->CreateAnimation(L"Buff", Buff, Vec2(0.f, 0.f), Vec2(400.f, 400.f), 17, 5);
+	m_Animator->CreateAnimation(L"Buff", Buff, Vec2(0.f, 0.f), Vec2(400.f, 400.f), 17, 13);
 
 	// 애니메이션 SAVE
 	m_Animator->FindAnimation(L"Buff")->Save(L"animation\\skill\\buff\\");

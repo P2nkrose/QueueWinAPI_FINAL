@@ -236,6 +236,9 @@
     <Filter Include="03. Game\05. Object\5. Skill\2. Missile\2. ball">
       <UniqueIdentifier>{1a8865c3-613e-4625-9e75-86d61a2cec35}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\05. Object\5. Skill\7. HighJump">
+      <UniqueIdentifier>{55b2eb40-60f0-4387-971c-d458443227e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -475,6 +478,9 @@
     <ClInclude Include="qSkill_doublejump_right.h">
       <Filter>03. Game\05. Object\5. Skill\6. DoubleJump</Filter>
     </ClInclude>
+    <ClInclude Include="qSkill_highjump.h">
+      <Filter>03. Game\05. Object\5. Skill\7. HighJump</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -708,6 +714,9 @@
     </ClCompile>
     <ClCompile Include="qSkill_doublejump_right.cpp">
       <Filter>03. Game\05. Object\5. Skill\6. DoubleJump</Filter>
+    </ClCompile>
+    <ClCompile Include="qSkill_highjump.cpp">
+      <Filter>03. Game\05. Object\5. Skill\7. HighJump</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

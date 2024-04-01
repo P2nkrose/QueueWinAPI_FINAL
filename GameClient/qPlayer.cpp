@@ -31,6 +31,7 @@
 #include "qSkill_buff.h"
 #include "qSkill_doublejump_left.h"
 #include "qSkill_doublejump_right.h"
+#include "qSkill_highjump.h"
 
 
 #include "qDbgRender.h"
@@ -76,24 +77,6 @@ qPlayer::qPlayer()
 	m_BodyCol->SetActive(true);
 
 	
-	// Animation 추가
-	//qTexture* pAtlas = qAssetMgr::GetInst()->LoadTexture(L"PlayerAtlasTex", L"texture\\link.png");
-
-	//m_Animator->CreateAnimation(L"IDLE_DOWN", pAtlas, Vec2(0.f, 0.f), Vec2(120.f, 130.f), 3, 10);
-	//m_Animator->CreateAnimation(L"IDLE_LEFT", pAtlas, Vec2(0.f, 130.f), Vec2(120.f, 130.f), 3, 10);
-	//m_Animator->CreateAnimation(L"IDLE_UP", pAtlas, Vec2(0.f, 260.f), Vec2(120.f, 130.f), 1, 1);
-	//m_Animator->CreateAnimation(L"IDLE_RIGHT", pAtlas, Vec2(0.f, 390.f), Vec2(120.f, 130.f), 3, 1);
-
-	//m_Animator->CreateAnimation(L"WALK_DOWN", pAtlas, Vec2(0.f, 520.f), Vec2(120.f, 130.f), 10, 18);
-	//m_Animator->CreateAnimation(L"WALK_LEFT", pAtlas, Vec2(0.f, 650.f), Vec2(120.f, 130.f), 10, 18);
-	//m_Animator->CreateAnimation(L"WALK_UP", pAtlas, Vec2(0.f, 780.f), Vec2(120.f, 130.f), 10, 18);
-	//m_Animator->CreateAnimation(L"WALK_RIGHT", pAtlas, Vec2(0.f, 910.f), Vec2(120.f, 130.f), 10, 18);
-
-	//m_Animator->FindAnimation(L"IDLE_LEFT")->Save(L"animation\\player\\idle\\");
-
-	//m_Animator->LoadAnimation(L"animation\\player\\idle\\IDLE_LEFT.anim");
-
-
 	//// Animation 추가
 	////IDLE
 	//qTexture* pIdleLeft = qAssetMgr::GetInst()->LoadTexture(L"PlayerIdleLeft", L"texture\\character\\player\\idle\\idle_left.png");
@@ -123,8 +106,8 @@ qPlayer::qPlayer()
 	//qTexture* pAttackRight = qAssetMgr::GetInst()->LoadTexture(L"PlayerAttackRight", L"texture\\character\\player\\attack\\attack_right.png");
 	//
 	//// MISSILE
-	//qTexture* pMissileLeft = qAssetMgr::GetInst()->LoadTexture(L"PlayerMissileLeft", L"texture\\character\\player\\missile\\missile_left.png");
-	//qTexture* pMissileRight = qAssetMgr::GetInst()->LoadTexture(L"PlayerMissileRight", L"texture\\character\\player\\missile\\missile_right.png");
+	qTexture* pMissileLeft = qAssetMgr::GetInst()->LoadTexture(L"PlayerMissileLeft", L"texture\\character\\player\\missile\\missile_left.png");
+	qTexture* pMissileRight = qAssetMgr::GetInst()->LoadTexture(L"PlayerMissileRight", L"texture\\character\\player\\missile\\missile_right.png");
 
 	//// SLASH
 	//qTexture* pSlashLeft = qAssetMgr::GetInst()->LoadTexture(L"PlayerSlashLeft", L"texture\\character\\player\\slash\\slash_left.png");
@@ -164,8 +147,8 @@ qPlayer::qPlayer()
 	//m_Animator->CreateAnimation(L"PlayerAttackRight", pAttackRight, Vec2(0.f, 0.f), Vec2(223.f, 149.f), 3, 6);
 
 	//// MISSILE
-	//m_Animator->CreateAnimation(L"PlayerMissileLeft", pMissileLeft, Vec2(0.f, 0.f), Vec2(227.f, 140.f), 3, 6);
-	//m_Animator->CreateAnimation(L"PlayerMissileRight", pMissileRight, Vec2(0.f, 0.f), Vec2(227.f, 140.f), 3, 6);
+	//m_Animator->CreateAnimation(L"PlayerMissileLeft", pMissileLeft, Vec2(0.f, 0.f), Vec2(227.f, 140.f), 3, 8);
+	//m_Animator->CreateAnimation(L"PlayerMissileRight", pMissileRight, Vec2(0.f, 0.f), Vec2(227.f, 140.f), 3, 8);
 
 	//// SLASH
 	//m_Animator->CreateAnimation(L"PlayerSlashLeft", pSlashLeft, Vec2(0.f, 0.f), Vec2(182.f, 78.f), 2, 5);
@@ -529,10 +512,43 @@ void qPlayer::tick()
 		{
 			m_Animator->Play(L"PlayerAttackLeft", false);
 			
+			// 솔라 슬래시 스킬 이펙트
+
+			qSkill_attack_left* pAttackLeft = new qSkill_attack_left;
+			pAttackLeft->SetName(L"AttackLeft");
+
+			Vec2 vAttackLeftPos = GetPos() + Vec2(-100.f, 0.f);
+			Vec2 vAttackLeftScale = Vec2(410.f, 240.f);
+
+			pAttackLeft->SetPos(vAttackLeftPos);
+			pAttackLeft->SetScale(vAttackLeftScale);
+
+			if (L"AttackLeft" == pAttackLeft->GetName())
+			{
+				SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pAttackLeft);
+			}
+
+
 		}
 		else if (GetDir() == DIRECTION::RIGHT)
 		{
 			m_Animator->Play(L"PlayerAttackRight", false);
+
+			// 솔라 슬래시 스킬 이펙트
+
+			qSkill_attack_right* pAttackRight = new qSkill_attack_right;
+			pAttackRight->SetName(L"AttackRight");
+
+			Vec2 vAttackRightPos = GetPos() + Vec2(100.f, 0.f);
+			Vec2 vAttackRightScale = Vec2(410.f, 240.f);
+
+			pAttackRight->SetPos(vAttackRightPos);
+			pAttackRight->SetScale(vAttackRightScale);
+
+			if (L"AttackRight" == pAttackRight->GetName())
+			{
+				SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pAttackRight);
+			}
 		}
 	}
 
@@ -567,10 +583,72 @@ void qPlayer::tick()
 		{
 			m_Animator->Play(L"PlayerMissileLeft", false);
 
+
+			// 루나 디바이드 스킬 이펙트
+			qSkill_missile_left* pMissileLeft = new qSkill_missile_left;
+			pMissileLeft->SetName(L"MissileLeft");
+
+			Vec2 vMissileLeftPos = GetPos() + Vec2(-50.f, 0.f);
+			Vec2 vMissileLeftScale = Vec2(240.f, 195.f);
+
+			pMissileLeft->SetPos(vMissileLeftPos);
+			pMissileLeft->SetScale(vMissileLeftScale);
+
+			if (L"MissileLeft" == pMissileLeft->GetName())
+			{
+				SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pMissileLeft);
+			}
+
+			// 루나 디바이드 미사일
+			qSkill_missile_ball_left* pBallLeft = new qSkill_missile_ball_left;
+			pBallLeft->SetName(L"BallLeft");
+
+			Vec2 vBallLeftPos = GetPos() + Vec2(-50.f, 0.f);
+			Vec2 vBallLeftScale = Vec2(100.f, 70.f);
+
+			pBallLeft->SetPos(vBallLeftPos);
+			pBallLeft->SetScale(vBallLeftScale);
+
+			if (L"BallLeft" == pBallLeft->GetName())
+			{
+				SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pBallLeft);
+			}
+
 		}
 		else if (GetDir() == DIRECTION::RIGHT)
 		{
 			m_Animator->Play(L"PlayerMissileRight", false);
+
+			// 루나 디바이드 스킬 이펙트
+			qSkill_missile_right* pMissileRight = new qSkill_missile_right;
+			pMissileRight->SetName(L"MissileRight");
+
+			Vec2 vMissileRightPos = GetPos() + Vec2(50.f, 0.f);
+			Vec2 vMissileRightScale = Vec2(240.f, 195.f);
+
+			pMissileRight->SetPos(vMissileRightPos);
+			pMissileRight->SetScale(vMissileRightScale);
+
+			if (L"MissileRight" == pMissileRight->GetName())
+			{
+				SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pMissileRight);
+			}
+
+
+			// 루나 디바이드 미사일
+			qSkill_missile_ball_right* pBallRight = new qSkill_missile_ball_right;
+			pBallRight->SetName(L"BallRight");
+
+			Vec2 vBallRightPos = GetPos() + Vec2(50.f, 0.f);
+			Vec2 vBallRightScale = Vec2(100.f, 70.f);
+
+			pBallRight->SetPos(vBallRightPos);
+			pBallRight->SetScale(vBallRightScale);
+
+			if (L"BallRight" == pBallRight->GetName())
+			{
+				SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pBallRight);
+			}
 		}
 	}
 
@@ -605,6 +683,23 @@ void qPlayer::tick()
 
 			if (GetDir() == DIRECTION::LEFT)
 			{
+				// 라우드 러쉬 스킬 이펙트
+				qSkill_slash_left* pSlashLeft = new qSkill_slash_left;
+				pSlashLeft->SetName(L"pSlashLeft");
+
+				Vec2 vSlashLeftPos = GetPos();
+				Vec2 vSlashLeftScale = Vec2(675.f, 215.f);
+
+				pSlashLeft->SetOwner(this);
+				pSlashLeft->SetPos(vSlashLeftPos);
+				pSlashLeft->SetScale(vSlashLeftScale);
+
+				if (L"pSlashLeft" == pSlashLeft->GetName())
+				{
+					SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pSlashLeft);
+				}
+
+
 				m_SlashRange += m_SlashSpeed * DT;
 
 				m_Pos += Vec2(-1.f, 0.f) * m_SlashSpeed * DT;
@@ -617,10 +712,28 @@ void qPlayer::tick()
 
 				m_Pos += Vec2(1.f, 0.f) * m_SlashSpeed * DT;
 				m_Animator->Play(L"PlayerSlashRight", false);
+
+
+				// 라우드 러쉬 스킬 이펙트
+				qSkill_slash_right* pSlashRight = new qSkill_slash_right;
+				pSlashRight->SetName(L"pSlashRight");
+
+				Vec2 vSlashRightPos = GetPos();
+				Vec2 vSlashRightScale = Vec2(675.f, 215.f);
+
+				pSlashRight->SetOwner(this);
+				pSlashRight->SetPos(vSlashRightPos);
+				pSlashRight->SetScale(vSlashRightScale);
+
+				if (L"pSlashRight" == pSlashRight->GetName())
+				{
+					SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pSlashRight);
+				}
+
 			}
 		}
 
-		if (200.f < m_SlashRange)
+		if (250.f < m_SlashRange)
 		{
 			m_SlashRange = 0.f;
 			m_Slash = false;
@@ -650,9 +763,9 @@ void qPlayer::tick()
 	}
 
 
-	// ======================
-	//    엘리시온 / SPECIAL
-	// ======================
+	// ==============================
+	//    크로스 더 스틱스 / SPECIAL
+	// ==============================
 
 
 
@@ -664,10 +777,42 @@ void qPlayer::tick()
 		{
 			m_Animator->Play(L"PlayerSpecialLeft", false);
 
+			// 크로스 더 스틱스 스킬 이펙트
+
+			qSkill_special_left* pSpecialLeft = new qSkill_special_left;
+			pSpecialLeft->SetName(L"SpecialLeft");
+
+			Vec2 vSpecialLeftPos = GetPos() + Vec2(-100.f, -130.f);
+			Vec2 vSpecialLeftScale = Vec2(500.f, 400.f);
+
+			pSpecialLeft->SetPos(vSpecialLeftPos);
+			pSpecialLeft->SetScale(vSpecialLeftScale);
+
+			if (L"SpecialLeft" == pSpecialLeft->GetName())
+			{
+				SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pSpecialLeft);
+			}
+
 		}
 		else if (GetDir() == DIRECTION::RIGHT)
 		{
 			m_Animator->Play(L"PlayerSpecialRight", false);
+
+			// 크로스 더 스틱스 스킬 이펙트
+
+			qSkill_special_right* pSpecialRight = new qSkill_special_right;
+			pSpecialRight->SetName(L"SpecialRight");
+
+			Vec2 vSpecialRightPos = GetPos() + Vec2(100.f, -130.f);
+			Vec2 vSpecialRightScale = Vec2(500.f, 400.f);
+
+			pSpecialRight->SetPos(vSpecialRightPos);
+			pSpecialRight->SetScale(vSpecialRightScale);
+
+			if (L"SpecialRight" == pSpecialRight->GetName())
+			{
+				SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pSpecialRight);
+			}
 		}
 	}
 
@@ -696,10 +841,21 @@ void qPlayer::tick()
 
 	if (KEY_TAP(KEY::G) && m_RigidBody->IsGround())
 	{
+		// 트루 사이트 스킬 이펙트
+		qSkill_buff* pBuff = new qSkill_buff;
+		pBuff->SetName(L"Buff");
 
+		Vec2 vBuffPos = GetPos() + Vec2(0.f, -100.f);
+		Vec2 vBuffScale = Vec2(400.f, 400.f);
+
+		pBuff->SetPos(vBuffPos);
+		pBuff->SetScale(vBuffScale);
+
+		if (L"Buff" == pBuff->GetName())
+		{
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pBuff);
+		}
 	}
-
-
 
 	//SPACE 누르면 점프!
 
@@ -781,6 +937,25 @@ void qPlayer::tick()
 		if (m_DoubleJumpCount > m_CurJumpCount)
 		{
 			Jump();
+
+			if (m_CurJumpCount == 1)
+			{
+				qSkill_highjump* pHighJump = new qSkill_highjump;
+				pHighJump->SetName(L"Highjump");
+
+				Vec2 vHighJumpPos = GetPos() + Vec2(0.f, 50.f);
+				Vec2 vHighJumpScale = Vec2(185.f, 255.f);
+
+				pHighJump->SetPos(vHighJumpPos);
+				pHighJump->SetScale(vHighJumpScale);
+
+				if (L"Highjump" == pHighJump->GetName())
+				{
+					// TASK
+					SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pHighJump);
+				}
+			}
+
 			m_CurJumpCount += 1;
 		}
 
@@ -873,6 +1048,8 @@ void qPlayer::EndOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _O
 void qPlayer::Jump()
 {
 	m_RigidBody->jump();
+
+	
 }
 
 void qPlayer::DoubleJump()
@@ -881,10 +1058,11 @@ void qPlayer::DoubleJump()
 
 	if (DIRECTION::LEFT == GetDir())
 	{
+		// 더블점프 스킬 이펙트
 		qSkill_doublejump_left* pDoubleJumpLeft = new qSkill_doublejump_left;
 		pDoubleJumpLeft->SetName(L"DoubleJumpLeft");
 
-		Vec2 vDoubleJumpLeftPos = GetPos();
+		Vec2 vDoubleJumpLeftPos = GetPos() + Vec2(30.f, 0.f);
 		Vec2 vDoubleJumpLeftScale = Vec2(255.f, 185.f);
 
 		pDoubleJumpLeft->SetPos(vDoubleJumpLeftPos);
@@ -898,10 +1076,11 @@ void qPlayer::DoubleJump()
 	}
 	else if (DIRECTION::RIGHT == GetDir())
 	{
+		// 더블점프 스킬 이펙트
 		qSkill_doublejump_right* pDoubleJumpRight = new qSkill_doublejump_right;
 		pDoubleJumpRight->SetName(L"DoubleJumpRight");
 
-		Vec2 vDoubleJumpRightPos = GetPos();
+		Vec2 vDoubleJumpRightPos = GetPos() + Vec2(-30.f, 0.f);
 		Vec2 vDoubleJumpRightScale = Vec2(255.f, 185.f);
 
 		pDoubleJumpRight->SetPos(vDoubleJumpRightPos);

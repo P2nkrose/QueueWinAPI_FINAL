@@ -18,7 +18,7 @@ qSkill_special_right::qSkill_special_right()
 	qTexture* SpecialRight = qAssetMgr::GetInst()->LoadTexture(L"SpecialRight", L"texture\\skill\\special\\special_right.png");
 
 	// 애니메이션 CREATE
-	m_Animator->CreateAnimation(L"SpecialRight", SpecialRight, Vec2(0.f, 0.f), Vec2(500.f, 450.f), 11, 5);
+	m_Animator->CreateAnimation(L"SpecialRight", SpecialRight, Vec2(0.f, 0.f), Vec2(580.f, 450.f), 11, 13);
 
 	// 애니메이션 SAVE
 	m_Animator->FindAnimation(L"SpecialRight")->Save(L"animation\\skill\\special\\");
@@ -33,8 +33,8 @@ qSkill_special_right::qSkill_special_right()
 
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 
-	m_Collider->SetOffsetPos(Vec2(0.f, 0.f));
-	m_Collider->SetScale(Vec2(500.f, 450.f));
+	m_Collider->SetOffsetPos(Vec2(80.f, 30.f));
+	m_Collider->SetScale(Vec2(300.f, 300.f));
 }
 
 qSkill_special_right::qSkill_special_right(const qSkill_special_right& _Other)

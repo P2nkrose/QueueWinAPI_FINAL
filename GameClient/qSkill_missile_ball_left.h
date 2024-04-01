@@ -25,5 +25,7 @@ public:
 private:
 	qAnimator* m_Animator;
 	qCollider* m_Collider;
+
+	float	   m_BallSpeed;
 };
 

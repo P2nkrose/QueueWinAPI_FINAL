@@ -10,6 +10,7 @@
 qSkill_missile_ball_right::qSkill_missile_ball_right()
 	: m_Animator(nullptr)
 	, m_Collider(nullptr)
+	, m_BallSpeed(600.f)
 {
 	m_Animator = (qAnimator*)AddComponent(new qAnimator);
 
@@ -33,12 +34,13 @@ qSkill_missile_ball_right::qSkill_missile_ball_right()
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 
 	m_Collider->SetOffsetPos(Vec2(0.f, 0.f));
-	m_Collider->SetScale(Vec2(100.f, 70.f));
+	m_Collider->SetScale(Vec2(60.f, 30.f));
 }
 
 qSkill_missile_ball_right::qSkill_missile_ball_right(const qSkill_missile_ball_right& _Other)
 	: m_Animator(nullptr)
 	, m_Collider(nullptr)
+	, m_BallSpeed(600.f)
 {
 	m_Animator = GetComponent<qAnimator>();
 }
@@ -50,6 +52,13 @@ qSkill_missile_ball_right::~qSkill_missile_ball_right()
 void qSkill_missile_ball_right::tick()
 {
 	qObj::tick();
+
+	Vec2 vPos = GetPos();
+	Vec2 vDir = Vec2(1.f, 0.f);
+
+	vPos += vDir * m_BallSpeed * DT;
+
+	SetPos(vPos);
 }
 
 

@@ -19,11 +19,14 @@ public:
 	qAnimator* GetAnimator() { return m_Animator; }
 	qCollider* GetCollider() { return m_Collider; }
 
+	void SetOwner(qObj* _Owner) { m_Owner = _Owner; }
+
 	virtual void OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
 
 
 private:
-	qAnimator* m_Animator;
-	qCollider* m_Collider;
+	qAnimator*		m_Animator;
+	qCollider*		m_Collider;
+	qObj*			m_Owner;
 };
 

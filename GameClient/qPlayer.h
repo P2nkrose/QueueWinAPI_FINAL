@@ -43,13 +43,6 @@ public:
 	virtual void tick();	
 
 
-	void Attack();
-	void Missile();
-	void Slash();
-	void Special();
-	void Buff();
-
-
 	//void Shoot();
 	void Jump();
 	void DoubleJump();

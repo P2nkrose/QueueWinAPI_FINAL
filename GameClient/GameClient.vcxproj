@@ -195,6 +195,7 @@
     <ClInclude Include="qSkill_buff.h" />
     <ClInclude Include="qSkill_doublejump_left.h" />
     <ClInclude Include="qSkill_doublejump_right.h" />
+    <ClInclude Include="qSkill_highjump.h" />
     <ClInclude Include="qSkill_missile_ball_right.h" />
     <ClInclude Include="qSkill_missile_left.h" />
     <ClInclude Include="qSkill_missile_ball_left.h" />
@@ -276,6 +277,7 @@
     <ClCompile Include="qSkill_buff.cpp" />
     <ClCompile Include="qSkill_doublejump_left.cpp" />
     <ClCompile Include="qSkill_doublejump_right.cpp" />
+    <ClCompile Include="qSkill_highjump.cpp" />
     <ClCompile Include="qSkill_missile_ball_right.cpp" />
     <ClCompile Include="qSkill_missile_left.cpp" />
     <ClCompile Include="qSkill_missile_ball_left.cpp" />

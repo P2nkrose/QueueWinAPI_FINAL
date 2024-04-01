@@ -17,7 +17,7 @@ qSkill_slash_left::qSkill_slash_left()
 	qTexture* SlashLeft = qAssetMgr::GetInst()->LoadTexture(L"SlashLeft", L"texture\\skill\\slash\\slash_left.png");
 
 	// 애니메이션 CREATE
-	m_Animator->CreateAnimation(L"SlashLeft", SlashLeft, Vec2(0.f, 0.f), Vec2(675.f, 215.f), 11, 5);
+	m_Animator->CreateAnimation(L"SlashLeft", SlashLeft, Vec2(0.f, 0.f), Vec2(675.f, 215.f), 11, 13);
 
 	// 애니메이션 SAVE
 	m_Animator->FindAnimation(L"SlashLeft")->Save(L"animation\\skill\\slash\\");
@@ -33,7 +33,7 @@ qSkill_slash_left::qSkill_slash_left()
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 
 	m_Collider->SetOffsetPos(Vec2(0.f, 0.f));
-	m_Collider->SetScale(Vec2(675.f, 215.f));
+	m_Collider->SetScale(Vec2(450.f, 130.f));
 }
 
 qSkill_slash_left::qSkill_slash_left(const qSkill_slash_left& _Other)
@@ -50,6 +50,8 @@ qSkill_slash_left::~qSkill_slash_left()
 void qSkill_slash_left::tick()
 {
 	qObj::tick();
+
+	SetPos(m_Owner->GetPos());
 
 	if (L"SlashLeft" == m_Animator->GetCurAnim()->GetName())
 	{

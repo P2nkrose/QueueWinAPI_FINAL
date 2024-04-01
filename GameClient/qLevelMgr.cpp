@@ -53,7 +53,7 @@ void qLevelMgr::init()
 	m_arrLevel[(UINT)LEVEL_TYPE::BOSS_02] = new qLevel_boss2;
 
 	// 처음 시작할 레벨 
-	::ChangeLevel(LEVEL_TYPE::STAGE_02);
+	::ChangeLevel(LEVEL_TYPE::STAGE_01);
 	
 }
 

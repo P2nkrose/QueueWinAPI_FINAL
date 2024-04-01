@@ -15,7 +15,7 @@ qSkill_missile_right::qSkill_missile_right()
 	qTexture* MissileRight = qAssetMgr::GetInst()->LoadTexture(L"MissileRight", L"texture\\skill\\missile\\missile_right.png");
 
 	// 애니메이션 CREATE
-	m_Animator->CreateAnimation(L"MissileRight", MissileRight, Vec2(0.f, 0.f), Vec2(240.f, 195.f), 11, 5);
+	m_Animator->CreateAnimation(L"MissileRight", MissileRight, Vec2(0.f, 0.f), Vec2(240.f, 195.f), 11, 13);
 
 	// 애니메이션 SAVE
 	m_Animator->FindAnimation(L"MissileRight")->Save(L"animation\\skill\\missile\\");
