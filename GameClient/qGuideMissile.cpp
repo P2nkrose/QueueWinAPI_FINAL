@@ -60,7 +60,7 @@ void qGuideMissile::tick()
 
 void qGuideMissile::FindTarget()
 {
-	if (LAYER_TYPE::MONSTER_MISSILE == GetLayerType())
+	if (LAYER_TYPE::PLAYER_MISSILE == GetLayerType())
 	{
 		// 플레이어를 탐색
 		qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();

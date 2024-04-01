@@ -7,9 +7,9 @@ qButton::qButton()
 	, m_HoverImg(nullptr)
 	, m_DownImg(nullptr)
 {
-	m_NormalImg = qAssetMgr::GetInst()->LoadTexture(L"normal", L"texture\\ui\\btn\\btn1.png");
-	m_HoverImg = qAssetMgr::GetInst()->LoadTexture(L"hover", L"texture\\ui\\btn\\btn2.png");
-	m_DownImg = qAssetMgr::GetInst()->LoadTexture(L"down", L"texture\\ui\\btn\\btn3.png");
+	m_NormalImg = qAssetMgr::GetInst()->LoadTexture(L"normal", L"texture\\ui\\btn\\scania\\btn1.png");
+	m_HoverImg = qAssetMgr::GetInst()->LoadTexture(L"hover", L"texture\\ui\\btn\\scania\\btn2.png");
+	m_DownImg = qAssetMgr::GetInst()->LoadTexture(L"down", L"texture\\ui\\btn\\scania\\btn3.png");
 }
 
 qButton::~qButton()

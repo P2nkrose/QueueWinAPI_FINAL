@@ -18,6 +18,21 @@
 #include "qMissile.h"
 #include "qGuideMissile.h"
 
+#include "qSkill_attack_left.h"
+#include "qSkill_attack_right.h"
+#include "qSkill_missile_left.h"
+#include "qSkill_missile_right.h"
+#include "qSkill_missile_ball_left.h"
+#include "qSkill_missile_ball_right.h"
+#include "qSkill_slash_left.h"
+#include "qSkill_slash_right.h"
+#include "qSkill_special_left.h"
+#include "qSkill_special_right.h"
+#include "qSkill_buff.h"
+#include "qSkill_doublejump_left.h"
+#include "qSkill_doublejump_right.h"
+
+
 #include "qDbgRender.h"
 #include "qCamera.h"
 
@@ -863,6 +878,41 @@ void qPlayer::Jump()
 void qPlayer::DoubleJump()
 {
 	m_RigidBody->doublejump();
+
+	if (DIRECTION::LEFT == GetDir())
+	{
+		qSkill_doublejump_left* pDoubleJumpLeft = new qSkill_doublejump_left;
+		pDoubleJumpLeft->SetName(L"DoubleJumpLeft");
+
+		Vec2 vDoubleJumpLeftPos = GetPos();
+		Vec2 vDoubleJumpLeftScale = Vec2(255.f, 185.f);
+
+		pDoubleJumpLeft->SetPos(vDoubleJumpLeftPos);
+		pDoubleJumpLeft->SetScale(vDoubleJumpLeftScale);
+		
+		if (L"DoubleJumpLeft" == pDoubleJumpLeft->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pDoubleJumpLeft);
+		}
+	}
+	else if (DIRECTION::RIGHT == GetDir())
+	{
+		qSkill_doublejump_right* pDoubleJumpRight = new qSkill_doublejump_right;
+		pDoubleJumpRight->SetName(L"DoubleJumpRight");
+
+		Vec2 vDoubleJumpRightPos = GetPos();
+		Vec2 vDoubleJumpRightScale = Vec2(255.f, 185.f);
+
+		pDoubleJumpRight->SetPos(vDoubleJumpRightPos);
+		pDoubleJumpRight->SetScale(vDoubleJumpRightScale);
+
+		if (L"DoubleJumpRight" == pDoubleJumpRight->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pDoubleJumpRight);
+		}
+	}
 }
 
 

@@ -68,11 +68,12 @@ enum class DIRECTION
 
 enum class PLAYER_SKILL
 {
-	BUFF,		// 트루사이트 (버프기)
 	ATTACK,		// 솔라슬래시 (기본기)
 	MISSILE,	// 루나 디바이드 (유도탄)
 	SLASH,		// 라우드 러쉬 (벽력일섬)
-	SPECIAL,	// 엘리시온 (크게 한방)
+	SPECIAL,	// 크로스 더 스틱스 (크게 한방)
+	BUFF,		// 트루사이트 (버프기)
+	DOUBLEJUMP,	// 더블점프
 
 	END,
 };
@@ -99,7 +100,6 @@ enum class LAYER_TYPE
 {
 	DEFAULT,
 	BACKGROUND,
-	TILE,
 
 	PLATFORM,
 	ROPE,
@@ -112,10 +112,10 @@ enum class LAYER_TYPE
 
 	BOSS,
 
-	PLAYER_MISSILE,
-	MONSTER_MISSILE,
+	PLAYER_SKILL,
+	BOSS_SKILL,
 
-	FORCE,
+	PLAYER_MISSILE,
 
 	UI,
 	END,
