@@ -4,6 +4,7 @@
 #include "qCollider.h"
 #include "qAnimator.h"
 #include "qCamera.h"
+#include "qSound.h"
 
 #include "qTaskMgr.h"
 
@@ -37,6 +38,12 @@ qSkill_attack_left::qSkill_attack_left()
 	m_Collider->SetOffsetPos(Vec2(0.f, 0.f));
 	m_Collider->SetScale(Vec2(350.f, 200.f));
 
+
+	// 스킬 사운드
+	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\skill\\attack.wav");
+	pSound->SetVolume(30.f);
+	pSound->Play();
+
 }
 
 qSkill_attack_left::qSkill_attack_left(const qSkill_attack_left& _Other)
@@ -59,6 +66,9 @@ void qSkill_attack_left::tick()
 		if (m_Animator->IsFinish())
 		{
 			Destroy();
+
+			pSound->SetVolume(30.f);
+			pSound->Stop();
 		}
 	}
 }

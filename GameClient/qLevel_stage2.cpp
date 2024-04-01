@@ -31,7 +31,7 @@ void qLevel_stage2::begin()
 {
 	qLevel::begin();
 
-	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\stage2.wav");
+	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\level\\stage2.wav");
 	pSound->SetVolume(30.f);
 	pSound->Play();
 

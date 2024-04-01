@@ -29,7 +29,7 @@ void qLevel_Logo::begin()
 {
 	qLevel::begin();
 
-	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\logo.wav");
+	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\level\\logo.wav");
 	pSound->SetVolume(30.f);
 	pSound->Play();
 }

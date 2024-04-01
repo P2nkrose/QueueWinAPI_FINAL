@@ -16,7 +16,7 @@ private:
 	float			m_Speed;
 	float			m_Hud;
 	float			m_SlashSpeed;
-	float			m_SlashRange;
+	float			m_SlashMaxRange;
 	bool			m_Slash;
 
 	bool			m_Portal;		// Æ÷Å»
@@ -26,6 +26,7 @@ private:
 	LEVEL_TYPE		m_Level;
 
 	Vec2			m_Pos;
+	Vec2			m_CenterPos;
 
 	qTexture*		m_PlayerImg;
 
@@ -50,6 +51,7 @@ public:
 	{
 		m_CurJumpCount = 0;
 	}
+
 
 	void SetTargetRope(qRope* _Rope) { m_Rope = _Rope; }
 

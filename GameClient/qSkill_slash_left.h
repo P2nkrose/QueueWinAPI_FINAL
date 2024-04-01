@@ -4,6 +4,7 @@
 class qCamera;
 class qTexture;
 class qAnimator;
+class qSound;
 
 class qSkill_slash_left : public qObj
 {
@@ -27,5 +28,6 @@ private:
 	qAnimator*		m_Animator;
 	qCollider*		m_Collider;
 	qObj*			m_Owner;
+	qSound*			pSound;
 };
 

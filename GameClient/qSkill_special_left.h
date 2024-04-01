@@ -4,6 +4,7 @@
 class qCamera;
 class qTexture;
 class qAnimator;
+class qSound;
 
 class qSkill_special_left : public qObj
 {
@@ -22,7 +23,8 @@ public:
 	virtual void OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
 
 private:
-	qAnimator* m_Animator;
-	qCollider* m_Collider;
+	qAnimator*		m_Animator;
+	qCollider*		m_Collider;
+	qSound*			pSound;
 };
 

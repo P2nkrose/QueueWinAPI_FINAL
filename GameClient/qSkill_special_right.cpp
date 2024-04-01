@@ -4,6 +4,7 @@
 #include "qCollider.h"
 #include "qAnimator.h"
 #include "qCamera.h"
+#include "qSound.h"
 
 #include "qTaskMgr.h"
 
@@ -35,6 +36,13 @@ qSkill_special_right::qSkill_special_right()
 
 	m_Collider->SetOffsetPos(Vec2(80.f, 30.f));
 	m_Collider->SetScale(Vec2(300.f, 300.f));
+
+
+
+	// 스킬 사운드
+	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\skill\\special.wav");
+	pSound->SetVolume(30.f);
+	pSound->Play();
 }
 
 qSkill_special_right::qSkill_special_right(const qSkill_special_right& _Other)
@@ -57,6 +65,9 @@ void qSkill_special_right::tick()
 		if (m_Animator->IsFinish())
 		{
 			Destroy();
+
+			pSound->SetVolume(30.f);
+			pSound->Stop();
 		}
 	}
 }

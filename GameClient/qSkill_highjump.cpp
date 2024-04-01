@@ -3,6 +3,7 @@
 
 #include "qAnimator.h"
 #include "qCamera.h"
+#include "qSound.h"
 
 #include "qTaskMgr.h"
 
@@ -25,6 +26,12 @@ qSkill_highjump::qSkill_highjump()
 	m_Animator->LoadAnimation(L"animation\\skill\\highjump\\HighJump.anim");
 
 	m_Animator->Play(L"HighJump", false);
+
+
+	// 스킬 사운드
+	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\skill\\jump.wav");
+	pSound->SetVolume(30.f);
+	pSound->Play();
 }
 
 qSkill_highjump::qSkill_highjump(const qSkill_highjump& _Other)
@@ -46,6 +53,9 @@ void qSkill_highjump::tick()
 		if (m_Animator->IsFinish())
 		{
 			Destroy();
+
+			pSound->SetVolume(30.f);
+			pSound->Stop();
 		}
 	}
 }

@@ -27,7 +27,7 @@ void qLevel_boss1::begin()
 {
 	qLevel::begin();
 
-	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\boss1.wav");
+	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\level\\boss1.wav");
 	pSound->SetVolume(30.f);
 	pSound->Play();
 

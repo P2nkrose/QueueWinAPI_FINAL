@@ -4,6 +4,7 @@
 class qCamera;
 class qTexture;
 class qAnimator;
+class qSound;
 
 class qSkill_missile_right : public qObj
 {
@@ -21,5 +22,6 @@ public:
 
 
 private:
-	qAnimator* m_Animator;
+	qAnimator*		m_Animator;
+	qSound*			pSound;
 };

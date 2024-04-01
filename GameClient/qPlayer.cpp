@@ -55,7 +55,7 @@ qPlayer::qPlayer()
 	: m_State(PLAYER_STATE::IDLE)
 	, m_Speed(150.f)
 	, m_SlashSpeed(900.f)
-	, m_SlashRange(0.f)
+	, m_SlashMaxRange(0.f)
 	, m_Slash(true)
 	, m_Hud(100.f)
 	, m_Level(LEVEL_TYPE::END)
@@ -677,12 +677,12 @@ void qPlayer::tick()
 
 	if (m_Slash)
 	{
-		if (KEY_PRESSED(KEY::D) && m_RigidBody->IsGround())
+		if (KEY_TAP(KEY::D) && m_RigidBody->IsGround())
 		{
-			m_State = PLAYER_STATE::SLASH;
-
-			if (GetDir() == DIRECTION::LEFT)
+			if (DIRECTION::LEFT == GetDir())
 			{
+				m_CenterPos = GetPos();
+
 				// 라우드 러쉬 스킬 이펙트
 				qSkill_slash_left* pSlashLeft = new qSkill_slash_left;
 				pSlashLeft->SetName(L"pSlashLeft");
@@ -698,21 +698,10 @@ void qPlayer::tick()
 				{
 					SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pSlashLeft);
 				}
-
-
-				m_SlashRange += m_SlashSpeed * DT;
-
-				m_Pos += Vec2(-1.f, 0.f) * m_SlashSpeed * DT;
-				m_Animator->Play(L"PlayerSlashLeft", false);
-
 			}
-			else if (GetDir() == DIRECTION::RIGHT)
+			else if (DIRECTION::RIGHT == GetDir())
 			{
-				m_SlashRange += m_SlashSpeed * DT;
-
-				m_Pos += Vec2(1.f, 0.f) * m_SlashSpeed * DT;
-				m_Animator->Play(L"PlayerSlashRight", false);
-
+				m_CenterPos = GetPos();
 
 				// 라우드 러쉬 스킬 이펙트
 				qSkill_slash_right* pSlashRight = new qSkill_slash_right;
@@ -729,19 +718,39 @@ void qPlayer::tick()
 				{
 					SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pSlashRight);
 				}
+			}
+		}
+
+		if (KEY_PRESSED(KEY::D) && m_RigidBody->IsGround())
+		{
+			SetState(PLAYER_STATE::SLASH);
+
+			if (GetDir() == DIRECTION::LEFT)
+			{	
+				m_SlashMaxRange += m_SlashSpeed * DT;
+				m_Pos += Vec2(-1.f, 0.f) * m_SlashSpeed * DT;
+
+
+				m_Animator->Play(L"PlayerSlashLeft", false);
+			}
+			else if (GetDir() == DIRECTION::RIGHT)
+			{
+				m_SlashMaxRange += m_SlashSpeed * DT;
+				m_Pos += Vec2(1.f, 0.f) * m_SlashSpeed * DT;
+
+
+				m_Animator->Play(L"PlayerSlashRight", false);
 
 			}
 		}
 
-		if (250.f < m_SlashRange)
+		if (350.f < m_SlashMaxRange)
 		{
-			m_SlashRange = 0.f;
+			m_SlashMaxRange = 0.f;
 			m_Slash = false;
 		}
 	}
 
-	
-	
 
 	if (L"PlayerSlashLeft" == m_Animator->GetCurAnim()->GetName())
 	{

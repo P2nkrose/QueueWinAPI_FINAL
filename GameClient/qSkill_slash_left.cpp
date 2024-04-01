@@ -4,6 +4,7 @@
 #include "qCollider.h"
 #include "qAnimator.h"
 #include "qCamera.h"
+#include "qSound.h"
 
 #include "qTaskMgr.h"
 
@@ -34,6 +35,12 @@ qSkill_slash_left::qSkill_slash_left()
 
 	m_Collider->SetOffsetPos(Vec2(0.f, 0.f));
 	m_Collider->SetScale(Vec2(450.f, 130.f));
+
+
+	// 스킬 사운드
+	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\skill\\slash.wav");
+	pSound->SetVolume(30.f);
+	pSound->Play();
 }
 
 qSkill_slash_left::qSkill_slash_left(const qSkill_slash_left& _Other)
@@ -58,6 +65,9 @@ void qSkill_slash_left::tick()
 		if (m_Animator->IsFinish())
 		{
 			Destroy();
+
+			pSound->SetVolume(30.f);
+			pSound->Stop();
 		}
 	}
 }

@@ -3,6 +3,7 @@
 
 #include "qAnimator.h"
 #include "qCamera.h"
+#include "qSound.h"
 
 #include "qTaskMgr.h"
 
@@ -24,6 +25,13 @@ qSkill_missile_left::qSkill_missile_left()
 	m_Animator->LoadAnimation(L"animation\\skill\\missile\\MissileLeft.anim");
 
 	m_Animator->Play(L"MissileLeft", false);
+
+
+
+	// 스킬 사운드
+	pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\skill\\missile.wav");
+	pSound->SetVolume(30.f);
+	pSound->Play();
 }
 
 qSkill_missile_left::qSkill_missile_left(const qSkill_missile_left& _Other)
@@ -45,6 +53,9 @@ void qSkill_missile_left::tick()
 		if (m_Animator->IsFinish())
 		{
 			Destroy();
+
+			pSound->SetVolume(30.f);
+			pSound->Stop();
 		}
 	}
 }
