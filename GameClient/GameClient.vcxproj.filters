@@ -224,9 +224,6 @@
     <Filter Include="03. Game\05. Object\6. Effect\4. Special">
       <UniqueIdentifier>{4c91be43-f2a2-4cb6-beda-0dd47fc864ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\6. Effect\5. Buff">
-      <UniqueIdentifier>{72d1a724-54ef-4609-82f1-b06c49ae6138}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\5. Skill\6. DoubleJump">
       <UniqueIdentifier>{2c7c9d56-9d47-4b52-896b-f4f562a4d1a1}</UniqueIdentifier>
     </Filter>
@@ -505,6 +502,18 @@
     <ClInclude Include="qRedDeadState.h">
       <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
     </ClInclude>
+    <ClInclude Include="qEffect_attack.h">
+      <Filter>03. Game\05. Object\6. Effect\1. Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="qEffect_missile.h">
+      <Filter>03. Game\05. Object\6. Effect\2. Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="qEffect_slash.h">
+      <Filter>03. Game\05. Object\6. Effect\3. Slash</Filter>
+    </ClInclude>
+    <ClInclude Include="qEffect_special.h">
+      <Filter>03. Game\05. Object\6. Effect\4. Special</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -753,6 +762,18 @@
     </ClCompile>
     <ClCompile Include="qRedDeadState.cpp">
       <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+    </ClCompile>
+    <ClCompile Include="qEffect_attack.cpp">
+      <Filter>03. Game\05. Object\6. Effect\1. Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="qEffect_missile.cpp">
+      <Filter>03. Game\05. Object\6. Effect\2. Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="qEffect_slash.cpp">
+      <Filter>03. Game\05. Object\6. Effect\3. Slash</Filter>
+    </ClCompile>
+    <ClCompile Include="qEffect_special.cpp">
+      <Filter>03. Game\05. Object\6. Effect\4. Special</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

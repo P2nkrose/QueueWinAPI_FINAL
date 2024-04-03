@@ -155,15 +155,15 @@ void qMonster_red::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qColli
 
 void qMonster_red::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
-	if (LAYER_TYPE::PLAYER_SKILL == _OtherObj->GetLayerType())
-	{
-		m_FSM->ChangeState(L"RedDead");
+	//if (LAYER_TYPE::PLAYER_SKILL == _OtherObj->GetLayerType())
+	//{
+	//	m_FSM->ChangeState(L"RedDead");
 
-		//--m_HP;
-		//
-		//if (0 >= m_HP)
-		//{
-		//	
-		//}
-	}
+	//	//--m_HP;
+	//	//
+	//	//if (0 >= m_HP)
+	//	//{
+	//	//	
+	//	//}
+	//}
 }

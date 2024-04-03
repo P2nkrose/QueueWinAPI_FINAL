@@ -1,30 +1,27 @@
 #pragma once
 #include "qObj.h"
 
-class qCamera;
-class qTexture;
-class qAnimator;
 class qSound;
+class qAnimator;
+class qTexture;
 
-class qSkill_special_left : public qObj
+class qEffect_attack : public qObj
 {
-	CLONE(qSkill_special_left);
+	CLONE(qEffect_attack);
 
 public:
-	qSkill_special_left();
-	qSkill_special_left(const qSkill_special_left& _Other);
-	~qSkill_special_left();
+	qEffect_attack();
+	qEffect_attack(const qEffect_attack& _Other);
+	~qEffect_attack();
 
 	virtual void tick() override;
 
 	qAnimator* GetAnimator() { return m_Animator; }
-	qCollider* GetCollider() { return m_Collider; }
 
 	virtual void BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
 
 private:
 	qAnimator*		m_Animator;
-	qCollider*		m_Collider;
 	qSound*			pSound;
 };
 

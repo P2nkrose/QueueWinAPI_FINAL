@@ -60,13 +60,13 @@ void qGuideMissile::tick()
 
 void qGuideMissile::FindTarget()
 {
-	if (LAYER_TYPE::PLAYER_MISSILE == GetLayerType())
+	if (LAYER_TYPE::EFFECT == GetLayerType())
 	{
 		// 플레이어를 탐색
 		qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
 		m_Target = pCurLevel->FindObjectByName(L"Player");
 	}
-	else if (LAYER_TYPE::PLAYER_MISSILE == GetLayerType())
+	else if (LAYER_TYPE::EFFECT == GetLayerType())
 	{
 		// 몬스터 전체 목록을 받아옴
 		qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();

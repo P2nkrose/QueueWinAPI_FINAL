@@ -86,8 +86,8 @@ qMonster_blue::qMonster_blue(DIRECTION _Dir)
 	//m_Animator->CreateAnimation(L"BlueMoveLeft", pBlueMoveLeft, Vec2(0.f, 0.f), Vec2(65.f, 91.f), 6, 7);
 
 	//// DEAD
-	//m_Animator->CreateAnimation(L"BlueDeadRight", pBlueDeadRight, Vec2(0.f, 0.f), Vec2(93.f, 93.f), 12, 10);
-	//m_Animator->CreateAnimation(L"BlueDeadLeft", pBlueDeadLeft, Vec2(0.f, 0.f), Vec2(93.f, 93.f), 12, 10);
+	//m_Animator->CreateAnimation(L"BlueDeadRight", pBlueDeadRight, Vec2(0.f, 0.f), Vec2(93.f, 93.f), 12, 8);
+	//m_Animator->CreateAnimation(L"BlueDeadLeft", pBlueDeadLeft, Vec2(0.f, 0.f), Vec2(93.f, 93.f), 12, 8);
 	//
 
 	//// Animation Save
@@ -183,11 +183,11 @@ void qMonster_blue::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qColl
 
 void qMonster_blue::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
-	if (LAYER_TYPE::PLAYER_SKILL == _OtherObj->GetLayerType())
-	{
-		m_FSM->ChangeState(L"Dead");
+	//if (LAYER_TYPE::PLAYER_SKILL == _OtherObj->GetLayerType())
+	//{
+	//	m_FSM->ChangeState(L"Dead");
 
-	}
+	//}
 }
 
 

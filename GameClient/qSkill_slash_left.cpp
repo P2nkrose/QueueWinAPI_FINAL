@@ -6,6 +6,11 @@
 #include "qCamera.h"
 #include "qSound.h"
 
+#include "qLevel.h"
+#include "qLevelMgr.h"
+
+#include "qEffect_slash.h"
+
 #include "qTaskMgr.h"
 
 qSkill_slash_left::qSkill_slash_left()
@@ -33,8 +38,8 @@ qSkill_slash_left::qSkill_slash_left()
 
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 
-	m_Collider->SetOffsetPos(Vec2(0.f, 0.f));
-	m_Collider->SetScale(Vec2(450.f, 130.f));
+	m_Collider->SetOffsetPos(Vec2(-100.f, 0.f));
+	m_Collider->SetScale(Vec2(250.f, 100.f));
 
 
 	// 스킬 사운드
@@ -72,7 +77,25 @@ void qSkill_slash_left::tick()
 	}
 }
 
-void qSkill_slash_left::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
+void qSkill_slash_left::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
+	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::BOSS == _OtherObj->GetLayerType()
+		|| LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType())
+	{
+		qEffect_slash* pSlashEffect = new qEffect_slash;
+		pSlashEffect->SetName(L"SlashEffect");
 
+		Vec2 vSlashEffectPos = _OtherObj->GetPos() + Vec2(30.f, 0.f);
+		Vec2 vSlashEffectScale = Vec2(200.f, 200.f);
+
+		pSlashEffect->SetPos(vSlashEffectPos);
+		pSlashEffect->SetScale(vSlashEffectScale);
+
+		if (L"SlashEffect" == pSlashEffect->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pSlashEffect);
+		}
+	}
 }
+

@@ -6,6 +6,11 @@
 #include "qCamera.h"
 #include "qSound.h"
 
+#include "qLevel.h"
+#include "qLevelMgr.h"
+
+#include "qEffect_attack.h"
+
 #include "qTaskMgr.h"
 
 
@@ -74,6 +79,26 @@ void qSkill_attack_left::tick()
 	}
 }
 
-void qSkill_attack_left::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
+void qSkill_attack_left::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
+	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::BOSS == _OtherObj->GetLayerType()
+		|| LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType())
+	{
+		qEffect_attack* pAttackEffect = new qEffect_attack;
+		pAttackEffect->SetName(L"AttackEffect");
+
+		Vec2 vAttackEffectPos = _OtherObj->GetPos() + Vec2(50.f, 0.f);
+		Vec2 vAttackEffectScale = Vec2(150.f, 150.f);
+
+		pAttackEffect->SetPos(vAttackEffectPos);
+		pAttackEffect->SetScale(vAttackEffectScale);
+
+		if (L"AttackEffect" == pAttackEffect->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pAttackEffect);
+		}
+	}
 }
+
+

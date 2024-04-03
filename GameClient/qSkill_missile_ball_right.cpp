@@ -5,6 +5,11 @@
 #include "qAnimator.h"
 #include "qCamera.h"
 
+#include "qLevel.h"
+#include "qLevelMgr.h"
+
+#include "qEffect_missile.h"
+
 #include "qTaskMgr.h"
 
 qSkill_missile_ball_right::qSkill_missile_ball_right()
@@ -64,5 +69,30 @@ void qSkill_missile_ball_right::tick()
 
 void qSkill_missile_ball_right::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
+
+	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::BOSS == _OtherObj->GetLayerType()
+		|| LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType())
+	{
+		qEffect_missile* pMissileEffect = new qEffect_missile;
+		pMissileEffect->SetName(L"MissileEffect");
+
+		Vec2 vMissileEffectPos = _OtherObj->GetPos() + Vec2(-30.f, 0.f);
+		Vec2 vMissileEffectScale = Vec2(150.f, 130.f);
+
+		pMissileEffect->SetPos(vMissileEffectPos);
+		pMissileEffect->SetScale(vMissileEffectScale);
+
+		if (L"MissileEffect" == pMissileEffect->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pMissileEffect);
+		}
+	}
+
+
 	// Àû°ú ºÎµúÇûÀ»¶§ Destroy();
+	if (_OtherObj->GetName() == L"Blue" || _OtherObj->GetName() == L"Red" || _OtherObj->GetName() == L"Boss")
+	{
+		Destroy();
+	}
 }

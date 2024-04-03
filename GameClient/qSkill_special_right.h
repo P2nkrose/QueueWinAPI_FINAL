@@ -20,7 +20,7 @@ public:
 	qAnimator* GetAnimator() { return m_Animator; }
 	qCollider* GetCollider() { return m_Collider; }
 
-	virtual void OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
+	virtual void BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
 
 private:
 	qAnimator*		m_Animator;

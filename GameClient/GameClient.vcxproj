@@ -163,6 +163,10 @@
     <ClInclude Include="qDbgRender.h" />
     <ClInclude Include="qDummy_blue.h" />
     <ClInclude Include="qDummy_red.h" />
+    <ClInclude Include="qEffect_attack.h" />
+    <ClInclude Include="qEffect_missile.h" />
+    <ClInclude Include="qEffect_slash.h" />
+    <ClInclude Include="qEffect_special.h" />
     <ClInclude Include="qEngine.h" />
     <ClInclude Include="qEntity.h" />
     <ClInclude Include="qForce.h" />
@@ -249,6 +253,10 @@
     <ClCompile Include="qDbgRender.cpp" />
     <ClCompile Include="qDummy_blue.cpp" />
     <ClCompile Include="qDummy_red.cpp" />
+    <ClCompile Include="qEffect_attack.cpp" />
+    <ClCompile Include="qEffect_missile.cpp" />
+    <ClCompile Include="qEffect_slash.cpp" />
+    <ClCompile Include="qEffect_special.cpp" />
     <ClCompile Include="qEngine.cpp" />
     <ClCompile Include="qEntity.cpp" />
     <ClCompile Include="qForce.cpp" />

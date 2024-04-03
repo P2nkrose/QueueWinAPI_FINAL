@@ -6,6 +6,11 @@
 #include "qCamera.h"
 #include "qSound.h"
 
+#include "qLevel.h"
+#include "qLevelMgr.h"
+
+#include "qEffect_special.h"
+
 #include "qTaskMgr.h"
 
 
@@ -72,6 +77,25 @@ void qSkill_special_right::tick()
 	}
 }
 
-void qSkill_special_right::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
+void qSkill_special_right::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
+	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::BOSS == _OtherObj->GetLayerType()
+		|| LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType())
+	{
+		qEffect_special* pSpecialEffect = new qEffect_special;
+		pSpecialEffect->SetName(L"SpecialEffect");
+
+		Vec2 vSpecialEffectPos = _OtherObj->GetPos() + Vec2(-10.f, 0.f);
+		Vec2 vSpecialEffectScale = Vec2(330.f, 345.f);
+
+		pSpecialEffect->SetPos(vSpecialEffectPos);
+		pSpecialEffect->SetScale(vSpecialEffectScale);
+
+		if (L"SpecialEffect" == pSpecialEffect->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pSpecialEffect);
+		}
+	}
 }
+

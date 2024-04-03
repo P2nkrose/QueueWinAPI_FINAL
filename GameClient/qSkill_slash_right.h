@@ -22,7 +22,7 @@ public:
 
 	void SetOwner(qObj* _Owner) { m_Owner = _Owner; }
 
-	virtual void OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
+	virtual void BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
 
 
 private:
