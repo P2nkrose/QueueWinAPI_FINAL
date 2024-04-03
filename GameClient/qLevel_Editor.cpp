@@ -8,9 +8,13 @@
 #include "qPortal.h"
 #include "qCollider.h"
 #include "qTexture.h"
+#include "qAnimation.h"
+#include "qAnimator.h"
 
 #include "qMonster_red.h"
 #include "qMonster_blue.h"
+#include "qDummy_blue.h"
+#include "qDummy_red.h"
 
 #include "qBackground_stage1.h"
 #include "qBackground_stage2.h"
@@ -105,13 +109,13 @@ void qLevel_Editor::tick()
 	}
 	else if (KEY_TAP(KEY::K))
 	{
-		SetType(EDIT_TYPE::MONSTER_BLUE);
+		SetType(EDIT_TYPE::DUMMY_BLUE);
 		ResetInfo();
 		MessageBox(qEngine::GetInst()->GetMainWnd(), L"MONSTER BLUE EDIT", L"EDITOR TOOL", MB_OK);
 	}
 	else if (KEY_TAP(KEY::L))
 	{
-		SetType(EDIT_TYPE::MONSTER_RED);
+		SetType(EDIT_TYPE::DUMMY_RED);
 		ResetInfo();
 		MessageBox(qEngine::GetInst()->GetMainWnd(), L"MONSTER RED EDIT", L"EDITOR TOOL", MB_OK);
 	}
@@ -130,11 +134,11 @@ void qLevel_Editor::tick()
 	{
 		Portal();
 	}
-	else if (EDIT_TYPE::MONSTER_BLUE == GetType())
+	else if (EDIT_TYPE::DUMMY_BLUE == GetType())
 	{
 		Monster_blue();
 	}
-	else if (EDIT_TYPE::MONSTER_RED == GetType())
+	else if (EDIT_TYPE::DUMMY_RED == GetType())
 	{
 		Monster_red();
 	}
@@ -184,6 +188,7 @@ void qLevel_Editor::tick()
 void qLevel_Editor::Enter()
 {
 	qCamera::GetInst()->SetOwner(nullptr);
+	
 
 }
 
@@ -277,11 +282,13 @@ void qLevel_Editor::Monster_blue()
 	if (KEY_TAP(KEY::LBTN))
 	{
 		Vec2 vPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
-		qMonster_blue* pMonster = new qMonster_blue;
+		qDummy_blue* pMonster = new qDummy_blue;
 		pMonster->SetPos(vPos);
 		pMonster->SetScale(100.f, 100.f);
+		pMonster->SetName(L"Blue");
 
-		AddObject(LAYER_TYPE::MONSTER_BLUE, pMonster);
+		AddObject(LAYER_TYPE::DUMMY_BLUE, pMonster);
+
 	}
 }
 
@@ -290,18 +297,18 @@ void qLevel_Editor::Monster_red()
 	if (KEY_TAP(KEY::LBTN))
 	{
 		Vec2 vPos = qCamera::GetInst()->GetRealPos(qKeyMgr::GetInst()->GetMousePos());
-		qMonster_red* pMonster = new qMonster_red;
+		qDummy_red* pMonster = new qDummy_red;
 		pMonster->SetPos(vPos);
 		pMonster->SetScale(100.f, 100.f);
+		pMonster->SetName(L"Red");
 
-		AddObject(LAYER_TYPE::MONSTER_RED, pMonster);
+		AddObject(LAYER_TYPE::DUMMY_RED, pMonster);
 	}
 }
 
 
 void qLevel_Editor::render()
 {
-	
 
 	// Rendering
 	if (nullptr == m_CurImg)
@@ -316,6 +323,11 @@ void qLevel_Editor::render()
 		, 0, 0
 		, m_CurImg->GetWidth(), m_CurImg->GetHeight(), SRCCOPY);
 
+	//m_BlueImg = qAssetMgr::GetInst()->LoadTexture(L"monster_blue", L"texture\\edit\\monster_blue.png");
+
+	//Vec2 vMousePos = qCamera::GetInst()->GetRenderPos(qKeyMgr::GetInst()->GetMousePos());
+
+	
 
 	if (m_Type == EDIT_TYPE::PLATFORM || m_Type == EDIT_TYPE::ROPE || m_Type == EDIT_TYPE::PORTAL)
 	{
@@ -327,6 +339,8 @@ void qLevel_Editor::render()
 
 		Rectangle(DC, Start.x, Start.y, End.x, End.y);
 	}
+
+	
 
 	qLevel::render();
 }

@@ -63,4 +63,8 @@ void qSkill_missile_ball_left::tick()
 void qSkill_missile_ball_left::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
 	// Àû°ú ºÎµúÇûÀ»¶§ Destroy();
+	if (_OtherObj->GetName() == L"Blue" || _OtherObj->GetName() == L"Red" || _OtherObj->GetName() == L"Boss")
+	{
+		Destroy();
+	}
 }

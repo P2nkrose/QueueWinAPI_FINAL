@@ -97,6 +97,7 @@ void qLevel_stage1::Enter()
 	pObject->SetScale(100.0f, 100.0f);
 	AddObject(LAYER_TYPE::PLAYER, pObject);
 
+
 	// 플레이어 클론
 	//qObj* pPlayerClone = pObject->Clone();
 	//pPlayerClone->SetPos(800.f, 400.f);
@@ -139,6 +140,9 @@ void qLevel_stage1::Enter()
 	//qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_MISSILE, LAYER_TYPE::MONSTER_BLUE);
 
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::MONSTER_BLUE, LAYER_TYPE::PLATFORM);
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::MONSTER_RED, LAYER_TYPE::PLATFORM);
+
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::ROPE);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PORTAL);
 

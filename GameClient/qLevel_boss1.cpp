@@ -101,6 +101,9 @@ void qLevel_boss1::Enter()
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::ROPE);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PORTAL);
+
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::MONSTER_BLUE, LAYER_TYPE::PLATFORM);
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::MONSTER_RED, LAYER_TYPE::PLATFORM);
 }
 
 void qLevel_boss1::Exit()

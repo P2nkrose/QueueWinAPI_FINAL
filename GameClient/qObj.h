@@ -23,6 +23,7 @@ private:
 
 	DIRECTION			m_Dir;		// 방향
 	
+	Vec2				m_CenterPos;
 	Vec2				m_Pos;		// 위치
 	Vec2				m_PrevPos;	// 이전 프레임에서의 위치
 	Vec2				m_Scale;	// 크기
@@ -43,7 +44,10 @@ public:
 
 	void SetPos(float _x, float _y) { m_Pos.x = _x; m_Pos.y = _y; }
 	void SetScale(float _width, float _height) { m_Scale.x = _width; m_Scale.y = _height; }
+	void SetCenterPos(Vec2 _CenterPos) { m_CenterPos = _CenterPos; }
 
+
+	Vec2 GetCenterPos() { return m_CenterPos; }
 	Vec2 GetPos() { return m_Pos; }
 	Vec2 GetPrevPos() { return m_PrevPos; }
 	Vec2 GetRenderPos() { return qCamera::GetInst()->GetRenderPos(m_Pos); }

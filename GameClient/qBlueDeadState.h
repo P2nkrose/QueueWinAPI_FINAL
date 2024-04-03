@@ -1,21 +1,24 @@
 #pragma once
 #include "qState.h"
-class qTraceState : public qState
+
+class qSound;
+
+class qBlueDeadState : public qState
 {
 public:
+	CLONE(qBlueDeadState);
 
-	CLONE(qTraceState);
-
-	qTraceState();
-	~qTraceState();
+	qBlueDeadState();
+	~qBlueDeadState();
 
 public:
 	virtual void Enter() override;
 	virtual void FinalTick() override;
 	virtual void Exit() override;
 
-private:
 
+private:
+	qSound*			pSound;
 
 };
 

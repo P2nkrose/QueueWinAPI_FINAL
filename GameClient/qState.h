@@ -2,6 +2,12 @@
 #include "qEntity.h"
 
 #include "qFSM.h"
+
+#include "qAnimation.h"
+#include "qAnimator.h"
+#include "qRigidbody.h"
+#include "qCollider.h"
+
 class qState : public qEntity
 {
 public:
@@ -28,9 +34,23 @@ protected:
 		return m_Owner->GetBlackboardData<T>(_DataName);
 	}
 
+	void init();
+
+public:
+	void SetDir(DIRECTION _Dir) { m_Dir = _Dir; }
+	DIRECTION GetDir() { return m_Dir; }
+
+public:
+	qAnimator* GetAnimator() { return m_Animator; }
+
+private:
+	DIRECTION		m_Dir;
 
 
 private:
-	qFSM*	m_Owner;
+	qFSM*			m_Owner;
+	qAnimator*		m_Animator;
+	qRigidbody*		m_Rigidbody;
+	qCollider*		m_Collider;
 };
 

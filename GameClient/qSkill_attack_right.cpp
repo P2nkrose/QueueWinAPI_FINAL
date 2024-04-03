@@ -35,8 +35,8 @@ qSkill_attack_right::qSkill_attack_right()
 
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 
-	m_Collider->SetOffsetPos(Vec2(0.f, 0.f));
-	m_Collider->SetScale(Vec2(350.f, 200.f));
+	m_Collider->SetOffsetPos(Vec2(10.f, 0.f));
+	m_Collider->SetScale(Vec2(300.f, 180.f));
 
 
 	// 스킬 사운드

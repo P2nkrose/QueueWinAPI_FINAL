@@ -10,6 +10,8 @@
 #include "qPortal.h"
 #include "qMonster_red.h"
 #include "qMonster_blue.h"
+#include "qDummy_blue.h"
+#include "qDummy_red.h"
 
 qLevel::qLevel()
 {
@@ -355,14 +357,14 @@ void qLevel::SaveMonster_blue(const wstring& _strRelativePath)
 		return;
 	}
 
-	size_t len = m_arrObj[(UINT)LAYER_TYPE::MONSTER_BLUE].size();
+	size_t len = m_arrObj[(UINT)LAYER_TYPE::DUMMY_BLUE].size();
 
 	fwrite(&len, sizeof(size_t), 1, pFile);
 
-	for (size_t i = 0; i < m_arrObj[(UINT)LAYER_TYPE::MONSTER_BLUE].size(); ++i)
+	for (size_t i = 0; i < m_arrObj[(UINT)LAYER_TYPE::DUMMY_BLUE].size(); ++i)
 	{
-		Vec2 vPos = m_arrObj[(UINT)LAYER_TYPE::MONSTER_BLUE][i]->GetPos();
-		Vec2 vScale = m_arrObj[(UINT)LAYER_TYPE::MONSTER_BLUE][i]->GetScale();
+		Vec2 vPos = m_arrObj[(UINT)LAYER_TYPE::DUMMY_BLUE][i]->GetPos();
+		Vec2 vScale = m_arrObj[(UINT)LAYER_TYPE::DUMMY_BLUE][i]->GetScale();
 
 		fwrite(&vPos, sizeof(Vec2), 1, pFile);
 		fwrite(&vScale, sizeof(Vec2), 1, pFile);
@@ -405,14 +407,14 @@ void qLevel::SaveMonster_red(const wstring& _strRelativePath)
 		return;
 	}
 
-	size_t len = m_arrObj[(UINT)LAYER_TYPE::MONSTER_RED].size();
+	size_t len = m_arrObj[(UINT)LAYER_TYPE::DUMMY_RED].size();
 
 	fwrite(&len, sizeof(size_t), 1, pFile);
 
-	for (size_t i = 0; i < m_arrObj[(UINT)LAYER_TYPE::MONSTER_RED].size(); ++i)
+	for (size_t i = 0; i < m_arrObj[(UINT)LAYER_TYPE::DUMMY_RED].size(); ++i)
 	{
-		Vec2 vPos = m_arrObj[(UINT)LAYER_TYPE::MONSTER_RED][i]->GetPos();
-		Vec2 vScale = m_arrObj[(UINT)LAYER_TYPE::MONSTER_RED][i]->GetScale();
+		Vec2 vPos = m_arrObj[(UINT)LAYER_TYPE::DUMMY_RED][i]->GetPos();
+		Vec2 vScale = m_arrObj[(UINT)LAYER_TYPE::DUMMY_RED][i]->GetScale();
 
 		fwrite(&vPos, sizeof(Vec2), 1, pFile);
 		fwrite(&vScale, sizeof(Vec2), 1, pFile);
@@ -608,8 +610,11 @@ void qLevel::LoadMonster_blue(const wstring& _strRelativePath)
 		fread(&vPos, sizeof(Vec2), 1, pFile);
 		fread(&vScale, sizeof(Vec2), 1, pFile);
 
-		qMonster_blue* pMonster = new qMonster_blue(vPos, vScale);
-		AddObject(LAYER_TYPE::MONSTER_BLUE, pMonster);
+		qDummy_blue* pMonster = new qDummy_blue;
+		pMonster->SetPos(vPos.x, vPos.y);
+		pMonster->SetScale(vScale.x, vScale.y);
+		pMonster->SetDir(DIRECTION::LEFT);
+		AddObject(LAYER_TYPE::DUMMY_BLUE, pMonster);
 	}
 
 	fclose(pFile);
@@ -655,8 +660,8 @@ void qLevel::LoadMonster_red(const wstring& _strRelativePath)
 		fread(&vPos, sizeof(Vec2), 1, pFile);
 		fread(&vScale, sizeof(Vec2), 1, pFile);
 
-		qMonster_red* pMonster = new qMonster_red(vPos, vScale);
-		AddObject(LAYER_TYPE::MONSTER_RED, pMonster);
+		qDummy_red* pMonster = new qDummy_red;
+		AddObject(LAYER_TYPE::DUMMY_RED, pMonster);
 	}
 
 	fclose(pFile);

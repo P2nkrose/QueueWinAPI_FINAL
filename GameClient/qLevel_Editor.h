@@ -52,6 +52,7 @@ private:
 	EDIT_TYPE		m_Type;
 
 	qTexture*		m_Img;
+	qTexture*		m_BlueImg;
 
 	qTexture*		m_CurImg;
 	qObj*			m_Background;

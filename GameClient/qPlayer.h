@@ -10,7 +10,7 @@ class qRope;
 class qPlayer : public qObj
 {
 private:
-	PLAYER_STATE		m_State;
+	PLAYER_STATE	m_State;
 	
 
 	float			m_Speed;

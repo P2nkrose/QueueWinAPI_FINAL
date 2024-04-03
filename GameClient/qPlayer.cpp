@@ -106,8 +106,8 @@ qPlayer::qPlayer()
 	//qTexture* pAttackRight = qAssetMgr::GetInst()->LoadTexture(L"PlayerAttackRight", L"texture\\character\\player\\attack\\attack_right.png");
 	//
 	//// MISSILE
-	qTexture* pMissileLeft = qAssetMgr::GetInst()->LoadTexture(L"PlayerMissileLeft", L"texture\\character\\player\\missile\\missile_left.png");
-	qTexture* pMissileRight = qAssetMgr::GetInst()->LoadTexture(L"PlayerMissileRight", L"texture\\character\\player\\missile\\missile_right.png");
+	//qTexture* pMissileLeft = qAssetMgr::GetInst()->LoadTexture(L"PlayerMissileLeft", L"texture\\character\\player\\missile\\missile_left.png");
+	//qTexture* pMissileRight = qAssetMgr::GetInst()->LoadTexture(L"PlayerMissileRight", L"texture\\character\\player\\missile\\missile_right.png");
 
 	//// SLASH
 	//qTexture* pSlashLeft = qAssetMgr::GetInst()->LoadTexture(L"PlayerSlashLeft", L"texture\\character\\player\\slash\\slash_left.png");

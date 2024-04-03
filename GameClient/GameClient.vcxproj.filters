@@ -239,6 +239,18 @@
     <Filter Include="03. Game\05. Object\5. Skill\7. HighJump">
       <UniqueIdentifier>{55b2eb40-60f0-4387-971c-d458443227e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\05. Object\2. Monster\3. Dummy_BLUE">
+      <UniqueIdentifier>{25bfa282-9986-4916-b698-9b5a1403f241}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\2. Monster\4. Dummy_Red">
+      <UniqueIdentifier>{99bfafe4-370e-4b9f-bdef-de2b5fd77317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\MonsterState\1. BLUE">
+      <UniqueIdentifier>{fae33fcf-abe9-40f7-876e-2b84bc216413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\MonsterState\2. RED">
+      <UniqueIdentifier>{f7351e22-c859-44f1-a0f7-39db0c53427b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -348,21 +360,6 @@
     </ClInclude>
     <ClInclude Include="qCamera.h">
       <Filter>03. Game\03. Manager\09. Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="qState.h">
-      <Filter>03. Game\08. Module\State</Filter>
-    </ClInclude>
-    <ClInclude Include="qIdleState.h">
-      <Filter>03. Game\08. Module\State\MonsterState</Filter>
-    </ClInclude>
-    <ClInclude Include="qAttackState.h">
-      <Filter>03. Game\08. Module\State\MonsterState</Filter>
-    </ClInclude>
-    <ClInclude Include="qDeadState.h">
-      <Filter>03. Game\08. Module\State\MonsterState</Filter>
-    </ClInclude>
-    <ClInclude Include="qTraceState.h">
-      <Filter>03. Game\08. Module\State\MonsterState</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_Editor.h">
       <Filter>03. Game\04. Level\03. Editor</Filter>
@@ -481,6 +478,33 @@
     <ClInclude Include="qSkill_highjump.h">
       <Filter>03. Game\05. Object\5. Skill\7. HighJump</Filter>
     </ClInclude>
+    <ClInclude Include="qDummy_blue.h">
+      <Filter>03. Game\05. Object\2. Monster\3. Dummy_BLUE</Filter>
+    </ClInclude>
+    <ClInclude Include="qDummy_red.h">
+      <Filter>03. Game\05. Object\2. Monster\4. Dummy_Red</Filter>
+    </ClInclude>
+    <ClInclude Include="qBlueMoveState.h">
+      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+    </ClInclude>
+    <ClInclude Include="qBlueIdleState.h">
+      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+    </ClInclude>
+    <ClInclude Include="qState.h">
+      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+    </ClInclude>
+    <ClInclude Include="qRedIdleState.h">
+      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+    </ClInclude>
+    <ClInclude Include="qRedMoveState.h">
+      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+    </ClInclude>
+    <ClInclude Include="qBlueDeadState.h">
+      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+    </ClInclude>
+    <ClInclude Include="qRedDeadState.h">
+      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -585,21 +609,6 @@
     </ClCompile>
     <ClCompile Include="qCamera.cpp">
       <Filter>03. Game\03. Manager\09. Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="qState.cpp">
-      <Filter>03. Game\08. Module\State</Filter>
-    </ClCompile>
-    <ClCompile Include="qAttackState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState</Filter>
-    </ClCompile>
-    <ClCompile Include="qIdleState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState</Filter>
-    </ClCompile>
-    <ClCompile Include="qDeadState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState</Filter>
-    </ClCompile>
-    <ClCompile Include="qTraceState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_Editor.cpp">
       <Filter>03. Game\04. Level\03. Editor</Filter>
@@ -717,6 +726,33 @@
     </ClCompile>
     <ClCompile Include="qSkill_highjump.cpp">
       <Filter>03. Game\05. Object\5. Skill\7. HighJump</Filter>
+    </ClCompile>
+    <ClCompile Include="qDummy_blue.cpp">
+      <Filter>03. Game\05. Object\2. Monster\3. Dummy_BLUE</Filter>
+    </ClCompile>
+    <ClCompile Include="qDummy_red.cpp">
+      <Filter>03. Game\05. Object\2. Monster\4. Dummy_Red</Filter>
+    </ClCompile>
+    <ClCompile Include="qBlueIdleState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+    </ClCompile>
+    <ClCompile Include="qBlueMoveState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+    </ClCompile>
+    <ClCompile Include="qState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+    </ClCompile>
+    <ClCompile Include="qRedIdleState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+    </ClCompile>
+    <ClCompile Include="qRedMoveState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+    </ClCompile>
+    <ClCompile Include="qBlueDeadState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+    </ClCompile>
+    <ClCompile Include="qRedDeadState.cpp">
+      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

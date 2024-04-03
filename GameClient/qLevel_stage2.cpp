@@ -89,6 +89,42 @@ void qLevel_stage2::Enter()
 	pPlayer->SetScale(100.0f, 100.0f);
 	AddObject(LAYER_TYPE::PLAYER, pPlayer);
 
+	// 블루 몬스터 (티구르) 생성
+	qObj* pBlue1 = new qMonster_blue(DIRECTION::LEFT);
+	pBlue1->SetName(L"Blue");
+	pBlue1->SetPos(1377.f, 1448.f);
+	pBlue1->SetScale(100.0f, 100.0f);
+	AddObject(LAYER_TYPE::MONSTER_BLUE, pBlue1);
+	
+	qObj* pBlue2 = new qMonster_blue(DIRECTION::RIGHT);
+	pBlue2->SetName(L"Blue");
+	pBlue2->SetPos(972.f, 1448.f);
+	pBlue2->SetScale(100.0f, 100.0f);
+	AddObject(LAYER_TYPE::MONSTER_BLUE, pBlue2);
+
+	qObj* pBlue3 = new qMonster_blue(DIRECTION::LEFT);
+	pBlue3->SetName(L"Blue");
+	pBlue3->SetPos(543.f, 1448.f);
+	pBlue3->SetScale(100.0f, 100.0f);
+	AddObject(LAYER_TYPE::MONSTER_BLUE, pBlue3);
+
+
+	// 레드 몬스터(티루) 생성
+	qObj* pRed1 = new qMonster_red(DIRECTION::LEFT);
+	pRed1->SetName(L"Red");
+	pRed1->SetPos(1336.f, 1093.f);
+	pRed1->SetScale(100.0f, 100.0f);
+	AddObject(LAYER_TYPE::MONSTER_RED, pRed1);
+
+	// 몬스터 생성
+	qObj* pRed2 = new qMonster_red(DIRECTION::RIGHT);
+	pRed2->SetName(L"Red");
+	pRed2->SetPos(700.f, 1093.f);
+	pRed2->SetScale(100.0f, 100.0f);
+	AddObject(LAYER_TYPE::MONSTER_RED, pRed2);
+
+
+
 
 	// 플랫폼 생성
 	//qObj* pPlatform = new qPlatform;
@@ -102,8 +138,8 @@ void qLevel_stage2::Enter()
 	LoadRope(L"rope\\rope.dat");
 	LoadPortal(L"portal\\portal.dat");
 
-	LoadMonster_blue(L"monster_blue\\monster_blue.dat");
-	LoadMonster_red(L"monster_red\\monster_red.dat");
+	//LoadMonster_blue(L"monster_blue\\monster_blue.dat");
+	//LoadMonster_red(L"monster_red\\monster_red.dat");
 
 	// 레벨 충돌 설정하기
 	qCollisionMgr::GetInst()->CollisionCheckClear();
@@ -114,6 +150,11 @@ void qLevel_stage2::Enter()
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::ROPE);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PORTAL);
 
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_SKILL, LAYER_TYPE::MONSTER_BLUE);
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_SKILL, LAYER_TYPE::MONSTER_RED);
+
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::MONSTER_BLUE, LAYER_TYPE::PLATFORM);
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::MONSTER_RED, LAYER_TYPE::PLATFORM);
 
 }
 
