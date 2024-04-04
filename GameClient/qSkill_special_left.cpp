@@ -10,6 +10,7 @@
 #include "qLevelMgr.h"
 
 #include "qEffect_special.h"
+#include "qDamage_special.h"
 
 #include "qTaskMgr.h"
 
@@ -94,6 +95,25 @@ void qSkill_special_left::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj,
 		{
 			// TASK
 			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pSpecialEffect);
+		}
+	}
+
+	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::BOSS == _OtherObj->GetLayerType()
+		|| LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType())
+	{
+		qDamage_special* pDamageSpecial = new qDamage_special;
+		pDamageSpecial->SetName(L"DamageSpecial");
+
+		Vec2 vDamageSpecialPos = _OtherObj->GetPos() + Vec2(0.f, -90.f);
+		Vec2 vDamageSpecialScale = Vec2(258.f, 112.f);
+
+		pDamageSpecial->SetPos(vDamageSpecialPos);
+		pDamageSpecial->SetScale(vDamageSpecialScale);
+
+		if (L"DamageSpecial" == pDamageSpecial->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pDamageSpecial);
 		}
 	}
 }

@@ -535,6 +535,18 @@
     <ClInclude Include="qDamage_miss.h">
       <Filter>03. Game\05. Object\7. Damage\5. Miss</Filter>
     </ClInclude>
+    <ClInclude Include="qDamage_attack.h">
+      <Filter>03. Game\05. Object\7. Damage\1. Attack</Filter>
+    </ClInclude>
+    <ClInclude Include="qDamage_missile.h">
+      <Filter>03. Game\05. Object\7. Damage\2. Missile</Filter>
+    </ClInclude>
+    <ClInclude Include="qDamage_slash.h">
+      <Filter>03. Game\05. Object\7. Damage\3. Slash</Filter>
+    </ClInclude>
+    <ClInclude Include="qDamage_special.h">
+      <Filter>03. Game\05. Object\7. Damage\4. Special</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -798,6 +810,18 @@
     </ClCompile>
     <ClCompile Include="qDamage_miss.cpp">
       <Filter>03. Game\05. Object\7. Damage\5. Miss</Filter>
+    </ClCompile>
+    <ClCompile Include="qDamage_attack.cpp">
+      <Filter>03. Game\05. Object\7. Damage\1. Attack</Filter>
+    </ClCompile>
+    <ClCompile Include="qDamage_missile.cpp">
+      <Filter>03. Game\05. Object\7. Damage\2. Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="qDamage_slash.cpp">
+      <Filter>03. Game\05. Object\7. Damage\3. Slash</Filter>
+    </ClCompile>
+    <ClCompile Include="qDamage_special.cpp">
+      <Filter>03. Game\05. Object\7. Damage\4. Special</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

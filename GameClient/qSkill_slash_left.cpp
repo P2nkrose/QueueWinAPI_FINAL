@@ -10,6 +10,7 @@
 #include "qLevelMgr.h"
 
 #include "qEffect_slash.h"
+#include "qDamage_slash.h"
 
 #include "qTaskMgr.h"
 
@@ -95,6 +96,25 @@ void qSkill_slash_left::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, q
 		{
 			// TASK
 			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pSlashEffect);
+		}
+	}
+
+	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::BOSS == _OtherObj->GetLayerType()
+		|| LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType())
+	{
+		qDamage_slash* pDamageSlash = new qDamage_slash;
+		pDamageSlash->SetName(L"DamageSlash");
+
+		Vec2 vDamageSlashPos = _OtherObj->GetPos() + Vec2(0.f, -90.f);
+		Vec2 vDamageSlashScale = Vec2(258.f, 112.f);
+
+		pDamageSlash->SetPos(vDamageSlashPos);
+		pDamageSlash->SetScale(vDamageSlashScale);
+
+		if (L"DamageSlash" == pDamageSlash->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pDamageSlash);
 		}
 	}
 }

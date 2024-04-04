@@ -9,7 +9,7 @@
 #include "qLevelMgr.h"
 
 #include "qEffect_missile.h"
-
+#include "qDamage_missile.h"
 
 #include "qTaskMgr.h"
 
@@ -86,6 +86,26 @@ void qSkill_missile_ball_left::BeginOverlap(qCollider* _OwnCollider, qObj* _Othe
 			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pMissileEffect);
 		}
 	}
+
+	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::BOSS == _OtherObj->GetLayerType()
+		|| LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType())
+	{
+		qDamage_missile* pDamageMissile = new qDamage_missile;
+		pDamageMissile->SetName(L"DamageMissile");
+
+		Vec2 vDamageMissilePos = _OtherObj->GetPos() + Vec2(0.f, -90.f);
+		Vec2 vDamageMissileScale = Vec2(258.f, 112.f);
+
+		pDamageMissile->SetPos(vDamageMissilePos);
+		pDamageMissile->SetScale(vDamageMissileScale);
+
+		if (L"DamageMissile" == pDamageMissile->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pDamageMissile);
+		}
+	}
+
 
 
 	// 적과 부딪혔을때 Destroy();
