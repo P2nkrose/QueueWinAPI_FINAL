@@ -160,6 +160,7 @@
     <ClInclude Include="qCollider.h" />
     <ClInclude Include="qCollisionMgr.h" />
     <ClInclude Include="qComponent.h" />
+    <ClInclude Include="qDamage_miss.h" />
     <ClInclude Include="qDbgRender.h" />
     <ClInclude Include="qDummy_blue.h" />
     <ClInclude Include="qDummy_red.h" />
@@ -250,6 +251,7 @@
     <ClCompile Include="qCollider.cpp" />
     <ClCompile Include="qCollisionMgr.cpp" />
     <ClCompile Include="qComponent.cpp" />
+    <ClCompile Include="qDamage_miss.cpp" />
     <ClCompile Include="qDbgRender.cpp" />
     <ClCompile Include="qDummy_blue.cpp" />
     <ClCompile Include="qDummy_red.cpp" />

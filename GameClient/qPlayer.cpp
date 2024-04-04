@@ -33,6 +33,7 @@
 #include "qSkill_doublejump_right.h"
 #include "qSkill_highjump.h"
 
+#include "qDamage_miss.h"
 
 #include "qDbgRender.h"
 #include "qCamera.h"
@@ -1019,7 +1020,23 @@ void qPlayer::tick()
 
 void qPlayer::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
-	int a = 0;
+	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType())
+	{
+		qDamage_miss* pDamageMiss = new qDamage_miss();
+		pDamageMiss->SetName(L"DamageMiss");
+
+		Vec2 vDamageMissPos = GetPos() + Vec2(0.f, -50.f);
+		Vec2 vDamageMissScale = Vec2(140.f, 60.f);
+
+		pDamageMiss->SetPos(vDamageMissPos);
+		pDamageMiss->SetScale(vDamageMissScale);
+
+		if (L"DamageMiss" == pDamageMiss->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pDamageMiss);
+		}
+	}
 }
 
 
