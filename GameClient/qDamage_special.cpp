@@ -13,7 +13,7 @@ qDamage_special::qDamage_special()
 	qTexture* DamageSpecial = qAssetMgr::GetInst()->LoadTexture(L"DamageSpecial", L"texture\\damage\\special\\special.png");
 
 	// Animation CREATE
-	m_Animator->CreateAnimation(L"DamageSpecial", DamageSpecial, Vec2(0.f, 0.f), Vec2(258.f, 112.f), 11, 10);
+	m_Animator->CreateAnimation(L"DamageSpecial", DamageSpecial, Vec2(0.f, 0.f), Vec2(322.f, 216.f), 14, 10);
 
 	// Animation Save
 	m_Animator->FindAnimation(L"DamageSpecial")->Save(L"animation\\damage\\special\\");

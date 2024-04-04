@@ -104,8 +104,8 @@ void qSkill_special_left::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj,
 		qDamage_special* pDamageSpecial = new qDamage_special;
 		pDamageSpecial->SetName(L"DamageSpecial");
 
-		Vec2 vDamageSpecialPos = _OtherObj->GetPos() + Vec2(0.f, -90.f);
-		Vec2 vDamageSpecialScale = Vec2(258.f, 112.f);
+		Vec2 vDamageSpecialPos = _OtherObj->GetPos() + Vec2(0.f, -150.f);
+		Vec2 vDamageSpecialScale = Vec2(322.f, 216.f);
 
 		pDamageSpecial->SetPos(vDamageSpecialPos);
 		pDamageSpecial->SetScale(vDamageSpecialScale);
