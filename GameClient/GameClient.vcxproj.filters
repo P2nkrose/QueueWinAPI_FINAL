@@ -131,68 +131,11 @@
     <Filter Include="03. Game\04. Level\04. Stage\4. BOSS_2">
       <UniqueIdentifier>{458ed9ed-2312-4000-b45a-9bf6c3e25bd1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\4. Background">
-      <UniqueIdentifier>{61f9d4fd-02e1-4ba3-b69b-59384a1788ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\4. Background\3. STAGE_1">
-      <UniqueIdentifier>{52c92b9e-6ffa-4ed4-8a59-870ebe5def94}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\4. Background\4. STAGE_2">
-      <UniqueIdentifier>{32a2503b-46c7-4113-8df9-07ce7af83b5f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\4. Background\5. BOSS_1">
-      <UniqueIdentifier>{6f9dd70e-97d9-40e4-a1d7-764f54167268}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\4. Background\6. BOSS_2">
-      <UniqueIdentifier>{1a68b75e-ed74-4250-a368-90409d7bfe05}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\4. Background\1. LOGO">
-      <UniqueIdentifier>{df77344f-b607-405c-89c8-2c288078803d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\4. Background\2. START">
-      <UniqueIdentifier>{f30bff3b-0abf-41eb-9c4b-a42e709080b5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\3. Boss">
-      <UniqueIdentifier>{13a51e0e-fbae-4ee4-8366-8ffc06e30764}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\2. Monster\2. RED">
       <UniqueIdentifier>{5c384c47-5be3-4703-abb9-b1c333bb1d6b}</UniqueIdentifier>
     </Filter>
     <Filter Include="03. Game\05. Object\2. Monster\1. BLUE">
       <UniqueIdentifier>{bfc21093-8ebf-42ec-96bf-2b5f15413de2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Skill">
-      <UniqueIdentifier>{11b15ce1-ad09-4301-b340-f07a7e6fb034}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\6. Effect">
-      <UniqueIdentifier>{5844f181-35e6-4dff-8772-b0e2656f7f47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Skill\1. Attack">
-      <UniqueIdentifier>{9749c9dd-a27a-4c2e-97e1-f7a1a5984baf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Skill\2. Missile">
-      <UniqueIdentifier>{64beaa63-4bd1-4273-884b-f2469ea15d0e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Skill\3. Slash">
-      <UniqueIdentifier>{2192986a-b9c4-49f5-938a-01f26fd5f01b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Skill\4. Special">
-      <UniqueIdentifier>{25e56372-8235-4013-bdc8-837877cc79a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Skill\5. Buff">
-      <UniqueIdentifier>{5a59bfa8-1963-4b56-a040-bfa8b5b9f70e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Skill\6. DoubleJump">
-      <UniqueIdentifier>{2c7c9d56-9d47-4b52-896b-f4f562a4d1a1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Skill\2. Missile\1. missile">
-      <UniqueIdentifier>{213c771e-ac40-435d-9b6d-191ba3e1ba46}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Skill\2. Missile\2. ball">
-      <UniqueIdentifier>{1a8865c3-613e-4625-9e75-86d61a2cec35}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Skill\7. HighJump">
-      <UniqueIdentifier>{55b2eb40-60f0-4387-971c-d458443227e3}</UniqueIdentifier>
     </Filter>
     <Filter Include="03. Game\05. Object\2. Monster\3. Dummy_BLUE">
       <UniqueIdentifier>{25bfa282-9986-4916-b698-9b5a1403f241}</UniqueIdentifier>
@@ -206,65 +149,143 @@
     <Filter Include="03. Game\08. Module\State\MonsterState\2. RED">
       <UniqueIdentifier>{f7351e22-c859-44f1-a0f7-39db0c53427b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\6. Effect\1. Attack">
+    <Filter Include="03. Game\03. Manager\12. RespawnMgr">
+      <UniqueIdentifier>{9db607a2-fd80-4ea3-8019-f35664c61a98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\4. Boss">
+      <UniqueIdentifier>{13a51e0e-fbae-4ee4-8366-8ffc06e30764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Background">
+      <UniqueIdentifier>{61f9d4fd-02e1-4ba3-b69b-59384a1788ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Background\3. STAGE_1">
+      <UniqueIdentifier>{52c92b9e-6ffa-4ed4-8a59-870ebe5def94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Background\4. STAGE_2">
+      <UniqueIdentifier>{32a2503b-46c7-4113-8df9-07ce7af83b5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Background\5. BOSS_1">
+      <UniqueIdentifier>{6f9dd70e-97d9-40e4-a1d7-764f54167268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Background\6. BOSS_2">
+      <UniqueIdentifier>{1a68b75e-ed74-4250-a368-90409d7bfe05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Background\1. LOGO">
+      <UniqueIdentifier>{df77344f-b607-405c-89c8-2c288078803d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Background\2. START">
+      <UniqueIdentifier>{f30bff3b-0abf-41eb-9c4b-a42e709080b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill">
+      <UniqueIdentifier>{11b15ce1-ad09-4301-b340-f07a7e6fb034}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Attack">
+      <UniqueIdentifier>{9749c9dd-a27a-4c2e-97e1-f7a1a5984baf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\2. Missile">
+      <UniqueIdentifier>{64beaa63-4bd1-4273-884b-f2469ea15d0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\2. Missile\1. missile">
+      <UniqueIdentifier>{213c771e-ac40-435d-9b6d-191ba3e1ba46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\2. Missile\2. ball">
+      <UniqueIdentifier>{1a8865c3-613e-4625-9e75-86d61a2cec35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\3. Slash">
+      <UniqueIdentifier>{2192986a-b9c4-49f5-938a-01f26fd5f01b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\4. Special">
+      <UniqueIdentifier>{25e56372-8235-4013-bdc8-837877cc79a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\5. Buff">
+      <UniqueIdentifier>{5a59bfa8-1963-4b56-a040-bfa8b5b9f70e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\6. DoubleJump">
+      <UniqueIdentifier>{2c7c9d56-9d47-4b52-896b-f4f562a4d1a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\7. HighJump">
+      <UniqueIdentifier>{55b2eb40-60f0-4387-971c-d458443227e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect">
+      <UniqueIdentifier>{5844f181-35e6-4dff-8772-b0e2656f7f47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\1. Attack">
       <UniqueIdentifier>{93c25c4c-6407-42a5-9ce4-fb09478c2468}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\6. Effect\2. Missile">
+    <Filter Include="03. Game\05. Object\7. Effect\2. Missile">
       <UniqueIdentifier>{ec6d6c07-faec-4afa-90c3-04c435a22e16}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\6. Effect\3. Slash">
+    <Filter Include="03. Game\05. Object\7. Effect\3. Slash">
       <UniqueIdentifier>{62536544-6639-4570-9ecb-23bcd70eb417}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\6. Effect\4. Special">
+    <Filter Include="03. Game\05. Object\7. Effect\4. Special">
       <UniqueIdentifier>{4c91be43-f2a2-4cb6-beda-0dd47fc864ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\7. Damage">
+    <Filter Include="03. Game\05. Object\8. Damage">
       <UniqueIdentifier>{41d13a27-744b-4e07-8db9-e5e3a98b08ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\7. Damage\1. Attack">
+    <Filter Include="03. Game\05. Object\8. Damage\1. Attack">
       <UniqueIdentifier>{81755e83-a1d0-4caa-90b8-dbbfed3cdfd2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\7. Damage\2. Missile">
+    <Filter Include="03. Game\05. Object\8. Damage\2. Missile">
       <UniqueIdentifier>{0ecd0deb-b8a3-4cbe-8d93-24edd85dc6c2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\7. Damage\3. Slash">
+    <Filter Include="03. Game\05. Object\8. Damage\3. Slash">
       <UniqueIdentifier>{269fc529-65fd-4e17-88be-a3cae5154332}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\7. Damage\4. Special">
+    <Filter Include="03. Game\05. Object\8. Damage\4. Special">
       <UniqueIdentifier>{a2ceab87-7853-48ed-ad50-a284725796a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\7. Damage\5. Miss">
+    <Filter Include="03. Game\05. Object\8. Damage\5. Miss">
       <UniqueIdentifier>{df09c42a-dfca-4044-8b88-3528648994f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\8. Platform">
+    <Filter Include="03. Game\05. Object\9. Platform">
       <UniqueIdentifier>{5590f0c0-c71e-4db1-be1c-4bd293e51693}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\8. Platform\1. Platform">
+    <Filter Include="03. Game\05. Object\9. Platform\1. Platform">
       <UniqueIdentifier>{ab3dbf2e-aa34-43f0-98c3-38c116f54b88}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\8. Platform\2. Rope">
+    <Filter Include="03. Game\05. Object\9. Platform\2. Rope">
       <UniqueIdentifier>{5fa6d2a7-f811-4251-8674-4c2d496e1aa6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\8. Platform\3. Portal">
+    <Filter Include="03. Game\05. Object\9. Platform\3. Portal">
       <UniqueIdentifier>{3e5283af-4ecc-4e96-8d18-6c18ad3eb787}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\9. UI">
+    <Filter Include="03. Game\05. Object\10. UI">
       <UniqueIdentifier>{9f4156f9-f6bc-4d96-ab4c-38de7a7264c1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\9. UI\ButtonUI">
+    <Filter Include="03. Game\05. Object\10. UI\ButtonUI">
       <UniqueIdentifier>{42af13b4-b6a3-4bc9-ac57-fcc244f3d4c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\10. Tile">
+    <Filter Include="03. Game\05. Object\11. Tile">
       <UniqueIdentifier>{d15c0527-03ea-4b38-8a0c-2e279cf51ff5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\11. Missile">
+    <Filter Include="03. Game\05. Object\12. Missile">
       <UniqueIdentifier>{90a2e921-b1cb-4cdf-80f2-a23562480524}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\11. Missile\GuideMissile">
+    <Filter Include="03. Game\05. Object\12. Missile\GuideMissile">
       <UniqueIdentifier>{1e990868-0c14-49f4-94aa-a047d0fdcae3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\12. Force">
+    <Filter Include="03. Game\05. Object\13. Force">
       <UniqueIdentifier>{c807ea12-8c56-4ed0-82e0-6463658f874f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\3. Spawner">
+      <UniqueIdentifier>{4210ec3f-3e53-49cd-9445-62ca5025a5f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\3. Spawner\1. BLUE_1">
+      <UniqueIdentifier>{0a41aa88-0eba-4a36-bc33-d69d623a0866}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\3. Spawner\2. BLUE_2">
+      <UniqueIdentifier>{bbe01da3-e1a6-4f04-aa9e-dea49f548cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\3. Spawner\3. BLUE_3">
+      <UniqueIdentifier>{d3fe9115-2955-4caf-850c-b534d4973a12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\3. Spawner\4. RED_1">
+      <UniqueIdentifier>{4f462573-8dad-4789-9835-a4060889a0e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\3. Spawner\5. RED_2">
+      <UniqueIdentifier>{da8a4b03-e129-41da-bb5b-3906825e2906}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -317,7 +338,7 @@
       <Filter>03. Game\05. Object\1. Player</Filter>
     </ClInclude>
     <ClInclude Include="qMissile.h">
-      <Filter>03. Game\05. Object\11. Missile</Filter>
+      <Filter>03. Game\05. Object\12. Missile</Filter>
     </ClInclude>
     <ClInclude Include="qKeyMgr.h">
       <Filter>03. Game\03. Manager\02. KeyMgr</Filter>
@@ -365,13 +386,13 @@
       <Filter>03. Game\03. Manager\08. TaskMgr</Filter>
     </ClInclude>
     <ClInclude Include="qGuideMissile.h">
-      <Filter>03. Game\05. Object\11. Missile\GuideMissile</Filter>
+      <Filter>03. Game\05. Object\12. Missile\GuideMissile</Filter>
     </ClInclude>
     <ClInclude Include="qAnimation.h">
       <Filter>03. Game\08. Module\Animation</Filter>
     </ClInclude>
     <ClInclude Include="qForce.h">
-      <Filter>03. Game\05. Object\12. Force</Filter>
+      <Filter>03. Game\05. Object\13. Force</Filter>
     </ClInclude>
     <ClInclude Include="qCamera.h">
       <Filter>03. Game\03. Manager\09. Camera</Filter>
@@ -380,7 +401,7 @@
       <Filter>03. Game\04. Level\03. Editor</Filter>
     </ClInclude>
     <ClInclude Include="qTile.h">
-      <Filter>03. Game\05. Object\10. Tile</Filter>
+      <Filter>03. Game\05. Object\11. Tile</Filter>
     </ClInclude>
     <ClInclude Include="qPlayerState.h">
       <Filter>03. Game\08. Module\State\PlayerState</Filter>
@@ -389,7 +410,7 @@
       <Filter>03. Game\06. Component\05. TileMap</Filter>
     </ClInclude>
     <ClInclude Include="qUI.h">
-      <Filter>03. Game\05. Object\9. UI</Filter>
+      <Filter>03. Game\05. Object\10. UI</Filter>
     </ClInclude>
     <ClInclude Include="qUIMgr.h">
       <Filter>03. Game\03. Manager\10. UIMgr</Filter>
@@ -404,16 +425,16 @@
       <Filter>03. Game\03. Manager\11. SoundMgr</Filter>
     </ClInclude>
     <ClInclude Include="qBackground_stage1.h">
-      <Filter>03. Game\05. Object\4. Background\3. STAGE_1</Filter>
+      <Filter>03. Game\05. Object\5. Background\3. STAGE_1</Filter>
     </ClInclude>
     <ClInclude Include="qLogo.h">
-      <Filter>03. Game\05. Object\4. Background\1. LOGO</Filter>
+      <Filter>03. Game\05. Object\5. Background\1. LOGO</Filter>
     </ClInclude>
     <ClInclude Include="qBackground_stage2.h">
-      <Filter>03. Game\05. Object\4. Background\4. STAGE_2</Filter>
+      <Filter>03. Game\05. Object\5. Background\4. STAGE_2</Filter>
     </ClInclude>
     <ClInclude Include="qBackground_boss1.h">
-      <Filter>03. Game\05. Object\4. Background\5. BOSS_1</Filter>
+      <Filter>03. Game\05. Object\5. Background\5. BOSS_1</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_stage1.h">
       <Filter>03. Game\04. Level\04. Stage\1. STAGE_1</Filter>
@@ -425,22 +446,22 @@
       <Filter>03. Game\04. Level\04. Stage\3. BOSS_1</Filter>
     </ClInclude>
     <ClInclude Include="qBackground_boss2.h">
-      <Filter>03. Game\05. Object\4. Background\6. BOSS_2</Filter>
+      <Filter>03. Game\05. Object\5. Background\6. BOSS_2</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_boss2.h">
       <Filter>03. Game\04. Level\04. Stage\4. BOSS_2</Filter>
     </ClInclude>
     <ClInclude Include="qPlatform.h">
-      <Filter>03. Game\05. Object\8. Platform\1. Platform</Filter>
+      <Filter>03. Game\05. Object\9. Platform\1. Platform</Filter>
     </ClInclude>
     <ClInclude Include="qRope.h">
-      <Filter>03. Game\05. Object\8. Platform\2. Rope</Filter>
+      <Filter>03. Game\05. Object\9. Platform\2. Rope</Filter>
     </ClInclude>
     <ClInclude Include="qPortal.h">
-      <Filter>03. Game\05. Object\8. Platform\3. Portal</Filter>
+      <Filter>03. Game\05. Object\9. Platform\3. Portal</Filter>
     </ClInclude>
     <ClInclude Include="qBackground_start.h">
-      <Filter>03. Game\05. Object\4. Background\2. START</Filter>
+      <Filter>03. Game\05. Object\5. Background\2. START</Filter>
     </ClInclude>
     <ClInclude Include="qMonster_blue.h">
       <Filter>03. Game\05. Object\2. Monster\1. BLUE</Filter>
@@ -449,49 +470,49 @@
       <Filter>03. Game\05. Object\2. Monster\2. RED</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_attack_left.h">
-      <Filter>03. Game\05. Object\5. Skill\1. Attack</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Attack</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_buff.h">
-      <Filter>03. Game\05. Object\5. Skill\5. Buff</Filter>
+      <Filter>03. Game\05. Object\6. Skill\5. Buff</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_special_left.h">
-      <Filter>03. Game\05. Object\5. Skill\4. Special</Filter>
+      <Filter>03. Game\05. Object\6. Skill\4. Special</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_slash_left.h">
-      <Filter>03. Game\05. Object\5. Skill\3. Slash</Filter>
+      <Filter>03. Game\05. Object\6. Skill\3. Slash</Filter>
     </ClInclude>
     <ClInclude Include="qButton.h">
-      <Filter>03. Game\05. Object\9. UI\ButtonUI</Filter>
+      <Filter>03. Game\05. Object\10. UI\ButtonUI</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_doublejump_left.h">
-      <Filter>03. Game\05. Object\5. Skill\6. DoubleJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\6. DoubleJump</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_attack_right.h">
-      <Filter>03. Game\05. Object\5. Skill\1. Attack</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Attack</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_missile_left.h">
-      <Filter>03. Game\05. Object\5. Skill\2. Missile\1. missile</Filter>
+      <Filter>03. Game\05. Object\6. Skill\2. Missile\1. missile</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_missile_right.h">
-      <Filter>03. Game\05. Object\5. Skill\2. Missile\1. missile</Filter>
+      <Filter>03. Game\05. Object\6. Skill\2. Missile\1. missile</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_missile_ball_left.h">
-      <Filter>03. Game\05. Object\5. Skill\2. Missile\2. ball</Filter>
+      <Filter>03. Game\05. Object\6. Skill\2. Missile\2. ball</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_missile_ball_right.h">
-      <Filter>03. Game\05. Object\5. Skill\2. Missile\2. ball</Filter>
+      <Filter>03. Game\05. Object\6. Skill\2. Missile\2. ball</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_slash_right.h">
-      <Filter>03. Game\05. Object\5. Skill\3. Slash</Filter>
+      <Filter>03. Game\05. Object\6. Skill\3. Slash</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_special_right.h">
-      <Filter>03. Game\05. Object\5. Skill\4. Special</Filter>
+      <Filter>03. Game\05. Object\6. Skill\4. Special</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_doublejump_right.h">
-      <Filter>03. Game\05. Object\5. Skill\6. DoubleJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\6. DoubleJump</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_highjump.h">
-      <Filter>03. Game\05. Object\5. Skill\7. HighJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\7. HighJump</Filter>
     </ClInclude>
     <ClInclude Include="qDummy_blue.h">
       <Filter>03. Game\05. Object\2. Monster\3. Dummy_BLUE</Filter>
@@ -521,31 +542,49 @@
       <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
     </ClInclude>
     <ClInclude Include="qEffect_attack.h">
-      <Filter>03. Game\05. Object\6. Effect\1. Attack</Filter>
+      <Filter>03. Game\05. Object\7. Effect\1. Attack</Filter>
     </ClInclude>
     <ClInclude Include="qEffect_missile.h">
-      <Filter>03. Game\05. Object\6. Effect\2. Missile</Filter>
+      <Filter>03. Game\05. Object\7. Effect\2. Missile</Filter>
     </ClInclude>
     <ClInclude Include="qEffect_slash.h">
-      <Filter>03. Game\05. Object\6. Effect\3. Slash</Filter>
+      <Filter>03. Game\05. Object\7. Effect\3. Slash</Filter>
     </ClInclude>
     <ClInclude Include="qEffect_special.h">
-      <Filter>03. Game\05. Object\6. Effect\4. Special</Filter>
+      <Filter>03. Game\05. Object\7. Effect\4. Special</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_miss.h">
-      <Filter>03. Game\05. Object\7. Damage\5. Miss</Filter>
+      <Filter>03. Game\05. Object\8. Damage\5. Miss</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_attack.h">
-      <Filter>03. Game\05. Object\7. Damage\1. Attack</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Attack</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_missile.h">
-      <Filter>03. Game\05. Object\7. Damage\2. Missile</Filter>
+      <Filter>03. Game\05. Object\8. Damage\2. Missile</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_slash.h">
-      <Filter>03. Game\05. Object\7. Damage\3. Slash</Filter>
+      <Filter>03. Game\05. Object\8. Damage\3. Slash</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_special.h">
-      <Filter>03. Game\05. Object\7. Damage\4. Special</Filter>
+      <Filter>03. Game\05. Object\8. Damage\4. Special</Filter>
+    </ClInclude>
+    <ClInclude Include="qRespawnMgr.h">
+      <Filter>03. Game\03. Manager\12. RespawnMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="qSpawner_blue1.h">
+      <Filter>03. Game\05. Object\3. Spawner\1. BLUE_1</Filter>
+    </ClInclude>
+    <ClInclude Include="qSpawner_blue2.h">
+      <Filter>03. Game\05. Object\3. Spawner\2. BLUE_2</Filter>
+    </ClInclude>
+    <ClInclude Include="qSpawner_blue3.h">
+      <Filter>03. Game\05. Object\3. Spawner\3. BLUE_3</Filter>
+    </ClInclude>
+    <ClInclude Include="qSpawner_red1.h">
+      <Filter>03. Game\05. Object\3. Spawner\4. RED_1</Filter>
+    </ClInclude>
+    <ClInclude Include="qSpawner_red2.h">
+      <Filter>03. Game\05. Object\3. Spawner\5. RED_2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -593,7 +632,7 @@
       <Filter>03. Game\05. Object\1. Player</Filter>
     </ClCompile>
     <ClCompile Include="qMissile.cpp">
-      <Filter>03. Game\05. Object\11. Missile</Filter>
+      <Filter>03. Game\05. Object\12. Missile</Filter>
     </ClCompile>
     <ClCompile Include="qKeyMgr.cpp">
       <Filter>03. Game\03. Manager\02. KeyMgr</Filter>
@@ -641,13 +680,13 @@
       <Filter>03. Game\03. Manager\08. TaskMgr</Filter>
     </ClCompile>
     <ClCompile Include="qGuideMissile.cpp">
-      <Filter>03. Game\05. Object\11. Missile\GuideMissile</Filter>
+      <Filter>03. Game\05. Object\12. Missile\GuideMissile</Filter>
     </ClCompile>
     <ClCompile Include="qAnimation.cpp">
       <Filter>03. Game\08. Module\Animation</Filter>
     </ClCompile>
     <ClCompile Include="qForce.cpp">
-      <Filter>03. Game\05. Object\12. Force</Filter>
+      <Filter>03. Game\05. Object\13. Force</Filter>
     </ClCompile>
     <ClCompile Include="qCamera.cpp">
       <Filter>03. Game\03. Manager\09. Camera</Filter>
@@ -656,7 +695,7 @@
       <Filter>03. Game\04. Level\03. Editor</Filter>
     </ClCompile>
     <ClCompile Include="qTile.cpp">
-      <Filter>03. Game\05. Object\10. Tile</Filter>
+      <Filter>03. Game\05. Object\11. Tile</Filter>
     </ClCompile>
     <ClCompile Include="qPlayerState.cpp">
       <Filter>03. Game\08. Module\State\PlayerState</Filter>
@@ -665,7 +704,7 @@
       <Filter>03. Game\06. Component\05. TileMap</Filter>
     </ClCompile>
     <ClCompile Include="qUI.cpp">
-      <Filter>03. Game\05. Object\9. UI</Filter>
+      <Filter>03. Game\05. Object\10. UI</Filter>
     </ClCompile>
     <ClCompile Include="qUIMgr.cpp">
       <Filter>03. Game\03. Manager\10. UIMgr</Filter>
@@ -680,16 +719,16 @@
       <Filter>03. Game\03. Manager\11. SoundMgr</Filter>
     </ClCompile>
     <ClCompile Include="qBackground_stage1.cpp">
-      <Filter>03. Game\05. Object\4. Background\3. STAGE_1</Filter>
+      <Filter>03. Game\05. Object\5. Background\3. STAGE_1</Filter>
     </ClCompile>
     <ClCompile Include="qLogo.cpp">
-      <Filter>03. Game\05. Object\4. Background\1. LOGO</Filter>
+      <Filter>03. Game\05. Object\5. Background\1. LOGO</Filter>
     </ClCompile>
     <ClCompile Include="qBackground_stage2.cpp">
-      <Filter>03. Game\05. Object\4. Background\4. STAGE_2</Filter>
+      <Filter>03. Game\05. Object\5. Background\4. STAGE_2</Filter>
     </ClCompile>
     <ClCompile Include="qBackground_boss1.cpp">
-      <Filter>03. Game\05. Object\4. Background\5. BOSS_1</Filter>
+      <Filter>03. Game\05. Object\5. Background\5. BOSS_1</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_stage1.cpp">
       <Filter>03. Game\04. Level\04. Stage\1. STAGE_1</Filter>
@@ -701,22 +740,22 @@
       <Filter>03. Game\04. Level\04. Stage\3. BOSS_1</Filter>
     </ClCompile>
     <ClCompile Include="qBackground_boss2.cpp">
-      <Filter>03. Game\05. Object\4. Background\6. BOSS_2</Filter>
+      <Filter>03. Game\05. Object\5. Background\6. BOSS_2</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_boss2.cpp">
       <Filter>03. Game\04. Level\04. Stage\4. BOSS_2</Filter>
     </ClCompile>
     <ClCompile Include="qPlatform.cpp">
-      <Filter>03. Game\05. Object\8. Platform\1. Platform</Filter>
+      <Filter>03. Game\05. Object\9. Platform\1. Platform</Filter>
     </ClCompile>
     <ClCompile Include="qRope.cpp">
-      <Filter>03. Game\05. Object\8. Platform\2. Rope</Filter>
+      <Filter>03. Game\05. Object\9. Platform\2. Rope</Filter>
     </ClCompile>
     <ClCompile Include="qPortal.cpp">
-      <Filter>03. Game\05. Object\8. Platform\3. Portal</Filter>
+      <Filter>03. Game\05. Object\9. Platform\3. Portal</Filter>
     </ClCompile>
     <ClCompile Include="qBackground_start.cpp">
-      <Filter>03. Game\05. Object\4. Background\2. START</Filter>
+      <Filter>03. Game\05. Object\5. Background\2. START</Filter>
     </ClCompile>
     <ClCompile Include="qMonster_blue.cpp">
       <Filter>03. Game\05. Object\2. Monster\1. BLUE</Filter>
@@ -725,49 +764,49 @@
       <Filter>03. Game\05. Object\2. Monster\2. RED</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_attack_left.cpp">
-      <Filter>03. Game\05. Object\5. Skill\1. Attack</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Attack</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_buff.cpp">
-      <Filter>03. Game\05. Object\5. Skill\5. Buff</Filter>
+      <Filter>03. Game\05. Object\6. Skill\5. Buff</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_special_left.cpp">
-      <Filter>03. Game\05. Object\5. Skill\4. Special</Filter>
+      <Filter>03. Game\05. Object\6. Skill\4. Special</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_slash_left.cpp">
-      <Filter>03. Game\05. Object\5. Skill\3. Slash</Filter>
+      <Filter>03. Game\05. Object\6. Skill\3. Slash</Filter>
     </ClCompile>
     <ClCompile Include="qButton.cpp">
-      <Filter>03. Game\05. Object\9. UI\ButtonUI</Filter>
+      <Filter>03. Game\05. Object\10. UI\ButtonUI</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_doublejump_left.cpp">
-      <Filter>03. Game\05. Object\5. Skill\6. DoubleJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\6. DoubleJump</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_attack_right.cpp">
-      <Filter>03. Game\05. Object\5. Skill\1. Attack</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Attack</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_missile_left.cpp">
-      <Filter>03. Game\05. Object\5. Skill\2. Missile\1. missile</Filter>
+      <Filter>03. Game\05. Object\6. Skill\2. Missile\1. missile</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_missile_right.cpp">
-      <Filter>03. Game\05. Object\5. Skill\2. Missile\1. missile</Filter>
+      <Filter>03. Game\05. Object\6. Skill\2. Missile\1. missile</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_missile_ball_left.cpp">
-      <Filter>03. Game\05. Object\5. Skill\2. Missile\2. ball</Filter>
+      <Filter>03. Game\05. Object\6. Skill\2. Missile\2. ball</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_missile_ball_right.cpp">
-      <Filter>03. Game\05. Object\5. Skill\2. Missile\2. ball</Filter>
+      <Filter>03. Game\05. Object\6. Skill\2. Missile\2. ball</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_slash_right.cpp">
-      <Filter>03. Game\05. Object\5. Skill\3. Slash</Filter>
+      <Filter>03. Game\05. Object\6. Skill\3. Slash</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_special_right.cpp">
-      <Filter>03. Game\05. Object\5. Skill\4. Special</Filter>
+      <Filter>03. Game\05. Object\6. Skill\4. Special</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_doublejump_right.cpp">
-      <Filter>03. Game\05. Object\5. Skill\6. DoubleJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\6. DoubleJump</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_highjump.cpp">
-      <Filter>03. Game\05. Object\5. Skill\7. HighJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\7. HighJump</Filter>
     </ClCompile>
     <ClCompile Include="qDummy_blue.cpp">
       <Filter>03. Game\05. Object\2. Monster\3. Dummy_BLUE</Filter>
@@ -797,31 +836,49 @@
       <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
     </ClCompile>
     <ClCompile Include="qEffect_attack.cpp">
-      <Filter>03. Game\05. Object\6. Effect\1. Attack</Filter>
+      <Filter>03. Game\05. Object\7. Effect\1. Attack</Filter>
     </ClCompile>
     <ClCompile Include="qEffect_missile.cpp">
-      <Filter>03. Game\05. Object\6. Effect\2. Missile</Filter>
+      <Filter>03. Game\05. Object\7. Effect\2. Missile</Filter>
     </ClCompile>
     <ClCompile Include="qEffect_slash.cpp">
-      <Filter>03. Game\05. Object\6. Effect\3. Slash</Filter>
+      <Filter>03. Game\05. Object\7. Effect\3. Slash</Filter>
     </ClCompile>
     <ClCompile Include="qEffect_special.cpp">
-      <Filter>03. Game\05. Object\6. Effect\4. Special</Filter>
+      <Filter>03. Game\05. Object\7. Effect\4. Special</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_miss.cpp">
-      <Filter>03. Game\05. Object\7. Damage\5. Miss</Filter>
+      <Filter>03. Game\05. Object\8. Damage\5. Miss</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_attack.cpp">
-      <Filter>03. Game\05. Object\7. Damage\1. Attack</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Attack</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_missile.cpp">
-      <Filter>03. Game\05. Object\7. Damage\2. Missile</Filter>
+      <Filter>03. Game\05. Object\8. Damage\2. Missile</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_slash.cpp">
-      <Filter>03. Game\05. Object\7. Damage\3. Slash</Filter>
+      <Filter>03. Game\05. Object\8. Damage\3. Slash</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_special.cpp">
-      <Filter>03. Game\05. Object\7. Damage\4. Special</Filter>
+      <Filter>03. Game\05. Object\8. Damage\4. Special</Filter>
+    </ClCompile>
+    <ClCompile Include="qRespawnMgr.cpp">
+      <Filter>03. Game\03. Manager\12. RespawnMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="qSpawner_blue1.cpp">
+      <Filter>03. Game\05. Object\3. Spawner\1. BLUE_1</Filter>
+    </ClCompile>
+    <ClCompile Include="qSpawner_blue2.cpp">
+      <Filter>03. Game\05. Object\3. Spawner\2. BLUE_2</Filter>
+    </ClCompile>
+    <ClCompile Include="qSpawner_blue3.cpp">
+      <Filter>03. Game\05. Object\3. Spawner\3. BLUE_3</Filter>
+    </ClCompile>
+    <ClCompile Include="qSpawner_red1.cpp">
+      <Filter>03. Game\05. Object\3. Spawner\4. RED_1</Filter>
+    </ClCompile>
+    <ClCompile Include="qSpawner_red2.cpp">
+      <Filter>03. Game\05. Object\3. Spawner\5. RED_2</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

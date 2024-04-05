@@ -121,13 +121,21 @@ qMonster_blue::qMonster_blue(DIRECTION _Dir)
 qMonster_blue::qMonster_blue(const qMonster_blue& _Other)
 	: qObj(_Other)
 	, m_BlueHP(100)
-	, m_Speed(50.f)
-
+	, m_Speed(_Other.m_Speed)
+	, m_MaxDistance(_Other.m_MaxDistance)
+	, m_Animator(nullptr)
+	, m_Dir(_Other.m_Dir)
+	, m_FSM(_Other.m_FSM)
 {
 	m_Collider = GetComponent<qCollider>();
 	m_Animator = GetComponent<qAnimator>();
 	m_Rigidbody = GetComponent<qRigidbody>();
+
+	//m_Collider = _Other.m_Collider->Clone();
+	//m_Animator = _Other.m_Animator->Clone();
+	//m_Rigidbody = _Other.m_Rigidbody->Clone();
 }
+
 
 qMonster_blue::~qMonster_blue()
 {

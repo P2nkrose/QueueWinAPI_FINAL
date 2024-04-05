@@ -200,6 +200,7 @@
     <ClInclude Include="qRedDeadState.h" />
     <ClInclude Include="qRedIdleState.h" />
     <ClInclude Include="qRedMoveState.h" />
+    <ClInclude Include="qRespawnMgr.h" />
     <ClInclude Include="qRigidbody.h" />
     <ClInclude Include="qRope.h" />
     <ClInclude Include="qSelectObj.h" />
@@ -220,6 +221,11 @@
     <ClInclude Include="qSound.h" />
     <ClInclude Include="qSoundMgr.h" />
     <ClInclude Include="qLevel_Start.h" />
+    <ClInclude Include="qSpawner_blue1.h" />
+    <ClInclude Include="qSpawner_blue2.h" />
+    <ClInclude Include="qSpawner_blue3.h" />
+    <ClInclude Include="qSpawner_red1.h" />
+    <ClInclude Include="qSpawner_red2.h" />
     <ClInclude Include="qState.h" />
     <ClInclude Include="qTaskMgr.h" />
     <ClInclude Include="qTexture.h" />
@@ -295,6 +301,7 @@
     <ClCompile Include="qRedDeadState.cpp" />
     <ClCompile Include="qRedIdleState.cpp" />
     <ClCompile Include="qRedMoveState.cpp" />
+    <ClCompile Include="qRespawnMgr.cpp" />
     <ClCompile Include="qRigidbody.cpp" />
     <ClCompile Include="qRope.cpp" />
     <ClCompile Include="qSelectObj.cpp" />
@@ -315,6 +322,11 @@
     <ClCompile Include="qSound.cpp" />
     <ClCompile Include="qSoundMgr.cpp" />
     <ClCompile Include="qLevel_Start.cpp" />
+    <ClCompile Include="qSpawner_blue1.cpp" />
+    <ClCompile Include="qSpawner_blue2.cpp" />
+    <ClCompile Include="qSpawner_blue3.cpp" />
+    <ClCompile Include="qSpawner_red1.cpp" />
+    <ClCompile Include="qSpawner_red2.cpp" />
     <ClCompile Include="qState.cpp" />
     <ClCompile Include="qTaskMgr.cpp" />
     <ClCompile Include="qTexture.cpp" />

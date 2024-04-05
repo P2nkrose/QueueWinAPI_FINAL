@@ -17,17 +17,19 @@ qObj::qObj()
 
 qObj::qObj(const qObj& _Other)
 	: qEntity(_Other)
-	, m_Pos(_Other.m_Pos)
 	, m_PrevPos(_Other.m_PrevPos)
 	, m_Scale(_Other.m_Scale)
 	, m_Animator(nullptr)
-	, m_Type(LAYER_TYPE::NONE)
+	, m_Type(_Other.m_Type)
+	, m_CenterPos(_Other.m_CenterPos)
 	, m_bDead(false)
+	, m_Dir(_Other.m_Dir)
 {
 	for (size_t i = 0; i < _Other.m_vecCom.size(); ++i)
 	{
 		AddComponent(_Other.m_vecCom[i]->Clone());
 	}
+
 }
 
 qObj::~qObj()
