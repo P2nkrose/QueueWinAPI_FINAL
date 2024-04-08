@@ -155,6 +155,13 @@
     <ClInclude Include="qBackground_stage2.h" />
     <ClInclude Include="qBackground_start.h" />
     <ClInclude Include="qBlueDeadState.h" />
+    <ClInclude Include="qBoss.h" />
+    <ClInclude Include="qBossBallState.h" />
+    <ClInclude Include="qBossDeadState.h" />
+    <ClInclude Include="qBossFirebirdState.h" />
+    <ClInclude Include="qBossGenesisState.h" />
+    <ClInclude Include="qBossIdleState.h" />
+    <ClInclude Include="qBossTornadoState.h" />
     <ClInclude Include="qButton.h" />
     <ClInclude Include="qCamera.h" />
     <ClInclude Include="qCollider.h" />
@@ -195,7 +202,6 @@
     <ClInclude Include="qPathMgr.h" />
     <ClInclude Include="qPlatform.h" />
     <ClInclude Include="qPlayer.h" />
-    <ClInclude Include="qPlayerState.h" />
     <ClInclude Include="qPortal.h" />
     <ClInclude Include="qRedDeadState.h" />
     <ClInclude Include="qRedIdleState.h" />
@@ -256,6 +262,13 @@
     <ClCompile Include="qBackground_stage2.cpp" />
     <ClCompile Include="qBackground_start.cpp" />
     <ClCompile Include="qBlueDeadState.cpp" />
+    <ClCompile Include="qBoss.cpp" />
+    <ClCompile Include="qBossBallState.cpp" />
+    <ClCompile Include="qBossDeadState.cpp" />
+    <ClCompile Include="qBossFirebirdState.cpp" />
+    <ClCompile Include="qBossGenesisState.cpp" />
+    <ClCompile Include="qBossIdleState.cpp" />
+    <ClCompile Include="qBossTornadoState.cpp" />
     <ClCompile Include="qButton.cpp" />
     <ClCompile Include="qCamera.cpp" />
     <ClCompile Include="qCollider.cpp" />
@@ -296,7 +309,6 @@
     <ClCompile Include="qPathMgr.cpp" />
     <ClCompile Include="qPlatform.cpp" />
     <ClCompile Include="qPlayer.cpp" />
-    <ClCompile Include="qPlayerState.cpp" />
     <ClCompile Include="qPortal.cpp" />
     <ClCompile Include="qRedDeadState.cpp" />
     <ClCompile Include="qRedIdleState.cpp" />

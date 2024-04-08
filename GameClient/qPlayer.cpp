@@ -13,7 +13,6 @@
 #include "qRope.h"
 
 #include "qFSM.h"
-#include "qPlayerState.h"
 
 #include "qMissile.h"
 #include "qGuideMissile.h"
@@ -37,6 +36,13 @@
 
 #include "qDbgRender.h"
 #include "qCamera.h"
+
+#include "qBossIdleState.h"
+#include "qBossBallState.h"
+#include "qBossGenesisState.h"
+#include "qBossFirebirdState.h"
+#include "qBossTornadoState.h"
+#include "qBossDeadState.h"
 
 
 void BeGround()
@@ -65,6 +71,9 @@ qPlayer::qPlayer()
 	, m_CurJumpCount(0)
 	, m_bRope(false)
 {
+
+	m_Pos = GetPos();
+
 	// Player의 컴포넌트 설정
 	
 	m_BodyCol = (qCollider*)AddComponent(new qCollider);
@@ -263,6 +272,8 @@ qPlayer::qPlayer()
 	//m_FSM = (qFSM*)AddComponent(new qFSM);
 	//m_FSM->AddState(L"IDLE", new qPlayerState);
 
+
+
 	m_Animator->Play(L"PlayerIdleLeft", true);
 
 }
@@ -326,6 +337,9 @@ void qPlayer::begin()
 	// Delegate
 	//m_RigidBody->SetGroundDelegate(this, (DELEGATE)&qPlayer::RestoreJumpCount);
 
+
+	// 블랙보드
+	//m_FSM->SetBlackboardData(L"Player", DATA_TYPE::OBJECT, this);
 
 	// 블랙보드로 넘겨주기
 	//m_FSM->SetBlackboardData(L"pHud", DATA_TYPE::FLOAT, &m_Hud);
@@ -861,6 +875,7 @@ void qPlayer::tick()
 		pBuff->SetPos(vBuffPos);
 		pBuff->SetScale(vBuffScale);
 
+		
 		if (L"Buff" == pBuff->GetName())
 		{
 			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pBuff);

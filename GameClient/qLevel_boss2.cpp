@@ -11,6 +11,9 @@
 
 #include "qBackground_boss2.h"
 
+#include "qBoss.h"
+
+
 #include "qSound.h"
 
 qLevel_boss2::qLevel_boss2()
@@ -78,12 +81,13 @@ void qLevel_boss2::Enter()
 	pPlayer->SetScale(100.0f, 100.0f);
 	AddObject(LAYER_TYPE::PLAYER, pPlayer);
 
-
-	// 플랫폼 생성
-	//qObj* pPlatform = new qPlatform;
-	//pPlatform->SetName(L"Platform");
-	//pPlatform->SetPos(Vec2(640.f, 700.f));
-	//AddObject(LAYER_TYPE::PLATFORM, pPlatform);
+	// Boss
+	qObj* pBoss = new qBoss;
+	pBoss->SetName(L"Boss");
+	pBoss->SetPos(915.f, 680.f);
+	pBoss->SetScale(100.f, 100.f);
+	pBoss->SetDir(DIRECTION::LEFT);
+	AddObject(LAYER_TYPE::BOSS, pBoss);
 
 
 	// 콜라이더 읽어오기
@@ -103,8 +107,12 @@ void qLevel_boss2::Enter()
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::BOSS);
 
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
+	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::BOSS, LAYER_TYPE::PLATFORM);
+
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::ROPE);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PORTAL);
+
+	
 }
 
 void qLevel_boss2::Exit()

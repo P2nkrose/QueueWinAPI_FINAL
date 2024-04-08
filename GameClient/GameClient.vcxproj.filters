@@ -83,12 +83,6 @@
     <Filter Include="03. Game\08. Module\State">
       <UniqueIdentifier>{e26ffa26-cbfe-45d6-804a-d3c8014b1cdd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\08. Module\State\MonsterState">
-      <UniqueIdentifier>{94db36c4-f659-4cd4-b7bf-8c0caaaa14a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\08. Module\State\PlayerState">
-      <UniqueIdentifier>{89fb0671-31f6-4dd1-99c9-265b756dde21}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\06. Component\05. TileMap">
       <UniqueIdentifier>{04b77910-0cfc-4701-94a6-2f5d39296b4b}</UniqueIdentifier>
     </Filter>
@@ -143,12 +137,6 @@
     <Filter Include="03. Game\05. Object\2. Monster\4. Dummy_Red">
       <UniqueIdentifier>{99bfafe4-370e-4b9f-bdef-de2b5fd77317}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\08. Module\State\MonsterState\1. BLUE">
-      <UniqueIdentifier>{fae33fcf-abe9-40f7-876e-2b84bc216413}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\08. Module\State\MonsterState\2. RED">
-      <UniqueIdentifier>{f7351e22-c859-44f1-a0f7-39db0c53427b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\03. Manager\12. RespawnMgr">
       <UniqueIdentifier>{9db607a2-fd80-4ea3-8019-f35664c61a98}</UniqueIdentifier>
     </Filter>
@@ -179,47 +167,8 @@
     <Filter Include="03. Game\05. Object\6. Skill">
       <UniqueIdentifier>{11b15ce1-ad09-4301-b340-f07a7e6fb034}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\6. Skill\1. Attack">
-      <UniqueIdentifier>{9749c9dd-a27a-4c2e-97e1-f7a1a5984baf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\6. Skill\2. Missile">
-      <UniqueIdentifier>{64beaa63-4bd1-4273-884b-f2469ea15d0e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\6. Skill\2. Missile\1. missile">
-      <UniqueIdentifier>{213c771e-ac40-435d-9b6d-191ba3e1ba46}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\6. Skill\2. Missile\2. ball">
-      <UniqueIdentifier>{1a8865c3-613e-4625-9e75-86d61a2cec35}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\6. Skill\3. Slash">
-      <UniqueIdentifier>{2192986a-b9c4-49f5-938a-01f26fd5f01b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\6. Skill\4. Special">
-      <UniqueIdentifier>{25e56372-8235-4013-bdc8-837877cc79a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\6. Skill\5. Buff">
-      <UniqueIdentifier>{5a59bfa8-1963-4b56-a040-bfa8b5b9f70e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\6. Skill\6. DoubleJump">
-      <UniqueIdentifier>{2c7c9d56-9d47-4b52-896b-f4f562a4d1a1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\6. Skill\7. HighJump">
-      <UniqueIdentifier>{55b2eb40-60f0-4387-971c-d458443227e3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\7. Effect">
       <UniqueIdentifier>{5844f181-35e6-4dff-8772-b0e2656f7f47}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\7. Effect\1. Attack">
-      <UniqueIdentifier>{93c25c4c-6407-42a5-9ce4-fb09478c2468}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\7. Effect\2. Missile">
-      <UniqueIdentifier>{ec6d6c07-faec-4afa-90c3-04c435a22e16}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\7. Effect\3. Slash">
-      <UniqueIdentifier>{62536544-6639-4570-9ecb-23bcd70eb417}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\7. Effect\4. Special">
-      <UniqueIdentifier>{4c91be43-f2a2-4cb6-beda-0dd47fc864ac}</UniqueIdentifier>
     </Filter>
     <Filter Include="03. Game\05. Object\8. Damage">
       <UniqueIdentifier>{41d13a27-744b-4e07-8db9-e5e3a98b08ff}</UniqueIdentifier>
@@ -286,6 +235,114 @@
     </Filter>
     <Filter Include="03. Game\05. Object\3. Spawner\5. RED_2">
       <UniqueIdentifier>{da8a4b03-e129-41da-bb5b-3906825e2906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Player_Skill">
+      <UniqueIdentifier>{bd96ce94-7a5e-4eb8-9c7e-d29ecef1918e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Player_Skill\1. Attack">
+      <UniqueIdentifier>{9749c9dd-a27a-4c2e-97e1-f7a1a5984baf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile">
+      <UniqueIdentifier>{64beaa63-4bd1-4273-884b-f2469ea15d0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile\1. missile">
+      <UniqueIdentifier>{213c771e-ac40-435d-9b6d-191ba3e1ba46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile\2. ball">
+      <UniqueIdentifier>{1a8865c3-613e-4625-9e75-86d61a2cec35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Player_Skill\3. Slash">
+      <UniqueIdentifier>{2192986a-b9c4-49f5-938a-01f26fd5f01b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Player_Skill\4. Special">
+      <UniqueIdentifier>{25e56372-8235-4013-bdc8-837877cc79a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Player_Skill\5. Buff">
+      <UniqueIdentifier>{5a59bfa8-1963-4b56-a040-bfa8b5b9f70e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Player_Skill\6. DoubleJump">
+      <UniqueIdentifier>{2c7c9d56-9d47-4b52-896b-f4f562a4d1a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\1. Player_Skill\7. HighJump">
+      <UniqueIdentifier>{55b2eb40-60f0-4387-971c-d458443227e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\2. Boss_Skill">
+      <UniqueIdentifier>{8cfe83a4-9b31-4900-aea8-9418fed5da93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\1. Player_Effect">
+      <UniqueIdentifier>{17d7ec3d-655b-496b-ba93-df987c33141e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\1. Player_Effect\4. Special">
+      <UniqueIdentifier>{4c91be43-f2a2-4cb6-beda-0dd47fc864ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\1. Player_Effect\1. Attack">
+      <UniqueIdentifier>{93c25c4c-6407-42a5-9ce4-fb09478c2468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\1. Player_Effect\2. Missile">
+      <UniqueIdentifier>{ec6d6c07-faec-4afa-90c3-04c435a22e16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\1. Player_Effect\3. Slash">
+      <UniqueIdentifier>{62536544-6639-4570-9ecb-23bcd70eb417}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\2. Boss_Effect">
+      <UniqueIdentifier>{10ac7e53-5798-44b9-8a35-358c656757e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\2. Boss_Skill\1. Ball">
+      <UniqueIdentifier>{757013bf-a8ba-4a98-9991-668d278ac514}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\2. Boss_Skill\2. Genesis">
+      <UniqueIdentifier>{ab942fea-1809-4e1b-a80f-8a7f4da19b66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\2. Boss_Skill\3. Firebird">
+      <UniqueIdentifier>{18bae139-e0ec-4b87-902e-8dbabf5fd082}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\6. Skill\2. Boss_Skill\4. Tornado">
+      <UniqueIdentifier>{b9310024-2bf0-4b0d-b22e-f2ed47cf6e27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\2. Boss_Effect\1. Ball">
+      <UniqueIdentifier>{6b0e015d-0ded-4b09-baaa-959ca99898be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\2. Boss_Effect\2. Genesis">
+      <UniqueIdentifier>{b0f3db95-b371-4a97-b02c-971d5ba2ab4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\2. Boss_Effect\3. Firebird">
+      <UniqueIdentifier>{fa55fb7b-b9e0-4470-8909-9da8ba447688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\7. Effect\2. Boss_Effect\4. Tornado">
+      <UniqueIdentifier>{b36f6018-7bfc-4665-ac12-2bcb5ccf6cdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\2. MonsterState">
+      <UniqueIdentifier>{94db36c4-f659-4cd4-b7bf-8c0caaaa14a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\2. MonsterState\1. BLUE">
+      <UniqueIdentifier>{fae33fcf-abe9-40f7-876e-2b84bc216413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\2. MonsterState\2. RED">
+      <UniqueIdentifier>{f7351e22-c859-44f1-a0f7-39db0c53427b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\3. BossState">
+      <UniqueIdentifier>{aad83735-37d8-4323-8c72-dd585f31a060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\1. PlayerState">
+      <UniqueIdentifier>{89fb0671-31f6-4dd1-99c9-265b756dde21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\3. BossState\1. Idle">
+      <UniqueIdentifier>{ff8df37b-2954-4785-adef-2aff877ee785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\3. BossState\2. Ball">
+      <UniqueIdentifier>{5cb524c9-6057-40f7-8366-10cbc45fb433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\3. BossState\3. Genesis">
+      <UniqueIdentifier>{c0f8e12a-836b-4741-a48c-ee376faefb4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\3. BossState\4. Firebird">
+      <UniqueIdentifier>{f3997a39-90c8-439d-ac77-8813ab92f9c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\3. BossState\5. Tornado">
+      <UniqueIdentifier>{5502fb35-823b-4629-aaf6-fb8c405f794c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\08. Module\State\3. BossState\6. Dead">
+      <UniqueIdentifier>{24a19cd5-85f8-4033-8dd8-16f94c0f4b51}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -403,9 +460,6 @@
     <ClInclude Include="qTile.h">
       <Filter>03. Game\05. Object\11. Tile</Filter>
     </ClInclude>
-    <ClInclude Include="qPlayerState.h">
-      <Filter>03. Game\08. Module\State\PlayerState</Filter>
-    </ClInclude>
     <ClInclude Include="qTileMap.h">
       <Filter>03. Game\06. Component\05. TileMap</Filter>
     </ClInclude>
@@ -470,49 +524,49 @@
       <Filter>03. Game\05. Object\2. Monster\2. RED</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_attack_left.h">
-      <Filter>03. Game\05. Object\6. Skill\1. Attack</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\1. Attack</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_buff.h">
-      <Filter>03. Game\05. Object\6. Skill\5. Buff</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\5. Buff</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_special_left.h">
-      <Filter>03. Game\05. Object\6. Skill\4. Special</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\4. Special</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_slash_left.h">
-      <Filter>03. Game\05. Object\6. Skill\3. Slash</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\3. Slash</Filter>
     </ClInclude>
     <ClInclude Include="qButton.h">
       <Filter>03. Game\05. Object\10. UI\ButtonUI</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_doublejump_left.h">
-      <Filter>03. Game\05. Object\6. Skill\6. DoubleJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\6. DoubleJump</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_attack_right.h">
-      <Filter>03. Game\05. Object\6. Skill\1. Attack</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\1. Attack</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_missile_left.h">
-      <Filter>03. Game\05. Object\6. Skill\2. Missile\1. missile</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile\1. missile</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_missile_right.h">
-      <Filter>03. Game\05. Object\6. Skill\2. Missile\1. missile</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile\1. missile</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_missile_ball_left.h">
-      <Filter>03. Game\05. Object\6. Skill\2. Missile\2. ball</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile\2. ball</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_missile_ball_right.h">
-      <Filter>03. Game\05. Object\6. Skill\2. Missile\2. ball</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile\2. ball</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_slash_right.h">
-      <Filter>03. Game\05. Object\6. Skill\3. Slash</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\3. Slash</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_special_right.h">
-      <Filter>03. Game\05. Object\6. Skill\4. Special</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\4. Special</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_doublejump_right.h">
-      <Filter>03. Game\05. Object\6. Skill\6. DoubleJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\6. DoubleJump</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_highjump.h">
-      <Filter>03. Game\05. Object\6. Skill\7. HighJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\7. HighJump</Filter>
     </ClInclude>
     <ClInclude Include="qDummy_blue.h">
       <Filter>03. Game\05. Object\2. Monster\3. Dummy_BLUE</Filter>
@@ -521,37 +575,37 @@
       <Filter>03. Game\05. Object\2. Monster\4. Dummy_Red</Filter>
     </ClInclude>
     <ClInclude Include="qBlueMoveState.h">
-      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\1. BLUE</Filter>
     </ClInclude>
     <ClInclude Include="qBlueIdleState.h">
-      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\1. BLUE</Filter>
     </ClInclude>
     <ClInclude Include="qState.h">
-      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState</Filter>
     </ClInclude>
     <ClInclude Include="qRedIdleState.h">
-      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\2. RED</Filter>
     </ClInclude>
     <ClInclude Include="qRedMoveState.h">
-      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\2. RED</Filter>
     </ClInclude>
     <ClInclude Include="qBlueDeadState.h">
-      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\1. BLUE</Filter>
     </ClInclude>
     <ClInclude Include="qRedDeadState.h">
-      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\2. RED</Filter>
     </ClInclude>
     <ClInclude Include="qEffect_attack.h">
-      <Filter>03. Game\05. Object\7. Effect\1. Attack</Filter>
+      <Filter>03. Game\05. Object\7. Effect\1. Player_Effect\1. Attack</Filter>
     </ClInclude>
     <ClInclude Include="qEffect_missile.h">
-      <Filter>03. Game\05. Object\7. Effect\2. Missile</Filter>
+      <Filter>03. Game\05. Object\7. Effect\1. Player_Effect\2. Missile</Filter>
     </ClInclude>
     <ClInclude Include="qEffect_slash.h">
-      <Filter>03. Game\05. Object\7. Effect\3. Slash</Filter>
+      <Filter>03. Game\05. Object\7. Effect\1. Player_Effect\3. Slash</Filter>
     </ClInclude>
     <ClInclude Include="qEffect_special.h">
-      <Filter>03. Game\05. Object\7. Effect\4. Special</Filter>
+      <Filter>03. Game\05. Object\7. Effect\1. Player_Effect\4. Special</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_miss.h">
       <Filter>03. Game\05. Object\8. Damage\5. Miss</Filter>
@@ -585,6 +639,27 @@
     </ClInclude>
     <ClInclude Include="qSpawner_red2.h">
       <Filter>03. Game\05. Object\3. Spawner\5. RED_2</Filter>
+    </ClInclude>
+    <ClInclude Include="qBoss.h">
+      <Filter>03. Game\05. Object\4. Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossIdleState.h">
+      <Filter>03. Game\08. Module\State\3. BossState\1. Idle</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossBallState.h">
+      <Filter>03. Game\08. Module\State\3. BossState\2. Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossGenesisState.h">
+      <Filter>03. Game\08. Module\State\3. BossState\3. Genesis</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossFirebirdState.h">
+      <Filter>03. Game\08. Module\State\3. BossState\4. Firebird</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossTornadoState.h">
+      <Filter>03. Game\08. Module\State\3. BossState\5. Tornado</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossDeadState.h">
+      <Filter>03. Game\08. Module\State\3. BossState\6. Dead</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -697,9 +772,6 @@
     <ClCompile Include="qTile.cpp">
       <Filter>03. Game\05. Object\11. Tile</Filter>
     </ClCompile>
-    <ClCompile Include="qPlayerState.cpp">
-      <Filter>03. Game\08. Module\State\PlayerState</Filter>
-    </ClCompile>
     <ClCompile Include="qTileMap.cpp">
       <Filter>03. Game\06. Component\05. TileMap</Filter>
     </ClCompile>
@@ -764,49 +836,49 @@
       <Filter>03. Game\05. Object\2. Monster\2. RED</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_attack_left.cpp">
-      <Filter>03. Game\05. Object\6. Skill\1. Attack</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\1. Attack</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_buff.cpp">
-      <Filter>03. Game\05. Object\6. Skill\5. Buff</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\5. Buff</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_special_left.cpp">
-      <Filter>03. Game\05. Object\6. Skill\4. Special</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\4. Special</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_slash_left.cpp">
-      <Filter>03. Game\05. Object\6. Skill\3. Slash</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\3. Slash</Filter>
     </ClCompile>
     <ClCompile Include="qButton.cpp">
       <Filter>03. Game\05. Object\10. UI\ButtonUI</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_doublejump_left.cpp">
-      <Filter>03. Game\05. Object\6. Skill\6. DoubleJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\6. DoubleJump</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_attack_right.cpp">
-      <Filter>03. Game\05. Object\6. Skill\1. Attack</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\1. Attack</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_missile_left.cpp">
-      <Filter>03. Game\05. Object\6. Skill\2. Missile\1. missile</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile\1. missile</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_missile_right.cpp">
-      <Filter>03. Game\05. Object\6. Skill\2. Missile\1. missile</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile\1. missile</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_missile_ball_left.cpp">
-      <Filter>03. Game\05. Object\6. Skill\2. Missile\2. ball</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile\2. ball</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_missile_ball_right.cpp">
-      <Filter>03. Game\05. Object\6. Skill\2. Missile\2. ball</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\2. Missile\2. ball</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_slash_right.cpp">
-      <Filter>03. Game\05. Object\6. Skill\3. Slash</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\3. Slash</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_special_right.cpp">
-      <Filter>03. Game\05. Object\6. Skill\4. Special</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\4. Special</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_doublejump_right.cpp">
-      <Filter>03. Game\05. Object\6. Skill\6. DoubleJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\6. DoubleJump</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_highjump.cpp">
-      <Filter>03. Game\05. Object\6. Skill\7. HighJump</Filter>
+      <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\7. HighJump</Filter>
     </ClCompile>
     <ClCompile Include="qDummy_blue.cpp">
       <Filter>03. Game\05. Object\2. Monster\3. Dummy_BLUE</Filter>
@@ -815,37 +887,37 @@
       <Filter>03. Game\05. Object\2. Monster\4. Dummy_Red</Filter>
     </ClCompile>
     <ClCompile Include="qBlueIdleState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\1. BLUE</Filter>
     </ClCompile>
     <ClCompile Include="qBlueMoveState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\1. BLUE</Filter>
     </ClCompile>
     <ClCompile Include="qState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState</Filter>
     </ClCompile>
     <ClCompile Include="qRedIdleState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\2. RED</Filter>
     </ClCompile>
     <ClCompile Include="qRedMoveState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\2. RED</Filter>
     </ClCompile>
     <ClCompile Include="qBlueDeadState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState\1. BLUE</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\1. BLUE</Filter>
     </ClCompile>
     <ClCompile Include="qRedDeadState.cpp">
-      <Filter>03. Game\08. Module\State\MonsterState\2. RED</Filter>
+      <Filter>03. Game\08. Module\State\2. MonsterState\2. RED</Filter>
     </ClCompile>
     <ClCompile Include="qEffect_attack.cpp">
-      <Filter>03. Game\05. Object\7. Effect\1. Attack</Filter>
+      <Filter>03. Game\05. Object\7. Effect\1. Player_Effect\1. Attack</Filter>
     </ClCompile>
     <ClCompile Include="qEffect_missile.cpp">
-      <Filter>03. Game\05. Object\7. Effect\2. Missile</Filter>
+      <Filter>03. Game\05. Object\7. Effect\1. Player_Effect\2. Missile</Filter>
     </ClCompile>
     <ClCompile Include="qEffect_slash.cpp">
-      <Filter>03. Game\05. Object\7. Effect\3. Slash</Filter>
+      <Filter>03. Game\05. Object\7. Effect\1. Player_Effect\3. Slash</Filter>
     </ClCompile>
     <ClCompile Include="qEffect_special.cpp">
-      <Filter>03. Game\05. Object\7. Effect\4. Special</Filter>
+      <Filter>03. Game\05. Object\7. Effect\1. Player_Effect\4. Special</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_miss.cpp">
       <Filter>03. Game\05. Object\8. Damage\5. Miss</Filter>
@@ -879,6 +951,27 @@
     </ClCompile>
     <ClCompile Include="qSpawner_red2.cpp">
       <Filter>03. Game\05. Object\3. Spawner\5. RED_2</Filter>
+    </ClCompile>
+    <ClCompile Include="qBoss.cpp">
+      <Filter>03. Game\05. Object\4. Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossIdleState.cpp">
+      <Filter>03. Game\08. Module\State\3. BossState\1. Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossBallState.cpp">
+      <Filter>03. Game\08. Module\State\3. BossState\2. Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossGenesisState.cpp">
+      <Filter>03. Game\08. Module\State\3. BossState\3. Genesis</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossFirebirdState.cpp">
+      <Filter>03. Game\08. Module\State\3. BossState\4. Firebird</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossTornadoState.cpp">
+      <Filter>03. Game\08. Module\State\3. BossState\5. Tornado</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossDeadState.cpp">
+      <Filter>03. Game\08. Module\State\3. BossState\6. Dead</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

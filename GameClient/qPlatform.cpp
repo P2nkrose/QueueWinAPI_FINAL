@@ -67,7 +67,7 @@ void qPlatform::render()
 void qPlatform::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
 	if (_OtherObj->GetName() == L"Player" || _OtherObj->GetName() == L"Blue" || _OtherObj->GetName() == L"Red" 
-		|| _OtherObj->GetName() == L"Blue1")
+		|| _OtherObj->GetName() == L"Blue1" || _OtherObj->GetName() == L"Boss")
 	{
 		qRigidbody* pRB = _OtherObj->GetComponent<qRigidbody>();
 		if (GetPrevPos().y + (GetScale().y * 0.5) <= _OtherObj->GetPos().y)

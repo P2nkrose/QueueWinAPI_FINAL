@@ -163,10 +163,6 @@ void qMonster_blue::tick()
 	qObj::tick();
 	Vec2 vPos = GetPos();
 
-	
-
-	
-		
 
 }
 
