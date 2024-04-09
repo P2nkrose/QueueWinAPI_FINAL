@@ -32,6 +32,8 @@ public:
     bool IsFinish() { return m_bFinish; }
     void SetAtlasTexture(qTexture* _Atlas) { m_Atlas = _Atlas; }
 
+    int GetCurFrmIdx() { return m_CurFrmIdx; }
+
     void Save(const wstring& _strRelativeFolderPath);
     int Load(const wstring& _strRelativeFilePath);
 

@@ -5,14 +5,13 @@ class qCamera;
 class qTexture;
 class qAnimator;
 
-class qSkill_missile_ball_left : public qObj
+class qBossSkill_tornado : public qObj
 {
-	CLONE(qSkill_missile_ball_left);
+	CLONE(qBossSkill_tornado);
 
 public:
-	qSkill_missile_ball_left();
-	qSkill_missile_ball_left(const qSkill_missile_ball_left& _Other);
-	~qSkill_missile_ball_left();
+	qBossSkill_tornado();
+	~qBossSkill_tornado();
 
 	virtual void tick() override;
 
@@ -25,6 +24,5 @@ private:
 	qAnimator* m_Animator;
 	qCollider* m_Collider;
 
-	float	   m_BallSpeed;
 };
 

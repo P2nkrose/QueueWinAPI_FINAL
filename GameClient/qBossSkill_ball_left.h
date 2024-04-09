@@ -5,14 +5,14 @@ class qCamera;
 class qTexture;
 class qAnimator;
 
-class qSkill_missile_ball_left : public qObj
+class qBossSkill_ball_left : public qObj
 {
-	CLONE(qSkill_missile_ball_left);
+	CLONE(qBossSkill_ball_left);
 
 public:
-	qSkill_missile_ball_left();
-	qSkill_missile_ball_left(const qSkill_missile_ball_left& _Other);
-	~qSkill_missile_ball_left();
+	qBossSkill_ball_left();
+	qBossSkill_ball_left(const qBossSkill_ball_left& _Other);
+	~qBossSkill_ball_left();
 
 	virtual void tick() override;
 
@@ -22,9 +22,9 @@ public:
 	virtual void BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider) override;
 
 private:
-	qAnimator* m_Animator;
-	qCollider* m_Collider;
+	qAnimator*		m_Animator;
+	qCollider*		m_Collider;
 
-	float	   m_BallSpeed;
+	float			m_BallSpeed;
 };
 

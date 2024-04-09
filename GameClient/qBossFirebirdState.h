@@ -1,5 +1,8 @@
 #pragma once
 #include "qState.h"
+
+class qSound;
+
 class qBossFirebirdState : public qState
 {
 public:
@@ -22,5 +25,7 @@ private:
 	Vec2		m_CenterPos;
 	float		m_Time;
 	float		m_Dir;
+	qSound*		pSound;
+	bool		m_OneShot;
 };
 

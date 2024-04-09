@@ -179,6 +179,9 @@ void qBoss::begin()
 	qObj* pPlayer = qLevelMgr::GetInst()->FindObjectByName(L"Player");
 	m_FSM->SetBlackboardData(L"Player", DATA_TYPE::OBJECT, pPlayer);
 
+	qObj* pBossBallLeft = qLevelMgr::GetInst()->FindObjectByName(L"BossBallLeft");
+	m_FSM->SetBlackboardData(L"BossBallLeft", DATA_TYPE::OBJECT, pBossBallLeft);
+
 	m_FSM->SetBlackboardData(L"BossHP", DATA_TYPE::INT, &m_BossHP);
 	m_FSM->SetBlackboardData(L"Boss", DATA_TYPE::OBJECT, this);
 

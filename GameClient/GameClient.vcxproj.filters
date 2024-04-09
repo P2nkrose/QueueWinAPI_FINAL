@@ -661,6 +661,21 @@
     <ClInclude Include="qState.h">
       <Filter>03. Game\08. Module\State</Filter>
     </ClInclude>
+    <ClInclude Include="qBossSkill_ball_left.h">
+      <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\1. Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossSkill_tornado.h">
+      <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\4. Tornado</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossSkill_genesis.h">
+      <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\2. Genesis</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossSkill_firebird.h">
+      <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\3. Firebird</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossSkill_ball_right.h">
+      <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\1. Ball</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -972,6 +987,21 @@
     </ClCompile>
     <ClCompile Include="qState.cpp">
       <Filter>03. Game\08. Module\State</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossSkill_ball_left.cpp">
+      <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\1. Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossSkill_tornado.cpp">
+      <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\4. Tornado</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossSkill_genesis.cpp">
+      <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\2. Genesis</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossSkill_firebird.cpp">
+      <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\3. Firebird</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossSkill_ball_right.cpp">
+      <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\1. Ball</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

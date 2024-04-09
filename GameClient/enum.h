@@ -117,9 +117,10 @@ enum class LAYER_TYPE
 	BOSS,
 
 	PLAYER_SKILL,
+	BOSS_SKILL,
+
 	EFFECT,
 
-	BOSS_SKILL,
 
 	UI,
 	END,

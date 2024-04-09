@@ -1,10 +1,21 @@
 #include "pch.h"
 #include "qBossBallState.h"
 
+#include "qAnimator.h"
+#include "qSound.h"
+
+#include "qBossSkill_ball_left.h"
+#include "qBossSkill_ball_right.h"
+#include "qLevel.h"
+#include "qLevelMgr.h"
+
+#include "qTaskMgr.h"
+
 
 qBossBallState::qBossBallState()
 	: m_Time(0.f)
 	, m_Dir(-1.f)
+	, m_OneShot(true)
 {
 }
 
@@ -15,6 +26,8 @@ qBossBallState::~qBossBallState()
 void qBossBallState::Enter()
 {
 	init();
+
+	//qObj* pBossBallLeft = GetBlackboardData<qObj*>(L"BossBallLeft");
 
 	m_CenterPos = GetObj()->GetCenterPos();
 
@@ -30,47 +43,55 @@ void qBossBallState::Enter()
 	if (m_Dir == 1.f)
 	{
 		GetAnimator()->Play(L"BossBallRight", false);
+
+		// 스킬 사운드
+		pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\boss\\ball.wav");
+		pSound->SetVolume(30.f);
+		pSound->Play();
 	}
 	else if (m_Dir == -1.f)
 	{
 		GetAnimator()->Play(L"BossBallLeft", false);
+
+		// 스킬 사운드
+		pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\boss\\ball.wav");
+		pSound->SetVolume(30.f);
+		pSound->Play();
+
 	}
 }
 
 void qBossBallState::FinalTick()
 {
-	//qObj* pPlayer = GetBlackboardData<qObj*>(L"Player");
-
-	//Vec2 PlayerPos = pPlayer->GetPos();
-	//Vec2 PlayerPrevPos = pPlayer->GetPrevPos();
-
-	//float fDist = m_CenterPos.x - PlayerPos.x;
-	//float PrevDir = m_Dir;
-
-	//if (fDist < 0)
-	//{
-	//	SetDir(1.f);
-	//}
-	//else if (fDist > 0)
-	//{
-	//	SetDir(-1.f);
-	//}
-
-	//if (m_Dir == 1.f && PrevDir != m_Dir)
-	//{
-	//	GetAnimator()->Play(L"BossBallRight", false);
-	//}
-	//else if (m_Dir == -1.f && PrevDir != m_Dir)
-	//{
-	//	GetAnimator()->Play(L"BossBallLeft", false);
-	//}
-
 	qObj* pBoss = GetBlackboardData<qObj*>(L"Boss");
 	int pBossHP = GetBlackboardData<int>(L"BossHP");
 
 
 	if (L"BossBallRight" == GetAnimator()->GetCurAnim()->GetName())
 	{
+		if (GetAnimator()->GetCurAnim()->GetCurFrmIdx() == 9)
+		{
+			if (m_OneShot == true)
+			{
+				// 다크니스 볼 발사
+				qBossSkill_ball_right* pBossSkillBallRight = new qBossSkill_ball_right;
+				pBossSkillBallRight->SetName(L"BossSkillBallRight");
+
+				Vec2 vBossSkillBallRightPos = GetObj()->GetPos() + Vec2(70.f, 33.f);
+				Vec2 vBossSkillBallRightScale = Vec2(120.f, 60.f);
+
+				pBossSkillBallRight->SetPos(vBossSkillBallRightPos);
+				pBossSkillBallRight->SetScale(vBossSkillBallRightScale);
+
+				if (L"BossSkillBallRight" == pBossSkillBallRight->GetName())
+				{
+					SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::BOSS_SKILL, pBossSkillBallRight);
+				}
+
+				m_OneShot = false;
+			}
+		}
+
 		if (GetAnimator()->IsFinish())
 		{
 			GetFSM()->ChangeState(L"Idle");
@@ -79,6 +100,29 @@ void qBossBallState::FinalTick()
 
 	if (L"BossBallLeft" == GetAnimator()->GetCurAnim()->GetName())
 	{
+		if (GetAnimator()->GetCurAnim()->GetCurFrmIdx() == 9)
+		{
+			if (m_OneShot == true)
+			{
+				// 다크니스 볼 발사
+				qBossSkill_ball_left* pBossSkillBallLeft = new qBossSkill_ball_left;
+				pBossSkillBallLeft->SetName(L"BossSkillBallLeft");
+
+				Vec2 vBossSkillBallLeftPos = GetObj()->GetPos() + Vec2(-70.f, 33.f);
+				Vec2 vBossSkillBallLeftScale = Vec2(120.f, 60.f);
+
+				pBossSkillBallLeft->SetPos(vBossSkillBallLeftPos);
+				pBossSkillBallLeft->SetScale(vBossSkillBallLeftScale);
+
+				if (L"BossSkillBallLeft" == pBossSkillBallLeft->GetName())
+				{
+					SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::BOSS_SKILL, pBossSkillBallLeft);
+				}
+
+				m_OneShot = false;
+			}
+		}
+
 		if (GetAnimator()->IsFinish())
 		{
 			GetFSM()->ChangeState(L"Idle");
@@ -90,4 +134,7 @@ void qBossBallState::FinalTick()
 
 void qBossBallState::Exit()
 {
+	m_OneShot = true;
+	pSound->SetVolume(30.f);
+	pSound->Stop();
 }

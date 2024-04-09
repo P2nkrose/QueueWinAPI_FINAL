@@ -74,12 +74,28 @@ void qBossIdleState::FinalTick()
 	qObj* pBoss = GetBlackboardData<qObj*>(L"Boss");
 	int pBossHP = GetBlackboardData<int>(L"BossHP");
 
-	
-	//m_Time += DT;
-	//if (m_Time > 3.f)
-	//{
-	//	GetFSM()->ChangeState(L"Dead");
-	//}
+	int state = rand() % 4;
+
+	m_Time += DT;
+	if (m_Time > 3.f)
+	{
+		if (state == 0)
+		{
+			GetFSM()->ChangeState(L"Ball");
+		}
+		else if (state == 1)
+		{
+			GetFSM()->ChangeState(L"Genesis");
+		}
+		else if (state == 2)
+		{
+			GetFSM()->ChangeState(L"Firebird");
+		}
+		else if (state == 3)
+		{
+			GetFSM()->ChangeState(L"Tornado");
+		}
+	}
 }
 
 void qBossIdleState::Exit()

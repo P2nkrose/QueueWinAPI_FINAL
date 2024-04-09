@@ -1,6 +1,8 @@
 #pragma once
 #include "qState.h"
 
+class qSound;
+
 class qBossBallState : public qState
 {
 public:
@@ -24,5 +26,7 @@ private:
 	Vec2		m_CenterPos;
 	float		m_Time;
 	float		m_Dir;
+	bool		m_OneShot;
+	qSound*		pSound;
 };
 

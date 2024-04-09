@@ -32,6 +32,8 @@
 #include "qSkill_doublejump_right.h"
 #include "qSkill_highjump.h"
 
+#include "qBossSkill_ball_left.h"
+
 #include "qDamage_miss.h"
 
 #include "qDbgRender.h"

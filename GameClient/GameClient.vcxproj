@@ -161,6 +161,11 @@
     <ClInclude Include="qBossFirebirdState.h" />
     <ClInclude Include="qBossGenesisState.h" />
     <ClInclude Include="qBossIdleState.h" />
+    <ClInclude Include="qBossSkill_ball_left.h" />
+    <ClInclude Include="qBossSkill_ball_right.h" />
+    <ClInclude Include="qBossSkill_firebird.h" />
+    <ClInclude Include="qBossSkill_genesis.h" />
+    <ClInclude Include="qBossSkill_tornado.h" />
     <ClInclude Include="qBossTornadoState.h" />
     <ClInclude Include="qButton.h" />
     <ClInclude Include="qCamera.h" />
@@ -268,6 +273,11 @@
     <ClCompile Include="qBossFirebirdState.cpp" />
     <ClCompile Include="qBossGenesisState.cpp" />
     <ClCompile Include="qBossIdleState.cpp" />
+    <ClCompile Include="qBossSkill_ball_left.cpp" />
+    <ClCompile Include="qBossSkill_ball_right.cpp" />
+    <ClCompile Include="qBossSkill_firebird.cpp" />
+    <ClCompile Include="qBossSkill_genesis.cpp" />
+    <ClCompile Include="qBossSkill_tornado.cpp" />
     <ClCompile Include="qBossTornadoState.cpp" />
     <ClCompile Include="qButton.cpp" />
     <ClCompile Include="qCamera.cpp" />
