@@ -158,6 +158,10 @@
     <ClInclude Include="qBoss.h" />
     <ClInclude Include="qBossBallState.h" />
     <ClInclude Include="qBossDeadState.h" />
+    <ClInclude Include="qBossEffect_ball.h" />
+    <ClInclude Include="qBossEffect_firebird.h" />
+    <ClInclude Include="qBossEffect_genesis.h" />
+    <ClInclude Include="qBossEffect_tornado.h" />
     <ClInclude Include="qBossFirebirdState.h" />
     <ClInclude Include="qBossGenesisState.h" />
     <ClInclude Include="qBossIdleState.h" />
@@ -270,6 +274,10 @@
     <ClCompile Include="qBoss.cpp" />
     <ClCompile Include="qBossBallState.cpp" />
     <ClCompile Include="qBossDeadState.cpp" />
+    <ClCompile Include="qBossEffect_ball.cpp" />
+    <ClCompile Include="qBossEffect_firebird.cpp" />
+    <ClCompile Include="qBossEffect_genesis.cpp" />
+    <ClCompile Include="qBossEffect_tornado.cpp" />
     <ClCompile Include="qBossFirebirdState.cpp" />
     <ClCompile Include="qBossGenesisState.cpp" />
     <ClCompile Include="qBossIdleState.cpp" />

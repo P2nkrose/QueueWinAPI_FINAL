@@ -10,6 +10,8 @@
 
 #include "qTaskMgr.h"
 
+#include "qBossEffect_tornado.h"
+
 qBossSkill_tornado::qBossSkill_tornado()
 {
 	m_Animator = (qAnimator*)AddComponent(new qAnimator);
@@ -61,4 +63,21 @@ void qBossSkill_tornado::tick()
 
 void qBossSkill_tornado::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
+	if (LAYER_TYPE::PLAYER == _OtherObj->GetLayerType())
+	{
+		qBossEffect_tornado* pTornadoEffect = new qBossEffect_tornado;
+		pTornadoEffect->SetName(L"TornadoEffect");
+
+		Vec2 vTornadoEffectPos = _OtherObj->GetPos() + Vec2(0.f, -20.f);
+		Vec2 vTonardoEffectScale = Vec2(130.f, 130.f);
+
+		pTornadoEffect->SetPos(vTornadoEffectPos);
+		pTornadoEffect->SetScale(vTonardoEffectScale);
+
+		if (L"TornadoEffect" == pTornadoEffect->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pTornadoEffect);
+		}
+	}
 }

@@ -676,6 +676,18 @@
     <ClInclude Include="qBossSkill_ball_right.h">
       <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\1. Ball</Filter>
     </ClInclude>
+    <ClInclude Include="qBossEffect_ball.h">
+      <Filter>03. Game\05. Object\7. Effect\2. Boss_Effect\1. Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossEffect_firebird.h">
+      <Filter>03. Game\05. Object\7. Effect\2. Boss_Effect\3. Firebird</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossEffect_tornado.h">
+      <Filter>03. Game\05. Object\7. Effect\2. Boss_Effect\4. Tornado</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossEffect_genesis.h">
+      <Filter>03. Game\05. Object\7. Effect\2. Boss_Effect\2. Genesis</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -1002,6 +1014,18 @@
     </ClCompile>
     <ClCompile Include="qBossSkill_ball_right.cpp">
       <Filter>03. Game\05. Object\6. Skill\2. Boss_Skill\1. Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossEffect_ball.cpp">
+      <Filter>03. Game\05. Object\7. Effect\2. Boss_Effect\1. Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossEffect_firebird.cpp">
+      <Filter>03. Game\05. Object\7. Effect\2. Boss_Effect\3. Firebird</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossEffect_tornado.cpp">
+      <Filter>03. Game\05. Object\7. Effect\2. Boss_Effect\4. Tornado</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossEffect_genesis.cpp">
+      <Filter>03. Game\05. Object\7. Effect\2. Boss_Effect\2. Genesis</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

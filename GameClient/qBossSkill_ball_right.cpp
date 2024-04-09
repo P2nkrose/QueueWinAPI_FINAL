@@ -10,6 +10,8 @@
 
 #include "qTaskMgr.h"
 
+#include "qBossEffect_ball.h"
+
 qBossSkill_ball_right::qBossSkill_ball_right()
 	: m_BallSpeed(500.f)
 {
@@ -56,4 +58,27 @@ void qBossSkill_ball_right::tick()
 
 void qBossSkill_ball_right::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
+	if (LAYER_TYPE::PLAYER == _OtherObj->GetLayerType())
+	{
+		qBossEffect_ball* pBallEffect = new qBossEffect_ball;
+		pBallEffect->SetName(L"BallEffect");
+
+		Vec2 vBallEffectPos = _OtherObj->GetPos() + Vec2(-30.f, -20.f);
+		Vec2 vBallEffectScale = Vec2(200.f, 200.f);
+
+		pBallEffect->SetPos(vBallEffectPos);
+		pBallEffect->SetScale(vBallEffectScale);
+
+		if (L"BallEffect" == pBallEffect->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pBallEffect);
+		}
+	}
+
+	// Àû°ú ºÎµúÇûÀ»¶§ Destroy();
+	if (_OtherObj->GetName() == L"Player")
+	{
+		Destroy();
+	}
 }

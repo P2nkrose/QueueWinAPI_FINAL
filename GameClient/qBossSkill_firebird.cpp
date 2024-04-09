@@ -10,6 +10,8 @@
 
 #include "qTaskMgr.h"
 
+#include "qBossEffect_firebird.h"
+
 qBossSkill_firebird::qBossSkill_firebird()
 {
 	m_Animator = (qAnimator*)AddComponent(new qAnimator);
@@ -65,4 +67,21 @@ void qBossSkill_firebird::tick()
 
 void qBossSkill_firebird::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
+	if (LAYER_TYPE::PLAYER == _OtherObj->GetLayerType())
+	{
+		qBossEffect_firebird* pFirebirdEffect = new qBossEffect_firebird;
+		pFirebirdEffect->SetName(L"FirebirdEffect");
+
+		Vec2 vFirebirdEffectPos = _OtherObj->GetPos() + Vec2(0.f, -20.f);
+		Vec2 vFirebirdEffectScale = Vec2(180.f, 180.f);
+
+		pFirebirdEffect->SetPos(vFirebirdEffectPos);
+		pFirebirdEffect->SetScale(vFirebirdEffectScale);
+
+		if (L"FirebirdEffect" == pFirebirdEffect->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pFirebirdEffect);
+		}
+	}
 }

@@ -10,6 +10,8 @@
 
 #include "qTaskMgr.h"
 
+#include "qBossEffect_genesis.h"
+
 qBossSkill_genesis::qBossSkill_genesis()
 {
 	m_Animator = (qAnimator*)AddComponent(new qAnimator);
@@ -33,7 +35,7 @@ qBossSkill_genesis::qBossSkill_genesis()
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 
 	m_Collider->SetOffsetPos(Vec2(0.f, 10.f));
-	m_Collider->SetScale(Vec2(190.f, 550.f));
+	m_Collider->SetScale(Vec2(0.f, 0.f));
 }
 
 qBossSkill_genesis::~qBossSkill_genesis()
@@ -44,6 +46,12 @@ qBossSkill_genesis::~qBossSkill_genesis()
 void qBossSkill_genesis::tick()
 {
 	qObj::tick();
+
+	if (m_Animator->GetCurAnim()->GetCurFrmIdx() == 12)
+	{
+		m_Collider->SetScale(Vec2(190.f, 550.f));
+	}
+
 
 	if (L"BossSkillGenesis" == m_Animator->GetCurAnim()->GetName())
 	{
@@ -57,4 +65,21 @@ void qBossSkill_genesis::tick()
 
 void qBossSkill_genesis::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
+	if (LAYER_TYPE::PLAYER == _OtherObj->GetLayerType())
+	{
+		qBossEffect_genesis* pGenesisEffect = new qBossEffect_genesis;
+		pGenesisEffect->SetName(L"GenesisEffect");
+
+		Vec2 vGenesisEffectPos = _OtherObj->GetPos() + Vec2(0.f, -20.f);
+		Vec2 vGenesisEffectScale = Vec2(200.f, 200.f);
+
+		pGenesisEffect->SetPos(vGenesisEffectPos);
+		pGenesisEffect->SetScale(vGenesisEffectScale);
+
+		if (L"GenesisEffect" == pGenesisEffect->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pGenesisEffect);
+		}
+	}
 }
