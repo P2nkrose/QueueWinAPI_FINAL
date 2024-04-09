@@ -84,7 +84,7 @@ void qLevel_boss2::Enter()
 	// Boss
 	qObj* pBoss = new qBoss;
 	pBoss->SetName(L"Boss");
-	pBoss->SetPos(915.f, 680.f);
+	pBoss->SetPos(910.f, 680.f);
 	pBoss->SetScale(100.f, 100.f);
 	pBoss->SetDir(DIRECTION::LEFT);
 	AddObject(LAYER_TYPE::BOSS, pBoss);

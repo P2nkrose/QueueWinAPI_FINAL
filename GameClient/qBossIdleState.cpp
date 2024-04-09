@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "qBossIdleState.h"
 
-#include "qPlayer.h"
 
 qBossIdleState::qBossIdleState()
 	: m_Time(0.f)
@@ -62,10 +61,12 @@ void qBossIdleState::FinalTick()
 	if (m_Dir == 1.f && PrevDir != m_Dir)
 	{
 		GetAnimator()->Play(L"BossIdleRight", true);
+		GetObj()->SetDir(DIRECTION::RIGHT);
 	}
 	else if (m_Dir == -1.f && PrevDir != m_Dir)
 	{
 		GetAnimator()->Play(L"BossIdleLeft", true);
+		GetObj()->SetDir(DIRECTION::LEFT);
 	}
 
 
@@ -77,7 +78,7 @@ void qBossIdleState::FinalTick()
 	//m_Time += DT;
 	//if (m_Time > 3.f)
 	//{
-	//	GetFSM()->ChangeState(L"Ball");
+	//	GetFSM()->ChangeState(L"Dead");
 	//}
 }
 

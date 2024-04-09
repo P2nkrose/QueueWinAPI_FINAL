@@ -580,9 +580,6 @@
     <ClInclude Include="qBlueIdleState.h">
       <Filter>03. Game\08. Module\State\2. MonsterState\1. BLUE</Filter>
     </ClInclude>
-    <ClInclude Include="qState.h">
-      <Filter>03. Game\08. Module\State\2. MonsterState</Filter>
-    </ClInclude>
     <ClInclude Include="qRedIdleState.h">
       <Filter>03. Game\08. Module\State\2. MonsterState\2. RED</Filter>
     </ClInclude>
@@ -660,6 +657,9 @@
     </ClInclude>
     <ClInclude Include="qBossDeadState.h">
       <Filter>03. Game\08. Module\State\3. BossState\6. Dead</Filter>
+    </ClInclude>
+    <ClInclude Include="qState.h">
+      <Filter>03. Game\08. Module\State</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -892,9 +892,6 @@
     <ClCompile Include="qBlueMoveState.cpp">
       <Filter>03. Game\08. Module\State\2. MonsterState\1. BLUE</Filter>
     </ClCompile>
-    <ClCompile Include="qState.cpp">
-      <Filter>03. Game\08. Module\State\2. MonsterState</Filter>
-    </ClCompile>
     <ClCompile Include="qRedIdleState.cpp">
       <Filter>03. Game\08. Module\State\2. MonsterState\2. RED</Filter>
     </ClCompile>
@@ -972,6 +969,9 @@
     </ClCompile>
     <ClCompile Include="qBossDeadState.cpp">
       <Filter>03. Game\08. Module\State\3. BossState\6. Dead</Filter>
+    </ClCompile>
+    <ClCompile Include="qState.cpp">
+      <Filter>03. Game\08. Module\State</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
