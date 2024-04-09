@@ -18,6 +18,7 @@ qSkill_attack_right::qSkill_attack_right()
 	: m_Animator(nullptr)
 	, m_Collider(nullptr)
 {
+
 	// 애니메이션
 	m_Animator = (qAnimator*)AddComponent(new qAnimator);
 

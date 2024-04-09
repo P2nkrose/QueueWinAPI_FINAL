@@ -12,6 +12,10 @@ qObj::qObj()
 	: m_Type(LAYER_TYPE::NONE)
 	, m_bDead(false)
 	, m_Animator(nullptr)
+	, m_AttackDamage(1500000)
+	, m_MissileDamage(1600000)
+	, m_SlashDamage(1700000)
+	, m_SpecialDamage(2600000)
 {
 }
 
@@ -24,6 +28,10 @@ qObj::qObj(const qObj& _Other)
 	, m_CenterPos(_Other.m_CenterPos)
 	, m_bDead(false)
 	, m_Dir(_Other.m_Dir)
+	, m_AttackDamage(_Other.m_AttackDamage)
+	, m_MissileDamage(_Other.m_MissileDamage)
+	, m_SlashDamage(_Other.m_SlashDamage)
+	, m_SpecialDamage(_Other.m_SpecialDamage)
 {
 	for (size_t i = 0; i < _Other.m_vecCom.size(); ++i)
 	{

@@ -196,6 +196,47 @@ void qBoss::tick()
 
 void qBoss::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
+
+	if (L"AttackRight" == _OtherObj->GetName() || L"AttackLeft" == _OtherObj->GetName())
+	{
+		m_BossHP = m_BossHP - GetAttackDamage();
+
+		if (m_BossHP <= 0)
+		{
+			m_FSM->ChangeState(L"Dead");
+		}
+	}
+
+	if (L"BallRight" == _OtherObj->GetName() || L"BallLeft" == _OtherObj->GetName())
+	{
+		m_BossHP = m_BossHP - GetMissileDamage();
+
+		if (m_BossHP <= 0)
+		{
+			m_FSM->ChangeState(L"Dead");
+		}
+	}
+
+	if (L"SlashRight" == _OtherObj->GetName() || L"SlashLeft" == _OtherObj->GetName())
+	{
+		m_BossHP = m_BossHP - GetSlashDamage();
+
+		if (m_BossHP <= 0)
+		{
+			m_FSM->ChangeState(L"Dead");
+		}
+	}
+
+	if (L"SpecialRight" == _OtherObj->GetName() || L"SpecialLeft" == _OtherObj->GetName())
+	{
+		m_BossHP = m_BossHP - GetSpecialDamage();
+
+		if (m_BossHP <= 0)
+		{
+			m_FSM->ChangeState(L"Dead");
+		}
+	}
+
 }
 
 void qBoss::OnOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)

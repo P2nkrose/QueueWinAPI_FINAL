@@ -533,6 +533,7 @@ void qPlayer::tick()
 
 			qSkill_attack_left* pAttackLeft = new qSkill_attack_left;
 			pAttackLeft->SetName(L"AttackLeft");
+			
 
 			Vec2 vAttackLeftPos = GetPos() + Vec2(-100.f, 0.f);
 			Vec2 vAttackLeftScale = Vec2(410.f, 240.f);
@@ -555,7 +556,7 @@ void qPlayer::tick()
 
 			qSkill_attack_right* pAttackRight = new qSkill_attack_right;
 			pAttackRight->SetName(L"AttackRight");
-
+			
 			Vec2 vAttackRightPos = GetPos() + Vec2(100.f, 0.f);
 			Vec2 vAttackRightScale = Vec2(410.f, 240.f);
 
@@ -604,6 +605,7 @@ void qPlayer::tick()
 			// 루나 디바이드 스킬 이펙트
 			qSkill_missile_left* pMissileLeft = new qSkill_missile_left;
 			pMissileLeft->SetName(L"MissileLeft");
+			
 
 			Vec2 vMissileLeftPos = GetPos() + Vec2(-50.f, 0.f);
 			Vec2 vMissileLeftScale = Vec2(240.f, 195.f);
@@ -619,6 +621,7 @@ void qPlayer::tick()
 			// 루나 디바이드 미사일
 			qSkill_missile_ball_left* pBallLeft = new qSkill_missile_ball_left;
 			pBallLeft->SetName(L"BallLeft");
+			
 
 			Vec2 vBallLeftPos = GetPos() + Vec2(-50.f, 0.f);
 			Vec2 vBallLeftScale = Vec2(100.f, 70.f);
@@ -639,6 +642,7 @@ void qPlayer::tick()
 			// 루나 디바이드 스킬 이펙트
 			qSkill_missile_right* pMissileRight = new qSkill_missile_right;
 			pMissileRight->SetName(L"MissileRight");
+			
 
 			Vec2 vMissileRightPos = GetPos() + Vec2(50.f, 0.f);
 			Vec2 vMissileRightScale = Vec2(240.f, 195.f);
@@ -655,6 +659,7 @@ void qPlayer::tick()
 			// 루나 디바이드 미사일
 			qSkill_missile_ball_right* pBallRight = new qSkill_missile_ball_right;
 			pBallRight->SetName(L"BallRight");
+			
 
 			Vec2 vBallRightPos = GetPos() + Vec2(50.f, 0.f);
 			Vec2 vBallRightScale = Vec2(100.f, 70.f);
@@ -703,6 +708,7 @@ void qPlayer::tick()
 				// 라우드 러쉬 스킬 이펙트
 				qSkill_slash_left* pSlashLeft = new qSkill_slash_left;
 				pSlashLeft->SetName(L"pSlashLeft");
+				
 
 				Vec2 vSlashLeftPos = GetPos();
 				Vec2 vSlashLeftScale = Vec2(675.f, 215.f);
@@ -723,6 +729,7 @@ void qPlayer::tick()
 				// 라우드 러쉬 스킬 이펙트
 				qSkill_slash_right* pSlashRight = new qSkill_slash_right;
 				pSlashRight->SetName(L"pSlashRight");
+				
 
 				Vec2 vSlashRightPos = GetPos();
 				Vec2 vSlashRightScale = Vec2(675.f, 215.f);
@@ -807,6 +814,7 @@ void qPlayer::tick()
 
 			qSkill_special_left* pSpecialLeft = new qSkill_special_left;
 			pSpecialLeft->SetName(L"SpecialLeft");
+			
 
 			Vec2 vSpecialLeftPos = GetPos() + Vec2(-100.f, -130.f);
 			Vec2 vSpecialLeftScale = Vec2(500.f, 400.f);
@@ -828,6 +836,7 @@ void qPlayer::tick()
 
 			qSkill_special_right* pSpecialRight = new qSkill_special_right;
 			pSpecialRight->SetName(L"SpecialRight");
+			
 
 			Vec2 vSpecialRightPos = GetPos() + Vec2(100.f, -130.f);
 			Vec2 vSpecialRightScale = Vec2(500.f, 400.f);

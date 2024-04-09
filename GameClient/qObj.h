@@ -33,11 +33,23 @@ private:
 
 	qAnimator*			m_Animator;
 
+	int					m_AttackDamage;
+	int					m_MissileDamage;
+	int					m_SlashDamage;
+	int					m_SpecialDamage;
+
 	LAYER_TYPE			m_Type;		// 소속 레이어
 	bool				m_bDead;	// 삭제 예정 상태
 	
 
 public:
+
+	int GetAttackDamage() { return m_AttackDamage; }
+	int GetMissileDamage() { return m_MissileDamage; }
+	int GetSlashDamage() { return m_SlashDamage; }
+	int GetSpecialDamage() { return m_SpecialDamage; }
+
+
 	void SetDir(DIRECTION _Dir) { m_Dir = _Dir; }
 	DIRECTION GetDir() { return m_Dir; }
 
@@ -60,6 +72,7 @@ public:
 
 	LAYER_TYPE GetLayerType() { return m_Type; }
 	void SetLayerType(LAYER_TYPE _Type) { m_Type = _Type; }
+
 
 	bool IsDead() { return m_bDead; }
 
