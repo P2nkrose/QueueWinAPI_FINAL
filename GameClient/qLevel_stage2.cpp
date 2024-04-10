@@ -7,6 +7,9 @@
 #include "qCollisionMgr.h"
 #include "qPlayer.h"
 
+#include "qMinimap_stage2.h"
+#include "qAssetMgr.h"
+
 #include "qPlatform.h"
 #include "qRope.h"
 #include "qPortal.h"
@@ -82,6 +85,26 @@ void qLevel_stage2::tick()
 
 void qLevel_stage2::Enter()
 {
+	// 미니맵 UI 추가
+	// 화면 해상도
+	Vec2 vResol = qEngine::GetInst()->GetResolution();
+
+	// UI 추가
+	qMinimap_stage2* pMinimap_stage2 = new qMinimap_stage2;
+	m_Minimap = qAssetMgr::GetInst()->FindTexture(L"minimap_stage2");
+
+	pMinimap_stage2->SetMinimapImage(m_Minimap);
+	pMinimap_stage2->SetScale(Vec2(147.f, 160.f));
+
+	//pMinimap_stage1->SetPos(Vec2(vResol.x - (pMinimap_stage1->GetScale().x + 30), 30.f));
+
+	pMinimap_stage2->SetPos(Vec2(vResol.x - 30.f, 50.f));
+
+	AddObject(LAYER_TYPE::UI, pMinimap_stage2);
+
+
+
+
 
 	// 레벨에 오브젝트 추가
 	// 

@@ -203,9 +203,6 @@
     <Filter Include="03. Game\05. Object\10. UI">
       <UniqueIdentifier>{9f4156f9-f6bc-4d96-ab4c-38de7a7264c1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\10. UI\ButtonUI">
-      <UniqueIdentifier>{42af13b4-b6a3-4bc9-ac57-fcc244f3d4c6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\11. Tile">
       <UniqueIdentifier>{d15c0527-03ea-4b38-8a0c-2e279cf51ff5}</UniqueIdentifier>
     </Filter>
@@ -343,6 +340,27 @@
     </Filter>
     <Filter Include="03. Game\08. Module\State\3. BossState\6. Dead">
       <UniqueIdentifier>{24a19cd5-85f8-4033-8dd8-16f94c0f4b51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\1. ButtonUI">
+      <UniqueIdentifier>{42af13b4-b6a3-4bc9-ac57-fcc244f3d4c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\2. MinimapUI">
+      <UniqueIdentifier>{20cce0f5-5e6f-4586-8500-42495142121c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\3. MenuUI">
+      <UniqueIdentifier>{c12ec2c7-a3b4-4416-b220-ea9913a7c81f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\2. MinimapUI\1. stage1">
+      <UniqueIdentifier>{61d3683e-a6c3-4439-8474-866aa820b5aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\2. MinimapUI\2. stage2">
+      <UniqueIdentifier>{76843e35-cfcc-410f-ac4f-f67b8b2ce024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\2. MinimapUI\3. boss1">
+      <UniqueIdentifier>{f6e41bfe-ec40-47df-bc43-176553fb8f8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\2. MinimapUI\4. boss2">
+      <UniqueIdentifier>{560205f1-fb57-4bb8-a2f9-693d7fc5b901}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -536,7 +554,7 @@
       <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\3. Slash</Filter>
     </ClInclude>
     <ClInclude Include="qButton.h">
-      <Filter>03. Game\05. Object\10. UI\ButtonUI</Filter>
+      <Filter>03. Game\05. Object\10. UI\1. ButtonUI</Filter>
     </ClInclude>
     <ClInclude Include="qSkill_doublejump_left.h">
       <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\6. DoubleJump</Filter>
@@ -687,6 +705,18 @@
     </ClInclude>
     <ClInclude Include="qBossEffect_genesis.h">
       <Filter>03. Game\05. Object\7. Effect\2. Boss_Effect\2. Genesis</Filter>
+    </ClInclude>
+    <ClInclude Include="qMinimap_stage1.h">
+      <Filter>03. Game\05. Object\10. UI\2. MinimapUI\1. stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="qMinimap_boss2.h">
+      <Filter>03. Game\05. Object\10. UI\2. MinimapUI\4. boss2</Filter>
+    </ClInclude>
+    <ClInclude Include="qMinimap_boss1.h">
+      <Filter>03. Game\05. Object\10. UI\2. MinimapUI\3. boss1</Filter>
+    </ClInclude>
+    <ClInclude Include="qMinimap_stage2.h">
+      <Filter>03. Game\05. Object\10. UI\2. MinimapUI\2. stage2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -875,7 +905,7 @@
       <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\3. Slash</Filter>
     </ClCompile>
     <ClCompile Include="qButton.cpp">
-      <Filter>03. Game\05. Object\10. UI\ButtonUI</Filter>
+      <Filter>03. Game\05. Object\10. UI\1. ButtonUI</Filter>
     </ClCompile>
     <ClCompile Include="qSkill_doublejump_left.cpp">
       <Filter>03. Game\05. Object\6. Skill\1. Player_Skill\6. DoubleJump</Filter>
@@ -1026,6 +1056,18 @@
     </ClCompile>
     <ClCompile Include="qBossEffect_genesis.cpp">
       <Filter>03. Game\05. Object\7. Effect\2. Boss_Effect\2. Genesis</Filter>
+    </ClCompile>
+    <ClCompile Include="qMinimap_stage1.cpp">
+      <Filter>03. Game\05. Object\10. UI\2. MinimapUI\1. stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="qMinimap_boss2.cpp">
+      <Filter>03. Game\05. Object\10. UI\2. MinimapUI\4. boss2</Filter>
+    </ClCompile>
+    <ClCompile Include="qMinimap_boss1.cpp">
+      <Filter>03. Game\05. Object\10. UI\2. MinimapUI\3. boss1</Filter>
+    </ClCompile>
+    <ClCompile Include="qMinimap_stage2.cpp">
+      <Filter>03. Game\05. Object\10. UI\2. MinimapUI\2. stage2</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 #include "qLevel.h"
 
 class qSound;
+class qTexture;
 
 class qLevel_stage1 : public qLevel
 {
@@ -16,7 +17,8 @@ public:
 	virtual void Exit() override;
 
 private:
-	qSound*		pSound;
+	qSound*			pSound;
+	qTexture*		m_Minimap;
 };
 
 

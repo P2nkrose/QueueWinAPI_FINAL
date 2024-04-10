@@ -1034,9 +1034,6 @@ void qPlayer::tick()
 			}
 		}
 	}
-	
-
-	
 
 }
 
@@ -1046,7 +1043,8 @@ void qPlayer::tick()
 
 void qPlayer::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
 {
-	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType())
+	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType()
+		|| LAYER_TYPE::BOSS == _OtherObj->GetLayerType())
 	{
 		qDamage_miss* pDamageMiss = new qDamage_miss();
 		pDamageMiss->SetName(L"DamageMiss");

@@ -10,6 +10,8 @@
 #include "qMonster_red.h"
 #include "qMonster_blue.h"
 
+#include "qMinimap_boss1.h"
+
 #include "qBackground_boss1.h"
 
 #include "qSound.h"
@@ -62,6 +64,25 @@ void qLevel_boss1::tick()
 
 void qLevel_boss1::Enter()
 {
+
+	// 미니맵 UI 추가
+	// 화면 해상도
+	Vec2 vResol = qEngine::GetInst()->GetResolution();
+
+	// UI 추가
+	qMinimap_boss1* pMinimap_boss1 = new qMinimap_boss1;
+	m_Minimap = qAssetMgr::GetInst()->FindTexture(L"minimap_boss1");
+
+	pMinimap_boss1->SetMinimapImage(m_Minimap);
+	pMinimap_boss1->SetScale(Vec2(158.f, 145.f));
+
+	//pMinimap_stage1->SetPos(Vec2(vResol.x - (pMinimap_stage1->GetScale().x + 30), 30.f));
+
+	pMinimap_boss1->SetPos(Vec2(vResol.x - 30.f, 50.f));
+
+	AddObject(LAYER_TYPE::UI, pMinimap_boss1);
+
+
 	
 
 	// 레벨에 오브젝트 추가

@@ -8,6 +8,9 @@
 #include "qCollisionMgr.h"
 #include "qPlayer.h"
 
+#include "qMinimap_stage1.h"
+#include "qAssetMgr.h"
+
 #include "qPlatform.h"
 #include "qRope.h"
 #include "qPortal.h"
@@ -79,7 +82,23 @@ void qLevel_stage1::tick()
 
 void qLevel_stage1::Enter()
 {
-	
+	// 미니맵 UI 추가
+	// 화면 해상도
+	Vec2 vResol = qEngine::GetInst()->GetResolution();
+
+	// UI 추가
+	qMinimap_stage1* pMinimap_stage1 = new qMinimap_stage1;
+	m_Minimap = qAssetMgr::GetInst()->FindTexture(L"minimap_stage1");
+
+	pMinimap_stage1->SetMinimapImage(m_Minimap);
+	pMinimap_stage1->SetScale(Vec2(214.f, 142.f));
+
+	//pMinimap_stage1->SetPos(Vec2(vResol.x - (pMinimap_stage1->GetScale().x + 30), 30.f));
+
+	pMinimap_stage1->SetPos(Vec2(vResol.x - 30.f, 50.f));
+
+	AddObject(LAYER_TYPE::UI, pMinimap_stage1);
+
 
 	// 레벨에 오브젝트 추가
 	// 
@@ -104,26 +123,6 @@ void qLevel_stage1::Enter()
 	//m_pCurrentLevel->AddObject(LAYER_TYPE::PLAYER, pPlayerClone);
 
 
-	//// 레벨에 몬스터 추가하기
-	//pObject = new qMonster;
-	//pObject->SetName(L"Monster");
-	//pObject->SetPos(800.0f, 200.0f);
-	//pObject->SetScale(100.0f, 100.0f);
-	//AddObject(LAYER_TYPE::MONSTER, pObject);
-
-	//// 한마리 더!
-	//pObject = new qMonster;
-	//pObject->SetName(L"Monster");
-	//pObject->SetPos(100.0f, 100.0f);
-	//pObject->SetScale(100.0f, 100.0f);
-	//AddObject(LAYER_TYPE::MONSTER, pObject);
-
-	// 플랫폼 생성
-	//pObject = new qPlatform;
-	//pObject->SetName(L"Platform");
-	//pObject->SetPos(Vec2(640.f, 700.f));
-	//AddObject(LAYER_TYPE::PLATFORM, pObject);
-
 	// 콜라이더 읽어오기
 	LoadPlatform(L"platform\\platform.dat");
 	LoadRope(L"rope\\rope.dat");
@@ -136,8 +135,6 @@ void qLevel_stage1::Enter()
 
 	// 레벨 충돌 설정하기
 	qCollisionMgr::GetInst()->CollisionCheckClear();
-
-	//qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER_MISSILE, LAYER_TYPE::MONSTER_BLUE);
 
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::PLAYER, LAYER_TYPE::PLATFORM);
 	qCollisionMgr::GetInst()->CollisionCheck(LAYER_TYPE::MONSTER_BLUE, LAYER_TYPE::PLATFORM);

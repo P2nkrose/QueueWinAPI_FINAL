@@ -204,6 +204,10 @@
     <ClInclude Include="qLevel_stage2.h" />
     <ClInclude Include="qLevel_Logo.h" />
     <ClInclude Include="qLogo.h" />
+    <ClInclude Include="qMinimap_boss1.h" />
+    <ClInclude Include="qMinimap_boss2.h" />
+    <ClInclude Include="qMinimap_stage1.h" />
+    <ClInclude Include="qMinimap_stage2.h" />
     <ClInclude Include="qMissile.h" />
     <ClInclude Include="qMonster_blue.h" />
     <ClInclude Include="qMonster_red.h" />
@@ -320,6 +324,10 @@
     <ClCompile Include="qLevel_stage2.cpp" />
     <ClCompile Include="qLevel_Logo.cpp" />
     <ClCompile Include="qLogo.cpp" />
+    <ClCompile Include="qMinimap_boss1.cpp" />
+    <ClCompile Include="qMinimap_boss2.cpp" />
+    <ClCompile Include="qMinimap_stage1.cpp" />
+    <ClCompile Include="qMinimap_stage2.cpp" />
     <ClCompile Include="qMissile.cpp" />
     <ClCompile Include="qMonster_blue.cpp" />
     <ClCompile Include="qMonster_red.cpp" />

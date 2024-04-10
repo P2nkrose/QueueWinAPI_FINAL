@@ -2,6 +2,7 @@
 #include "qLevel.h"
 
 class qSound;
+class qTexture;
 
 class qLevel_stage2 : public qLevel
 {
@@ -20,6 +21,7 @@ public:
 
 
 private:
-	qSound*		pSound;
+	qSound*			pSound;
+	qTexture*		m_Minimap;
 };
 
