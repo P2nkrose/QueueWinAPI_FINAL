@@ -23,5 +23,6 @@ public:
 private:
 	qSound*			pSound;
 	qTexture*		m_Minimap;
+	qTexture*		m_Menu;
 };
 

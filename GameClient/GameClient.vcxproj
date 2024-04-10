@@ -204,6 +204,7 @@
     <ClInclude Include="qLevel_stage2.h" />
     <ClInclude Include="qLevel_Logo.h" />
     <ClInclude Include="qLogo.h" />
+    <ClInclude Include="qMenu.h" />
     <ClInclude Include="qMinimap_boss1.h" />
     <ClInclude Include="qMinimap_boss2.h" />
     <ClInclude Include="qMinimap_stage1.h" />
@@ -324,6 +325,7 @@
     <ClCompile Include="qLevel_stage2.cpp" />
     <ClCompile Include="qLevel_Logo.cpp" />
     <ClCompile Include="qLogo.cpp" />
+    <ClCompile Include="qMenu.cpp" />
     <ClCompile Include="qMinimap_boss1.cpp" />
     <ClCompile Include="qMinimap_boss2.cpp" />
     <ClCompile Include="qMinimap_stage1.cpp" />

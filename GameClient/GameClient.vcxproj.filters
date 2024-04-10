@@ -718,6 +718,9 @@
     <ClInclude Include="qMinimap_stage2.h">
       <Filter>03. Game\05. Object\10. UI\2. MinimapUI\2. stage2</Filter>
     </ClInclude>
+    <ClInclude Include="qMenu.h">
+      <Filter>03. Game\05. Object\10. UI\3. MenuUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameClient.rc">
@@ -1068,6 +1071,9 @@
     </ClCompile>
     <ClCompile Include="qMinimap_stage2.cpp">
       <Filter>03. Game\05. Object\10. UI\2. MinimapUI\2. stage2</Filter>
+    </ClCompile>
+    <ClCompile Include="qMenu.cpp">
+      <Filter>03. Game\05. Object\10. UI\3. MenuUI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
