@@ -61,7 +61,6 @@ void qBossTornadoState::Enter()
 void qBossTornadoState::FinalTick()
 {
 	qObj* pBoss = GetBlackboardData<qObj*>(L"Boss");
-	int pBossHP = GetBlackboardData<int>(L"BossHP");
 	qObj* pPlayer = GetBlackboardData<qObj*>(L"Player");
 
 	if (L"BossTornadoRight" == GetAnimator()->GetCurAnim()->GetName())

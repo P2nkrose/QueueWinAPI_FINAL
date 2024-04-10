@@ -72,7 +72,6 @@ void qBossIdleState::FinalTick()
 
 
 	qObj* pBoss = GetBlackboardData<qObj*>(L"Boss");
-	int pBossHP = GetBlackboardData<int>(L"BossHP");
 
 	int state = rand() % 4;
 

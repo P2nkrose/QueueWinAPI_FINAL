@@ -21,5 +21,7 @@ private:
 	qSound*			pSound;
 	qTexture*		m_Minimap;
 	qTexture*		m_Menu;
+	qTexture*		m_BossHud;
+	qTexture*		m_BossHp;
 };
 

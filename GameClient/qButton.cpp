@@ -16,9 +16,9 @@ qButton::~qButton()
 {
 }
 
-void qButton::tick()
+void qButton::tick_ui()
 {
-	qUI::tick();
+	//qUI::tick();
 
 	if (IsLbtnDowned())
 	{
@@ -26,9 +26,9 @@ void qButton::tick()
 	}
 }
 
-void qButton::render()
+void qButton::render_ui()
 {
-	qUI::render();
+	//qUI::render_ui();
 
 	Vec2 vPos = GetRenderPos();
 	Vec2 vScale = GetScale();
@@ -36,7 +36,7 @@ void qButton::render()
 	if (IsLbtnDowned())
 	{
 		if (nullptr == m_DownImg)
-			qUI::render();
+			qUI::render_ui();
 
 		StretchBlt(DC, (int)vPos.x, (int)vPos.y
 			, m_DownImg->GetWidth(), m_DownImg->GetHeight()
@@ -48,7 +48,7 @@ void qButton::render()
 	{
 
 		if (nullptr == m_HoverImg)
-			qUI::render();
+			qUI::render_ui();
 
 		StretchBlt(DC, (int)vPos.x, (int)vPos.y
 			, m_HoverImg->GetWidth(), m_HoverImg->GetHeight()
@@ -59,7 +59,7 @@ void qButton::render()
 	else
 	{
 		if (nullptr == m_NormalImg)
-			qUI::render();
+			qUI::render_ui();
 
 		StretchBlt(DC, (int)vPos.x, (int)vPos.y
 			, m_NormalImg->GetWidth(), m_NormalImg->GetHeight()

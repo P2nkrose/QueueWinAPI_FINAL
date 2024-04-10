@@ -15,22 +15,32 @@ qUI::~qUI()
 
 void qUI::tick()
 {
+	// FinalPos °è»ê
+	m_vFinalPos = GetPos();
+
 	CheckMouseOn();
 
 	if (KEY_RELEASED(KEY::LBTN) && m_MouseLbtnDown)
 	{
 		qTaskMgr::GetInst()->AddTask(tTask{ TASK_TYPE::UI_LBTN_DOWN, (DWORD_PTR)this, false });
 	}
+
+	tick_ui();
 }
 
 void qUI::render()
 {
 	qObj::render();
 
-	Vec2 vPos = GetPos();
-	Vec2 vScale = GetScale();
+	render_ui();
 
-	//Rectangle(DC, (int)(vPos.x), (int)(vPos.y), (int)(vPos.x + vScale.x), (int)(vPos.y + vScale.y));
+
+}
+
+void qUI::render_ui()
+{
+	Vec2 vPos = GetFinalPos();
+	Vec2 vScale = GetScale();
 }
 
 void qUI::CheckMouseOn()

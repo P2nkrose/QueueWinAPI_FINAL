@@ -60,7 +60,6 @@ void qBossFirebirdState::FinalTick()
 {
 	qObj* pBoss = GetBlackboardData<qObj*>(L"Boss");
 	qObj* pPlayer = GetBlackboardData<qObj*>(L"Player");
-	int pBossHP = GetBlackboardData<int>(L"BossHP");
 
 
 	if (L"BossFirebirdRight" == GetAnimator()->GetCurAnim()->GetName())

@@ -3,21 +3,24 @@
 
 class qTexture;
 
-class qMenu : public qUI
+
+class qBossHP : public qUI
 {
 public:
-	CLONE(qMenu);
+	CLONE(qBossHP);
 
-	qMenu();
-	~qMenu();
+	qBossHP();
+	~qBossHP();
 
 public:
 	virtual void tick_ui() override;
 	virtual void render_ui() override;
 
-	void SetImage(qTexture* _Tex) { m_MenuImg = _Tex; }
+	void SetImage(qTexture* _Tex) { m_HPImg = _Tex; }
+
 
 private:
-	qTexture*		m_MenuImg;
+	qTexture*		m_HPImg;
+
 };
 

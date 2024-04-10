@@ -79,6 +79,10 @@ void qLevel_stage2::tick()
 		::ChangeLevel(LEVEL_TYPE::BOSS_01);
 	}
 
+	if (KEY_TAP(KEY::V))
+	{
+		ChangeLevel(LEVEL_TYPE::BOSS_02);
+	}
 	
 
 
@@ -94,12 +98,12 @@ void qLevel_stage2::Enter()
 	qMinimap_stage2* pMinimap_stage2 = new qMinimap_stage2;
 	m_Minimap = qAssetMgr::GetInst()->FindTexture(L"minimap_stage2");
 
-	pMinimap_stage2->SetMinimapImage(m_Minimap);
+	pMinimap_stage2->SetImage(m_Minimap);
 	pMinimap_stage2->SetScale(Vec2(147.f, 160.f));
 
 	//pMinimap_stage1->SetPos(Vec2(vResol.x - (pMinimap_stage1->GetScale().x + 30), 30.f));
 
-	pMinimap_stage2->SetPos(Vec2(vResol.x - 30.f, 50.f));
+	pMinimap_stage2->SetPos(Vec2(0.f, 0.f));
 
 	AddObject(LAYER_TYPE::UI, pMinimap_stage2);
 
@@ -108,12 +112,12 @@ void qLevel_stage2::Enter()
 	qMenu* pMenu = new qMenu;
 	m_Menu = qAssetMgr::GetInst()->FindTexture(L"menu");
 
-	pMenu->SetMinimapImage(m_Menu);
+	pMenu->SetImage(m_Menu);
 	pMenu->SetScale(Vec2(1600.f, 900.f));
 
 	//pMinimap_stage1->SetPos(Vec2(vResol.x - (pMinimap_stage1->GetScale().x + 30), 30.f));
 
-	pMenu->SetPos(Vec2(vResol.x - 30.f, 50.f));
+	pMenu->SetPos(Vec2(0.f, 0.f));
 
 	AddObject(LAYER_TYPE::UI, pMenu);
 

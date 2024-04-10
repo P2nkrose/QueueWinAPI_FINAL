@@ -78,6 +78,7 @@ void qSkill_attack_left::tick()
 			pSound->Stop();
 		}
 	}
+
 }
 
 void qSkill_attack_left::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
@@ -85,6 +86,8 @@ void qSkill_attack_left::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, 
 	if (LAYER_TYPE::MONSTER_BLUE == _OtherObj->GetLayerType() || LAYER_TYPE::BOSS == _OtherObj->GetLayerType()
 		|| LAYER_TYPE::MONSTER_RED == _OtherObj->GetLayerType())
 	{
+
+
 		qEffect_attack* pAttackEffect = new qEffect_attack;
 		pAttackEffect->SetName(L"AttackEffect");
 
@@ -99,6 +102,7 @@ void qSkill_attack_left::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, 
 			// TASK
 			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pAttackEffect);
 		}
+
 	}
 
 

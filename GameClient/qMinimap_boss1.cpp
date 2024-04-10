@@ -10,14 +10,14 @@ qMinimap_boss1::~qMinimap_boss1()
 {
 }
 
-void qMinimap_boss1::tick()
+void qMinimap_boss1::tick_ui()
 {
-	qUI::tick();
+	//qUI::tick();
 }
 
-void qMinimap_boss1::render()
+void qMinimap_boss1::render_ui()
 {
-	qUI::render();
+	qUI::render_ui();
 
 	Vec2 vPos = GetFinalPos();
 	Vec2 vScale = GetScale();

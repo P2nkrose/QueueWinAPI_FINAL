@@ -5,9 +5,12 @@ class qUIMgr
 
 public:
 	void tick();
-
+	
+	void SetOwner(qObj* _Owner) { m_Owner = _Owner; }
 
 private:
+
+	qObj*		m_Owner;
 
 };
 

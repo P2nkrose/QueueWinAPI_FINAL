@@ -10,14 +10,14 @@ qMinimap_stage2::~qMinimap_stage2()
 {
 }
 
-void qMinimap_stage2::tick()
+void qMinimap_stage2::tick_ui()
 {
-	qUI::tick();
+	//qUI::tick();
 }
 
-void qMinimap_stage2::render()
+void qMinimap_stage2::render_ui()
 {
-	qUI::render();
+	qUI::render_ui();
 
 	Vec2 vPos = GetFinalPos();
 	Vec2 vScale = GetScale();

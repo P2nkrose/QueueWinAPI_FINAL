@@ -10,14 +10,14 @@ qMenu::~qMenu()
 {
 }
 
-void qMenu::tick()
+void qMenu::tick_ui()
 {
-	qUI::tick();
+	//qUI::tick();
 }
 
-void qMenu::render()
+void qMenu::render_ui()
 {
-	qUI::render();
+	qUI::render_ui();
 
 	Vec2 vPos = GetFinalPos();
 	Vec2 vScale = GetScale();

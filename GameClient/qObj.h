@@ -38,11 +38,35 @@ private:
 	int					m_SlashDamage;
 	int					m_SpecialDamage;
 
+	int					m_AttackCount;
+	int					m_MissileCount;
+	int					m_SlashCount;
+	int					m_SpecialCount;
+
+
+	int					m_BossHP;
+
 	LAYER_TYPE			m_Type;		// 소속 레이어
 	bool				m_bDead;	// 삭제 예정 상태
 	
 
 public:
+
+	int GetAttackCount() { return m_AttackCount; }
+	void PlusAttackCount() { m_AttackCount += 1; }
+
+	int GetMissileCount() { return m_MissileCount; }
+	void PlusMissileCount() { m_MissileCount += 1; }
+
+	int GetSlashCount() { return m_SlashCount; }
+	void PlusSlashCount() { m_SlashCount += 1; }
+
+	int GetSpecialCount() { return m_SpecialCount; }
+	void PlusSpecialCount() { m_SpecialCount += 1; }
+
+
+	int GetBossHP() { return m_BossHP; }
+	void SetBossHP(int _hp) { m_BossHP = _hp; }
 
 	int GetAttackDamage() { return m_AttackDamage; }
 	int GetMissileDamage() { return m_MissileDamage; }

@@ -29,7 +29,7 @@ public:
 
 private:
 
-	int				m_BossHP;
+	//int				m_BossHP;
 	DIRECTION		m_Dir;
 	
 	qAnimator*		m_Animator;

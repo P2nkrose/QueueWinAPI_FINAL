@@ -362,6 +362,21 @@
     <Filter Include="03. Game\05. Object\10. UI\2. MinimapUI\4. boss2">
       <UniqueIdentifier>{560205f1-fb57-4bb8-a2f9-693d7fc5b901}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\4. BossHP">
+      <UniqueIdentifier>{572c53fa-c28e-4615-a113-f58529cebf28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\4. BossHP\1. HUD">
+      <UniqueIdentifier>{a95e70c1-afe3-4eec-a857-d914ea0ff5c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\4. BossHP\2. HP">
+      <UniqueIdentifier>{925f9473-6645-416d-88c4-58334b06ddea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\3. MenuUI\1. Menu">
+      <UniqueIdentifier>{75978af0-54c3-42a3-8b80-1f17e2e55141}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\3. MenuUI\2. EXP">
+      <UniqueIdentifier>{c899f7d9-98c5-4694-8dea-2a85d31d8473}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -718,8 +733,14 @@
     <ClInclude Include="qMinimap_stage2.h">
       <Filter>03. Game\05. Object\10. UI\2. MinimapUI\2. stage2</Filter>
     </ClInclude>
+    <ClInclude Include="qBossHP.h">
+      <Filter>03. Game\05. Object\10. UI\4. BossHP\2. HP</Filter>
+    </ClInclude>
+    <ClInclude Include="qBossHUD.h">
+      <Filter>03. Game\05. Object\10. UI\4. BossHP\1. HUD</Filter>
+    </ClInclude>
     <ClInclude Include="qMenu.h">
-      <Filter>03. Game\05. Object\10. UI\3. MenuUI</Filter>
+      <Filter>03. Game\05. Object\10. UI\3. MenuUI\1. Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1072,8 +1093,14 @@
     <ClCompile Include="qMinimap_stage2.cpp">
       <Filter>03. Game\05. Object\10. UI\2. MinimapUI\2. stage2</Filter>
     </ClCompile>
+    <ClCompile Include="qBossHP.cpp">
+      <Filter>03. Game\05. Object\10. UI\4. BossHP\2. HP</Filter>
+    </ClCompile>
+    <ClCompile Include="qBossHUD.cpp">
+      <Filter>03. Game\05. Object\10. UI\4. BossHP\1. HUD</Filter>
+    </ClCompile>
     <ClCompile Include="qMenu.cpp">
-      <Filter>03. Game\05. Object\10. UI\3. MenuUI</Filter>
+      <Filter>03. Game\05. Object\10. UI\3. MenuUI\1. Menu</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

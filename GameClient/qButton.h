@@ -12,8 +12,8 @@ public:
 	~qButton();
 
 public:
-	virtual void tick() override;
-	virtual void render() override;
+	virtual void tick_ui() override;
+	virtual void render_ui() override;
 	virtual void LButtonClicked() override;
 
 public:

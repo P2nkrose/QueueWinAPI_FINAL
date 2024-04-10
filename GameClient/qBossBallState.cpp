@@ -64,7 +64,6 @@ void qBossBallState::Enter()
 void qBossBallState::FinalTick()
 {
 	qObj* pBoss = GetBlackboardData<qObj*>(L"Boss");
-	int pBossHP = GetBlackboardData<int>(L"BossHP");
 
 
 	if (L"BossBallRight" == GetAnimator()->GetCurAnim()->GetName())

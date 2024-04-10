@@ -14,7 +14,8 @@
 #include "qMenu.h"
 
 #include "qBoss.h"
-
+#include "qBossHUD.h"
+#include "qBossHP.h"
 
 #include "qSound.h"
 
@@ -62,6 +63,11 @@ void qLevel_boss2::tick()
 		::ChangeLevel(LEVEL_TYPE::BOSS_01);
 	}
 
+
+
+
+
+
 }
 
 void qLevel_boss2::Enter()
@@ -76,12 +82,12 @@ void qLevel_boss2::Enter()
 	qMinimap_boss2* pMinimap_boss2 = new qMinimap_boss2;
 	m_Minimap = qAssetMgr::GetInst()->FindTexture(L"minimap_boss2");
 
-	pMinimap_boss2->SetMinimapImage(m_Minimap);
+	pMinimap_boss2->SetImage(m_Minimap);
 	pMinimap_boss2->SetScale(Vec2(158.f, 130.f));
 
 	//pMinimap_stage1->SetPos(Vec2(vResol.x - (pMinimap_stage1->GetScale().x + 30), 30.f));
 
-	pMinimap_boss2->SetPos(Vec2(vResol.x - 30.f, 50.f));
+	pMinimap_boss2->SetPos(Vec2(0.f, 0.f));
 
 	AddObject(LAYER_TYPE::UI, pMinimap_boss2);
 	
@@ -90,12 +96,12 @@ void qLevel_boss2::Enter()
 	qMenu* pMenu = new qMenu;
 	m_Menu = qAssetMgr::GetInst()->FindTexture(L"menu");
 
-	pMenu->SetMinimapImage(m_Menu);
+	pMenu->SetImage(m_Menu);
 	pMenu->SetScale(Vec2(1600.f, 900.f));
 
 	//pMinimap_stage1->SetPos(Vec2(vResol.x - (pMinimap_stage1->GetScale().x + 30), 30.f));
 
-	pMenu->SetPos(Vec2(vResol.x - 30.f, 50.f));
+	pMenu->SetPos(Vec2(0.f, 0.f));
 
 	AddObject(LAYER_TYPE::UI, pMenu);
 
@@ -124,7 +130,34 @@ void qLevel_boss2::Enter()
 	pBoss->SetPos(910.f, 693.f);
 	pBoss->SetScale(100.f, 100.f);
 	pBoss->SetDir(DIRECTION::LEFT);
+	
 	AddObject(LAYER_TYPE::BOSS, pBoss);
+
+
+	// 보스 HUD
+	qBossHUD* pBossHud = new qBossHUD;
+	m_BossHud = qAssetMgr::GetInst()->FindTexture(L"hud");
+
+	pBossHud->SetImage(m_BossHud);
+	pBossHud->SetScale(Vec2(801.f, 40.f));
+
+	//pBossHud->SetPos(Vec2(vResol.x - (pBossHud->GetScale().x + 800), 500.f));
+	pBossHud->SetPos(Vec2(400.f, 0.f));
+
+	AddObject(LAYER_TYPE::UI, pBossHud);
+
+
+	// 보스 HP
+	qBossHP* pBossHP = new qBossHP;
+	m_BossHp = qAssetMgr::GetInst()->FindTexture(L"hp");
+
+	pBossHP->SetImage(m_BossHp);
+	pBossHP->SetScale(Vec2(801.f, 40.f));
+	pBossHP->SetPos(Vec2(439.f, 4.f));
+	pBossHP->SetOwner(pBoss);
+
+	AddObject(LAYER_TYPE::UI, pBossHP);
+	
 
 
 	// 콜라이더 읽어오기

@@ -12,11 +12,11 @@ public:
 	~qMinimap_boss2();
 
 public:
-	virtual void tick() override;
-	virtual void render() override;
+	virtual void tick_ui() override;
+	virtual void render_ui() override;
 
 
-	void SetMinimapImage(qTexture* _Tex) { m_MinimapImg_boss2 = _Tex; }
+	void SetImage(qTexture* _Tex) { m_MinimapImg_boss2 = _Tex; }
 
 
 private:

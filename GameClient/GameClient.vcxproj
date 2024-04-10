@@ -164,6 +164,8 @@
     <ClInclude Include="qBossEffect_tornado.h" />
     <ClInclude Include="qBossFirebirdState.h" />
     <ClInclude Include="qBossGenesisState.h" />
+    <ClInclude Include="qBossHP.h" />
+    <ClInclude Include="qBossHUD.h" />
     <ClInclude Include="qBossIdleState.h" />
     <ClInclude Include="qBossSkill_ball_left.h" />
     <ClInclude Include="qBossSkill_ball_right.h" />
@@ -285,6 +287,8 @@
     <ClCompile Include="qBossEffect_tornado.cpp" />
     <ClCompile Include="qBossFirebirdState.cpp" />
     <ClCompile Include="qBossGenesisState.cpp" />
+    <ClCompile Include="qBossHP.cpp" />
+    <ClCompile Include="qBossHUD.cpp" />
     <ClCompile Include="qBossIdleState.cpp" />
     <ClCompile Include="qBossSkill_ball_left.cpp" />
     <ClCompile Include="qBossSkill_ball_right.cpp" />

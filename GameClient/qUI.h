@@ -7,15 +7,16 @@ class qUI : public qObj
 public:
 	friend class qTaskMgr;
 
-	CLONE(qUI);
-
 public:
 	qUI();
 	~qUI();
 
 public:
-	virtual void tick() override;
-	virtual void render() override;
+	virtual void tick() final;
+	virtual void render() final;
+
+	virtual void render_ui();
+	virtual void tick_ui() = 0;
 
 public:
 	Vec2 GetFinalPos() { return m_vFinalPos; }

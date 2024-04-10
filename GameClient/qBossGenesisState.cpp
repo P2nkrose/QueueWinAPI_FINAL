@@ -59,7 +59,6 @@ void qBossGenesisState::Enter()
 void qBossGenesisState::FinalTick()
 {
 	qObj* pBoss = GetBlackboardData<qObj*>(L"Boss");
-	int pBossHP = GetBlackboardData<int>(L"BossHP");
 
 
 	if (L"BossGenesisRight" == GetAnimator()->GetCurAnim()->GetName())

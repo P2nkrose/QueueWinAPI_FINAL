@@ -51,7 +51,6 @@ void qBossDeadState::Enter()
 void qBossDeadState::FinalTick()
 {
 	qObj* pBoss = GetBlackboardData<qObj*>(L"Boss");
-	int pBossHP = GetBlackboardData<int>(L"BossHP");
 
 	if (L"BossDeadRight" == GetAnimator()->GetCurAnim()->GetName())
 	{

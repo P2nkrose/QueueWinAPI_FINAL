@@ -16,6 +16,11 @@ qObj::qObj()
 	, m_MissileDamage(1600000)
 	, m_SlashDamage(1700000)
 	, m_SpecialDamage(2600000)
+	, m_BossHP(63000000)
+	, m_AttackCount(0)
+	, m_MissileCount(0)
+	, m_SlashCount(0)
+	, m_SpecialCount(0)
 {
 }
 
@@ -32,6 +37,11 @@ qObj::qObj(const qObj& _Other)
 	, m_MissileDamage(_Other.m_MissileDamage)
 	, m_SlashDamage(_Other.m_SlashDamage)
 	, m_SpecialDamage(_Other.m_SpecialDamage)
+	, m_BossHP(_Other.m_BossHP)
+	, m_AttackCount(_Other.m_AttackCount)
+	, m_MissileCount(_Other.m_MissileCount)
+	, m_SlashCount(_Other.m_SlashCount)
+	, m_SpecialCount(_Other.m_SpecialCount)
 {
 	for (size_t i = 0; i < _Other.m_vecCom.size(); ++i)
 	{

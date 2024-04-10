@@ -707,7 +707,7 @@ void qPlayer::tick()
 
 				// 라우드 러쉬 스킬 이펙트
 				qSkill_slash_left* pSlashLeft = new qSkill_slash_left;
-				pSlashLeft->SetName(L"pSlashLeft");
+				pSlashLeft->SetName(L"SlashLeft");
 				
 
 				Vec2 vSlashLeftPos = GetPos();
@@ -717,7 +717,7 @@ void qPlayer::tick()
 				pSlashLeft->SetPos(vSlashLeftPos);
 				pSlashLeft->SetScale(vSlashLeftScale);
 
-				if (L"pSlashLeft" == pSlashLeft->GetName())
+				if (L"SlashLeft" == pSlashLeft->GetName())
 				{
 					SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pSlashLeft);
 				}
@@ -728,7 +728,7 @@ void qPlayer::tick()
 
 				// 라우드 러쉬 스킬 이펙트
 				qSkill_slash_right* pSlashRight = new qSkill_slash_right;
-				pSlashRight->SetName(L"pSlashRight");
+				pSlashRight->SetName(L"SlashRight");
 				
 
 				Vec2 vSlashRightPos = GetPos();
@@ -738,7 +738,7 @@ void qPlayer::tick()
 				pSlashRight->SetPos(vSlashRightPos);
 				pSlashRight->SetScale(vSlashRightScale);
 
-				if (L"pSlashRight" == pSlashRight->GetName())
+				if (L"SlashRight" == pSlashRight->GetName())
 				{
 					SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::PLAYER_SKILL, pSlashRight);
 				}

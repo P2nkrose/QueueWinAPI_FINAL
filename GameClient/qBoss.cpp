@@ -20,12 +20,16 @@
 #include "qBossTornadoState.h"
 #include "qBossDeadState.h"
 
+#include "qUIMgr.h"
+
 
 qBoss::qBoss()
-	: m_BossHP(63000000)
-	, m_Dir(DIRECTION::LEFT)
+	: m_Dir(DIRECTION::LEFT)
+	//, m_BossHP(63000000)
 
 {
+
+
 	// 콜라이더 설정
 	m_Collider = (qCollider*)AddComponent(new qCollider);
 	m_Collider->SetScale(Vec2(100.f, 190.f));
@@ -157,7 +161,7 @@ qBoss::qBoss()
 
 qBoss::qBoss(const qBoss& _Other)
 	: qObj(_Other)
-	, m_BossHP(63000000)
+	//, m_BossHP(63000000)
 	, m_Dir(_Other.m_Dir)
 	, m_Animator(nullptr)
 {
@@ -182,15 +186,22 @@ void qBoss::begin()
 	qObj* pBossBallLeft = qLevelMgr::GetInst()->FindObjectByName(L"BossBallLeft");
 	m_FSM->SetBlackboardData(L"BossBallLeft", DATA_TYPE::OBJECT, pBossBallLeft);
 
-	m_FSM->SetBlackboardData(L"BossHP", DATA_TYPE::INT, &m_BossHP);
 	m_FSM->SetBlackboardData(L"Boss", DATA_TYPE::OBJECT, this);
 
 	m_FSM->ChangeState(L"Idle");
+
 }
 
 void qBoss::tick()
 {
 	qObj::tick();
+
+	GetBossHP();
+
+	GetAttackCount();
+	GetMissileCount();
+	GetSlashCount();
+	GetSpecialCount();
 
 }
 
@@ -199,42 +210,50 @@ void qBoss::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _O
 
 	if (L"AttackRight" == _OtherObj->GetName() || L"AttackLeft" == _OtherObj->GetName())
 	{
-		m_BossHP = m_BossHP - GetAttackDamage();
+		SetBossHP(GetBossHP() - GetAttackDamage());
 
-		if (m_BossHP <= 0)
+		if (GetBossHP() <= 0)
 		{
 			m_FSM->ChangeState(L"Dead");
 		}
+
+		PlusAttackCount();
 	}
 
 	if (L"BallRight" == _OtherObj->GetName() || L"BallLeft" == _OtherObj->GetName())
 	{
-		m_BossHP = m_BossHP - GetMissileDamage();
+		SetBossHP(GetBossHP() - GetMissileDamage());
 
-		if (m_BossHP <= 0)
+		if (GetBossHP() <= 0)
 		{
 			m_FSM->ChangeState(L"Dead");
 		}
+
+		PlusMissileCount();
 	}
 
 	if (L"SlashRight" == _OtherObj->GetName() || L"SlashLeft" == _OtherObj->GetName())
 	{
-		m_BossHP = m_BossHP - GetSlashDamage();
+		SetBossHP(GetBossHP() - GetSlashDamage());
 
-		if (m_BossHP <= 0)
+		if (GetBossHP() <= 0)
 		{
 			m_FSM->ChangeState(L"Dead");
 		}
+
+		PlusSlashCount();
 	}
 
 	if (L"SpecialRight" == _OtherObj->GetName() || L"SpecialLeft" == _OtherObj->GetName())
 	{
-		m_BossHP = m_BossHP - GetSpecialDamage();
+		SetBossHP(GetBossHP() - GetSpecialDamage());
 
-		if (m_BossHP <= 0)
+		if (GetBossHP() <= 0)
 		{
 			m_FSM->ChangeState(L"Dead");
 		}
+
+		PlusSpecialCount();
 	}
 
 }
