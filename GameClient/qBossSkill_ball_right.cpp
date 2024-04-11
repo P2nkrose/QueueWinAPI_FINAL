@@ -11,6 +11,7 @@
 #include "qTaskMgr.h"
 
 #include "qBossEffect_ball.h"
+#include "qDamage_physical.h"
 
 qBossSkill_ball_right::qBossSkill_ball_right()
 	: m_BallSpeed(500.f)
@@ -75,6 +76,26 @@ void qBossSkill_ball_right::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherOb
 			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pBallEffect);
 		}
 	}
+
+	if (LAYER_TYPE::PLAYER == _OtherObj->GetLayerType())
+	{
+		qDamage_physical* pDamagePhysical = new qDamage_physical;
+		pDamagePhysical->SetName(L"DamagePhysical");
+
+		Vec2 vDamagePhysicalPos = _OtherObj->GetPos() + Vec2(0.f, -80.f);
+		Vec2 vDamagePhysicalScale = Vec2(181.f, 58.f);
+
+		pDamagePhysical->SetPos(vDamagePhysicalPos);
+		pDamagePhysical->SetScale(vDamagePhysicalScale);
+
+		if (L"DamagePhysical" == pDamagePhysical->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pDamagePhysical);
+		}
+	}
+
+
 
 	// Àû°ú ºÎµúÇûÀ»¶§ Destroy();
 	if (_OtherObj->GetName() == L"Player")

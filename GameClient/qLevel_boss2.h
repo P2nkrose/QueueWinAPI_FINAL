@@ -23,5 +23,6 @@ private:
 	qTexture*		m_Menu;
 	qTexture*		m_BossHud;
 	qTexture*		m_BossHp;
+	qTexture*		m_PlayerHP;
 };
 

@@ -44,7 +44,16 @@ private:
 	int					m_SpecialCount;
 
 
+	int					m_PhysicalDamage;
+	int					m_MagicDamage;
+
+	int					m_PhysicalCount;
+	int					m_MagicCount;
+
 	int					m_BossHP;
+	int					m_PlayerHP;
+
+	int					m_Exp;
 
 	LAYER_TYPE			m_Type;		// 소속 레이어
 	bool				m_bDead;	// 삭제 예정 상태
@@ -64,14 +73,30 @@ public:
 	int GetSpecialCount() { return m_SpecialCount; }
 	void PlusSpecialCount() { m_SpecialCount += 1; }
 
+	int GetPhysicalCount() { return m_PhysicalCount; }
+	void PlusPhysicalCount() { m_PhysicalCount += 1; }
+
+	int GetMagicCount() { return m_MagicCount; }
+	void PlusMagicCount() { m_MagicCount += 1; }
+
+
+	int GetExp() { return m_Exp; }
+	void PlusExp() { m_Exp += 40; }
 
 	int GetBossHP() { return m_BossHP; }
 	void SetBossHP(int _hp) { m_BossHP = _hp; }
+
+	int GetPlayerHP() { return m_PlayerHP; }
+	void SetPlayerHP(int _hp) { m_PlayerHP = _hp; }
+
 
 	int GetAttackDamage() { return m_AttackDamage; }
 	int GetMissileDamage() { return m_MissileDamage; }
 	int GetSlashDamage() { return m_SlashDamage; }
 	int GetSpecialDamage() { return m_SpecialDamage; }
+
+	int GetPhysicalDamage() { return m_PhysicalDamage; }
+	int GetMagicDamage() { return m_MagicDamage; }
 
 
 	void SetDir(DIRECTION _Dir) { m_Dir = _Dir; }

@@ -179,8 +179,10 @@
     <ClInclude Include="qCollisionMgr.h" />
     <ClInclude Include="qComponent.h" />
     <ClInclude Include="qDamage_attack.h" />
+    <ClInclude Include="qDamage_magic.h" />
     <ClInclude Include="qDamage_miss.h" />
     <ClInclude Include="qDamage_missile.h" />
+    <ClInclude Include="qDamage_physical.h" />
     <ClInclude Include="qDamage_slash.h" />
     <ClInclude Include="qDamage_special.h" />
     <ClInclude Include="qDbgRender.h" />
@@ -192,6 +194,7 @@
     <ClInclude Include="qEffect_special.h" />
     <ClInclude Include="qEngine.h" />
     <ClInclude Include="qEntity.h" />
+    <ClInclude Include="qExp.h" />
     <ClInclude Include="qForce.h" />
     <ClInclude Include="qFSM.h" />
     <ClInclude Include="qGuideMissile.h" />
@@ -218,6 +221,7 @@
     <ClInclude Include="qPathMgr.h" />
     <ClInclude Include="qPlatform.h" />
     <ClInclude Include="qPlayer.h" />
+    <ClInclude Include="qPlayerHP.h" />
     <ClInclude Include="qPortal.h" />
     <ClInclude Include="qRedDeadState.h" />
     <ClInclude Include="qRedIdleState.h" />
@@ -302,8 +306,10 @@
     <ClCompile Include="qCollisionMgr.cpp" />
     <ClCompile Include="qComponent.cpp" />
     <ClCompile Include="qDamage_attack.cpp" />
+    <ClCompile Include="qDamage_magic.cpp" />
     <ClCompile Include="qDamage_miss.cpp" />
     <ClCompile Include="qDamage_missile.cpp" />
+    <ClCompile Include="qDamage_physical.cpp" />
     <ClCompile Include="qDamage_slash.cpp" />
     <ClCompile Include="qDamage_special.cpp" />
     <ClCompile Include="qDbgRender.cpp" />
@@ -315,6 +321,7 @@
     <ClCompile Include="qEffect_special.cpp" />
     <ClCompile Include="qEngine.cpp" />
     <ClCompile Include="qEntity.cpp" />
+    <ClCompile Include="qExp.cpp" />
     <ClCompile Include="qForce.cpp" />
     <ClCompile Include="qFSM.cpp" />
     <ClCompile Include="qGuideMissile.cpp" />
@@ -341,6 +348,7 @@
     <ClCompile Include="qPathMgr.cpp" />
     <ClCompile Include="qPlatform.cpp" />
     <ClCompile Include="qPlayer.cpp" />
+    <ClCompile Include="qPlayerHP.cpp" />
     <ClCompile Include="qPortal.cpp" />
     <ClCompile Include="qRedDeadState.cpp" />
     <ClCompile Include="qRedIdleState.cpp" />

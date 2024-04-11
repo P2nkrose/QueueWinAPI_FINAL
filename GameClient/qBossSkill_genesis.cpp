@@ -11,6 +11,7 @@
 #include "qTaskMgr.h"
 
 #include "qBossEffect_genesis.h"
+#include "qDamage_magic.h"
 
 qBossSkill_genesis::qBossSkill_genesis()
 {
@@ -80,6 +81,26 @@ void qBossSkill_genesis::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, 
 		{
 			// TASK
 			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pGenesisEffect);
+		}
+	}
+
+
+
+	if (LAYER_TYPE::PLAYER == _OtherObj->GetLayerType())
+	{
+		qDamage_magic* pDamageMagic = new qDamage_magic;
+		pDamageMagic->SetName(L"DamageMagic");
+
+		Vec2 vDamageMagicPos = _OtherObj->GetPos() + Vec2(0.f, -80.f);
+		Vec2 vDamageMagicScale = Vec2(181.f, 58.f);
+
+		pDamageMagic->SetPos(vDamageMagicPos);
+		pDamageMagic->SetScale(vDamageMagicScale);
+
+		if (L"DamageMagic" == pDamageMagic->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pDamageMagic);
 		}
 	}
 }

@@ -357,6 +357,13 @@ void qPlayer::tick()
 
 	qObj::tick();
 
+	GetExp();
+
+	GetPlayerHP();
+
+	GetPhysicalCount();
+	GetMagicCount();
+
 	qLevel* pCurLevel = qLevelMgr::GetInst()->GetCurrentLevel();
 
 	m_Pos = GetPos();
@@ -754,7 +761,6 @@ void qPlayer::tick()
 				m_SlashMaxRange += m_SlashSpeed * DT;
 				m_Pos += Vec2(-1.f, 0.f) * m_SlashSpeed * DT;
 
-
 				m_Animator->Play(L"PlayerSlashLeft", false);
 			}
 			else if (GetDir() == DIRECTION::RIGHT)
@@ -1061,6 +1067,25 @@ void qPlayer::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* 
 			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pDamageMiss);
 		}
 	}
+
+	if (L"BossSkillBallRight" == _OtherObj->GetName() || L"BossSkillBallLeft" == _OtherObj->GetName()
+		|| L"BossSkillTornado" == _OtherObj->GetName())
+	{
+		SetPlayerHP(GetPlayerHP() - GetPhysicalDamage());
+
+		PlusPhysicalCount();
+	}
+
+	if (L"BossSkillGenesis1" == _OtherObj->GetName() || L"BossSkillGenesis2" == _OtherObj->GetName()
+		|| L"BossSkillGenesis3" == _OtherObj->GetName() || L"BossSkillGenesis4" == _OtherObj->GetName() || L"BossSkillFirebird" == _OtherObj->GetName())
+	{
+		SetPlayerHP(GetPlayerHP() - GetMagicDamage());
+
+		PlusMagicCount();
+	}
+
+
+
 }
 
 

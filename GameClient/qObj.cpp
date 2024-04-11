@@ -21,6 +21,8 @@ qObj::qObj()
 	, m_MissileCount(0)
 	, m_SlashCount(0)
 	, m_SpecialCount(0)
+	, m_Exp(0)
+	, m_PlayerHP(500000)
 {
 }
 
@@ -42,6 +44,8 @@ qObj::qObj(const qObj& _Other)
 	, m_MissileCount(_Other.m_MissileCount)
 	, m_SlashCount(_Other.m_SlashCount)
 	, m_SpecialCount(_Other.m_SpecialCount)
+	, m_Exp(_Other.m_Exp)
+	, m_PlayerHP(_Other.m_PlayerHP)
 {
 	for (size_t i = 0; i < _Other.m_vecCom.size(); ++i)
 	{

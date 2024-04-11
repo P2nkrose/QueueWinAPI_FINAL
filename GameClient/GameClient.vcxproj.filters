@@ -113,18 +113,6 @@
     <Filter Include="03. Game\05. Object\2. Monster">
       <UniqueIdentifier>{140961b4-6256-481f-a9d8-5cd1121e3d61}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\04. Level\04. Stage\1. STAGE_1">
-      <UniqueIdentifier>{cfbb3697-f361-462d-9d3b-e5c218356661}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\04. Level\04. Stage\2. STAGE_2">
-      <UniqueIdentifier>{315df053-46d6-497c-847a-554bc66d6dea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\04. Level\04. Stage\3. BOSS_1">
-      <UniqueIdentifier>{8caf85df-f2a2-45ac-a1e6-5d3aadb583d4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\04. Level\04. Stage\4. BOSS_2">
-      <UniqueIdentifier>{458ed9ed-2312-4000-b45a-9bf6c3e25bd1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\2. Monster\2. RED">
       <UniqueIdentifier>{5c384c47-5be3-4703-abb9-b1c333bb1d6b}</UniqueIdentifier>
     </Filter>
@@ -152,12 +140,6 @@
     <Filter Include="03. Game\05. Object\5. Background\4. STAGE_2">
       <UniqueIdentifier>{32a2503b-46c7-4113-8df9-07ce7af83b5f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\5. Background\5. BOSS_1">
-      <UniqueIdentifier>{6f9dd70e-97d9-40e4-a1d7-764f54167268}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\5. Background\6. BOSS_2">
-      <UniqueIdentifier>{1a68b75e-ed74-4250-a368-90409d7bfe05}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\5. Background\1. LOGO">
       <UniqueIdentifier>{df77344f-b607-405c-89c8-2c288078803d}</UniqueIdentifier>
     </Filter>
@@ -172,21 +154,6 @@
     </Filter>
     <Filter Include="03. Game\05. Object\8. Damage">
       <UniqueIdentifier>{41d13a27-744b-4e07-8db9-e5e3a98b08ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\8. Damage\1. Attack">
-      <UniqueIdentifier>{81755e83-a1d0-4caa-90b8-dbbfed3cdfd2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\8. Damage\2. Missile">
-      <UniqueIdentifier>{0ecd0deb-b8a3-4cbe-8d93-24edd85dc6c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\8. Damage\3. Slash">
-      <UniqueIdentifier>{269fc529-65fd-4e17-88be-a3cae5154332}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\8. Damage\4. Special">
-      <UniqueIdentifier>{a2ceab87-7853-48ed-ad50-a284725796a9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\8. Damage\5. Miss">
-      <UniqueIdentifier>{df09c42a-dfca-4044-8b88-3528648994f9}</UniqueIdentifier>
     </Filter>
     <Filter Include="03. Game\05. Object\9. Platform">
       <UniqueIdentifier>{5590f0c0-c71e-4db1-be1c-4bd293e51693}</UniqueIdentifier>
@@ -362,20 +329,74 @@
     <Filter Include="03. Game\05. Object\10. UI\2. MinimapUI\4. boss2">
       <UniqueIdentifier>{560205f1-fb57-4bb8-a2f9-693d7fc5b901}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\10. UI\4. BossHP">
-      <UniqueIdentifier>{572c53fa-c28e-4615-a113-f58529cebf28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\10. UI\4. BossHP\1. HUD">
-      <UniqueIdentifier>{a95e70c1-afe3-4eec-a857-d914ea0ff5c3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Game\05. Object\10. UI\4. BossHP\2. HP">
-      <UniqueIdentifier>{925f9473-6645-416d-88c4-58334b06ddea}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Game\05. Object\10. UI\3. MenuUI\1. Menu">
       <UniqueIdentifier>{75978af0-54c3-42a3-8b80-1f17e2e55141}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Game\05. Object\10. UI\3. MenuUI\2. EXP">
+    <Filter Include="03. Game\05. Object\10. UI\5. ExpUI">
+      <UniqueIdentifier>{22a60f9c-4942-4e90-a8b4-3858b12259cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\4. BossHPUI">
+      <UniqueIdentifier>{572c53fa-c28e-4615-a113-f58529cebf28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\4. BossHPUI\1. HUD">
+      <UniqueIdentifier>{a95e70c1-afe3-4eec-a857-d914ea0ff5c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\04. Stage\2. BOSS">
+      <UniqueIdentifier>{ca3d70ea-5ec6-4b43-aac8-9fb7bb1af3ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\04. Stage\1. QUEENS_LOAD">
+      <UniqueIdentifier>{581d34f5-202c-4948-9d81-e3f3bbcf5300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\04. Stage\1. QUEENS_LOAD\1. STAGE_1">
+      <UniqueIdentifier>{cfbb3697-f361-462d-9d3b-e5c218356661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\04. Stage\1. QUEENS_LOAD\2. STAGE_2">
+      <UniqueIdentifier>{315df053-46d6-497c-847a-554bc66d6dea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\04. Stage\2. BOSS\1. BOSS_1">
+      <UniqueIdentifier>{8caf85df-f2a2-45ac-a1e6-5d3aadb583d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\04. Level\04. Stage\2. BOSS\2. BOSS_2">
+      <UniqueIdentifier>{458ed9ed-2312-4000-b45a-9bf6c3e25bd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Background\5. BOSS_1">
+      <UniqueIdentifier>{6f9dd70e-97d9-40e4-a1d7-764f54167268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\5. Background\6. BOSS_2">
+      <UniqueIdentifier>{1a68b75e-ed74-4250-a368-90409d7bfe05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\8. Damage\1. Player_Skill_Damage">
+      <UniqueIdentifier>{cfdb255b-44e3-43c6-a6d3-d6e0b6682c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\8. Damage\2. Boss_Skill_Damage">
+      <UniqueIdentifier>{ad3d79d8-1af2-4c9f-9c39-c4ce45f7071d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\8. Damage\1. Player_Skill_Damage\5. Miss">
+      <UniqueIdentifier>{df09c42a-dfca-4044-8b88-3528648994f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\8. Damage\1. Player_Skill_Damage\1. Attack">
+      <UniqueIdentifier>{81755e83-a1d0-4caa-90b8-dbbfed3cdfd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\8. Damage\1. Player_Skill_Damage\2. Missile">
+      <UniqueIdentifier>{0ecd0deb-b8a3-4cbe-8d93-24edd85dc6c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\8. Damage\1. Player_Skill_Damage\3. Slash">
+      <UniqueIdentifier>{269fc529-65fd-4e17-88be-a3cae5154332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\8. Damage\1. Player_Skill_Damage\4. Special">
+      <UniqueIdentifier>{a2ceab87-7853-48ed-ad50-a284725796a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\8. Damage\2. Boss_Skill_Damage\1. Physical">
+      <UniqueIdentifier>{d58f2a3d-59cd-4b1b-bb43-e9f84c7079f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\8. Damage\2. Boss_Skill_Damage\2. Magic">
+      <UniqueIdentifier>{b287c2fd-1137-4fa9-b5f7-271cc0322903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\3. MenuUI\2. PlayerHP">
       <UniqueIdentifier>{c899f7d9-98c5-4694-8dea-2a85d31d8473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Game\05. Object\10. UI\4. BossHPUI\2. BossHP">
+      <UniqueIdentifier>{925f9473-6645-416d-88c4-58334b06ddea}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -524,19 +545,19 @@
       <Filter>03. Game\05. Object\5. Background\5. BOSS_1</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_stage1.h">
-      <Filter>03. Game\04. Level\04. Stage\1. STAGE_1</Filter>
+      <Filter>03. Game\04. Level\04. Stage\1. QUEENS_LOAD\1. STAGE_1</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_stage2.h">
-      <Filter>03. Game\04. Level\04. Stage\2. STAGE_2</Filter>
+      <Filter>03. Game\04. Level\04. Stage\1. QUEENS_LOAD\2. STAGE_2</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_boss1.h">
-      <Filter>03. Game\04. Level\04. Stage\3. BOSS_1</Filter>
+      <Filter>03. Game\04. Level\04. Stage\2. BOSS\1. BOSS_1</Filter>
     </ClInclude>
     <ClInclude Include="qBackground_boss2.h">
       <Filter>03. Game\05. Object\5. Background\6. BOSS_2</Filter>
     </ClInclude>
     <ClInclude Include="qLevel_boss2.h">
-      <Filter>03. Game\04. Level\04. Stage\4. BOSS_2</Filter>
+      <Filter>03. Game\04. Level\04. Stage\2. BOSS\2. BOSS_2</Filter>
     </ClInclude>
     <ClInclude Include="qPlatform.h">
       <Filter>03. Game\05. Object\9. Platform\1. Platform</Filter>
@@ -638,19 +659,19 @@
       <Filter>03. Game\05. Object\7. Effect\1. Player_Effect\4. Special</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_miss.h">
-      <Filter>03. Game\05. Object\8. Damage\5. Miss</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Player_Skill_Damage\5. Miss</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_attack.h">
-      <Filter>03. Game\05. Object\8. Damage\1. Attack</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Player_Skill_Damage\1. Attack</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_missile.h">
-      <Filter>03. Game\05. Object\8. Damage\2. Missile</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Player_Skill_Damage\2. Missile</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_slash.h">
-      <Filter>03. Game\05. Object\8. Damage\3. Slash</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Player_Skill_Damage\3. Slash</Filter>
     </ClInclude>
     <ClInclude Include="qDamage_special.h">
-      <Filter>03. Game\05. Object\8. Damage\4. Special</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Player_Skill_Damage\4. Special</Filter>
     </ClInclude>
     <ClInclude Include="qRespawnMgr.h">
       <Filter>03. Game\03. Manager\12. RespawnMgr</Filter>
@@ -734,13 +755,25 @@
       <Filter>03. Game\05. Object\10. UI\2. MinimapUI\2. stage2</Filter>
     </ClInclude>
     <ClInclude Include="qBossHP.h">
-      <Filter>03. Game\05. Object\10. UI\4. BossHP\2. HP</Filter>
+      <Filter>03. Game\05. Object\10. UI\4. BossHPUI\2. BossHP</Filter>
     </ClInclude>
     <ClInclude Include="qBossHUD.h">
-      <Filter>03. Game\05. Object\10. UI\4. BossHP\1. HUD</Filter>
+      <Filter>03. Game\05. Object\10. UI\4. BossHPUI\1. HUD</Filter>
     </ClInclude>
     <ClInclude Include="qMenu.h">
       <Filter>03. Game\05. Object\10. UI\3. MenuUI\1. Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="qExp.h">
+      <Filter>03. Game\05. Object\10. UI\5. ExpUI</Filter>
+    </ClInclude>
+    <ClInclude Include="qDamage_physical.h">
+      <Filter>03. Game\05. Object\8. Damage\2. Boss_Skill_Damage\1. Physical</Filter>
+    </ClInclude>
+    <ClInclude Include="qDamage_magic.h">
+      <Filter>03. Game\05. Object\8. Damage\2. Boss_Skill_Damage\2. Magic</Filter>
+    </ClInclude>
+    <ClInclude Include="qPlayerHP.h">
+      <Filter>03. Game\05. Object\10. UI\3. MenuUI\2. PlayerHP</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -884,19 +917,19 @@
       <Filter>03. Game\05. Object\5. Background\5. BOSS_1</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_stage1.cpp">
-      <Filter>03. Game\04. Level\04. Stage\1. STAGE_1</Filter>
+      <Filter>03. Game\04. Level\04. Stage\1. QUEENS_LOAD\1. STAGE_1</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_stage2.cpp">
-      <Filter>03. Game\04. Level\04. Stage\2. STAGE_2</Filter>
+      <Filter>03. Game\04. Level\04. Stage\1. QUEENS_LOAD\2. STAGE_2</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_boss1.cpp">
-      <Filter>03. Game\04. Level\04. Stage\3. BOSS_1</Filter>
+      <Filter>03. Game\04. Level\04. Stage\2. BOSS\1. BOSS_1</Filter>
     </ClCompile>
     <ClCompile Include="qBackground_boss2.cpp">
       <Filter>03. Game\05. Object\5. Background\6. BOSS_2</Filter>
     </ClCompile>
     <ClCompile Include="qLevel_boss2.cpp">
-      <Filter>03. Game\04. Level\04. Stage\4. BOSS_2</Filter>
+      <Filter>03. Game\04. Level\04. Stage\2. BOSS\2. BOSS_2</Filter>
     </ClCompile>
     <ClCompile Include="qPlatform.cpp">
       <Filter>03. Game\05. Object\9. Platform\1. Platform</Filter>
@@ -998,19 +1031,19 @@
       <Filter>03. Game\05. Object\7. Effect\1. Player_Effect\4. Special</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_miss.cpp">
-      <Filter>03. Game\05. Object\8. Damage\5. Miss</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Player_Skill_Damage\5. Miss</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_attack.cpp">
-      <Filter>03. Game\05. Object\8. Damage\1. Attack</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Player_Skill_Damage\1. Attack</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_missile.cpp">
-      <Filter>03. Game\05. Object\8. Damage\2. Missile</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Player_Skill_Damage\2. Missile</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_slash.cpp">
-      <Filter>03. Game\05. Object\8. Damage\3. Slash</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Player_Skill_Damage\3. Slash</Filter>
     </ClCompile>
     <ClCompile Include="qDamage_special.cpp">
-      <Filter>03. Game\05. Object\8. Damage\4. Special</Filter>
+      <Filter>03. Game\05. Object\8. Damage\1. Player_Skill_Damage\4. Special</Filter>
     </ClCompile>
     <ClCompile Include="qRespawnMgr.cpp">
       <Filter>03. Game\03. Manager\12. RespawnMgr</Filter>
@@ -1094,13 +1127,25 @@
       <Filter>03. Game\05. Object\10. UI\2. MinimapUI\2. stage2</Filter>
     </ClCompile>
     <ClCompile Include="qBossHP.cpp">
-      <Filter>03. Game\05. Object\10. UI\4. BossHP\2. HP</Filter>
+      <Filter>03. Game\05. Object\10. UI\4. BossHPUI\2. BossHP</Filter>
     </ClCompile>
     <ClCompile Include="qBossHUD.cpp">
-      <Filter>03. Game\05. Object\10. UI\4. BossHP\1. HUD</Filter>
+      <Filter>03. Game\05. Object\10. UI\4. BossHPUI\1. HUD</Filter>
     </ClCompile>
     <ClCompile Include="qMenu.cpp">
       <Filter>03. Game\05. Object\10. UI\3. MenuUI\1. Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="qExp.cpp">
+      <Filter>03. Game\05. Object\10. UI\5. ExpUI</Filter>
+    </ClCompile>
+    <ClCompile Include="qDamage_physical.cpp">
+      <Filter>03. Game\05. Object\8. Damage\2. Boss_Skill_Damage\1. Physical</Filter>
+    </ClCompile>
+    <ClCompile Include="qDamage_magic.cpp">
+      <Filter>03. Game\05. Object\8. Damage\2. Boss_Skill_Damage\2. Magic</Filter>
+    </ClCompile>
+    <ClCompile Include="qPlayerHP.cpp">
+      <Filter>03. Game\05. Object\10. UI\3. MenuUI\2. PlayerHP</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

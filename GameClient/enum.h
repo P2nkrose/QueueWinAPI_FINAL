@@ -34,6 +34,8 @@ enum class LEVEL_TYPE
 	STAGE_01,
 	STAGE_02,
 
+	BOSS_ENTER,
+
 	BOSS_01,
 	BOSS_02,
 

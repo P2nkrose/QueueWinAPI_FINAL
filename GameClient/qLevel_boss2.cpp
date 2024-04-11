@@ -16,6 +16,7 @@
 #include "qBoss.h"
 #include "qBossHUD.h"
 #include "qBossHP.h"
+#include "qPlayerHP.h"
 
 #include "qSound.h"
 
@@ -94,7 +95,7 @@ void qLevel_boss2::Enter()
 
 	// 메뉴 UI 추가
 	qMenu* pMenu = new qMenu;
-	m_Menu = qAssetMgr::GetInst()->FindTexture(L"menu");
+	m_Menu = qAssetMgr::GetInst()->FindTexture(L"menuno");
 
 	pMenu->SetImage(m_Menu);
 	pMenu->SetScale(Vec2(1600.f, 900.f));
@@ -157,6 +158,18 @@ void qLevel_boss2::Enter()
 	pBossHP->SetOwner(pBoss);
 
 	AddObject(LAYER_TYPE::UI, pBossHP);
+
+
+	// 플레이어 Hp
+	qPlayerHP* pPlayerHP = new qPlayerHP;
+	m_PlayerHP = qAssetMgr::GetInst()->FindTexture(L"playerhp");
+
+	pPlayerHP->SetImage(m_PlayerHP);
+	pPlayerHP->SetScale(Vec2(169.f, 11.f));
+	pPlayerHP->SetPos(Vec2(719.f, 843.f));
+	pPlayerHP->SetOwner(pPlayer);
+
+	AddObject(LAYER_TYPE::UI, pPlayerHP);
 	
 
 

@@ -19,5 +19,7 @@ public:
 
 private:
 	qTexture*		m_MenuImg;
+	qTexture*		m_MenuNoImg;
+
 };
 

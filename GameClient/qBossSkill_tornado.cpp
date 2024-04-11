@@ -11,6 +11,7 @@
 #include "qTaskMgr.h"
 
 #include "qBossEffect_tornado.h"
+#include "qDamage_physical.h"
 
 qBossSkill_tornado::qBossSkill_tornado()
 {
@@ -80,4 +81,25 @@ void qBossSkill_tornado::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, 
 			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pTornadoEffect);
 		}
 	}
+
+
+	if (LAYER_TYPE::PLAYER == _OtherObj->GetLayerType())
+	{
+		qDamage_physical* pDamagePhysical = new qDamage_physical;
+		pDamagePhysical->SetName(L"DamagePhysical");
+
+		Vec2 vDamagePhysicalPos = _OtherObj->GetPos() + Vec2(0.f, -80.f);
+		Vec2 vDamagePhysicalScale = Vec2(181.f, 58.f);
+
+		pDamagePhysical->SetPos(vDamagePhysicalPos);
+		pDamagePhysical->SetScale(vDamagePhysicalScale);
+
+		if (L"DamagePhysical" == pDamagePhysical->GetName())
+		{
+			// TASK
+			SpawnObject(qLevelMgr::GetInst()->GetCurrentLevel(), LAYER_TYPE::EFFECT, pDamagePhysical);
+		}
+	}
+
+
 }

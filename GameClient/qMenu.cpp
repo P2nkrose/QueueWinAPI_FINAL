@@ -4,6 +4,7 @@
 qMenu::qMenu()
 {
 	m_MenuImg = qAssetMgr::GetInst()->LoadTexture(L"menu", L"texture\\ui\\menu\\menu.png");
+	m_MenuNoImg = qAssetMgr::GetInst()->LoadTexture(L"menuno", L"texture\\ui\\menu\\menu1.png");
 }
 
 qMenu::~qMenu()
