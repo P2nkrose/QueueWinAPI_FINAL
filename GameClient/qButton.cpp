@@ -33,16 +33,25 @@ void qButton::render_ui()
 	Vec2 vPos = GetRenderPos();
 	Vec2 vScale = GetScale();
 
+	// AlphaBlending
+	BLENDFUNCTION bf = {};
+
+	bf.BlendOp = AC_SRC_OVER;
+	bf.BlendFlags = 0;
+	bf.SourceConstantAlpha = 255;
+	bf.AlphaFormat = AC_SRC_ALPHA;
+
+
 	if (IsLbtnDowned())
 	{
 		if (nullptr == m_DownImg)
 			qUI::render_ui();
 
-		StretchBlt(DC, (int)vPos.x, (int)vPos.y
+		AlphaBlend(DC, (int)(vPos.x)
+			, (int)(vPos.y)
 			, m_DownImg->GetWidth(), m_DownImg->GetHeight()
-			, m_DownImg->GetDC()
-			, 0, 0
-			, m_DownImg->GetWidth(), m_DownImg->GetHeight(), SRCCOPY);
+			, m_DownImg->GetDC(), 0, 0, m_DownImg->GetWidth(), m_DownImg->GetHeight(), bf);
+
 	}
 	else if (IsMouseOn())
 	{
@@ -50,22 +59,24 @@ void qButton::render_ui()
 		if (nullptr == m_HoverImg)
 			qUI::render_ui();
 
-		StretchBlt(DC, (int)vPos.x, (int)vPos.y
+
+		AlphaBlend(DC, (int)(vPos.x)
+			, (int)(vPos.y)
 			, m_HoverImg->GetWidth(), m_HoverImg->GetHeight()
-			, m_HoverImg->GetDC()
-			, 0, 0
-			, m_HoverImg->GetWidth(), m_HoverImg->GetHeight(), SRCCOPY);
+			, m_HoverImg->GetDC(), 0, 0, m_HoverImg->GetWidth(), m_HoverImg->GetHeight(), bf);
+
+
 	}
 	else
 	{
 		if (nullptr == m_NormalImg)
 			qUI::render_ui();
 
-		StretchBlt(DC, (int)vPos.x, (int)vPos.y
+		AlphaBlend(DC, (int)(vPos.x)
+			, (int)(vPos.y)
 			, m_NormalImg->GetWidth(), m_NormalImg->GetHeight()
-			, m_NormalImg->GetDC()
-			, 0, 0
-			, m_NormalImg->GetWidth(), m_NormalImg->GetHeight(), SRCCOPY);
+			, m_NormalImg->GetDC(), 0, 0, m_NormalImg->GetWidth(), m_NormalImg->GetHeight(), bf);
+
 	}
 
 	
