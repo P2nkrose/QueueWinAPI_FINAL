@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "qBossIdleState.h"
+#include "qKeyMgr.h"
 
 
 qBossIdleState::qBossIdleState()
@@ -95,6 +96,25 @@ void qBossIdleState::FinalTick()
 			GetFSM()->ChangeState(L"Tornado");
 		}
 	}
+
+	if (KEY_TAP(KEY::Q))
+	{
+		GetFSM()->ChangeState(L"Ball");
+	}
+	else if (KEY_TAP(KEY::W))
+	{
+		GetFSM()->ChangeState(L"Genesis");
+	}
+	else if (KEY_TAP(KEY::E))
+	{
+		GetFSM()->ChangeState(L"Firebird");
+	}
+	else if (KEY_TAP(KEY::R))
+	{
+		GetFSM()->ChangeState(L"Tornado");
+	}
+
+	
 }
 
 void qBossIdleState::Exit()

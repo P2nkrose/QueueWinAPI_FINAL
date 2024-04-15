@@ -78,7 +78,7 @@ void qSkill_attack_left::tick()
 			pSound->Stop();
 		}
 	}
-
+	
 }
 
 void qSkill_attack_left::BeginOverlap(qCollider* _OwnCollider, qObj* _OtherObj, qCollider* _OtherCollider)
