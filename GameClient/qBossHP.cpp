@@ -42,7 +42,7 @@ void qBossHP::render_ui()
 
 
 	StretchBlt(DC, (int)vPos.x, (int)vPos.y
-		, m_HPImg->GetWidth() - (m_HPImg->GetWidth() * GetOwner()->GetAttackCount() * 0.0238f + m_HPImg->GetWidth() * GetOwner()->GetMissileCount() * 0.0254f + m_HPImg->GetWidth() * GetOwner()->GetSlashCount() * 0.027f + m_HPImg->GetWidth() * GetOwner()->GetSpecialCount() * 0.0396f), m_HPImg->GetHeight()
+		, m_HPImg->GetWidth() - (m_HPImg->GetWidth() * GetOwner()->GetAttackCount() * 0.02380f + m_HPImg->GetWidth() * GetOwner()->GetMissileCount() * 0.02539f + m_HPImg->GetWidth() * GetOwner()->GetSlashCount() * 0.02698f + m_HPImg->GetWidth() * GetOwner()->GetSpecialCount() * 0.03968f), m_HPImg->GetHeight()
 		, m_HPImg->GetDC()
 		, 0, 0
 		, m_HPImg->GetWidth(), m_HPImg->GetHeight(), SRCCOPY);

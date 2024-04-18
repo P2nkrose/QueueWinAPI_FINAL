@@ -43,7 +43,7 @@ void qBossDeadState::Enter()
 
 		// 스킬 사운드
 		pSound = qAssetMgr::GetInst()->LoadSound(L"BGM_START", L"sound\\boss\\dead.wav");
-		pSound->SetVolume(30.f);
+		pSound->SetVolume(50.f);
 		pSound->Play();
 	}
 }

@@ -28,7 +28,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-
+    // 랜드값 시간으로 주기
     srand((unsigned int)time(nullptr));
 
     // 메모리 릭 확인
