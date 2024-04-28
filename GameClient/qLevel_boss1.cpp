@@ -108,7 +108,7 @@ void qLevel_boss1::Enter()
 	// Player
 	qObj* pPlayer = new qPlayer;
 	pPlayer->SetName(L"Player");
-	pPlayer->SetPos(223.f, 771.f);
+	pPlayer->SetPos(223.f, 768.f);
 	pPlayer->SetScale(100.0f, 100.0f);
 	AddObject(LAYER_TYPE::PLAYER, pPlayer);
 

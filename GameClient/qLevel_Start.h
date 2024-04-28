@@ -18,10 +18,9 @@ public:
 
 
 private:
-	qSound* pSound;
-	qTexture* m_NormalImg;
-	qTexture* m_HoverImg;
-	qTexture* m_DownImg;
-
+	qSound*			pSound;
+	qTexture*		m_NormalImg;
+	qTexture*		m_HoverImg;
+	qTexture*		m_DownImg;
 };
 
