@@ -10,8 +10,6 @@
 
 [![Video Label](http://img.youtube.com/vi/rJVViun10fQ/0.jpg)](https://youtu.be/rJVViun10fQ)
 
-
-
 <br>
 <br>
 
@@ -89,7 +87,7 @@ Ability의 성장을 경험할 수 있습니다.
 
 
 
-<br><br>
+<br>
 <h2>프로젝트 핵심 구현</h2>
 
 ```
@@ -105,6 +103,8 @@ Ability의 성장을 경험할 수 있습니다.
 
 <br><br>
 
+* 조작 방식
+<img width="601" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/96006bb4-946f-491d-8f5d-ee4281197ea5">
 
 
 
