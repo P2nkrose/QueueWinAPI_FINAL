@@ -9,6 +9,10 @@
 
 <h2>프로젝트 영상</h2>
 
+[![Video Label](http://img.youtube.com/vi/rJVViun10fQ/0.jpg)](https://youtu.be/rJVViun10fQ)
+
+<br>
+<br>
 
 <h2>프로젝트 개요</h2>
 <p align="center"><img width="550" alt="1" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/acf4979a-794d-4e8a-8009-2a0e76cc9914"></p>
@@ -78,4 +82,11 @@ Ability의 성장을 경험할 수 있습니다.
 ```
 * Collider Edit Tool
 <img width="680" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/324d8d64-e774-4ea1-9145-4e39b3e6b9a4">
+
+<br><br>
+
+* Monster deploy Edit Tool
+<img width="706" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/048169a7-6d9b-4412-9d03-8f641bd18dbd">
+
+
 
