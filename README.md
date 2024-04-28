@@ -1,4 +1,4 @@
-<p align="center"><img width="350" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/c304819c-d99c-4ee6-a649-4d82450dec05"></p>
+<p align="center"><img alt="1" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/69ca3167-e2e1-433c-9d47-6161adcf76d8"></p>
 
 <h1>Window API 포트폴리오 : 메이플스토리</h1>
 > Windows API를 활용한 2D Game Copy Project
@@ -22,3 +22,5 @@ Ability의 성장을 경험할 수 있습니다.
 <br>
 <h2>프로젝트 설명</h2>
 <b>게임 설명</b>
+<p align="center"><img width="250" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/c304819c-d99c-4ee6-a649-4d82450dec05"></p>
+<p align="center"><img width="610" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/9b2cfa48-9c93-49c7-b89e-d59862b49f19"></p>
