@@ -1,4 +1,5 @@
-<p align="center"><img alt="1" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/69ca3167-e2e1-433c-9d47-6161adcf76d8"></p>
+<p align="center"><img alt="1" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/c5bc0826-039a-4ee4-9e7c-1abe378c5d7c"></p>
+
 
 <h1>Window API 포트폴리오 : 메이플스토리</h1>
 > Windows API를 활용한 2D Game Copy Project
@@ -24,3 +25,14 @@ Ability의 성장을 경험할 수 있습니다.
 <b>게임 설명</b>
 <p align="center"><img width="250" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/c304819c-d99c-4ee6-a649-4d82450dec05"></p>
 <p align="center"><img width="610" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/9b2cfa48-9c93-49c7-b89e-d59862b49f19"></p>
+<br>
+<b>프로젝트에 반영된 게임의 특징</b>
+<br><br>
+
+* 게임 플레이 및 매커니즘
+
+```
+메이플 스토리는 좌/우/점프키를 활용하는 2D 횡스크롤 게임입니다.
+캐릭터가 갖고있는 고유 스킬을 활용하여 필드의 몬스터를 사냥합니다.
+보스 스테이지는 다양한 보스의 스킬 패턴을 피하며 클리어를 할 수 있습니다.
+```
