@@ -6,7 +6,7 @@
 <br>
 <br>
 <h2>프로젝트 개요</h2>
-<p align="center"><img width="570" alt="1" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/acf4979a-794d-4e8a-8009-2a0e76cc9914"></p>
+<p align="center"><img width="500" alt="1" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/acf4979a-794d-4e8a-8009-2a0e76cc9914"></p>
 
 ```
 2003년 출시된 메이플스토리의 모작으로, C++, Windows API를 활용해 제작했습니다.
