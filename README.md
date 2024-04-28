@@ -10,6 +10,8 @@
 
 [![Video Label](http://img.youtube.com/vi/rJVViun10fQ/0.jpg)](https://youtu.be/rJVViun10fQ)
 
+
+
 <br>
 <br>
 
@@ -36,6 +38,17 @@ Ability의 성장을 경험할 수 있습니다.
 <b>프로젝트에 반영된 게임의 특징</b>
 <br><br>
 
+```
+🍄 원작「메이플스토리」의 플레이 방식 / 컨텐츠를 재현
+```
+
+
+
+* 조작 방식
+<img width="680" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/84ac31b4-f29c-4900-a203-6ec197c59a08">
+
+<br><br>
+
 * 게임 플레이 및 매커니즘
 ```
 메이플 스토리는 좌/우/점프키를 활용하는 2D 횡스크롤 게임입니다.
@@ -43,6 +56,7 @@ Ability의 성장을 경험할 수 있습니다.
 캐릭터가 갖고있는 고유 스킬을 활용하여 필드의 몬스터를 사냥합니다.
 보스 스테이지는 다양한 보스의 스킬 패턴을 피하며 클리어를 할 수 있습니다.
 ```
+
 
 * 캐릭터
 ```
@@ -73,8 +87,10 @@ Ability의 성장을 경험할 수 있습니다.
 보스는 HP가 0이 되었을 시 사라지게 됩니다.
 ```
 
+
+
 <br><br>
-<b>프로젝트 구현</b>
+<h2>프로젝트 핵심 구현</h2>
 
 ```
 🛠️ 손쉽게 Collider, 몬스터 배치가 가능한 EDIT TOOL
@@ -89,9 +105,6 @@ Ability의 성장을 경험할 수 있습니다.
 
 <br><br>
 
-```
-🍄 원작「메이플스토리」의 플레이 방식 / 컨텐츠를 재현
-```
-* 조작 방식
-<img width="680" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/84ac31b4-f29c-4900-a203-6ec197c59a08">
+
+
 
