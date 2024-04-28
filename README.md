@@ -1,9 +1,8 @@
 <p align="center"><img alt="1" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/c5bc0826-039a-4ee4-9e7c-1abe378c5d7c"></p>
 
-
 <h1>Window API 포트폴리오 : 메이플스토리</h1>
+
 > Windows API를 활용한 2D Game Copy Project
-<br>
 <br>
 <br>
 
@@ -74,11 +73,11 @@ Ability의 성장을 경험할 수 있습니다.
 보스는 HP가 0이 되었을 시 사라지게 됩니다.
 ```
 
-<br>
-<b>게임 내 TOOL 제작</b>
+<br><br>
+<b>프로젝트 구현</b>
 
 ```
-🛠️ 손쉽게 Collider, 몬스터 배치가 가능한 Edit Tool
+🛠️ 손쉽게 Collider, 몬스터 배치가 가능한 EDIT TOOL
 ```
 * Collider Edit Tool
 <img width="680" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/324d8d64-e774-4ea1-9145-4e39b3e6b9a4">
@@ -86,7 +85,13 @@ Ability의 성장을 경험할 수 있습니다.
 <br><br>
 
 * Monster deploy Edit Tool
-<img width="706" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/048169a7-6d9b-4412-9d03-8f641bd18dbd">
+<img width="680" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/4d6d4ae7-3bc1-4cca-8b50-9acb75ebb8cf">
 
+<br><br>
 
+```
+🍄 원작「메이플스토리」의 플레이 방식 / 컨텐츠를 재현
+```
+* 조작 방식
+<img width="680" alt="image" src="https://github.com/P2nkrose/WinAPI_MapleStory/assets/124218203/84ac31b4-f29c-4900-a203-6ec197c59a08">
 
