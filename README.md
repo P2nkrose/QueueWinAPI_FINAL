@@ -4,7 +4,7 @@
 
 > Windows API를 활용한 2D Game Copy Project
 > 
-<a target="_blank" rel="noopener noreferrer nofollow" href="https://maple-story.notion.site/Copycat-s-Maple-Story-16b845247e254b29952836f5bb2cb098?pvs=4"><img src="https://camo.githubusercontent.com/eabafd2d4be8e0abcc9f0c7b9bc682a7fa2e8d6b2b42c6e5de2b2ea3bae5f505/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f74696f6e2d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d6e6f74696f6e266c6f676f436f6c6f723d7768697465" data-canonical-src="	https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://maple-story.notion.site/Copycat-s-Maple-Story-16b845247e254b29952836f5bb2cb098?pvs=4"><img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)" data-canonical-src="	https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white" style="max-width: 100%;"></a>
 <br>
 <br>
 
